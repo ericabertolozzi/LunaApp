@@ -1,1 +1,1 @@
-# WebScienceS21
+# Luna App for Web Science Systems Development
