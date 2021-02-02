@@ -1,1 +1,1 @@
-#README for Lab 1
+README for Lab 1
