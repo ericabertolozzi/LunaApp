@@ -7,11 +7,21 @@
   color: #7d8285;
 }
 
+.container{
+  border:20px solid grey;
+  padding-bottom:40px;
+}
+
 .article-list h2 {
   font-weight: bold;
-  margin-bottom: 40px;
-  padding-top: 40px;
+  margin-bottom: 40px; 
+  padding-top:40px;
   color: inherit;
+  font-family: 'Cutive', serif;
+}
+
+.text-center{
+  font-family: 'Cutive', serif;
 }
 
 @media (max-width:767px) {
@@ -70,4 +80,5 @@
 .article-list .item .action:hover {
   opacity: 1;
 }
+
 
