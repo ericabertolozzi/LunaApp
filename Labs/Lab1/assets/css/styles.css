@@ -74,3 +74,12 @@ body {
   background-color: black;
   color: white;
 }
+
+#date{
+  float:right;
+  margin-right:-64px;
+  margin-top:-40px;
+  font-family:'Courier Prime',monospace;
+  font-size:13px;
+}
+

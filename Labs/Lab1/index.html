@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cutive&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
 
 </head>
 
@@ -20,6 +21,7 @@
     <div class="article-list">
         <div class="container">
             <div class="intro">
+                <p id="date"></p>
                 <h1 class="text-center" id="heading"><span>The News</span></h1>
                 <p class="text-center" id="subheading">
                     A news ticker that rotates through 200 articles 5 articles at a time every 3 seconds.
@@ -94,3 +96,9 @@
 </body>
 
 </html>
+
+<script>
+    var dates = new Date();
+    document.getElementById("date").innerHTML = dates;
+</script>
+    
