@@ -39,20 +39,20 @@ body {
   border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
   box-shadow: 20px 20px rgba(0,0,0,.15);
   transition: all .4s ease;
+  margin-bottom: 2%;
+  width: 150%;
 }
 .article:hover {
   border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
   box-shadow: 10px 10px rgba(0,0,0,.25);
-}
-.article-padding {
-  margin-bottom: 2%;
-  width: 150%;
 }
 
 .article-title {
   font-size: 200%;
   text-decoration: underline;
   text-align: center;
+  text-transform: uppercase;
+  margin-top: 2%;
 }
 .article-description {
   font-size: 90%;
@@ -62,6 +62,10 @@ body {
   font-family: 'UnifrakturCook', cursive;
   font-size: 250%;
   font-weight: none;
+}
+
+.last-article {
+  margin-bottom: 10%;
 }
 
 .footer{
