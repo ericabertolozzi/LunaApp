@@ -2,10 +2,9 @@ body {
   background-image: url("../img/newspaper.jpg");
   width: 100%;
 }
-
 .article-list {
   background-image: url("../img/newspaper.jpg");
-  width: 100%;l
+  width: 100%;
 }
 
 #heading {
@@ -20,12 +19,10 @@ body {
   margin-top: 40px;
   margin-bottom: 50px;
 }
-
 #heading span {
   background-image: url("../img/newspaper.jpg");
   padding: 0 10px;
 }
-
 #subheading {
   color: #282828;
   font-family: 'Bodoni Moda', serif;
@@ -37,32 +34,43 @@ body {
 .article {
   font-family: 'Bodoni Moda', serif;
   font-weight: bold;
+  background-color: #e8e8e8;
   color: #282828;
   border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
   box-shadow: 20px 20px rgba(0,0,0,.15);
   transition: all .4s ease;
 }
-
+.article:hover {
+  border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
+  box-shadow: 10px 10px rgba(0,0,0,.25);
+}
 .article-padding {
-  margin-right: 5%;
+  margin-bottom: 2%;
+  width: 150%;
 }
 
 .article-title {
   font-size: 200%;
+  text-decoration: underline;
+  text-align: center;
 }
 .article-description {
-  font-size: 130%;
+  font-size: 90%;
+  margin-left: 10%;
 }
 .article-description span{
   font-family: 'UnifrakturCook', cursive;
-  font-size: 150%;
+  font-size: 250%;
   font-weight: none;
 }
 
 .footer{
-  text-align:center;
+  font-family: 'Bodoni Moda', serif;
+  text-align: center;
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 100%
+  width: 100%;
+  background-color: black;
+  color: white;
 }
