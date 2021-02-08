@@ -5,6 +5,7 @@ body {
 
 .article-list {
   background-image: url("../img/newspaper.jpg");
+  width: 100%;l
 }
 
 #heading {
