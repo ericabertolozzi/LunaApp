@@ -1,17 +1,19 @@
 body {
-  background-color: #F5ECEC;
+  background-image: url("../img/newspaper.jpg");
+  width: 100%;
 }
+
 .article-list {
-  background-color: #F5ECEC;
+  background-image: url("../img/newspaper.jpg");
 }
 
 #heading {
   font-family: 'UnifrakturCook', cursive;
   font-size: 500%;
-  color: black;
+  color: #282828;
   width: 100%;
   text-align: center;
-  border-bottom: 5px solid #000;
+  border-bottom: 5px solid #282828;
   line-height: 0.1em;
   margin: 10px 0 20px;
   margin-top: 40px;
@@ -19,6 +21,37 @@ body {
 }
 
 #heading span {
-  background: #F5ECEC;
+  background-image: url("../img/newspaper.jpg");
   padding: 0 10px;
+}
+
+#subheading {
+  color: #282828;
+  font-family: 'Bodoni Moda', serif;
+  font-weight: bold;
+  font-size: 130%;
+  margin-bottom: 5%;
+}
+
+.article {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: bold;
+  color: #282828;
+}
+
+.article-title {
+  font-size: 200%;
+}
+.article-description {
+  font-size: 130%;
+}
+.article-description span{
+  font-family: 'UnifrakturCook', cursive;
+  font-size: 150%;
+  font-weight: none;
+}
+
+.footer{
+  text-align:center;
+  margin-bottom:-25px;
 }
