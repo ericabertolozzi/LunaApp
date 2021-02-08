@@ -1,4 +1,4 @@
-[{
+var json = [{
    "title": "‘Don’t Kill Me’: Others Tell of Abuse by Officer Who Knelt on George Floyd",
    "link": [
       "https://www.nytimes.com/2021/02/02/us/derek-chauvin-george-floyd-past-cases.html",
@@ -6246,4 +6246,4 @@
       "Children and Childhood"
    ]
 }
-]
+];
