@@ -2,12 +2,14 @@ $(document).ready(function() {
 	getNewArticles();
 });
 
+
 // Setting up the delay
 const sleep = (milliseconds) => {
 	return new Promise(resolve => setTimeout(resolve, milliseconds))
 }
 
-// Asynchronous function that displays 5 articles every 4 secondsa
+
+// Asynchronous function that displays 5 articles every 4 seconds
 const getNewArticles = async () => {
 	// Variable to keep track of place in the JSON array
 	counter = 0;
@@ -49,3 +51,4 @@ function populatePage(data) {
 	}
 	$("#articles").html(innerHTML);
 }
+
