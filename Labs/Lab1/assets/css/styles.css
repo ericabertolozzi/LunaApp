@@ -10,6 +10,7 @@ body {
 .article-list {
   background-image: url("../img/newspaper.jpg");
   width: 100%;
+  margin-bottom: 5%;
 }
 
 #heading {
@@ -45,7 +46,7 @@ body {
   box-shadow: 20px 20px rgba(0,0,0,.15);
   transition: all .4s ease;
   margin-bottom: 2%;
-  width: 150%;
+  width: 1100px;
 }
 .article:hover {
   border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
@@ -53,24 +54,33 @@ body {
 }
 
 .article-title {
-  font-size: 200%;
-  text-decoration: underline;
+  font-family: 'Coda', cursive;
+  font-size: 160%;
   text-align: center;
   text-transform: uppercase;
   margin-top: 2%;
+  margin-bottom: -2%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+a:link {
+  color: #282828;
+}
+a:hover {
+  color: blue;
 }
 .article-description {
-  font-size: 90%;
-  margin-left: 10%;
+  font-size: 100%;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 .article-description span{
   font-family: 'UnifrakturCook', cursive;
   font-size: 250%;
   font-weight: none;
 }
-
 .last-article {
-  margin-bottom: 10%;
+
 }
 
 .footer{
@@ -85,9 +95,7 @@ body {
 }
 
 #date{
-  float:none; /* Changed from float right to float none */
-  margin-right:-64px;
-  /*margin-top:-40px;*/
+  float: none;
   font-family:'Courier Prime',monospace;
   font-size:13px;
   text-align: center;
