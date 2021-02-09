@@ -2,11 +2,16 @@ README for Lab 1
 
 Group Work Log:
 
-Our first step was collecting all 200 articles to be displayed on the site. The articles were collected from a variety 
-of news platforms including NY Times, Yahoo News, and Apple News. These articles were presented in XML format. 
+Our first step was collecting all 200 articles to be displayed on the site.  The articles were collected from a 
+variety of news platforms including NY Times, Yahoo News, and Apple News. These articles were presented in XML format. 
 As JSON is simpler to work with, the news article data was converted from XML to JSON using an online converter. 
-The next step was building a webpage to store the articles. To do this, we used HTML, CSS and Bootstrap. 
-The last step actually involved displaying the news articles on the HTML page. To do this…...(to be continued).
+The next step was building a webpage to store the articles. To do this, we used HTML, CSS and Bootstrap.  
+The final step actually involved displaying the news articles. To do this, an AJAX Get request was used to retrieve the 
+JSON data in the “news.json” file. Next, in the “getsNewsArticles” function, we are looping through the JSON data and 
+displaying 5 items at a time every 4 seconds. The five articles that are going to be displayed are saved in an 
+array called “articlesForPage.” The last step is actually populating the page with the news data which is 
+done in the “populatedPage” function. In this function, the article name, link and description are displayed in its 
+respective location on the HTML page. 
 
 Helena's Work Log:
  For Lab 1, I assisted with gathering a portion of the 200 XML articles. Once I
