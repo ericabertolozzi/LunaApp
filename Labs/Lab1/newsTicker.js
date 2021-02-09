@@ -34,11 +34,13 @@ function populatePage(data) {
 	$("#articles").html("");
 	var innerHTML = "";
 	for (var i=0; i<5; i++) {
-		innerHTML += '<div class="col-sm-6 col-md-4 item">';
-		// innerHTML += '<a href=' + data[i] + '><img class="img-fluid" src="assets/img/desk.jpg"></a>';
-		innerHTML += '<h3 class="name">' + data[i]["title"] + '</h3>';
-		innerHTML += '<p class="description">' + data[i]["description"] + '</p>';
-		innerHTML += '<a class="action" href="' + data[i]["link"][0] + '"><i class="fa fa-arrow-circle-right"></i></a></div>';
+		var len = data[i]["description"][0].length;
+
+		innerHTML += '<div class="row"><div class="article">';
+		innerHTML += '<p class="article-title"><a href="' + data[i]["link"][0] + '">' + data[i]["title"] + '</a></p><br>';
+		innerHTML += '<p class="article-description"><span>'+ data[i]["description"][0][0] + '</span>' + data[i]["description"][0].slice(1, len) + '</p>';
+		innerHTML += '</div></div>';
+
 	}
 	$("#articles").html(innerHTML);
 }
