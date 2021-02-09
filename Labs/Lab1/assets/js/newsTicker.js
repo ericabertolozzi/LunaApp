@@ -23,7 +23,7 @@ const getNewArticles = async () => {
 			if (counter == 5) {
 				populatePage(articlesForPage);
 				// wait 4 seconds to populate the page with more articles
-				await sleep(2000);
+				await sleep(4000);
 				counter = 0;
 				articlesForPage = [];
 			}
