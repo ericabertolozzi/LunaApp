@@ -54,3 +54,11 @@ Helena's Work Log:
   bold capital letters for the headlines. I did get stuck with  the article blocks
   adjusting to the size of the webpage properly. I used CSS fadein code that I found
   online. I also helped a bit with planning the logic for the javascript.
+
+ Erica's Work Log:
+ For this lab, I worked primarily on the JavaScript for loading the JSON data to the webpage. I struggled at first
+ with remembering the ajax call needed, and experienced 404 file not found errors when I had a typo with the url
+ of the JSON file, and later on when there was an extra bracket in the JSON file. I also worked on switching out
+ the articles every 4 seconds, and my thought process was to make an infinite loop that gets five articles at a time,
+ puts them into an array, and then formats the html for these five articles. I got stuck on the sleep/delay async function,
+ but got it to work evenutally. I also thought for creativity that having the articles fade in with a CSS transition would look nice.
