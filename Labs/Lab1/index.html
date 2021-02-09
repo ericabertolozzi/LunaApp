@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -26,8 +26,10 @@
     <div class="article-list">
         <div class="container">
             <div class="intro">
-                <p id="date"></p>
                 <h1 class="text-center" id="heading"><span>The News</span></h1>
+                <hr />
+                <p id="date"></p>
+                <hr />
                 <p class="text-center" id="subheading">
                     A news ticker that rotates through 200 articles 5 articles at a time every 3 seconds.
                 </p>
@@ -79,6 +81,6 @@
 
 <script>
     var dates = new Date();
-    document.getElementById("date").innerHTML = dates;
+    document.getElementById("date").innerHTML = dates.toLocaleString();
 </script>
     
