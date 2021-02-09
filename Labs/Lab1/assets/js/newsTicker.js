@@ -11,18 +11,23 @@ const sleep = (milliseconds) => {
 
 // Asynchronous function that displays 5 articles every 4 seconds
 const getNewArticles = async () => {
-	// Variable to keep track of place in the JSON array
-	counter = 0;
-	console.log(json.length);
-	for (var i=0; i<json.length; i++) {
+	// Loop through JSON data in groups of 5
+	while (true) {
+		counter = 0;
+		
 		let articlesForPage = [];
-		for (var j=0; j<5; j++) {
-			articlesForPage.push(json[counter+j]);
-		}
-		counter += 5;
-		populatePage(articlesForPage);
-		// wait 4 seconds to populate the page with more articles
-		await sleep(4000);
+		for (var j=0; j<json.length; j++) {
+			console.log(j);
+			articlesForPage.push(json[j]);
+			counter++;
+			if (counter == 5) {
+				populatePage(articlesForPage);
+				// wait 4 seconds to populate the page with more articles
+				await sleep(2000);
+				counter = 0;
+				articlesForPage = [];
+			}
+		}	
 	}
 }
 

@@ -4577,7 +4577,7 @@ var json = [{
       ""
    ],
    "guid": "https://www.nytimes.com/live/2021/02/04/business/stock-market-today/",
-   "description": "",
+   "description": [""],
    "creator": "The New York Times",
    "pubDate": "Fri, 05 Feb 2021 00:44:55 +0000"
 },
