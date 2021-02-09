@@ -9,7 +9,7 @@ const sleep = (milliseconds) => {
 }
 
 
-// Asynchronous function that displays 5 articles every 4 seconds
+// Asynchronous function that displays 5 articles every 5 seconds
 const getNewArticles = async () => {
 	// Variable to keep track of place in the JSON array
 	counter = 0;
@@ -21,8 +21,8 @@ const getNewArticles = async () => {
 		}
 		counter += 5;
 		populatePage(articlesForPage);
-		// wait 4 seconds to populate the page with more articles
-		await sleep(4000);
+		// wait 5 seconds to populate the page with more articles
+		await sleep(5000);
 	}
 }
 
