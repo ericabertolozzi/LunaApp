@@ -125,13 +125,6 @@ a:hover {
   color: white;
 }
 
-#date{
-  float: none;
-  font-family:'Courier Prime',monospace;
-  font-size:13px;
-  text-align: center;
-}
-
 hr {
   border-color: #282828;
   border: 1px solid #282828;
