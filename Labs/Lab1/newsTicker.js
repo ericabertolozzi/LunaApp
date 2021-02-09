@@ -11,6 +11,10 @@ $(document).ready(function() {
 	populatePage(articlesForPage);
 });
 
+$(document).ready(function() {
+    $("#sound").get(0).play();
+});
+
 // Gathers initial news json data
 function getNews() {
 	$.getJSON(newsJSON, function(data) {
@@ -20,7 +24,7 @@ function getNews() {
 	}).then(function() {
 		for (var i=0; i<5; i++) {
 			let newsItem = newsData[i]; // change newsItem to correct name
-			// $() template articles however in html/css 
+			// $() template articles however in html/css
 			newsNum = (newsNum + 1) % totalNews;
 		}
 		// continuously get news articles using getNextNews
