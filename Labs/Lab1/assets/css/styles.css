@@ -3,10 +3,6 @@ body {
   width: 100%;
 }
 
-#sound {
-  display: none;
-}
-
 .article-list {
   background-image: url("../img/newspaper.jpg");
   width: 100%;
