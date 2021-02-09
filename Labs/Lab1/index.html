@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -27,13 +27,16 @@
     <div class="article-list">
         <div class="container">
             <div class="intro">
-                <p id="date"></p>
                 <h1 class="text-center" id="heading"><span>The News</span></h1>
+                <hr />
+                <p id="date"></p>
+                <hr />
                 <p class="text-center" id="subheading">
                     A news ticker that rotates through 200 articles 5 articles at a time every 3 seconds.
                 </p>
             </div>
 
+<<<<<<< HEAD
           <div class="row" id="articles">
 
             <div class="row">
@@ -53,24 +56,49 @@
                 <p class="article-title">Title</p><br>
                 <p class="article-description"><span>T</span>his is the description of an article</p>
               </div>
+=======
+            <div class="row articles" id="articles">
+            
+                <!-- <div class="row">
+                <div class="article">
+                    <p class="article-title">Title</p><br>
+                    <p class="article-description"><span>T</span>his is the description of an article</p>
+                </div>
+                </div>
+                <div class="row">
+                <div class="article">
+                    <p class="article-title">Title</p><br>
+                    <p class="article-description"><span>T</span>his is the description of an article</p>
+                </div>
+                </div>
+                <div class="row">
+                <div class="article">
+                    <p class="article-title">Title</p><br>
+                    <p class="article-description"><span>T</span>his is the description of an article</p>
+                </div>
+                </div>
+                <div class="row">
+                <div class="article">
+                    <p class="article-title">Title</p><br>
+                    <p class="article-description"><span>T</span>his is the description of an article</p>
+                </div>
+                </div>
+                <div class="row">
+                <div class="article last-article">
+                    <p class="article-title">Title</p><br>
+                    <p class="article-description"><span>T</span>his is the description of an article</p>
+                </div>
+                </div> -->
+            
+>>>>>>> 9ca6cec5d620b308bb162542314336bf277d9c94
             </div>
-            <div class="row">
-              <div class="article">
-                <p class="article-title">Title</p><br>
-                <p class="article-description"><span>T</span>his is the description of an article</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="article last-article">
-                <p class="article-title">Title</p><br>
-                <p class="article-description"><span>T</span>his is the description of an article</p>
-              </div>
-            </div>
-          </div>
-          <footer class="footer">
-            <p class=”text-center”>Design by Team luna</p>
-          </footer>
-      </div>
+        
+            <footer class="footer">
+                <p class=”text-center”>Design by Team luna</p>
+            </footer>
+
+        </div>
+    </div>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -80,5 +108,5 @@
 
 <script>
     var dates = new Date();
-    document.getElementById("date").innerHTML = dates;
+    document.getElementById("date").innerHTML = dates.toLocaleString();
 </script>

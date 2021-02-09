@@ -85,9 +85,20 @@ body {
 }
 
 #date{
-  float:right;
+  float:none; /* Changed from float right to float none */
   margin-right:-64px;
-  margin-top:-40px;
+  /*margin-top:-40px;*/
   font-family:'Courier Prime',monospace;
   font-size:13px;
+  text-align: center;
 }
+<<<<<<< HEAD
+=======
+
+hr {
+  border-color: #282828;
+  border: 1px solid #282828;
+  margin-left: auto;
+  margin-right: auto;
+}
+>>>>>>> 9ca6cec5d620b308bb162542314336bf277d9c94
