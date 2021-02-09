@@ -30,7 +30,6 @@ body {
   font-family: 'Bodoni Moda', serif;
   font-weight: bold;
   font-size: 130%;
-  margin-bottom: 5%;
 }
 
 .article {
@@ -43,7 +42,43 @@ body {
   transition: all .4s ease;
   margin-bottom: 2%;
   width: 1100px;
+
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+    -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+    animation: fadein 2s;
 }
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
 .article:hover {
   border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
   box-shadow: 10px 10px rgba(0,0,0,.25);
