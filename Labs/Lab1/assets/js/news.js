@@ -1,4 +1,4 @@
-[{
+var json = [{
    "title": "‘Don’t Kill Me’: Others Tell of Abuse by Officer Who Knelt on George Floyd",
    "link": [
       "https://www.nytimes.com/2021/02/02/us/derek-chauvin-george-floyd-past-cases.html",
@@ -222,7 +222,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/02/us/muskogee-shooting.html",
-   "description": "The police in Muskogee, Okla., said they caught the person believed to be the gunman, but did not identify the man or the victims.",
+   "description": [
+      "The police in Muskogee, Okla., said they caught the person believed to be the gunman, but did not identify the man or the victims."
+   ],
    "creator": "Maria Cramer",
    "pubDate": "Tue, 02 Feb 2021 15:39:21 +0000",
    "category": [
@@ -293,7 +295,6 @@
    ],
    "guid": "https://www.nytimes.com/2021/02/02/us/nyc-heaviest-snow.html",
    "description": [
-      "",
       "More than 17 inches of snow fell in Central Park, making it New York City’s biggest snowstorm in five years."
    ],
    "creator": "Daniel E. Slotnik",
@@ -1094,10 +1095,7 @@
       "__text": "https://www.nytimes.com/2021/02/01/health/a-study-shows-the-variant-spreading-rapidly-in-britain-might-make-vaccines-less-effective.html"
    },
    "description": [
-      null,
-      {
-         "__text": "Researchers at Aalborg University in Denmark analyzing coronavirus samples for the variant B.1.1.7 last month."
-      }
+      "Researchers at Aalborg University in Denmark analyzing coronavirus samples for the variant B.1.1.7 last month."
    ],
    "creator": {
       "__text": "Carl Zimmer"
@@ -1968,10 +1966,7 @@
       "__text": "https://www.nytimes.com/2021/01/29/health/health-care-unions-amplify-the-voices-of-frontline-workers-overwhelmed-by-pandemic-conditions.html"
    },
    "description": [
-      null,
-      {
-         "__text": "Registered nurses demonstrated against unsafe staffing practices at Good Samaritan Hospital in San Jose, Calif., in December."
-      }
+      "Registered nurses demonstrated against unsafe staffing practices at Good Samaritan Hospital in San Jose, Calif., in December."
    ],
    "creator": {
       "__text": "Ian Prasad Philbrick and Reed Abelson"
@@ -3029,7 +3024,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/01/us/north-carolina-confederate-license-plate.html",
-   "description": "The Division of Motor Vehicles said it had received complaints about the specialty plate, which had been issued to members of the Sons of Confederate Veterans.",
+   "description": [
+      "The Division of Motor Vehicles said it had received complaints about the specialty plate, which had been issued to members of the Sons of Confederate Veterans."
+   ],
    "creator": "Neil Vigdor",
    "pubDate": "Tue, 02 Feb 2021 03:24:34 +0000",
    "category": [
@@ -3163,7 +3160,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/01/us/coronavirus-today.html",
-   "description": "A hiccup in one country can become a tragedy for everyone.",
+   "description": [
+      "A hiccup in one country can become a tragedy for everyone."
+   ],
    "creator": "Jonathan Wolfe",
    "pubDate": "Mon, 01 Feb 2021 22:30:08 +0000",
    "content": "",
@@ -3373,7 +3372,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/01/business/media/jamie-tarses-dead.html",
-   "description": "She broke barriers as a woman in the TV industry and turned out hit after hit, only to see it all fizzle under a very public spotlight.",
+   "description": [
+      "She broke barriers as a woman in the TV industry and turned out hit after hit, only to see it all fizzle under a very public spotlight."
+   ],
    "creator": "Brooks Barnes",
    "pubDate": "Mon, 01 Feb 2021 20:09:05 +0000",
    "category": [
@@ -3508,7 +3509,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/04/travel/coronavirus-vaccine-passports.html",
-   "description": "In the near future, travel may require digital documentation showing that passengers have been vaccinated or tested for the coronavirus. Answers to your questions.",
+   "description": [
+      "In the near future, travel may require digital documentation showing that passengers have been vaccinated or tested for the coronavirus. Answers to your questions."
+   ],
    "creator": "Tariro Mzezewa",
    "pubDate": "Thu, 04 Feb 2021 21:43:04 +0000",
    "category": [
@@ -3527,7 +3530,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/03/travel/virus-vaccinated-travel.html",
-   "description": "A reader plans to hop on a flight two weeks after her second shot of the coronavirus vaccine to see much-missed grandchildren, but wonders what health and safety precautions she still needs to take.",
+   "description": [
+      "A reader plans to hop on a flight two weeks after her second shot of the coronavirus vaccine to see much-missed grandchildren, but wonders what health and safety precautions she still needs to take."
+   ],
    "creator": "Sarah Firshein",
    "pubDate": "Wed, 03 Feb 2021 10:00:22 +0000",
    "category": [
@@ -3598,7 +3603,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/01/28/travel/virus-new-hotels-opening.html",
-   "description": "Some new hotels and inns are thriving during these trying times by doubling down on the local market, creating escapist atmospheres and employing other, almost unheard-of tactics.",
+   "description": [
+      "Some new hotels and inns are thriving during these trying times by doubling down on the local market, creating escapist atmospheres and employing other, almost unheard-of tactics."
+   ],
    "creator": "Sarah Firshein",
    "pubDate": "Fri, 29 Jan 2021 10:32:52 +0000",
    "category": [
@@ -3643,7 +3650,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/01/26/travel/virus-testing-requirement-international.html",
-   "description": "The United States now requires a negative coronavirus test for all arriving international travelers, which has hotels adding testing suites and airlines enhancing mobile apps with health features.",
+   "description": [
+      "The United States now requires a negative coronavirus test for all arriving international travelers, which has hotels adding testing suites and airlines enhancing mobile apps with health features."
+   ],
    "creator": "Tariro Mzezewa and Ceylan Yeginsu",
    "pubDate": "Tue, 26 Jan 2021 11:50:39 +0000",
    "category": [
@@ -3758,7 +3767,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/03/realestate/house-hunting-on-st-croix-a-converted-sugar-mill-with-sea-views.html",
-   "description": "The U.S. Virgin Islands, heavily dependent on tourism, saw their three-year economic recovery stall amid the pandemic. But there is still plenty of life in the housing market.",
+   "description": [
+      "The U.S. Virgin Islands, heavily dependent on tourism, saw their three-year economic recovery stall amid the pandemic. But there is still plenty of life in the housing market."
+   ],
    "creator": "Lisa Prevost",
    "pubDate": "Wed, 03 Feb 2021 16:13:18 +0000",
    "category": [
@@ -3830,7 +3841,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/01/27/realestate/ottawa-canada-house-hunting.html",
-   "description": "After lagging behind larger Canadian cities for years, Ottawa saw home prices balloon in 2020, fueled by a surge in demand and ‘inventory at historic lows.’",
+   "description": [
+      "After lagging behind larger Canadian cities for years, Ottawa saw home prices balloon in 2020, fueled by a surge in demand and ‘inventory at historic lows.’"
+   ],
    "creator": "Michael Kaminer",
    "pubDate": "Wed, 27 Jan 2021 14:30:18 +0000",
    "category": [
@@ -3847,7 +3860,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/01/26/books/review/we-came-we-saw-we-left-charles-wheelan.html",
-   "description": "In “We Came, We Saw, We Left,” Charles Wheelan shares the highlights — and lowlights — of exploring the world with three teenagers.",
+   "description": [
+      "In “We Came, We Saw, We Left,” Charles Wheelan shares the highlights — and lowlights — of exploring the world with three teenagers."
+   ],
    "creator": "Amity Gaige",
    "pubDate": "Tue, 26 Jan 2021 10:00:06 +0000",
    "category": [
@@ -3865,7 +3880,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/01/25/travel/remote-weather-station-iceland.html",
-   "description": "Marsibil Erlendsdottir runs a farm and provides weather reports from a remote outpost in eastern Iceland. The job requires vigilance and an unfailing resolve.",
+   "description": [
+      "Marsibil Erlendsdottir runs a farm and provides weather reports from a remote outpost in eastern Iceland. The job requires vigilance and an unfailing resolve."
+   ],
    "creator": "Marzena Skubatz",
    "pubDate": "Mon, 25 Jan 2021 21:51:15 +0000",
    "category": [
@@ -3886,7 +3903,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/01/23/at-home/historic-home-tours.html",
-   "description": "Bored with your surroundings? Walk the (virtual) halls of some storied grand houses.",
+   "description": [
+      "Bored with your surroundings? Walk the (virtual) halls of some storied grand houses."
+   ],
    "creator": "Alexis Soloski",
    "pubDate": "Wed, 27 Jan 2021 16:50:32 +0000",
    "category": [
@@ -3906,7 +3925,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/01/22/science/seabirds-covid-tourism.html",
-   "description": "When travel restrictions stopped bird-watchers from visiting a Swedish island, hidden ecosystem dynamics were revealed.",
+   "description": [
+      "When travel restrictions stopped bird-watchers from visiting a Swedish island, hidden ecosystem dynamics were revealed."
+   ],
    "creator": "Cara Giaimo",
    "pubDate": "Fri, 22 Jan 2021 14:18:53 +0000",
    "category": [
@@ -3982,7 +4003,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/04/realestate/home-sales-nyc.html",
-   "description": "This week’s properties are in Carroll Gardens, the East Village and Spuyten Duyvil.",
+   "description": [
+      "This week’s properties are in Carroll Gardens, the East Village and Spuyten Duyvil."
+   ],
    "creator": "Sydney Franklin",
    "pubDate": "Thu, 04 Feb 2021 14:00:19 +0000",
    "category": [
@@ -4001,7 +4024,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/04/realestate/home-sales-near-nyc.html",
-   "description": "This week’s properties include a two-bedroom condo in Weehawken, N.J., and a six-bedroom house in Garden City, N.Y.",
+   "description": [
+      "This week’s properties include a two-bedroom condo in Weehawken, N.J., and a six-bedroom house in Garden City, N.Y."
+   ],
    "creator": "Jill P. Capuzzo and Claudia Gryvatz Copquin",
    "pubDate": "Thu, 04 Feb 2021 14:00:17 +0000",
    "category": [
@@ -4019,7 +4044,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/04/realestate/how-the-pandemic-blew-up-rents.html",
-   "description": "Wild fluctuations in the cost of rental apartments across the country seem to be slowing after a tumultuous year.",
+   "description": [
+      "Wild fluctuations in the cost of rental apartments across the country seem to be slowing after a tumultuous year."
+   ],
    "creator": "Michael Kolomatsky",
    "pubDate": "Thu, 04 Feb 2021 14:00:12 +0000",
    "category": [
@@ -4066,7 +4093,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/03/realestate/the-year-round-garden.html",
-   "description": "As one intrepid gardener in Nova Scotia discovered, you can extend the growing season more than you may think — if you have the right tools.",
+   "description": [
+      "As one intrepid gardener in Nova Scotia discovered, you can extend the growing season more than you may think — if you have the right tools."
+   ],
    "creator": "Margaret Roach",
    "pubDate": "Wed, 03 Feb 2021 11:00:09 +0000",
    "category": [
@@ -4083,7 +4112,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/03/realestate/house-hunting-on-st-croix-a-converted-sugar-mill-with-sea-views.html",
-   "description": "The U.S. Virgin Islands, heavily dependent on tourism, saw their three-year economic recovery stall amid the pandemic. But there is still plenty of life in the housing market.",
+   "description": [
+      "The U.S. Virgin Islands, heavily dependent on tourism, saw their three-year economic recovery stall amid the pandemic. But there is still plenty of life in the housing market."
+   ],
    "creator": "Lisa Prevost",
    "pubDate": "Wed, 03 Feb 2021 16:13:18 +0000",
    "category": [
@@ -4126,7 +4157,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/03/realestate/550000-homes-in-wisconsin-massachusetts-and-mississippi.html",
-   "description": "A prefabricated modern house in Madison, a brick colonial in Gloucester and a Greek Revival-style home in McComb.",
+   "description": [
+      "A prefabricated modern house in Madison, a brick colonial in Gloucester and a Greek Revival-style home in McComb."
+   ],
    "creator": "Julie Lasky",
    "pubDate": "Thu, 04 Feb 2021 22:57:42 +0000",
    "category": [
@@ -4164,7 +4197,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/03/realestate/living-in-madison-conn-welcoming-town-long-stretches-of-beach.html",
-   "description": "The shoreline town, which has seen an influx of buyers during the pandemic, has been praised by new arrivals as ‘neither too hip, nor too boring.’",
+   "description": [
+      "The shoreline town, which has seen an influx of buyers during the pandemic, has been praised by new arrivals as ‘neither too hip, nor too boring.’"
+   ],
    "creator": "Lisa Prevost",
    "pubDate": "Wed, 03 Feb 2021 15:48:07 +0000",
    "category": [
@@ -4181,7 +4216,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/02/realestate/how-to-get-the-best-workout-at-home.html",
-   "description": "Not ready to return to the gym? Here are seven simple tools for strength and conditioning that can help everyone get a healthy start in 2021.",
+   "description": [
+      "Not ready to return to the gym? Here are seven simple tools for strength and conditioning that can help everyone get a healthy start in 2021."
+   ],
    "creator": "Ingrid Skjong",
    "pubDate": "Tue, 02 Feb 2021 13:00:07 +0000",
    "category": [
@@ -4197,7 +4234,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/02/realestate/how-to-design-entryway-organize-winter-gear.html",
-   "description": "It’s a small space that needs to handle a lot: boots, bags, snow shovels, dirty dogs. Here’s how to make it look good, too.",
+   "description": [
+      "It’s a small space that needs to handle a lot: boots, bags, snow shovels, dirty dogs. Here’s how to make it look good, too."
+   ],
    "creator": "Tim McKeough",
    "pubDate": "Tue, 02 Feb 2021 10:00:40 +0000",
    "category": [
@@ -4216,7 +4255,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/03/style/hot-yoga-at-home.html",
-   "description": "Barred from studios, yogis are steaming up basements, pricey inflatable domes and even the loo.",
+   "description": [
+      "Barred from studios, yogis are steaming up basements, pricey inflatable domes and even the loo."
+   ],
    "creator": "Katherine Rosman",
    "pubDate": "Wed, 03 Feb 2021 17:32:18 +0000",
    "category": [
@@ -4232,7 +4273,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/02/business/-new-york-commercial-real-estate.html",
-   "description": "Recent commercial real estate transactions in New York.",
+   "description": [
+      "Recent commercial real estate transactions in New York."
+   ],
    "creator": "Sophia June",
    "pubDate": "Tue, 02 Feb 2021 14:00:05 +0000",
    "category": [
@@ -4285,7 +4328,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/01/realestate/975000-homes-in-california.html",
-   "description": "A four-bedroom house with a pool in Rancho Mirage, a farmhouse on five acres in Petaluma and a one-bedroom condominium in San Francisco.",
+   "description": [
+      "A four-bedroom house with a pool in Rancho Mirage, a farmhouse on five acres in Petaluma and a one-bedroom condominium in San Francisco."
+   ],
    "creator": "Angela Serratore",
    "pubDate": "Mon, 01 Feb 2021 14:00:19 +0000",
    "category": [
@@ -4326,7 +4371,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/01/31/realestate/homes-that-sold-for-around-450000.html",
-   "description": "Recent residential sales in New York City and the region.",
+   "description": [
+      "Recent residential sales in New York City and the region."
+   ],
    "creator": "C. J. Hughes",
    "pubDate": "Sun, 31 Jan 2021 14:00:07 +0000",
    "category": [
@@ -4346,7 +4393,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/01/30/realestate/Diy-rental-makeover.html",
-   "description": "But before you get started, check your lease to see what’s permitted.",
+   "description": [
+      "But before you get started, check your lease to see what’s permitted."
+   ],
    "creator": "Ronda Kaysen",
    "pubDate": "Mon, 01 Feb 2021 16:09:30 +0000",
    "category": [
@@ -4387,7 +4436,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/01/29/realestate/susan-orlean-house-columbia-county.html",
-   "description": "The writer’s modern three-bedroom house, lined with wood and stone, comes with a $3.495 million price tag.",
+   "description": [
+      "The writer’s modern three-bedroom house, lined with wood and stone, comes with a $3.495 million price tag."
+   ],
    "creator": "C. J. Hughes",
    "pubDate": "Fri, 29 Jan 2021 16:04:50 +0000",
    "category": [
@@ -4406,7 +4457,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/01/29/realestate/cleaning-videos-youtube.html",
-   "description": "In this corner of YouTube, you can watch someone else clean the house — and you won’t be alone.",
+   "description": [
+      "In this corner of YouTube, you can watch someone else clean the house — and you won’t be alone."
+   ],
    "creator": "Ronda Kaysen",
    "pubDate": "Fri, 29 Jan 2021 14:00:08 +0000",
    "category": [
@@ -4524,7 +4577,7 @@
       ""
    ],
    "guid": "https://www.nytimes.com/live/2021/02/04/business/stock-market-today/",
-   "description": "",
+   "description": [""],
    "creator": "The New York Times",
    "pubDate": "Fri, 05 Feb 2021 00:44:55 +0000"
 },
@@ -4663,7 +4716,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/04/business/media/news-corp-earnings.html",
-   "description": "News Corp reported a decline in its overall revenue and a pretax profit of $497 million for the three months ending in December.",
+   "description": [
+      "News Corp reported a decline in its overall revenue and a pretax profit of $497 million for the three months ending in December."
+   ],
    "creator": "Edmund Lee",
    "pubDate": "Fri, 05 Feb 2021 00:52:22 +0000",
    "category": [
@@ -4762,7 +4817,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/04/dining/drinks/wine-industry-covid-tariffs.html",
-   "description": "The year has changed. So has the government. But the challenges facing the wine industry — Covid, tariffs and climate change — remain.",
+   "description": [
+      "The year has changed. So has the government. But the challenges facing the wine industry — Covid, tariffs and climate change — remain."
+   ],
    "creator": "Eric Asimov",
    "pubDate": "Thu, 04 Feb 2021 16:37:08 +0000",
    "category": [
@@ -4811,7 +4868,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/04/business/dealbook/meme-stocks-regulators.html",
-   "description": "Officials are looking for signs of manipulation behind the recent market frenzy.",
+   "description": [
+      "Officials are looking for signs of manipulation behind the recent market frenzy."
+   ],
    "creator": "Andrew Ross Sorkin, Jason Karaian, Michael J. de la Merced, Lauren Hirsch and Ephrat Livni",
    "pubDate": "Thu, 04 Feb 2021 13:00:34 +0000",
    "category": [
@@ -4895,7 +4954,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/04/travel/coronavirus-vaccine-passports.html",
-   "description": "In the near future, travel may require digital documentation showing that passengers have been vaccinated or tested for the coronavirus. Answers to your questions.",
+   "description": [
+      "In the near future, travel may require digital documentation showing that passengers have been vaccinated or tested for the coronavirus. Answers to your questions."
+   ],
    "creator": "Tariro Mzezewa",
    "pubDate": "Thu, 04 Feb 2021 21:43:04 +0000",
    "category": [
@@ -4944,7 +5005,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/04/upshot/stock-market-winning-strategy.html",
-   "description": "The drama of GameStop is misleading; the surer path to wealth is extremely boring.",
+   "description": [
+      "The drama of GameStop is misleading; the surer path to wealth is extremely boring."
+   ],
    "creator": "Neil Irwin",
    "pubDate": "Thu, 04 Feb 2021 10:00:15 +0000",
    "category": [
@@ -4991,7 +5054,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/03/business/mckinsey-opioids-settlement.html",
-   "description": "The consulting firm has reached agreements with 49 states because of its sales advice to drugmakers, including Purdue Pharma, the manufacturer of OxyContin.",
+   "description": [
+      "The consulting firm has reached agreements with 49 states because of its sales advice to drugmakers, including Purdue Pharma, the manufacturer of OxyContin."
+   ],
    "creator": "Michael Forsythe and Walt Bogdanich",
    "pubDate": "Thu, 04 Feb 2021 19:03:26 +0000",
    "category": [
@@ -5101,7 +5166,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/03/technology/andy-jassy-amazon-ceo-jeff-bezos.html",
-   "description": "Mr. Jassy, who will become Amazon’s chief this summer, has spent more than two decades absorbing lessons from Mr. Bezos.",
+   "description": [
+      "Mr. Jassy, who will become Amazon’s chief this summer, has spent more than two decades absorbing lessons from Mr. Bezos."
+   ],
    "creator": "Karen Weise and Daisuke Wakabayashi",
    "pubDate": "Thu, 04 Feb 2021 05:15:57 +0000",
    "category": [
@@ -5221,7 +5288,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/03/style/what-can-you-actually-buy-with-bitcoin.html",
-   "description": "Pornography, patio furniture and an at-home coronavirus test are among the odd assortment of goods and services people are purchasing with the cryptocurrency.",
+   "description": [
+      "Pornography, patio furniture and an at-home coronavirus test are among the odd assortment of goods and services people are purchasing with the cryptocurrency."
+   ],
    "creator": "Jacob Bernstein",
    "pubDate": "Wed, 03 Feb 2021 16:38:55 +0000",
    "category": [
@@ -5238,7 +5307,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/03/arts/television/golden-globes-tv-snubs.html",
-   "description": "Michaela Coel’s standout series was the most puzzling omission by the Hollywood Foreign Press Association, which offered something familiar after a year of chaos: inconsistency.",
+   "description": [
+      "Michaela Coel’s standout series was the most puzzling omission by the Hollywood Foreign Press Association, which offered something familiar after a year of chaos: inconsistency."
+   ],
    "creator": "James Poniewozik",
    "pubDate": "Wed, 03 Feb 2021 15:35:16 +0000",
    "category": [
@@ -5280,7 +5351,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/03/business/apollo-pension-funds.html",
-   "description": "California’s huge public retirement system, for one, offered only cautious support after new disclosures of financial ties between the firm’s chief, Leon Black, and Jeffrey Epstein.",
+   "description": [
+      "California’s huge public retirement system, for one, offered only cautious support after new disclosures of financial ties between the firm’s chief, Leon Black, and Jeffrey Epstein."
+   ],
    "creator": "Matthew Goldstein",
    "pubDate": "Wed, 03 Feb 2021 19:22:00 +0000",
    "category": [
@@ -5417,7 +5490,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/03/travel/virus-vaccinated-travel.html",
-   "description": "A reader plans to hop on a flight two weeks after her second shot of the coronavirus vaccine to see much-missed grandchildren, but wonders what health and safety precautions she still needs to take.",
+   "description": [
+      "A reader plans to hop on a flight two weeks after her second shot of the coronavirus vaccine to see much-missed grandchildren, but wonders what health and safety precautions she still needs to take."
+   ],
    "creator": "Sarah Firshein",
    "pubDate": "Wed, 03 Feb 2021 10:00:22 +0000",
    "category": [
@@ -5439,7 +5514,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/03/technology/personaltech/telegram-signal-misinformation.html",
-   "description": "Telegram and Signal, the encrypted services that keep conversations confidential, are increasingly popular. Our tech columnists discuss whether this could get ugly.",
+   "description": [
+      "Telegram and Signal, the encrypted services that keep conversations confidential, are increasingly popular. Our tech columnists discuss whether this could get ugly."
+   ],
    "creator": "Brian X. Chen and Kevin Roose",
    "pubDate": "Wed, 03 Feb 2021 10:00:19 +0000",
    "category": [
@@ -5497,7 +5574,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2021/02/02/business/gamestop-investors-plunging-shares.html",
-   "description": "After a crazy run-up, the price dropped 72 percent over two days, putting it just 18 percent higher than it was at the start of last week.",
+   "description": [
+      "After a crazy run-up, the price dropped 72 percent over two days, putting it just 18 percent higher than it was at the start of last week."
+   ],
    "creator": "Matt Phillips, Gillian Friedman and Taylor Lorenz",
    "pubDate": "Wed, 03 Feb 2021 09:41:07 +0000",
    "category": [
@@ -6009,7 +6088,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2020/12/04/business/melinda-gates-interview-corner-office.html",
-   "description": "One of the richest women in the world devoted decades to preparing for a pandemic.",
+   "description": [
+      "One of the richest women in the world devoted decades to preparing for a pandemic."
+   ],
    "creator": "David Gelles",
    "pubDate": "Fri, 04 Dec 2020 15:02:15 +0000",
    "category": [
@@ -6059,7 +6140,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2020/11/28/insider/pandemic-pets-adoptions.html",
-   "description": "Some of our favorite new colleagues are four-legged and furry.",
+   "description": [
+      "Some of our favorite new colleagues are four-legged and furry."
+   ],
    "creator": "Danya Issawi",
    "pubDate": "Sat, 28 Nov 2020 10:00:12 +0000",
    "category": [
@@ -6073,7 +6156,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2020/11/20/business/erika-james-wharton-corner-office.html",
-   "description": "Erika James recently took over the Wharton School at the University of Pennsylvania. Already, she is enmeshed in debates about race, politics and the role of business in society.",
+   "description": [
+      "Erika James recently took over the Wharton School at the University of Pennsylvania. Already, she is enmeshed in debates about race, politics and the role of business in society."
+   ],
    "creator": "David Gelles",
    "pubDate": "Fri, 20 Nov 2020 15:00:08 +0000",
    "category": [
@@ -6093,7 +6178,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2020/11/06/business/corner-office-ajay-banga-mastercard.html",
-   "description": "In 10 years running Mastercard, Ajay Banga has favored a forward-looking approach.",
+   "description": [
+      "In 10 years running Mastercard, Ajay Banga has favored a forward-looking approach."
+   ],
    "creator": "David Gelles",
    "pubDate": "Fri, 06 Nov 2020 16:13:14 +0000",
    "category": [
@@ -6118,7 +6205,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2020/10/10/business/gail-mcgovern-red-cross-corner-office.html",
-   "description": "“I really believe when we’re all set free from captivity, we are going to be so happy and kind to each other,” Gail McGovern says.",
+   "description": [
+      "“I really believe when we’re all set free from captivity, we are going to be so happy and kind to each other,” Gail McGovern says."
+   ],
    "creator": "David Gelles",
    "pubDate": "Sun, 11 Oct 2020 14:20:26 +0000",
    "category": [
@@ -6139,7 +6228,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2020/09/24/business/john-mackey-corner-office-whole-foods.html",
-   "description": "John Mackey, who espouses a high-minded version of capitalism, sold his upscale grocery chain to Amazon.",
+   "description": [
+      "John Mackey, who espouses a high-minded version of capitalism, sold his upscale grocery chain to Amazon."
+   ],
    "creator": "David Gelles",
    "pubDate": "Thu, 24 Sep 2020 22:31:53 +0000",
    "category": [
@@ -6162,7 +6253,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2020/09/11/business/michele-roberts-nba-corner-office.html",
-   "description": "Michele Roberts grew up in the South Bronx and made her way to the pinnacle of the legal world before becoming the head of the players’ union.",
+   "description": [
+      "Michele Roberts grew up in the South Bronx and made her way to the pinnacle of the legal world before becoming the head of the players’ union."
+   ],
    "creator": "David Gelles",
    "pubDate": "Fri, 11 Sep 2020 09:00:24 +0000",
    "category": [
@@ -6182,7 +6275,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2020/08/29/books/review/mikaila-ulmer-bee-fearless.html",
-   "description": "Mikaila Ulmer’s “Bee Fearless” is that rarest of book breeds: the middle grade memoir.",
+   "description": [
+      "Mikaila Ulmer’s “Bee Fearless” is that rarest of book breeds: the middle grade memoir."
+   ],
    "creator": "Ron Lieber",
    "pubDate": "Sat, 29 Aug 2020 14:59:45 +0000",
    "category": [
@@ -6237,7 +6332,9 @@
       ""
    ],
    "guid": "https://www.nytimes.com/2020/08/25/insider/parenting-desk.html",
-   "description": "Whether it’s covering issues about safety, schooling or burnout, the members of the Parenting desk are working during this “new reality” to support caregivers on all fronts.",
+   "description": [
+      "Whether it’s covering issues about safety, schooling or burnout, the members of the Parenting desk are working during this “new reality” to support caregivers on all fronts."
+   ],
    "creator": "Emma Grillo",
    "pubDate": "Tue, 25 Aug 2020 13:00:15 +0000",
    "category": [
@@ -6246,4 +6343,4 @@
       "Children and Childhood"
    ]
 }
-]
+];

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -7,72 +7,53 @@
     <title>Web Sci - Lab 1</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/Article-List.css">
+    <link rel='icon' href='assets/img/news-icon-2.png'>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Cutive&display=swap" rel="stylesheet">
 
+    <script src="assets/js/news.js" defer></script>
+    <script src="assets/js/newsTicker.js" defer></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Coda:wght@800&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
+  <audio id="sound" src="assets/audio/news-music.mp3" loop="loop" autoplay="autoplay"></audio>
     <div class="article-list">
         <div class="container">
-            <div class="intro">
-                <h2 class="text-center">Latest Articles</h2>
-                <p class="text-center">
-                    Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae.
+            <div class="intro justify-content-center">
+                <h1 class="text-center" id="heading"><span>The News</span></h1>
+                <hr />
+                <p id="date"></p>
+                <hr />
+                <p class="text-center" id="subheading">
+                    A news ticker that rotates through 200 articles, 5 articles at a time, every 3 seconds.
                 </p>
             </div>
 
-            <div class="row articles">
-                <div class="col-sm-6 col-md-4 item">
-                    <a href="#"><img class="img-fluid" src="assets/img/desk.jpg"></a>
-                    <h3 class="name">Article Title</h3>
-                    <p class="description">
-                        Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.
-                    </p>
-                    <a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-                <div class="col-sm-6 col-md-4 item">
-                    <a href="#"><img class="img-fluid" src="assets/img/building.jpg"></a>
-                    <h3 class="name">Article Title</h3>
-                    <p class="description">
-                        Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.
-                    </p>
-                    <a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-                <div class="col-sm-6 col-md-4 item">
-                    <a href="#"><img class="img-fluid" src="assets/img/loft.jpg"></a>
-                    <h3 class="name">Article Title</h3>
-                    <p class="description">
-                        Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.
-                    </p>
-                    <a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-                <div class="col-sm-6 col-md-4 item">
-                    <a href="#"><img class="img-fluid" src="assets/img/loft.jpg"></a>
-                    <h3 class="name">Article Title</h3>
-                    <p class="description">
-                        Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.
-                    </p>
-                    <a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-                <div class="col-sm-6 col-md-4 item">
-                    <a href="#"><img class="img-fluid" src="assets/img/loft.jpg"></a>
-                    <h3 class="name">Article Title</h3>
-                    <p class="description">
-                        Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.
-                    </p>
-                    <a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a>
-                </div>
+            <div class="row articles justify-content-center" id="articles">
+
             </div>
-                <footer class="footer">
+
+            <footer class="footer">
                 <p class=”text-center”>Design by Team luna</p>
-               </footer>
+            </footer>
+
         </div>
     </div>
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>
+
+<script>
+    var dates = new Date();
+    document.getElementById("date").innerHTML = dates.toLocaleString();
+</script>
