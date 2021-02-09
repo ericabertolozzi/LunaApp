@@ -42,3 +42,8 @@ Helena's Work Log:
   
   For Lab1 I also worked on gathering the 200 articles from XML and into the Json file. I did this on visual studio code using different RSS our team found. 
   This was very similar to a lab we had completed in web systems so it was okay. 
+  
+  Lauren's Work Log:
+  
+  For this lab, I created and worked on the JavaScript news ticker file. I helped gathering the initial news JSON data in groups of 5. The team initially started the lab on 
+  visual studio code live share so it was easy to communicate who would take on what responsibility thereafter. 
