@@ -14,3 +14,9 @@ Helena's Work Log:
  Development Process:
   During the entire process of the lab, I didn't get stuck with any specific
   part of it. I found that the work that I did for the lab to be very reasonable. 
+  
+  
+  Simi's Work Log: 
+  
+  For Lab1 I also worked on gathering the 200 articles from XML and into the Json file. I did this on visual studio code using different RSS our team found. 
+  This was very similar to a lab we had completed in web systems so it was okay. 
