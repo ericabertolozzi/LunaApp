@@ -28,7 +28,7 @@ const getNewArticles = async () => {
 
 // Parameter data is an array containing 5 articles
 function populatePage(data) {
-	
+
 	// Clear out the html text that is already there
 	$("#articles").html("");
 	var innerHTML = "";
@@ -37,13 +37,13 @@ function populatePage(data) {
 		var len = data[i]["description"][0].length;
 
 		innerHTML += '<div class="row"><div class="article">';
-		innerHTML += '<p class="article-title"><a href="' + 
+		innerHTML += '<p class="article-title"><a href="' +
 			data[i]["link"][0] + '">' + data[i]["title"] + '</a></p><br>';
-		/* The first letter of the description has a special style so 
-		   slicing is used to get the rest of the text */ 
+		/* The first letter of the description has a special style so
+		   slicing is used to get the rest of the text */
 		if (len != 0) {
-			innerHTML += '<p class="article-description"><span>'+ 
-				data[i]["description"][0][0] + '</span>' + 
+			innerHTML += '<p class="article-description"><span>'+
+				data[i]["description"][0][0] + '</span>' +
 				data[i]["description"][0].slice(1, len) + '</p>';
 		}
 		innerHTML += '</div></div>';
@@ -51,4 +51,3 @@ function populatePage(data) {
 	}
 	$("#articles").html(innerHTML);
 }
-
