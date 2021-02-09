@@ -13,6 +13,15 @@ array called “articlesForPage.” The last step is actually populating the pag
 done in the “populatedPage” function. In this function, the article name, link and description are displayed in its 
 respective location on the HTML page. 
 
+Manya’s Work Log:
+
+I gathered XML data from New York Times RSS feeds and converted it to JSON using an online converter. After 
+finishing gathering all 200 articles, I validated the JSON code and corrected any errors that appeared. 
+In terms of creativity, I helped with styling certain aspects such as adding a footer and various Google Fonts. 
+Additionally, I added the date function to the top of the page.  
+
+
+
 Helena's Work Log:
  For Lab 1, I assisted with gathering a portion of the 200 XML articles. Once I
  found them, I converted the XML articles to JSON and added the news items 
