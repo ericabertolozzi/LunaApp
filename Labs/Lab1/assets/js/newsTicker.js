@@ -1,5 +1,16 @@
 $(document).ready(function() {
-	getNewArticles();
+	$.ajax({
+        type: "GET",
+        url: "assets/js/news.json",
+		contentType: 'application/json',
+        dataType: "json",
+        success: function(responseData) {
+			getNewArticles(responseData);
+        },
+       	error: function(msg) {
+        	alert("There was a problem: " + msg.status + " " + msg.statusText);
+       	}
+    });
 });
 
 
@@ -10,7 +21,7 @@ const sleep = (milliseconds) => {
 
 
 // Asynchronous function that displays 5 articles every 5 seconds
-const getNewArticles = async () => {
+const getNewArticles = async (json) => {
 	// Loop through JSON data in groups of 5
 	while (true) {
 		counter = 0;
