@@ -1,1 +1,8 @@
-
+#city{
+        font-size:30px;
+        text-align: center;
+}
+#temp,#feelslike,#weatherdescription{
+        font-size:20px;
+        text-align:center;
+ }
