@@ -2,7 +2,7 @@
     font-size:30px;
     text-align: center;
 }
-#temp,#feelslike,#weatherdescription,#icon,#humidity{
+#temp,#feelslike,#weatherdescription,#icon,#humidity, #tempMin, #tempMax, #pressure{
     font-size:20px;
     text-align:center;
  }
