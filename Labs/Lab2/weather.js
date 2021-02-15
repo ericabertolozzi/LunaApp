@@ -15,7 +15,9 @@ $.getJSON(
       document.getElementById('city').innerHTML ="<b>"+ data.name +" "+ "Weather"+"</b>"
       document.getElementById('temp').innerHTML = data.main.temp+ "&deg;F"
       document.getElementById('feelslike').innerHTML ="Feels Like"+" "+ data.main.feels_like+ "&deg;F"
-      document.getElementById('weatherdescription').innerHTML = data.weather[0].description;
+      document.getElementById('icon').innerHTML ="<img src='http://openweathermap.org/img/w/" + data.weather[0].icon +".png'>"
+      document.getElementById('weatherdescription').innerHTML = data.weather[0].main;
+      document.getElementById('humidity').innerHTML ="Humidity"+" "+ data.main.humidity+ "%";
   }
 );
 }

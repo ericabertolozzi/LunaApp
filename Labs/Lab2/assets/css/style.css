@@ -2,7 +2,8 @@
         font-size:30px;
         text-align: center;
 }
-#temp,#feelslike,#weatherdescription{
+#temp,#feelslike,#weatherdescription,#icon,#humidity{
         font-size:20px;
         text-align:center;
  }
+
