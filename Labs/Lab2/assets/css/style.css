@@ -7,3 +7,36 @@
         text-align:center;
  }
 
+ body {
+        background: linear-gradient(-90deg, #B9DEE7, #3190BE, #828189, #1E4469);
+        background-size: 400% 400%;
+        -webkit-animation: gradient 15s ease infinite;
+        animation: gradient 15s ease infinite;
+}
+#background_animation {
+        width: auto;
+        position: absolute;
+        text-align: center;
+}
+/* For the Background Gradient*/
+@-webkit-keyframes gradient {
+        0% {background-position: 0% 50%;}
+        50% {background-position: 100% 50%;}
+        100% {background-position: 0% 50%;}
+}
+/* For the Background Gradient*/
+@keyframes gradient {
+        0% {background-position: 0% 50%;}
+        50% {background-position: 100% 50%;}
+        100% {background-position: 0% 50%;}
+}
+.center-block{
+        width: 60%;
+        height: 300px; /* fit_content*/
+        background-color:#ccc;
+        margin-top: 10%;
+        background-color: white;
+        opacity: 0.7;
+        border: 3px solid rgb(196, 196, 196);
+        border-radius: 35px;
+}
