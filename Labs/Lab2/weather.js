@@ -9,28 +9,42 @@ if (navigator.geolocation) {
 // Function to set the wallpaper to a gif that matches the current weather forecast
 function setWallpaper(id) {
     var id_str = (''+id);
+    id_str = "000";
     if( id_str == "800" ) { // clear sky
       document.body.style.backgroundImage = "url('https://media.giphy.com/media/tntFzilPvh4je/source.gif')";
+      document.body.style.backgroundSize = "cover";
+      document.body.style.height = "100vh";
+      document.body.style.padding = "0";
+      document.body.style.margin = "0";
     }
     else if( id_str[0] == 8 ) { // clouds
       document.body.style.backgroundImage = "url('https://media.giphy.com/media/HoUgegTjteXCw/source.gif')";
+      document.body.style.backgroundSize = "cover";
+      document.body.style.height = "100vh";
+      document.body.style.padding = "0";
+      document.body.style.margin = "0";
     }
     else if( id_str[0] == 6 ) { // snow
       document.body.style.backgroundImage = "url('https://media.giphy.com/media/Xi2Xu0MejhsUo/source.gif')";
+      document.body.style.backgroundSize = "cover";
+      document.body.style.height = "100vh";
+      document.body.style.padding = "0";
+      document.body.style.margin = "0";
     }
     else if( id_str[0] == 5 || id_str[0] == 3 ) { // rain
       document.body.style.backgroundImage = "url('https://media.giphy.com/media/Mgq7EMQUrhcvC/source.gif')";
+      document.body.style.backgroundSize = "cover";
+      document.body.style.height = "100vh";
+      document.body.style.padding = "0";
+      document.body.style.margin = "0";
     }
     else if( id_str[0] == 2 ) { // thunderstorm
       document.body.style.backgroundImage = "url('https://media.giphy.com/media/o8A56JaNJQFSU/giphy.gif')";
+      document.body.style.backgroundSize = "cover";
+      document.body.style.height = "100vh";
+      document.body.style.padding = "0";
+      document.body.style.margin = "0";
     }
-    else { // default
-      document.body.style.backgroundImage = "url('https://media.giphy.com/media/u01ioCe6G8URG/source.gif')";
-    }
-    document.body.style.backgroundSize = "cover";
-    document.body.style.height = "100vh";
-    document.body.style.padding = "0";
-    document.body.style.margin = "0";
 }
 
 function currentWeather(position) {
