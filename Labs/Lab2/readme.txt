@@ -9,6 +9,7 @@ the webpage. This was accomplished by making div ID’s in the HTML page for eac
 Then, in the JavaScript file we assigned the API weather data to each of the respective ID tags.
 The data that was collected from the API included: city name, temperature, feels like temperature,
 icon of weather description and description, humidity, pressure, maximum and minimum temperature.
+The background of our web page changes depending on the weather calculated.
 
 Simi @simranambiar:
 
