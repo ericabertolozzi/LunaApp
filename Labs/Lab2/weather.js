@@ -9,7 +9,6 @@ if (navigator.geolocation) {
 // Function to set the wallpaper to a gif that matches the current weather forecast
 function setWallpaper(id) {
     var id_str = (''+id);
-    id_str = "000";
     if( id_str == "800" ) { // clear sky
       document.body.style.backgroundImage = "url('https://media.giphy.com/media/tntFzilPvh4je/source.gif')";
       document.body.style.backgroundSize = "cover";
