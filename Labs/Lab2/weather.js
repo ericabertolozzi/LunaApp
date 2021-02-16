@@ -27,10 +27,7 @@ function currentWeather(position) {
         document.getElementById('tempMax').innerHTML="Temp Max: "+" "+ data.main.temp_max + "&deg;F";
         document.getElementById('pressure').innerHTML="Pressure: "+" "+ data.main.pressure + "hpa";
         var id_str = (''+data.weather[0].id);
-        console.log( id_str );
-        id_str = "330";
-        console.log( id_str );
-        if( id_str == 800 ) { // clear sky
+        if( id_str == "800" ) { // clear sky
           document.body.style.backgroundImage = "url('https://media.giphy.com/media/tntFzilPvh4je/source.gif')";
         }
         else if( id_str[0] == 8 ) { // clouds
@@ -46,7 +43,7 @@ function currentWeather(position) {
           document.body.style.backgroundImage = "url('https://media.giphy.com/media/o8A56JaNJQFSU/giphy.gif')";
         }
         else { // default
-          document.body.style.backgroundImage = "url('https://media.giphy.com/media/dAWZiSMbMvObDWP3aA/source.gif')";
+          document.body.style.backgroundImage = "url('https://media.giphy.com/media/u01ioCe6G8URG/source.gif')";
         }
         document.body.style.backgroundSize = "cover";
         document.body.style.height = "100vh";
