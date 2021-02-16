@@ -28,7 +28,8 @@ h1 { /*change font size to be larger*/
     text-shadow: 1px 1px #ffffff;
 }
 
- body {
+
+body { /* Initial Background - that way users aren't met with a blank screen*/
     background: linear-gradient(-90deg, #B9DEE7, #3190BE, #828189, #1E4469);
     background-size: 400% 400%;
     -webkit-animation: gradient 15s ease infinite;
