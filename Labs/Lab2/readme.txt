@@ -139,6 +139,89 @@ This API holds a large store of poems. The API is broken down into a few section
 Work log:
 I added support for the user denied their browser access to their location. I learned how to do this on Stack Overflow, and set the default location to Troy NY so that weather will be displayed if no location is provided. I looked into the other ways to make an API call, and used the zip code URL for this part instead of the latitude and longitude coordinates. I also added an icon to the browser tab that has a weather icon similar to the iPhone weather app.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Manya Trehan (@Manya14)
+
+Work Log -
+
+I retrieved the user’s location by using the HTML geolocation feature. I learned how to do this by referencing w3schools. I then saved latitude and longitude coordinates in their respective variables and then fed them into the API call. In order to print the data onto the page, I created a div tag for each data weather variable i.e. city name, temperature, etc. and saved the data from the API to its respective div tag to be displayed. For creativity, I added the weather descriptions icons to the page in order to help users visualize the weather.
+
+API Research -
+
+1) Brandwatch Data Upload API
+Companies can upload their first party data to this API and will be able to receive a detailed analysis. This
+will allow businesses to better understand their customers and their business as a whole. After the data has been
+uploaded, companies can use this API to identify key topics and trends and sentiment based off of users’ posts
+online (Facebook, Twitter, etc.). In addition, companies can also upload all reviews (from Yelp) for their
+company so that the API can analyze it and find common trends. While data is returned in JSON form, there
+is also the option for the API to return visualizations (word map, line chart, etc.). This is a good way to
+organize the data because a company’s marketing team would easily be able to look at these visualizations
+and get a good picture of their business. Regarding what I would change, say I upload a dataset on February 1
+and another dataset on March 1st. It would be interesting if the API not only draws conclusions from the latest
+data set uploaded, but is also able to compare data from different time periods and identify trends and similarities/differences.
+
+2) Yahoo Finance API
+This API allows for one to view historical and real time data for stocks/bonds, market analysis,
+options, etc. From the data given, users have the ability to query this data to find market trends.
+To retrieve the data from this API, the user can enter something into the search bar and the
+information will be displayed related to that search. The user can then select ‘Historical Data’
+and a time period and all of the data from that particular time will be displayed.
+This is an example of a sample response:
+{
+“marketSummaryResponse”:{
+	“result”:[
+		“exchangeTimezoneName”: “America/New_York”
+		“fullExchangeName”: “SNP”
+		“symbol”: “^GSPC”
+		“regularMarketChange”:{
+			“raw”:0.2199707
+			“fmt”: “0.22”
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Lauren McAlarney (@mcalal)
+
+Work Log - 
+I worked on the html and css, and added classes for the divs and h1.
+
+API Research -
+
+1) Pokemon Go
+This API is a free public API classified as a Gaming API. The data is stored in stats as follows: candies required to evolve, buddy distances, raid pokemon, nesting pokemon, maximum CP, shiny pokemon, alolan pokemon, fast moves, names, charged moves, released pokemon, and more. I think that the data is organized as such since it is easier for users to search for specific pokemon with such terms. I like this organization because they are providing a fun free API for people to use that at one point brought a lot of people together. If I weree to add something to this API, it would have to do more with the functions in regards to friends you have on the game. It is easy to send gifts to friends, but it would be cool to send specific items that they may need. An example of fetch JavaScript is seen below:
+fetch("https://pokemon-go1.p.rapidapi.com/pokemon_stats.json", {
+  "method": "GET",
+  "headers": {
+    "x-rapidapi-key": "SIGN-UP-FOR-KEY",
+    "x-rapidapi-host": "pokemon-go1.p.rapidapi.com"
+  }
+})
+.then(response => {
+  console.log(response);
+})
+.catch(err => {
+  console.error(err);
+});
+
+2) Flight Data API
+This API was created by travelpayouts, with the goal to provide flight trends and popular destinations for a user's website or application. With this API you can query (using GET): non-stop tickets, popular airline routes, tickets for every day of the month, popular directions from a city, cheapest tickets, special offers, and more. For this API, data is generated from sites Aviasales.ru and Jetradar.come, then transferred from the cache. An example request would be:
+GET https://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=HKT&depart_date=2016-11&return_date=2016-12&token=PutHereYourToken
+Example output JSON code is as follows:
+{
+    "success": true,
+    "data": {
+        "LED": {
+            "0": {
+                "price": 4363,
+                "airline": "UT",
+                "flight_number": 369,
+                "departure_at": "2015-06-27T11:35:00Z",
+                "return_at": "2015-07-04T16:00:00Z",
+                "expires_at": "2015-01-08T20:21:46Z"
+            }
+        }
+    }
+}
+I like that this organization allows users to mass query these websites, and users can find the most optimal flight for them.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 Helena O'Sullivan:  (GitHub Username: osullh)
@@ -212,44 +295,3 @@ API Research:
             </SMSMessage>
         </TwilioResponse>      
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Manya Trehan (@Manya14)
-
-Work Log -
-
-I retrieved the user’s location by using the HTML geolocation feature. I learned how to do this by referencing w3schools. I then saved latitude and longitude coordinates in their respective variables and then fed them into the API call. In order to print the data onto the page, I created a div tag for each data weather variable i.e. city name, temperature, etc. and saved the data from the API to its respective div tag to be displayed. For creativity, I added the weather descriptions icons to the page in order to help users visualize the weather.
-
-API Research -
-
-1) Brandwatch Data Upload API
-Companies can upload their first party data to this API and will be able to receive a detailed analysis. This
-will allow businesses to better understand their customers and their business as a whole. After the data has been
-uploaded, companies can use this API to identify key topics and trends and sentiment based off of users’ posts
-online (Facebook, Twitter, etc.). In addition, companies can also upload all reviews (from Yelp) for their
-company so that the API can analyze it and find common trends. While data is returned in JSON form, there
-is also the option for the API to return visualizations (word map, line chart, etc.). This is a good way to
-organize the data because a company’s marketing team would easily be able to look at these visualizations
-and get a good picture of their business. Regarding what I would change, say I upload a dataset on February 1
-and another dataset on March 1st. It would be interesting if the API not only draws conclusions from the latest
-data set uploaded, but is also able to compare data from different time periods and identify trends and similarities/differences.
-
-2) Yahoo Finance API
-This API allows for one to view historical and real time data for stocks/bonds, market analysis,
-options, etc. From the data given, users have the ability to query this data to find market trends.
-To retrieve the data from this API, the user can enter something into the search bar and the
-information will be displayed related to that search. The user can then select ‘Historical Data’
-and a time period and all of the data from that particular time will be displayed.
-This is an example of a sample response:
-{
-“marketSummaryResponse”:{
-	“result”:[
-		“exchangeTimezoneName”: “America/New_York”
-		“fullExchangeName”: “SNP”
-		“symbol”: “^GSPC”
-		“regularMarketChange”:{
-			“raw”:0.2199707
-			“fmt”: “0.22”
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
