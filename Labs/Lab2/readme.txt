@@ -3,9 +3,10 @@ Lab 2 Work Log:
 Group Work Log:
 Our first step was reviewing the Openweathermap API to see the type of data it contained. There were several different ways to get
 the weather of the current location including by zip code, city name, and geolocation. We decided to use the
-HTML geolocation feature to retrieve the user’s location and specifically their latitude and longitude.
-These values were then fed into the API URL. The next step involved printing the results of the API call onto
-the webpage. This was accomplished by making div ID’s in the HTML page for each of the various data points.
+HTML geolocation feature to retrieve the user’s location and specifically their latitude and longitude. If the user's
+browser does not give a location, Troy NY's weather is displayed by default. These values were then fed into the API URL. 
+The next step involved printing the results of the API call onto the webpage. 
+This was accomplished by making div ID’s in the HTML page for each of the various data points.
 Then, in the JavaScript file we assigned the API weather data to each of the respective ID tags.
 The data that was collected from the API included: city name, temperature, feels like temperature,
 icon of weather description and description, humidity, pressure, maximum and minimum temperature.
@@ -95,3 +96,41 @@ Virginia Barnes @barnesv17 /////////////////////////////////////////////////////
     - This is requesting the top 3 artists in Italy
     - Much like the Spoonacular API, this API behaves more like a SQL query than
     a hierarchical API
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Erica Bertolozzi (@ericabertolozzi)
+
+API Research:
+1) Fruityvice API
+This API is very simple and provides nutritional data about each kind of fruit. The data for each fruit can be accessed at /api/fruit/<fruit-name>. The response contains information including name, id, genus, and an array with more specific nutritional data like calories, sugar, and fat. I think this is the best way to organize this data, but I would add ways to query to find fruits that have certain nutritional values and obtain them all together.
+Here is an example response when calling api/fruit/banana:
+{
+    "genus": "Musa",
+    "name": "Banana",
+    "id": 1,
+    "family": "Musaceae",
+    "order": "Zingiberales",
+    "nutritions": {
+        "carbohydrates": 22,
+        "protein": 1,
+        "fat": 0.2,
+        "calories": 96,
+        "sugar": 17.2
+    }
+}
+
+2) Poems One API
+This API holds a large store of poems. The API is broken down into a few sections: poem of the day, poems, and private poems. For poem of the day, you can get one from all categories or one from a specific category, denoted by pod/categories. Poems have /random, /search, and /categories/search. Search allows filtering by author or tags. You can only make GET requests for poem of the day and poems. Private poems support GET, PUSH, and DELETE requests. This organization makes a lot of sense to me. An example poemOfTheDay response is:
+{
+  "author": "string",
+  "title": "string"
+  "poem": string,
+  "tags": [...],
+  "id": string,
+  "image": string,
+  "length": integer($int32),
+  "date": string
+}
+-----------------------------------------------
+Work log:
+I added support for the user denied their browser access to their location. I learned how to do this on Stack Overflow, and set the default location to Troy NY so that weather will be displayed if no location is provided. I looked into the other ways to make an API call, and used the zip code URL for this part instead of the latitude and longitude coordinates. I also added an icon to the browser tab that has a weather icon similar to the iPhone weather app.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
