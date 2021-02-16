@@ -4,8 +4,9 @@ Group Work Log:
 Our first step was reviewing the Openweathermap API to see the type of data it contained. There were several different ways to get
 the weather of the current location including by zip code, city name, and geolocation. We decided to use the
 HTML geolocation feature to retrieve the user’s location and specifically their latitude and longitude. If the user's
-browser does not give a location, Troy NY's weather is displayed by default. These values were then fed into the API URL. 
-The next step involved printing the results of the API call onto the webpage. 
+browser does not give a location, Troy NY's weather is displayed by default. The latitude and longitude coordinate
+values were then fed into the API URL.
+The next step involved printing the results of the API call onto the webpage.
 This was accomplished by making div ID’s in the HTML page for each of the various data points.
 Then, in the JavaScript file we assigned the API weather data to each of the respective ID tags.
 The data that was collected from the API included: city name, temperature, feels like temperature,
@@ -16,8 +17,9 @@ Simi @simranambiar:
 
 I worked on the js file adding tempMin, tempMax and pressure to this file. I also added the divs into html and css.
 
-Virginia Barnes @barnesv17 /////////////////////////////////////////////////////
-  Facebook Login API:
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Virginia Barnes @barnesv17
+1) Facebook Login API:
     -"a secure, fast, and convenient way for users to log into your app, and for
     your app to ask for permissions to access data."
     - This API includes many features including cross platform login and granular
@@ -45,7 +47,7 @@ Virginia Barnes @barnesv17 /////////////////////////////////////////////////////
     The data is intuitively organized, with the highest level being a node and the rest following edges to get
     certain fields.
 
-  Spoonacular API: https://spoonacular.com/food-api
+2) Spoonacular API: https://spoonacular.com/food-api
     - "Let's you access over 330,000 recipes and 80,000 food products"
     - An example request is: `https://api.spoonacular.com/recipes/complexSearch?query=pasta&maxFat=25&number=2`
     - It returns:
@@ -82,7 +84,7 @@ Virginia Barnes @barnesv17 /////////////////////////////////////////////////////
     any number of parameters/filters. This API behaves more like a SQL select than
     other hierarchical APIs.
 
-  MusixMatch API: https://developer.musixmatch.com/documentation?ref=apilist.fun
+3) MusixMatch API: https://developer.musixmatch.com/documentation?ref=apilist.fun
     - "The fastest, most powerful and legal way to display lyrics on your website or
     in your application. Today."
     - This API allows for the following parameters:
@@ -96,6 +98,9 @@ Virginia Barnes @barnesv17 /////////////////////////////////////////////////////
     - This is requesting the top 3 artists in Italy
     - Much like the Spoonacular API, this API behaves more like a SQL query than
     a hierarchical API
+
+4) Worklog
+I added the functionality of the background gif changing depending on what the weather is.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Erica Bertolozzi (@ericabertolozzi)
 
@@ -134,6 +139,7 @@ This API holds a large store of poems. The API is broken down into a few section
 Work log:
 I added support for the user denied their browser access to their location. I learned how to do this on Stack Overflow, and set the default location to Troy NY so that weather will be displayed if no location is provided. I looked into the other ways to make an API call, and used the zip code URL for this part instead of the latitude and longitude coordinates. I also added an icon to the browser tab that has a weather icon similar to the iPhone weather app.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 Helena O'Sullivan:  (GitHub Username: osullh)
 
@@ -206,3 +212,44 @@ API Research:
             </SMSMessage>
         </TwilioResponse>      
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Manya Trehan (@Manya14)
+
+Work Log -
+
+I retrieved the user’s location by using the HTML geolocation feature. I learned how to do this by referencing w3schools. I then saved latitude and longitude coordinates in their respective variables and then fed them into the API call. In order to print the data onto the page, I created a div tag for each data weather variable i.e. city name, temperature, etc. and saved the data from the API to its respective div tag to be displayed. For creativity, I added the weather descriptions icons to the page in order to help users visualize the weather.
+
+API Research -
+
+1) Brandwatch Data Upload API
+Companies can upload their first party data to this API and will be able to receive a detailed analysis. This
+will allow businesses to better understand their customers and their business as a whole. After the data has been
+uploaded, companies can use this API to identify key topics and trends and sentiment based off of users’ posts
+online (Facebook, Twitter, etc.). In addition, companies can also upload all reviews (from Yelp) for their
+company so that the API can analyze it and find common trends. While data is returned in JSON form, there
+is also the option for the API to return visualizations (word map, line chart, etc.). This is a good way to
+organize the data because a company’s marketing team would easily be able to look at these visualizations
+and get a good picture of their business. Regarding what I would change, say I upload a dataset on February 1
+and another dataset on March 1st. It would be interesting if the API not only draws conclusions from the latest
+data set uploaded, but is also able to compare data from different time periods and identify trends and similarities/differences.
+
+2) Yahoo Finance API
+This API allows for one to view historical and real time data for stocks/bonds, market analysis,
+options, etc. From the data given, users have the ability to query this data to find market trends.
+To retrieve the data from this API, the user can enter something into the search bar and the
+information will be displayed related to that search. The user can then select ‘Historical Data’
+and a time period and all of the data from that particular time will be displayed.
+This is an example of a sample response:
+{
+“marketSummaryResponse”:{
+	“result”:[
+		“exchangeTimezoneName”: “America/New_York”
+		“fullExchangeName”: “SNP”
+		“symbol”: “^GSPC”
+		“regularMarketChange”:{
+			“raw”:0.2199707
+			“fmt”: “0.22”
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
