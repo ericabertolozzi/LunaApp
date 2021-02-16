@@ -15,66 +15,6 @@ The background of our web page changes depending on the weather calculated.
 
 Simi @simranambiar:
 
-API Research: 
-1. Love Calculator https://rapidapi.com/ajith/api/love-calculator
-“Enter your name and the name of your partner/lover/crush to find Love compatibility & chances of successful love relationship.”
-The required parameters are the user’s first and last name and their crush’s first and last name. What the API does is runs these names through its algorithm and produces a percentage of how compatible these people are. 
-This is the code snipped that was available 
-var unirest = require("unirest");
-
-var req = unirest("GET", "https://love-calculator.p.rapidapi.com/getPercentage");
-
-req.query({
-	"fname": "John",
-	"sname": "Alice"
-});
-
-req.headers({
-	"x-rapidapi-key": "SIGN-UP-FOR-KEY",
-	"x-rapidapi-host": "love-calculator.p.rapidapi.com",
-	"useQueryString": true
-});
-
-
-req.end(function (res) {
-	if (res.error) throw new Error(res.error);
-
-	console.log(res.body);
-});
-
-
-As seen above it reads in the names, calls the api and then returns the value. 
-
-2. The Cocktail DB https://rapidapi.com/thecocktaildb/api/the-cocktail-db?endpoint=apiendpoint_b2280d27-a2ef-4de9-be14-8c3f88f2d9ec 
-API to get data on alcohol & cocktails.
-This API can do 3 different things. It can search recipes by ingredient. It can search cocktail by name, and it can search ingredient by name. 
-This is the code that is available. 
-var unirest = require("unirest");
-
-var req = unirest("GET", "https://the-cocktail-db.p.rapidapi.com/search.php");
-
-req.query({
-	"i": "vodka"
-});
-
-req.headers({
-	"x-rapidapi-key": "SIGN-UP-FOR-KEY",
-	"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
-	"useQueryString": true
-});
-
-
-req.end(function (res) {
-	if (res.error) throw new Error(res.error);
-
-	console.log(res.body);
-});
-
-
-
-As seen above the code reads in the ingredient, in this case, vodka.Then it calls the API and then it returns the answers. 
-
-3. WORKLOG
 I worked on the js file adding tempMin, tempMax and pressure to this file. I also added the divs into html and css.
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -199,80 +139,6 @@ This API holds a large store of poems. The API is broken down into a few section
 Work log:
 I added support for the user denied their browser access to their location. I learned how to do this on Stack Overflow, and set the default location to Troy NY so that weather will be displayed if no location is provided. I looked into the other ways to make an API call, and used the zip code URL for this part instead of the latitude and longitude coordinates. I also added an icon to the browser tab that has a weather icon similar to the iPhone weather app.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-Helena O'Sullivan:  (GitHub Username: osullh)
-
-Work Log:
- For Lab 2, I helped with the HTML and CSS aspects of it. I worked on the background gradient animation,
- some styling, and I also helped with the footer as well as the center block. Some of the code that
- I implemented for the HTML and CSS styling was during a Visual Studio Live Share. During the entire
- process of the lab, I didn't get stuck on any specific part. I found that the work that I did for the
- lab to be very reasonable. 
-
- For individual creativity, instead of implementing a simple gradient background, I added CSS
- elements so that the background gradient would be animated.
-
-API Research:
- AccuWeather API:	https://developer.accuweather.com/getting-started
-    - The AccuWeather API collects weather data for a plethora of locations across the globe, and
-      presents their information in more than 100 languages.
-    - AccuWeather API is organized through a hierarchy. The first action is to use one of the 
-      Location APIs to find the user's location by either...
-		      * Geoposition Search
-		      * Text Search Using Postal Code
-		      * Text Search by City Name
-      After a location is established and a locationKey is obtained from the API response,
-      other APIs can be called (depending on personal use)...
-		      * Forecast API
-		      * Current Conditions API
-		      * Indices API
-		      * Weather Alarms API
-      I like how Accuweather provides multiple options for their users (i.e. with their Locations
-      API). I feel that this type of implementation should be replicated for Luna and
-      other future projects. This type of organization allows for a usage that's easy to
-      understand and provides a more straightforward API.
-    - An example request is: 'http://dataservice.accuweather.com/forecasts/v1/daily/1day/locationKey?apikey=01&language=en-us&details=true&metric=true'.
-      This request is for daily forecast data of a specific location.
-
- Twilio API:	https://www.twilio.com/docs/api
-    - Twilio's customizable API allows users to query and manage meta-data for accounts, phone numbers,
-      usage, and access tokens.
-    - Twilio supports HTTP Basic authentication. Essentially, this allows users to protect the URLs on
-      their web server. 
-    - Twilio has several APIs that users can utilize...
-      	 * Twilio’s Programmable SMS API
-      	 * Programmable Voice API
-      	 * Wireless API
-      	 * Programmable Video API
-      	 * Authy (Two-factor Authentication)
-    - I like how Twilio set up their Authy API, which allows for two-factor authorization. I wouldn't change anything about it, and it's a good 
-      example to draw inspiration from for building future APIs involved with account security. It's clear that this API was implemented and 
-      created with ease of use and manageability in mind.
-    - By default, Twilio's REST API returns XML. Here is an example response when calling Twilio’s Programmable SMS API:
-        <TwilioResponse>
-            <SMSMessage>
-                <Sid>SM1f0e8ae6ade43cb3c0ce4525424e404f</Sid>
-                <DateCreated>Fri, 13 Aug 2010 01:16:24 +0000</DateCreated>
-                <DateUpdated>Fri, 13 Aug 2010 01:16:24 +0000</DateUpdated>
-                <DateSent/>
-                <AccountSid>ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</AccountSid>
-                <To>+13455431221</To>
-                <From>+15104564545</From>
-                <Body>A Test Message</Body>
-                <Status>queued</Status>
-                <Flags>
-                      <Flag>outbound</Flag>
-                </Flags>
-                <ApiVersion>2010-04-01</ApiVersion>
-                <Price/>
-                <Uri>
-                      /2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SM1f0e8ae6ade43cb3c0ce4525424e404f
-                </Uri>
-            </SMSMessage>
-        </TwilioResponse>      
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 Manya Trehan (@Manya14)
 
 Work Log -
@@ -312,4 +178,46 @@ This is an example of a sample response:
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Lauren McAlarney (@mcalal)
 
+Work Log - 
+I worked on the html and css, and added classes for the divs and h1.
+
+API Research -
+
+1) Pokemon Go
+This API is a free public API classified as a Gaming API. The data is stored in stats as follows: candies required to evolve, buddy distances, raid pokemon, nesting pokemon, maximum CP, shiny pokemon, alolan pokemon, fast moves, names, charged moves, released pokemon, and more. I think that the data is organized as such since it is easier for users to search for specific pokemon with such terms. I like this organization because they are providing a fun free API for people to use that at one point brought a lot of people together. If I weree to add something to this API, it would have to do more with the functions in regards to friends you have on the game. It is easy to send gifts to friends, but it would be cool to send specific items that they may need. An example of fetch JavaScript is seen below:
+fetch("https://pokemon-go1.p.rapidapi.com/pokemon_stats.json", {
+  "method": "GET",
+  "headers": {
+    "x-rapidapi-key": "SIGN-UP-FOR-KEY",
+    "x-rapidapi-host": "pokemon-go1.p.rapidapi.com"
+  }
+})
+.then(response => {
+  console.log(response);
+})
+.catch(err => {
+  console.error(err);
+});
+
+2) Flight Data API
+This API was created by travelpayouts, with the goal to provide flight trends and popular destinations for a user's website or application. With this API you can query (using GET): non-stop tickets, popular airline routes, tickets for every day of the month, popular directions from a city, cheapest tickets, special offers, and more. For this API, data is generated from sites Aviasales.ru and Jetradar.come, then transferred from the cache. An example request would be:
+GET https://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=HKT&depart_date=2016-11&return_date=2016-12&token=PutHereYourToken
+Example output JSON code is as follows:
+{
+    "success": true,
+    "data": {
+        "LED": {
+            "0": {
+                "price": 4363,
+                "airline": "UT",
+                "flight_number": 369,
+                "departure_at": "2015-06-27T11:35:00Z",
+                "return_at": "2015-07-04T16:00:00Z",
+                "expires_at": "2015-01-08T20:21:46Z"
+            }
+        }
+    }
+}
+I like that this organization allows users to mass query these websites, and users can find the most optimal flight for them.
