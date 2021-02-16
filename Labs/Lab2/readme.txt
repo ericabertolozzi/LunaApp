@@ -15,6 +15,66 @@ The background of our web page changes depending on the weather calculated.
 
 Simi @simranambiar:
 
+API Research: 
+1. Love Calculator https://rapidapi.com/ajith/api/love-calculator
+“Enter your name and the name of your partner/lover/crush to find Love compatibility & chances of successful love relationship.”
+The required parameters are the user’s first and last name and their crush’s first and last name. What the API does is runs these names through its algorithm and produces a percentage of how compatible these people are. 
+This is the code snipped that was available 
+var unirest = require("unirest");
+
+var req = unirest("GET", "https://love-calculator.p.rapidapi.com/getPercentage");
+
+req.query({
+	"fname": "John",
+	"sname": "Alice"
+});
+
+req.headers({
+	"x-rapidapi-key": "SIGN-UP-FOR-KEY",
+	"x-rapidapi-host": "love-calculator.p.rapidapi.com",
+	"useQueryString": true
+});
+
+
+req.end(function (res) {
+	if (res.error) throw new Error(res.error);
+
+	console.log(res.body);
+});
+
+
+As seen above it reads in the names, calls the api and then returns the value. 
+
+2. The Cocktail DB https://rapidapi.com/thecocktaildb/api/the-cocktail-db?endpoint=apiendpoint_b2280d27-a2ef-4de9-be14-8c3f88f2d9ec 
+API to get data on alcohol & cocktails.
+This API can do 3 different things. It can search recipes by ingredient. It can search cocktail by name, and it can search ingredient by name. 
+This is the code that is available. 
+var unirest = require("unirest");
+
+var req = unirest("GET", "https://the-cocktail-db.p.rapidapi.com/search.php");
+
+req.query({
+	"i": "vodka"
+});
+
+req.headers({
+	"x-rapidapi-key": "SIGN-UP-FOR-KEY",
+	"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
+	"useQueryString": true
+});
+
+
+req.end(function (res) {
+	if (res.error) throw new Error(res.error);
+
+	console.log(res.body);
+});
+
+
+
+As seen above the code reads in the ingredient, in this case, vodka.Then it calls the API and then it returns the answers. 
+
+3. WORKLOG
 I worked on the js file adding tempMin, tempMax and pressure to this file. I also added the divs into html and css.
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
