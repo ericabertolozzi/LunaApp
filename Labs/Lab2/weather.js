@@ -26,8 +26,32 @@ function currentWeather(position) {
         document.getElementById('tempMin').innerHTML="Temp Min: "+" "+ data.main.temp_min + "&deg;F";
         document.getElementById('tempMax').innerHTML="Temp Max: "+" "+ data.main.temp_max + "&deg;F";
         document.getElementById('pressure').innerHTML="Pressure: "+" "+ data.main.pressure + "hpa";
-        
-
+        var id_str = (''+data.weather[0].id);
+        console.log( id_str );
+        id_str = "330";
+        console.log( id_str );
+        if( id_str == 800 ) { // clear sky
+          document.body.style.backgroundImage = "url('https://media.giphy.com/media/tntFzilPvh4je/source.gif')";
+        }
+        else if( id_str[0] == 8 ) { // clouds
+          document.body.style.backgroundImage = "url('https://media.giphy.com/media/HoUgegTjteXCw/source.gif')";
+        }
+        else if( id_str[0] == 6 ) { // snow
+          document.body.style.backgroundImage = "url('https://media.giphy.com/media/Xi2Xu0MejhsUo/source.gif')";
+        }
+        else if( id_str[0] == 5 || id_str[0] == 3 ) { // rain
+          document.body.style.backgroundImage = "url('https://media.giphy.com/media/Mgq7EMQUrhcvC/source.gif')";
+        }
+        else if( id_str[0] == 2 ) { // thunderstorm
+          document.body.style.backgroundImage = "url('https://media.giphy.com/media/o8A56JaNJQFSU/giphy.gif')";
+        }
+        else { // default
+          document.body.style.backgroundImage = "url('https://media.giphy.com/media/dAWZiSMbMvObDWP3aA/source.gif')";
+        }
+        document.body.style.backgroundSize = "cover";
+        document.body.style.height = "100vh";
+        document.body.style.padding = "0";
+        document.body.style.margin = "0";
     }
   );
 }
@@ -50,7 +74,7 @@ function defaultWeather() {
         document.getElementById('tempMin').innerHTML="Temp Min: "+" "+ data.main.temp_min + "&deg;F";
         document.getElementById('tempMax').innerHTML="Temp Max: "+" "+ data.main.temp_max + "&deg;F";
         document.getElementById('pressure').innerHTML="Pressure: "+" "+ data.main.pressure + "hpa";
-        
+
 
     }
   );
