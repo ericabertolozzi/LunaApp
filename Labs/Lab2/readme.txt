@@ -221,3 +221,77 @@ Example output JSON code is as follows:
     }
 }
 I like that this organization allows users to mass query these websites, and users can find the most optimal flight for them.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Helena O'Sullivan:  (GitHub Username: osullh)
+
+Work Log:
+ For Lab 2, I helped with the HTML and CSS aspects of it. I worked on the background gradient animation,
+ some styling, and I also helped with the footer as well as the center block. Some of the code that
+ I implemented for the HTML and CSS styling was during a Visual Studio Live Share. During the entire
+ process of the lab, I didn't get stuck on any specific part. I found that the work that I did for the
+ lab to be very reasonable. 
+
+ For individual creativity, instead of implementing a simple gradient background, I added CSS
+ elements so that the background gradient would be animated.
+
+API Research:
+ AccuWeather API:	https://developer.accuweather.com/getting-started
+    - The AccuWeather API collects weather data for a plethora of locations across the globe, and
+      presents their information in more than 100 languages.
+    - AccuWeather API is organized through a hierarchy. The first action is to use one of the 
+      Location APIs to find the user's location by either...
+		      * Geoposition Search
+		      * Text Search Using Postal Code
+		      * Text Search by City Name
+      After a location is established and a locationKey is obtained from the API response,
+      other APIs can be called (depending on personal use)...
+		      * Forecast API
+		      * Current Conditions API
+		      * Indices API
+		      * Weather Alarms API
+      I like how Accuweather provides multiple options for their users (i.e. with their Locations
+      API). I feel that this type of implementation should be replicated for Luna and
+      other future projects. This type of organization allows for a usage that's easy to
+      understand and provides a more straightforward API.
+    - An example request is: 'http://dataservice.accuweather.com/forecasts/v1/daily/1day/locationKey?apikey=01&language=en-us&details=true&metric=true'.
+      This request is for daily forecast data of a specific location.
+
+ Twilio API:	https://www.twilio.com/docs/api
+    - Twilio's customizable API allows users to query and manage meta-data for accounts, phone numbers,
+      usage, and access tokens.
+    - Twilio supports HTTP Basic authentication. Essentially, this allows users to protect the URLs on
+      their web server. 
+    - Twilio has several APIs that users can utilize...
+      	 * Twilio’s Programmable SMS API
+      	 * Programmable Voice API
+      	 * Wireless API
+      	 * Programmable Video API
+      	 * Authy (Two-factor Authentication)
+    - I like how Twilio set up their Authy API, which allows for two-factor authorization. I wouldn't change anything about it, and it's a good 
+      example to draw inspiration from for building future APIs involved with account security. It's clear that this API was implemented and 
+      created with ease of use and manageability in mind.
+    - By default, Twilio's REST API returns XML. Here is an example response when calling Twilio’s Programmable SMS API:
+        <TwilioResponse>
+            <SMSMessage>
+                <Sid>SM1f0e8ae6ade43cb3c0ce4525424e404f</Sid>
+                <DateCreated>Fri, 13 Aug 2010 01:16:24 +0000</DateCreated>
+                <DateUpdated>Fri, 13 Aug 2010 01:16:24 +0000</DateUpdated>
+                <DateSent/>
+                <AccountSid>ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</AccountSid>
+                <To>+13455431221</To>
+                <From>+15104564545</From>
+                <Body>A Test Message</Body>
+                <Status>queued</Status>
+                <Flags>
+                      <Flag>outbound</Flag>
+                </Flags>
+                <ApiVersion>2010-04-01</ApiVersion>
+                <Price/>
+                <Uri>
+                      /2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SM1f0e8ae6ade43cb3c0ce4525424e404f
+                </Uri>
+            </SMSMessage>
+        </TwilioResponse>      
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
