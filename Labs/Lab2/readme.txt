@@ -144,10 +144,24 @@ I retrieved the user’s location by using the HTML geolocation feature. I learn
 API Research - 
 
 1) Brandwatch Data Upload API
-Companies can upload their first party data to this API and will be able to receive a detailed analysis. This will allow businesses to better understand their customers and their business as a whole. After the data has been uploaded, companies can use this API to identify key topics and trends and sentiment based off of users’ posts online (Facebook, Twitter, etc.). In addition, companies can also upload all reviews (from Yelp) for their company so that the API can analyze it and find common trends. While data is returned in JSON form, there is also the option for the API to return visualizations (word map, line chart, etc.). This is a good way to organize the data because a company’s marketing team would easily be able to look at these visualizations and get a good picture of their business. Regarding what I would change, say I upload a dataset on February 1 and another dataset on March 1st. It would be interesting if the API not only draws conclusions from the latest data set uploaded, but is also able to compare data from different time periods and identify trends and similarities/differences. 
+Companies can upload their first party data to this API and will be able to receive a detailed analysis. This
+will allow businesses to better understand their customers and their business as a whole. After the data has been
+uploaded, companies can use this API to identify key topics and trends and sentiment based off of users’ posts
+online (Facebook, Twitter, etc.). In addition, companies can also upload all reviews (from Yelp) for their 
+company so that the API can analyze it and find common trends. While data is returned in JSON form, there 
+is also the option for the API to return visualizations (word map, line chart, etc.). This is a good way to 
+organize the data because a company’s marketing team would easily be able to look at these visualizations 
+and get a good picture of their business. Regarding what I would change, say I upload a dataset on February 1 
+and another dataset on March 1st. It would be interesting if the API not only draws conclusions from the latest 
+data set uploaded, but is also able to compare data from different time periods and identify trends and similarities/differences. 
 
 2) Yahoo Finance API
-This API allows for one to view historical and real time data for stocks/bonds, market analysis, options, etc. From the data given, users have the ability to query this data to find market trends. To retrieve the data from this API, the user can enter something into the search bar and the information will be displayed related to that search. The user can then select ‘Historical Data’ and a time period and all of the data from that particular time will be displayed. This is an example of a sample response: 
+This API allows for one to view historical and real time data for stocks/bonds, market analysis, 
+options, etc. From the data given, users have the ability to query this data to find market trends. 
+To retrieve the data from this API, the user can enter something into the search bar and the 
+information will be displayed related to that search. The user can then select ‘Historical Data’ 
+and a time period and all of the data from that particular time will be displayed. 
+This is an example of a sample response: 
 {
 “marketSummaryResponse”:{
 	“result”:[
