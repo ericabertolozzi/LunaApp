@@ -12,7 +12,9 @@
       #select { width: 28%; background: rgb(210, 174, 212); border: none; padding: 10px; font: 10px; font-family: Consolas,monaco,monospace; }
       #chat-form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
       #message { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-      #send { width: 9%; background: rgb(210, 174, 212); border: none; padding: 10px; font-family: Consolas,monaco,monospace; }
+      #send { width: 4.5%; background: rgb(210, 174, 212); border: none; padding: 10px; font-family: Consolas,monaco,monospace; }
+      #emoji-button {  width: 4.5%; background: rgb(217, 223, 145); border: none; padding: 10px; font-family: Consolas,monaco,monospace;}
+      #emoji-menu { display: none; position: fixed; bottom: 0; position: absolute; right:0;}
       #messages { position: fixed; top: 15%; width:100%; list-style-type: none; margin: 0; padding: 0; }
       #messages li { padding: 5px 10px; }
       #messages li:nth-child(odd) { background: rgb(210, 174, 212); }
@@ -24,52 +26,64 @@
       <input id="nickname" autocomplete="off" /><button id="select">Nickname</button>
     </form>
     <div id="greeting"></div>
+    <div id='emoji-menu'>
+      <emoji-picker></emoji-picker>
+    </div>
     <form action="" id="chat-form">
-      <input id="message" autocomplete="off" /><button id="send">Send</button>
+      <input id="message" autocomplete="off" /><button type='button' id='emoji-button'>Emoji</button>
+      <button id="send">Send</button>
     </form>
     <ul id="messages"></ul>
+
+
   </body>
   <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+
   <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
   <script src="/socket.io/socket.io.js"></script>
   <script>
 
 const CSS_COLOR_NAMES = [
-  "AliceBlue", "AntiqueWhite", "Aqua", "Aquamarine", "Azure", "Beige",
-  "Bisque", "Black", "BlanchedAlmond", "Blue", "BlueViolet", "Brown",
-  "BurlyWood", "CadetBlue", "Chartreuse", "Chocolate", "Coral",
-  "CornflowerBlue", "Cornsilk", "Crimson", "Cyan", "DarkBlue","DarkCyan", "DarkGoldenRod",
-  "DarkGray","DarkGrey","DarkGreen","DarkKhaki","DarkMagenta","DarkOliveGreen",
-  "DarkOrange","DarkOrchid","DarkRed","DarkSalmon","DarkSeaGreen","DarkSlateBlue",
-  "DarkSlateGray","DarkSlateGrey","DarkTurquoise","DarkViolet","DeepPink","DeepSkyBlue",
-  "DimGray","DimGrey","DodgerBlue","FireBrick","FloralWhite","ForestGreen","Fuchsia",
-  "Gainsboro","GhostWhite","Gold","GoldenRod","Gray","Grey","Green","GreenYellow",
-  "HoneyDew","HotPink","IndianRed","Indigo","Ivory","Khaki","Lavender","LavenderBlush",
-  "LawnGreen","LemonChiffon","LightBlue","LightCoral","LightCyan","LightGoldenRodYellow",
-  "LightGray","LightGrey","LightGreen","LightPink","LightSalmon","LightSeaGreen",
+  "AliceBlue", "AntiqueWhite", "Aqua", "Aquamarine", "Beige","Bisque","BurlyWood",
+  "CadetBlue", "Chartreuse", "Chocolate", "Coral","CornflowerBlue", "Cornsilk",
+  "Crimson", "Cyan","DarkCyan", "DarkGoldenRod","DarkGray","DarkKhaki","DarkOrange",
+  "DarkSalmon","DarkSeaGreen","DarkTurquoise","DeepPink","DeepSkyBlue","DodgerBlue",
+  "FloralWhite","ForestGreen","Fuchsia","Gainsboro","GhostWhite","Gold","GoldenRod",
+  "Grey","GreenYellow","HoneyDew","HotPink","IndianRed","Ivory","Khaki","Lavender",
+  "LavenderBlush","LawnGreen","LemonChiffon","LightBlue","LightCoral","LightCyan",
+  "LightGoldenRodYellow","LightGrey","LightGreen","LightPink","LightSalmon","LightSeaGreen",
   "LightSkyBlue","LightSlateGray","LightSlateGrey","LightSteelBlue","LightYellow","Lime",
-  "LimeGreen","Linen","Magenta","Maroon","MediumAquaMarine","MediumBlue","MediumOrchid",
-  "MediumPurple","MediumSeaGreen","MediumSlateBlue","MediumSpringGreen","MediumTurquoise",
-  "MediumVioletRed","MidnightBlue","MintCream","MistyRose","Moccasin","NavajoWhite","Navy",
-  "OldLace","Olive","OliveDrab","Orange","OrangeRed","Orchid","PaleGoldenRod",
-  "PaleGreen","PaleTurquoise","PaleVioletRed","PapayaWhip","PeachPuff","Peru","Pink","Plum",
-  "PowderBlue","Purple","RebeccaPurple","Red","RosyBrown","RoyalBlue","SaddleBrown",
-  "Salmon","SandyBrown","SeaGreen","SeaShell","Sienna","Silver","SkyBlue","SlateBlue",
-  "SlateGray","SlateGrey","Snow","SpringGreen","SteelBlue","Tan","Teal","Thistle",
-  "Tomato","Turquoise","Violet","Wheat","White","WhiteSmoke","Yellow","YellowGreen",
+  "LimeGreen","Linen","Magenta","MediumAquaMarine","MediumOrchid","MediumPurple",
+  "MediumSeaGreen","MediumSlateBlue","MediumSpringGreen","MediumTurquoise","MintCream",
+  "MistyRose","Moccasin","NavajoWhite","OldLace","Olive","OliveDrab","Orange","OrangeRed",
+  "Orchid","PaleGoldenRod","PaleGreen","PaleTurquoise","PaleVioletRed","PapayaWhip",
+  "PeachPuff","Peru","Pink","Plum","PowderBlue","Red","RosyBrown","RoyalBlue","Salmon",
+  "SandyBrown","SeaGreen","SeaShell","Sienna","Silver","SkyBlue","Snow","SpringGreen","Tan",
+  "Tomato","Turquoise","Violet","Wheat","WhiteSmoke","Yellow","YellowGreen"
 ];
 
     // load socket.io-client
     var socket = io();
-    
+
+    // Function to make the emoji menu display when the button is clicked
+    $('#emoji-button').click(function() {
+      if ($('#emoji-menu').css('display') == 'none') {
+        $('#emoji-menu').css('display', 'block');
+      }
+      else {
+        $('#emoji-menu').css('display', 'none');
+      }
+    });
+
+    document.querySelector('emoji-picker').addEventListener('emoji-click', event => console.log(event.detail));
+
     // on nick form submit, save nickname
     $('#nickname-form').submit(function(){
       // save nick in session & greet
       sessionStorage.setItem("nickname", $('#nickname').val());
-
       var randomColor = CSS_COLOR_NAMES[Math.floor(Math.random()*CSS_COLOR_NAMES.length)];
       sessionStorage.setItem("color", randomColor);
-    
+
       // greet user
       $("#greeting").html('Welcome' + ' ' + $('#nickname').val() + '!');
       $('#nick').val('');
@@ -78,28 +92,32 @@ const CSS_COLOR_NAMES = [
 
     // on chat form submit, send msg to server
     $('#chat-form').submit(function(){
-      
+
       // get nickname and color from session storage
       var nick = sessionStorage.getItem("nickname");
       var color = sessionStorage.getItem("color");
 
       // Get the Current Date
       var date = new Date();
-      var stringdate = date.toDateString();
+      var hours = date.getHours();
+      var minutes = date.getMinutes();
+      var ampm = hours >= 12 ? 'pm' : 'am';
+      hours = hours % 12;
+      hours = hours ? hours : 12; // the hour '0' should be '12'
+      minutes = minutes < 10 ? '0'+minutes : minutes;
+      var time = hours + ':' + minutes + ' ' + ampm;
 
-      // append and emit message
-      $('#messages').append($("<li style='color:"+color+"; font-weight:bold;'>").text(nick + ': ' + $('#message').val()));
-      // Helena - Changed the Message so it would include the Current Date
-      $('#messages').append($("<li style='color:"+color+"'>").text('Date: ' + stringdate));
-      socket.emit('message', nick + ': ' + $('#message').val());
+      // append and emit message locally
+      $('#messages').append($("<li style='background:"+color+"'><span style='font-weight:bold;'>" + nick + ": " + $('#message').val() + "</span><span style='float:right; display:inline;'>" + time + "</span></li>"));
+      socket.emit('message', {msg: nick+': '+$('#message').val(), c: color, t: time});
       $('#message').val('');
-      
       return false;
     });
-    
-    // on msg received, append to list
-    socket.on('message', function(msg){
-    $('#messages').append($('<li>').text(msg));
 
+    // on msg received, append to list globally
+    socket.on('message', function(data) {
+      $('#messages').append($("<li style='background:"+data.c+"'><span style='font-weight:bold;'>" + data.msg + "</span><span style='float:right; display:inline;'>" + data.t + "</span></li>"));
     });
+
   </script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
