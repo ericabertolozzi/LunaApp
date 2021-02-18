@@ -118,6 +118,5 @@ const CSS_COLOR_NAMES = [
     socket.on('message', function(data) {
       $('#messages').append($("<li style='background:"+data.c+"'><span style='font-weight:bold;'>" + data.msg + "</span><span style='float:right; display:inline;'>" + data.t + "</span></li>"));
     });
-    
   </script>
   <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
