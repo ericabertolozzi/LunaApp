@@ -51,11 +51,6 @@ io.on('connection', function(socket){
     //   socket.join(room);
     // });
 
-    // create sound in browser to alert new msg
-    var aSound = document.createElement('audio');
-    aSound.setAttribute('src', 'beep.wav');
-    aSound.play();
-
     // save message to db
     var message = new Message ({
       message : msg
