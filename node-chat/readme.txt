@@ -9,4 +9,4 @@ To run example do:
 5. In command line do: node server
 6. In browser go to localhost:3000
 
-For public use off of Erica's server, go to: http://129.161.80.193:3000/
+For public use off of Erica's server, go to: http://192.168.0.21:3000/
