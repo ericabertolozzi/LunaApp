@@ -1,0 +1,37 @@
+{
+    "4500": {
+        "course": "Web Science",
+        "number": "ITWS 4500",
+        "Description": "A course about web science"   
+    },
+    "4100": {
+
+        "course": "IT & Web Science Capstone",
+        "number": "ITWS 4100",
+        "Description": "ITWS Capstone course"
+    },
+    "2110": {
+        "course": "Web Systems",
+        "number": "ITWS 2110",
+        "Description": "A course about web systems"
+    },
+    "4350": {
+        "course": "Data Science",
+        "number": "ITWS 4350",
+        "Description": "A course about data science"
+    },
+    "4310": {
+      "course": "Managing IT Resources",
+      "number": "ITWS 4310",
+      "Description": "A course about managing IT resources"
+    },
+    "1100": {
+      "course": "Introduction to Information Technology and Web Science",
+      "number": "ITWS 1100",
+      "Description": "An introduction course to the field of information technology and web science"
+    }
+}
+
+
+
+
