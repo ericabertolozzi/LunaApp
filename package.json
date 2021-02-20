@@ -1,0 +1,22 @@
+{
+  "name": "lunaapp",
+  "version": "1.0.0",
+  "description": "Node server for the Luna application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericabertolozzi/LunaApp.git"
+  },
+  "author": "Erica Bertolozzi, Virginia Barnes, Lauren McAlarney, Helena O'Sullivan, Manya Trehan, Simi Nambiar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ericabertolozzi/LunaApp/issues"
+  },
+  "homepage": "https://github.com/ericabertolozzi/LunaApp#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
