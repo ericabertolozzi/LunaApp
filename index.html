@@ -1,9 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Welcome to Luna</h1>
+    <nav class="navbar navbar-custom">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <!-- I cannot get the logo to show, but I think the line commented out below is on the right track. -->
+            <!-- <a href="#" class="navbar-brand"><img src="http://localhost:3000/logo.PNG" class=img-fluid></a> -->
+            <a class="navbar-brand" href="#">LunaLogo</a> 
+          </div>
+          <ul class="nav nav-pills">
+            <li><a href="#">Period Tracker</a></li>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Period Health</a></li>
+              <!-- </div> -->
+          </ul>
+        </div>
+      </nav>
+      <div class="jumbotron bg-danger intro">
+        <h1 class="display-4">Welcome to Luna!</h1>
+        <p class="slogan">Track cycles. Accurate predictions. Learn about your body.</p>
+      </div>
+      <div class="footer">
+        <p class="footer-text">Luna Copyright &copy; 2021.</p>
+      </div> 
 </body>
 </html>
+
+<style>
+    .navbar-custom{
+        background-color:lightcoral;
+        position:fixed;
+        top:0;
+        font-family: 'Oswald', sans-serif;
+        width:100%;
+        font-size:19px;
+        color:white !important;
+    }
+    .text{
+        font-size:17px;
+        font-family: 'Nunito', sans-serif;
+    }
+
+    .slogan{
+        text-align:center;
+    }
+
+    h1{
+        text-align:center;
+        font-family: 'Nunito', sans-serif;
+    }
+
+    .intro{
+        background-color:lightcyan;
+        margin-top: 30px;
+
+    }
+    .footer {
+        position: fixed;
+        font-size:17px;
+        left: 0;
+        bottom: 0;
+        font-family: 'Oswald', sans-serif;
+        width: 100%;
+        background-color: lightcoral;
+        color: white;
+        text-align: center;
+}
+</style>
