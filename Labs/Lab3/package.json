@@ -1,0 +1,14 @@
+{
+  "name": "lab3",
+  "version": "1.0.0",
+  "description": "Project created for Web Sci Lab 3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Erica Bertolozzi, Virginia Barnes, Lauren McAlarney, Helena O'Sullivan, Simi Nambiar, Manya Trehan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
