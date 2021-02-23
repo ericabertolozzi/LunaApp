@@ -13,8 +13,7 @@ app.listen(port, () => {
 
 app.get('/getsinger',urlencodedParser,function(req,res){
     response={fname:req.body.fname}
-
-
-    // res.send('You sent singers data'+ req.body.fname + req.body.lname);
+    response={fname:req.body.lname}
+    console.log(response)
 }
 )
