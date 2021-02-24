@@ -28,17 +28,18 @@ spotifyApi.clientCredentialsGrant().then(
 console.log( "PLEASE WORK" );
 console.log( access_token );
 
-// var spotifyApi = new SpotifyWebApi({
-//   accessToken: 'BQCF0gRKGdajztZoRc5O6uNwIFKvsTAcdFoCHpsVfBFnAdzKgSaEW0sfxpBJWhB2xfpD3U0Qst9ktmzRNgc'
-// });
-//
-// // Get an artist's top tracks
-// spotifyApi.getArtistTopTracks('0oSGxfWSnnOXhD2fKuz2Gy', 'GB')
-//   .then(function(data) {
-//     console.log(data.body);
-//     }, function(err) {
-//     console.log('Something went wrong!', err);
-//   });
+var spotifyApi = new SpotifyWebApi({
+  // hard-coded for now
+  accessToken: 'BQCF0gRKGdajztZoRc5O6uNwIFKvsTAcdFoCHpsVfBFnAdzKgSaEW0sfxpBJWhB2xfpD3U0Qst9ktmzRNgc'
+});
+
+// Get an artist's top tracks
+spotifyApi.getArtistTopTracks('0oSGxfWSnnOXhD2fKuz2Gy', 'GB')
+  .then(function(data) {
+    console.log(data.body);
+    }, function(err) {
+    console.log('Something went wrong!', err);
+  });
 
 //------------------------------------------------------------------------------
 
