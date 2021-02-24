@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-var SpotifyWebApi = require('spotify-web-api-node');
 
+// Connect to the SpotifyWebApi-------------------------------------------------
+var SpotifyWebApi = require('spotify-web-api-node');
 var spotifyApi = new SpotifyWebApi({
   clientId: 'f59627e7fcb842ff8c712ebe30c3d9d7',
   clientSecret: '24e4f9a1e4244fd88fca81e8515a9860',
@@ -10,7 +11,6 @@ var spotifyApi = new SpotifyWebApi({
 });
 
 var access_token;
-
 // Retrieve an access token.
 spotifyApi.clientCredentialsGrant().then (
   function(data) {
@@ -25,9 +25,7 @@ spotifyApi.clientCredentialsGrant().then (
     console.log('Something went wrong when retrieving an access token', err);
   }
 );
-
 var spotifyApi = new SpotifyWebApi({
-  // hard-coded for now
   accessToken: access_token
 });
 //------------------------------------------------------------------------------
@@ -36,19 +34,20 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html');
 });
 
+// Test for "Pitbull"
 app.get('/pitbull', function(req, res){
-  spotifyApi.searchArtists( "Pitbull" )
+  spotifyApi.searchArtists( "Pitbull" ) // Enter any artist name here
     .then(function(data) {
       var output = '';
       console.log(data.body['artists']['items'][0]['id']);
-      artist_id = data.body['artists']['items'][0]['id'];
+      artist_id = data.body['artists']['items'][0]['id']; // Get the ID from the artist name
 
-      spotifyApi.getArtistTopTracks(artist_id, 'GB')
+      spotifyApi.getArtistTopTracks(artist_id, 'GB') // Get the top three tracks
         .then(function(data) {
           for( let i=0; i < 3; i++ ) {
-            output += data.body["tracks"][i]['name'];
+            output += data.body["tracks"][i]['name']; // Track name
             output += ', ';
-            // output += data.body["tracks"][i]['preview_url'];
+            // output += data.body["tracks"][i]['preview_url']; // Track audio preview
           }
           res.send( output );
         }, function(err) {
