@@ -12,35 +12,45 @@ var spotifyApi = new SpotifyWebApi({
 var access_token;
 
 // Retrieve an access token.
-spotifyApi.clientCredentialsGrant().then(
+spotifyApi.clientCredentialsGrant().then (
   function(data) {
     console.log('The access token expires in ' + data.body['expires_in']);
     console.log('The access token is ' + data.body['access_token']);
 
     // Save the access token so that it's used in future calls
     spotifyApi.setAccessToken(data.body['access_token']);
+    access_token = data.body['access_token'];
   },
   function(err) {
     console.log('Something went wrong when retrieving an access token', err);
   }
 );
 
-console.log( "PLEASE WORK" );
-console.log( access_token );
-
 var spotifyApi = new SpotifyWebApi({
   // hard-coded for now
-  accessToken: 'BQCF0gRKGdajztZoRc5O6uNwIFKvsTAcdFoCHpsVfBFnAdzKgSaEW0sfxpBJWhB2xfpD3U0Qst9ktmzRNgc'
+  accessToken: access_token
 });
 
-// Get an artist's top tracks
-spotifyApi.getArtistTopTracks('0oSGxfWSnnOXhD2fKuz2Gy', 'GB')
-  .then(function(data) {
-    console.log(data.body);
-    }, function(err) {
-    console.log('Something went wrong!', err);
-  });
+// Get Pitbull's top 3 tracks
+setTimeout( () => {
+  spotifyApi.searchArtists( "Pitbull" )
+    .then(function(data) {
+      console.log(data.body['artists']['items'][0]['id']);
+      artist_id = data.body['artists']['items'][0]['id'];
 
+      spotifyApi.getArtistTopTracks(artist_id, 'GB')
+        .then(function(data) {
+          for( let i=0; i < 3; i++ ) {
+            console.log(data.body["tracks"][i]['name']);
+            console.log(data.body["tracks"][i]['preview_url']);
+          }
+        }, function(err) {
+        console.log('Something went wrong!', err);
+        });
+    }, function(err) {
+      console.log(err);
+    });
+  }, 2000);
 //------------------------------------------------------------------------------
 
 app.get('/', function(req, res){
@@ -49,11 +59,6 @@ app.get('/', function(req, res){
 
 app.get('/pitbull', function(req, res){
     res.send("pitbull");
-
-    // curl -X "GET"
-    // "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg/top-tracks?market=ES"
-    // -H "Accept: application/json" -H "Content-Type: application/json"
-    // -H "Authorization: Bearer BQBO56_JagoAky4dYGVcexo0P-4frde47VYwFW0FW3zy4gtAqCDbqzW6lLu0leC8GYUt3E6yRPnMnlcwdO75s53O6Lvwj0iDk3m12joAaRSb9uWFt8GAqvh6gD7B6DX8ZM89R_3op10llQ"
 });
 
 
@@ -67,9 +72,3 @@ app.listen(port, () => {
 //     console.log(response)
 // }
 // )
-
-
-// curl -X "GET"
-// "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg/top-tracks?market=ES"
-// -H "Accept: application/json" -H "Content-Type: application/json"
-// -H "Authorization: Bearer BQBO56_JagoAky4dYGVcexo0P-4frde47VYwFW0FW3zy4gtAqCDbqzW6lLu0leC8GYUt3E6yRPnMnlcwdO75s53O6Lvwj0iDk3m12joAaRSb9uWFt8GAqvh6gD7B6DX8ZM89R_3op10llQ"
