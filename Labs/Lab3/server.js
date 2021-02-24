@@ -30,27 +30,6 @@ var spotifyApi = new SpotifyWebApi({
   // hard-coded for now
   accessToken: access_token
 });
-
-// Get Pitbull's top 3 tracks
-setTimeout( () => {
-  spotifyApi.searchArtists( "Pitbull" )
-    .then(function(data) {
-      console.log(data.body['artists']['items'][0]['id']);
-      artist_id = data.body['artists']['items'][0]['id'];
-
-      spotifyApi.getArtistTopTracks(artist_id, 'GB')
-        .then(function(data) {
-          for( let i=0; i < 3; i++ ) {
-            console.log(data.body["tracks"][i]['name']);
-            console.log(data.body["tracks"][i]['preview_url']);
-          }
-        }, function(err) {
-        console.log('Something went wrong!', err);
-        });
-    }, function(err) {
-      console.log(err);
-    });
-  }, 2000);
 //------------------------------------------------------------------------------
 
 app.get('/', function(req, res){
@@ -58,7 +37,26 @@ app.get('/', function(req, res){
 });
 
 app.get('/pitbull', function(req, res){
-    res.send("pitbull");
+  spotifyApi.searchArtists( "Pitbull" )
+    .then(function(data) {
+      var output = '';
+      console.log(data.body['artists']['items'][0]['id']);
+      artist_id = data.body['artists']['items'][0]['id'];
+
+      spotifyApi.getArtistTopTracks(artist_id, 'GB')
+        .then(function(data) {
+          for( let i=0; i < 3; i++ ) {
+            output += data.body["tracks"][i]['name'];
+            output += ', ';
+            // output += data.body["tracks"][i]['preview_url'];
+          }
+          res.send( output );
+        }, function(err) {
+        res.send('Something went wrong!', err);
+        });
+    }, function(err) {
+      res.send("Artist name not found");
+    });
 });
 
 
