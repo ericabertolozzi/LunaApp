@@ -24,11 +24,10 @@
 
         <div id="artistForm">
             <h2>Next, input an artist</h2>
-            <form id="singerdata" action="http://127.0.0.1:3000/getsinger" method="POST">
-                <label for="fname">First name:</label><br>
-                <input type="text" id="fname" name="fname"><br>
-                <label for="lname">Last name:</label><br>
-                <input type="text" id="lname" name="lname">
+            <form id="singerdata" action="/" method="POST">
+                <label for="name">Artist Name:</label><br>
+                <input type="text" id="singername" name="singername"><br>
+                <input type="submit" value="Submit">
               </form>
 
     </div>
@@ -54,3 +53,14 @@
         </script>
     </body>
 </html>
+
+<style>
+    body{
+        background-color:lightblue;
+        text-align:center;
+    }
+    #form{
+        display:inline-block;
+    }
+
+</style>

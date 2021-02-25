@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+var bodyParser = require('body-parser') //To help read form data.
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 
 // Connect to the SpotifyWebApi-------------------------------------------------
 var SpotifyWebApi = require('spotify-web-api-node');
@@ -34,6 +38,13 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html');
 });
 
+var singername=''
+app.post('/getsinger',function(req,res){
+  singername=req.body.singernamename;
+  res.send(singername);
+  console.log(singername)
+})
+
 // Test for "Pitbull"
 app.get('/pitbull', function(req, res){
   spotifyApi.searchArtists( "Pitbull" ) // Enter any artist name here
@@ -62,10 +73,3 @@ app.get('/pitbull', function(req, res){
 app.listen(port, () => {
 	console.log('Listening on *:3000');
 });
-
-// app.get('/getsinger',urlencodedParser,function(req,res){
-//     response={fname:req.body.fname}
-//     response={fname:req.body.lname}
-//     console.log(response)
-// }
-// )
