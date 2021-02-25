@@ -38,11 +38,12 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html');
 });
 
+
 var singername=''
 app.post('/getsinger',function(req,res){
-  singername=req.body.singernamename;
+  singername=req.body.singername;
   res.send(singername);
-  console.log(singername)
+  console.log(singername) //Users input saved to variable singernames
 })
 
 // Test for "Pitbull"
