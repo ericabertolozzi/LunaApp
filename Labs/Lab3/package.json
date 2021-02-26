@@ -9,6 +9,7 @@
   "author": "Erica Bertolozzi, Virginia Barnes, Lauren McAlarney, Helena O'Sullivan, Simi Nambiar, Manya Trehan",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "spotify-web-api-js": "^1.5.1",
     "spotify-web-api-node": "^5.0.2"

@@ -39,22 +39,23 @@ app.get('/', function(req, res){
 });
 
 
-var singername=''
+var singername='';
 app.post('/getsinger',function(req,res){
   singername=req.body.singername;
   res.send(singername);
   console.log(singername) //Users input saved to variable singernames
 })
 
+
 // Test for "Pitbull"
-app.get('/pitbull', function(req, res){
-  spotifyApi.searchArtists( "Pitbull" ) // Enter any artist name here
+app.get('/returnsongs', function(req, res){
+  spotifyApi.searchArtists( singername ) // Enter any artist name here
     .then(function(data) {
       var output = '';
       console.log(data.body['artists']['items'][0]['id']);
       artist_id = data.body['artists']['items'][0]['id']; // Get the ID from the artist name
 
-      spotifyApi.getArtistTopTracks(artist_id, 'GB') // Get the top three tracks
+      return spotifyApi.getArtistTopTracks(artist_id, 'GB') // Get the top three tracks
         .then(function(data) {
           for( let i=0; i < 3; i++ ) {
             output += data.body["tracks"][i]['name']; // Track name
