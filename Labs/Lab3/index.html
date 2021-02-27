@@ -1,5 +1,7 @@
 <html>
 <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
     
     <style type="text/css">
         #login {
@@ -13,6 +15,7 @@
         
     </style>
     <body>
+        <h3>Top Tracks</h3>
         <div>
             <div id="login">
                 <h1>First, log in to spotify</h1>
@@ -23,14 +26,14 @@
         </div>
 
         <div id="artistForm">
-            <h2>Next, input an artist</h2>
+            <h2>Input an artist to view their top tracks</h2>
             <form id="singerdata" action="/getsinger" method="POST">
-                <label for="name">Artist Name:</label><br>
-                <input type="text" id="singername" name="singername"><br>
-                <input type="submit" value="Submit">
+                <input type="text" id="singername" name="singername" placeholder="Enter artist">
+                <input type="submit" value="Submit" id="submit">
               </form>
 
     </div>
+    
 
         <script id="loggedin-template" type="text/x-handlebars-template">
             <h1>Logged in as </h1>
@@ -55,12 +58,39 @@
 </html>
 
 <style>
+    
     body{
-        background-color:lightblue;
+        background-color:black;
         text-align:center;
+    }
+    h3{
+        font-size:50px;
+        font-family: 'Akaya Telivigala', cursive;
+        color:white;
+    }
+
+    h2{
+        font-family: "Times New Roman", Times, serif;
     }
     #form{
         display:inline-block;
+        width:100%;
+    }
+    .singerdata{
+        text-align:left;
+    }
+    #submit{
+        background-color: #555555;
+        color:white;
+    }
+    #artistform{
+        background-color:white;
+        width:50%;
+        height:150px;
+        margin-top:60px;
+        display:inline-block;
+        border-radius: 25px;
+        border: 3px solid red;
     }
 
 </style>
