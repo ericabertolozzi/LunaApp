@@ -1,0 +1,73 @@
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
+    
+    <style type="text/css">
+        #login {
+            display: none;
+        }
+
+        #loggedin {
+            display: none;
+        }
+
+    </style>
+    </head>
+    <body>
+        <div id="borderLeft"></div>
+        <div id="borderRight"></div>
+        <div id="borderTop"></div>
+
+        <h3>Top Tracks</h3>
+        <div>
+            <div id="login">
+                <h1>First, log in to spotify</h1>
+                <a href="/login">Log in</a>
+            </div>
+            <div id="loggedin">
+            </div>
+        </div>
+
+        <div class="artistForm">
+            <h2>Input an artist to POST to the API</h2>
+            <form id="singerdata" action="/v1/singers" method="POST">
+                <input type="text" id="singername" name="singername" placeholder="Enter artist">
+                <input type="submit" value="Submit" id="submit">
+            </form>
+        </div>
+
+        <div class="artistForm">
+            <h2>Input an artist to get their top tracks</h2>
+            <form id="top-tracks" action="/v1/singers/returnsongs" method="GET">
+                <input type="text" id="singername" name="singername" placeholder="Enter artist">
+                <input type="submit" value="Submit" id="submit">
+            </form>
+        </div>
+    
+
+        <script id="loggedin-template" type="text/x-handlebars-template">
+            <h1>Logged in as </h1>
+            <img id="avatar" width="200" src="" />
+            <dl>
+                <dt>Display name</dt>
+                <dd></dd>
+                <dt>Username</dt>
+                <dd></dd>
+                <dt>Email</dt>
+                <dd></dd>
+                <dt>Spotify URI</dt>
+                <dd><a href=""></a></dd>
+                <dt>Link</dt>
+                <dd><a href=""></a></dd>
+                <dt>Profile Image</dt>
+                <dd></dd>
+            </dl>
+            <p><a href="/">Log in again</a></p>
+        </script>
+
+        <footer class="footer">
+            <p class=”text-center”>Design by Team luna</p>
+        </footer>
+    </body>
+</html>
