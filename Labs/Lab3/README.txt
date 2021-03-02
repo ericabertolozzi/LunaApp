@@ -28,3 +28,6 @@ this took a while to figure out. I was testing the new access code
 before Spotify had returned it, causing confusion. This issue was solved by
 reaching out to Dr. Callahan and adding wait() statements before testing the
 new access code.
+
+Simran's Work Log: simranambiar 
+For Lab 3 I worked on the form in the HTML form to connect to the Spotify API during live share. I also went back and worked on the HTML and CSS for the page. 
