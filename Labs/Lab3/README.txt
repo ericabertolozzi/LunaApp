@@ -16,3 +16,8 @@ able to save this form data into a variable that would then be fed into the Spot
 also worked on the HTML/CSS for the landing page. I was mostly confused on how write the correct 
 route for the Get and Post request so it would print the correct information on the right page. 
 
+Lauren's Work Log: mcalal
+I helped with setting up the Spotify Web API and retrieving the access token on the server js file.
+When setting up the access token, Virginia and I were confused on how to retrieve the correct access 
+token. After reaching out to Dr. Callahan, we realized that we had to set up a small time delay,
+since it was accessing the token too quickly before the token could refresh.
