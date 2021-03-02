@@ -25,14 +25,21 @@
             </div>
         </div>
 
-        <div id="artistForm">
-            <h2>Input an artist to view their top tracks</h2>
-            <form id="singerdata" action="/getsinger" method="POST">
+        <div class="artistForm">
+            <h2>Input an artist to POST to the API</h2>
+            <form id="singerdata" action="/v1/singers" method="POST">
                 <input type="text" id="singername" name="singername" placeholder="Enter artist">
                 <input type="submit" value="Submit" id="submit">
-              </form>
+            </form>
+        </div>
 
-    </div>
+        <div class="artistForm">
+            <h2>Input an artist to obtain their top tracks</h2>
+            <form id="top-tracks" action="/v1/singers/returnsongs" method="GET">
+                <input type="text" id="singername" name="singername" placeholder="Enter artist">
+                <input type="submit" value="Submit" id="submit">
+            </form>
+        </div>
     
 
         <script id="loggedin-template" type="text/x-handlebars-template">
@@ -76,7 +83,7 @@
         background-color: #555555;
         color:white;
     }
-    #artistform{
+    .artistform{
         background-color:white;
         width:50%;
         height:150px;

@@ -38,17 +38,9 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html');
 });
 
-
-var singername='';
-app.post('/getsinger',function(req,res){
-  singername=req.body.singername;
-  res.send(singername);
-  console.log(singername) //Users input saved to variable singernames
-})
-
-
-// Test for "Pitbull"
-app.get('/returnsongs', function(req, res){
+// Using route parameters
+app.get('/v1/singers/:singername/returnsongs', function (req, res) {
+  singername = req.params.singername;
   spotifyApi.searchArtists( singername ) // Enter any artist name here
     .then(function(data) {
       var output = '';
@@ -59,7 +51,42 @@ app.get('/returnsongs', function(req, res){
         .then(function(data) {
           for( let i=0; i < 3; i++ ) {
             output += data.body["tracks"][i]['name']; // Track name
-            output += ', ';
+            if (i<2)
+              output += ', ';
+            // output += data.body["tracks"][i]['preview_url']; // Track audio preview
+          }
+          res.send( output );
+        }, function(err) {
+        res.send('Something went wrong!', err);
+        });
+    }, function(err) {
+      res.send("Artist name not found");
+    });
+})
+
+var singername='';
+app.post('/v1/singers',function(req,res){
+  singername=req.body.singername;
+  res.send(singername);
+  console.log(singername) //Users input saved to variable singernames
+})
+
+
+// Test for "Pitbull"
+app.get('/v1/singers/returnsongs', function(req, res){
+  singername = req.query.singername;
+  spotifyApi.searchArtists( singername ) // Enter any artist name here
+    .then(function(data) {
+      var output = '';
+      console.log(data.body['artists']['items'][0]['id']);
+      artist_id = data.body['artists']['items'][0]['id']; // Get the ID from the artist name
+
+      return spotifyApi.getArtistTopTracks(artist_id, 'GB') // Get the top three tracks
+        .then(function(data) {
+          for( let i=0; i < 3; i++ ) {
+            output += data.body["tracks"][i]['name']; // Track name
+            if (i<2)
+              output += ', ';
             // output += data.body["tracks"][i]['preview_url']; // Track audio preview
           }
           res.send( output );
