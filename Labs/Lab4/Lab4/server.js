@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const port = 4200;
-app.use(express.static(path.join(__dirname, './Lab4/dist/Lab4')));
+app.use(express.static(path.join(__dirname, '.')));
 var bodyParser = require('body-parser') //To help read form data.
 app.use(bodyParser.urlencoded({
   extended: false
