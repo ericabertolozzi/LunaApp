@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const port = 4200;
-app.use(express.static(path.join(__dirname, '.')));
+app.use(express.static(path.join(__dirname, './Lab4')));
 var bodyParser = require('body-parser') //To help read form data.
 app.use(bodyParser.urlencoded({
   extended: false
@@ -37,7 +37,7 @@ var spotifyApi = new SpotifyWebApi({
 //------------------------------------------------------------------------------
 
 app.get('/', function(req, res){
-    res.sendFile(__dirname + '/src/app/spotify/spotify.component.html');
+    res.sendFile(__dirname + '/Lab4/src/app/spotify/spotify.component.html');
 });
 
 // Using route parameters
