@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 4200;
 app.use(express.static(path.join(__dirname, './Lab4/dist/Lab4')));
 var bodyParser = require('body-parser') //To help read form data.
 app.use(bodyParser.urlencoded({
@@ -13,7 +13,7 @@ var SpotifyWebApi = require('spotify-web-api-node');
 var spotifyApi = new SpotifyWebApi({
   clientId: 'f59627e7fcb842ff8c712ebe30c3d9d7',
   clientSecret: '24e4f9a1e4244fd88fca81e8515a9860',
-  redirectUri: 'https://localhost:3000'
+  redirectUri: 'https://localhost:4200'
 });
 
 var access_token;
@@ -37,7 +37,7 @@ var spotifyApi = new SpotifyWebApi({
 //------------------------------------------------------------------------------
 
 app.get('/', function(req, res){
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/src/app/spotify/spotify.component.html');
 });
 
 // Using route parameters
@@ -102,5 +102,6 @@ app.get('/v1/singers/returnsongs', function(req, res){
 
 
 app.listen(port, () => {
-	console.log('Listening on *:3000');
+	console.log('Listening on *:4200');
 });
+
