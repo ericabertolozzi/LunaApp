@@ -36,3 +36,72 @@
         color: white;
         text-align: center;
 }
+
+.questions{
+    margin-top:70px;
+    padding-left:70px;
+    font-size:15px;
+}
+
+.questions1{
+    margin-top:70px;
+    padding-left:70px;
+    font-size:15px;
+
+}
+.periodquestion{
+    padding-left:150px;
+    margin-left:75px;
+    font-size:15px;
+    border-radius: 25px;
+    border: 2px solid lightblue;
+    padding: 20px;
+    width: 200px;
+    height: 100px;
+    
+}
+
+h4{
+    position:relative;
+    top:50px;
+    text-align:center;
+}
+
+.container {
+    position: fixed;
+    right:-34px;
+    padding: 0;
+    margin: 0;
+}
+
+.left-element {
+    display: inline-block;
+    float: left;
+}
+
+.right-element {
+    display: inline-block;
+    float: left;
+}
+.submission{
+    text-align:center;
+}
+
+.submit{
+    margin-top:250px;
+    padding-left:-40px;
+    background-color:cornflowerblue;
+    color:black;
+    border-radius:40px;
+    width:250px;
+    height:40px;
+}
+
+label[for=quantity]{
+    width:150px;
+}
+
+
+
+
+
