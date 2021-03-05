@@ -22,6 +22,7 @@
     .intro{
         background-color:lightcyan;
         margin-top: 30px;
+        padding-bottom:25px;
 
     }
     .footer {
@@ -29,7 +30,7 @@
         font-size:17px;
         left: 0;
         bottom: 0;
-        font-family: 'Oswald', sans-serif;
+        font-family: 'Quicksand', sans-serif;
         width: 100%;
         background-color: mistyrose;
         color: white;
