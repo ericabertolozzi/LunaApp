@@ -64,7 +64,7 @@
           <p class="questions1">2.  How Many Days Did Your Period Last For?</p>
           <form class="periodquestion">
             <label for="quantity"></label>
-            <input type="number" id="periodlength" placeholder="Length" name="quantity" min="0" max="30">
+            <input type="number" id="periodlength" placeholder="Period Length" name="quantity" min="0" max="30">
           </form>
       </div>
       <div class="right-element">
@@ -76,7 +76,10 @@
       </div>
   </div>
   <div class="submission">
-  <input class="submit" type="submit" value="Start Tracking Your Cycle">
+  <input class="submit" type="submit" onclick="showInput();" value="Start Tracking Your Cycle"><br>
+  <div id="lastperiod">
+  <p class="lastperiods">Your last period was:<p><span id='display'></span></p> </p>
+  </div>
   </div>
     
     <div class="footer">
@@ -84,4 +87,10 @@
     </div> 
 </body>
 </html>
+
+<script>
+  function showInput() {
+    document.getElementById('display').innerHTML = document.getElementById("startdate").value;
+}
+</script>
 

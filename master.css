@@ -85,6 +85,27 @@ h4{
 .submission{
     text-align:center;
 }
+h4{
+    margin-top:-40px;
+}
+
+#periodlength{
+    background-color:mintcream;
+    width:160px;
+}
+
+#lastperiod{
+    margin-left:250px;
+    font-size:15px;
+    border-radius: 25px;
+    border: 2px solid lightblue;
+    padding: 20px;
+    width: 200px;
+    height: 100px;
+    
+}
+
+
 
 .submit{
     margin-top:250px;
