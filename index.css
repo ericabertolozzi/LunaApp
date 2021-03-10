@@ -1,0 +1,29 @@
+/* Colors: Dark Blue (#22223b), Blue/Purple (#4a4e69), Light Grey (#f2e9e4), Brown/Purple (#9a8c98), Brown/Pink (#c9ada7) */
+
+.slogan{
+    text-align:center;
+    font-family: 'Quicksand', sans-serif;
+    
+}
+.intro{
+    margin-top: 30px;
+    padding-bottom:25px;
+    border-radius: 25px;
+    margin-top: 125px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 5%;
+}
+#IntroSloganBox {
+    background-color: rgba(255, 255, 255, 0.37);
+    width: fit-content;
+    margin: 0px;
+    padding: 5px;
+    backdrop-filter: blur(65px) saturate(100%) contrast(45%) brightness(130%);
+    content: '';
+    border: 1px solid rgba(255, 255, 255, 0.37);
+    border-radius: 15px;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    justify-content: center;
+}
+
