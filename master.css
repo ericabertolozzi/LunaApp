@@ -1,7 +1,5 @@
 #full-navbar {
-    background-color:#cfcdcd;
-    /* position:fixed;
-    top:0; */
+    background-color:lavender;
     font-family: 'Quicksand', sans-serif;
     width:100%;
     font-size:18px;
@@ -57,7 +55,6 @@ h1{
     padding: 20px;
     width: 200px;
     height: 100px;
-    
 }
 
 h4{
@@ -84,6 +81,7 @@ h4{
 }
 .submission{
     text-align:center;
+    margin-top:-15px;
 }
 h4{
     margin-top:-40px;
@@ -94,15 +92,33 @@ h4{
     width:160px;
 }
 
+
+
+#cyclelength{
+  background-color:mintcream;
+  width:160px;
+}
+
 #lastperiod{
     margin-left:250px;
     font-size:15px;
     border-radius: 25px;
-    border: 2px solid lightblue;
+    border: 2px solid cornflowerblue;
     padding: 20px;
     width: 200px;
     height: 100px;
     
+}
+
+#nextperiod{
+  margin-top:-95px;
+  margin-left:900px;
+  font-size:15px;
+  border-radius: 25px;
+  border: 2px solid cornflowerblue;
+  padding: 20px;
+  width: 200px;
+  height: 100px;
 }
 
 
