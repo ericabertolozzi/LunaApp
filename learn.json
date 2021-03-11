@@ -1,0 +1,41 @@
+{
+  "articles": [
+
+    {
+      "name" : "All About Periods (For Teens)",
+      "preview" : "A period is a release of blood from a girl's uterus, out through her vagina. It is a sign that she is getting close to the end of puberty. There is a lot to learn about periods. Here are some common questions that teens have.",
+      "link" : "https://kidshealth.org/en/teens/menstruation.html"
+    },
+
+    {
+      "name" : "Menstrual Cycle: Dealing With Cramps",
+      "preview" : "Most women have painful cramps from their period from time to time. The good news is that you can usually relieve cramps with over-the-counter medicine and home treatment.",
+      "link" : "https://www.uofmhealth.org/health-library/aq0001"
+    },
+
+    {
+      "name" : "Now Is a Great Time to Try These 5 Menstrual Products",
+      "preview" : "ONE AFTERNOON WHEN I was in fourth grade, the girls were whisked away to watch a video about periods, pads, and tampons. That's about where my public education on menstruation began and ended&#8211;a secret discussion that boys couldn't be privy to.",
+      "link" : "https://www.wired.com/story/best-menstrual-products/"
+    },
+
+    {
+      "name" : "Gynocologists: When to visit and what to expect",
+      "preview" : "Gynecologists are doctors who specialize in women&#39;s health, with a focus on the female reproductive system. They deal with a wide range of issues, including obstetrics, or pregnancy and childbirth, menstruation and fertility issues, sexually transmitted infections (STIs), hormone disorders, and others.",
+      "link" : "https://www.medicalnewstoday.com/articles/288354"
+    },
+
+    {
+      "name" : "Birth Control",
+      "preview" : "Birth control is how you prevent pregnancy. There are lots of different birth control options out there. We&#39;re here to help you figure it all out.",
+      "link" : "https://www.plannedparenthood.org/learn/birth-control"
+    },
+
+    {
+      "name" : "The Ultimate Guide to Feminine Hygiene",
+      "preview" : "In 2017, total sales for feminine hygiene products in the U.S. were $5.9 billion, according to Global Industry Analysts, as cited in USA Today. Worldwide, sales for the year were $20.62 billion. In 2020, those numbers are expected to reach $6.2 billion for domestic sales and $40 billion worldwide.",
+      "link" : "https://onlinenursing.duq.edu/master-science-nursing/the-ultimate-guide-to-feminine-hygiene/"
+    }
+
+  ]
+}
