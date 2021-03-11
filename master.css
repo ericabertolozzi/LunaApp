@@ -1,14 +1,15 @@
+body{
+    background-color: #ebebeb;
+}
+
 #full-navbar {
-    background-color:lavender;
+    background-color:#b2b1b9;
+    position:fixed;
+    top:0;
     font-family: 'Quicksand', sans-serif;
     width:100%;
     font-size:18px;
     color:#ffffff !important;
-}
-
-.slogan{
-    text-align:center;
-    font-family: 'Quicksand', sans-serif;
 }
 
 h1{
@@ -16,12 +17,6 @@ h1{
     font-family: 'Quicksand', sans-serif;
 }
 
-.intro{
-    background-color:lightcyan;
-    margin-top: 30px;
-    padding-bottom:25px;
-
-}
 .footer {
     position: fixed;
     font-size:17px;
@@ -29,11 +24,14 @@ h1{
     bottom: 0;
     font-family: 'Quicksand', sans-serif;
     width: 100%;
-    /* background-color: mistyrose; */
+    background-color: #4a4e69;
+    color: white;
+    /* background-color: mistyrose;
     background-color: lavender;
-    /* color: white; */
-    color: black;
+    /* color: white;
+    color: black; */
     text-align: center;
+    border-radius: 15px;
 }
 
 .questions{
