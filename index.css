@@ -5,6 +5,16 @@
     font-family: 'Quicksand', sans-serif;
     
 }
+
+#full1-navbar {
+    background-color:lavender;
+    position:fixed;
+    top:0;
+    font-family: 'Quicksand', sans-serif;
+    width:100%;
+    font-size:18px;
+    color:#ffffff !important;
+}
 .intro{
     margin-top: 30px;
     padding-bottom:25px;
@@ -17,6 +27,7 @@
 #IntroSloganBox {
     background-color: rgba(255, 255, 255, 0.37);
     width: fit-content;
+    margin-bottom:50px;
     margin: 0px;
     padding: 5px;
     backdrop-filter: blur(65px) saturate(100%) contrast(45%) brightness(130%);
