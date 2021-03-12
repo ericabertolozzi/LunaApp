@@ -300,3 +300,15 @@ label[for=quantity]{
   display: table;
   clear: both;
 }
+
+  .settingsdiv{
+    width: 100%;
+    height: 50px;
+  
+    /* Center vertically and horizontally */
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+    
+  }
