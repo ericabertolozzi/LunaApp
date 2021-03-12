@@ -23,7 +23,7 @@ app.get('/learn.html', function(req, res){
   html1 = `
   <html>
   <head>
-    <title>Settings</title>
+    <title>Learn</title>
     <link rel="icon" href="moon.png">
     <!-- Load icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -58,11 +58,11 @@ app.get('/learn.html', function(req, res){
           <li class="nav-item">
             <a class="nav-link" href="./shop.html">Shop</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./learn.html">Learn</a>
-          </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">Settings</a>
+            <a class="nav-link" href="#">Learn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./settings.html">Settings</a>
           </li>
         </ul>
         <ul class="navbar-nav">
