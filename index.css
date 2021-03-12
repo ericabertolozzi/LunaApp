@@ -1,40 +1,99 @@
-/* Colors: Dark Blue (#22223b), Blue/Purple (#4a4e69), Light Grey (#f2e9e4), Brown/Purple (#9a8c98), Brown/Pink (#c9ada7) */
+/* Colors: Dark Blue (#22223b), Blue/Purple (#4a4e69),  Grey (#b2b1b9), Periwinkle Blue (#8e9aaf) */
 
 .slogan{
     text-align:center;
     font-family: 'Quicksand', sans-serif;
     
 }
-
 #full1-navbar {
-    background-color:lavender;
+    background-color: #b2b1b9;
     position:fixed;
     top:0;
     font-family: 'Quicksand', sans-serif;
     width:100%;
     font-size:18px;
     color:#ffffff !important;
+    z-index: 10;
+}
+.footer {
+    position:unset;
+    margin-top: 15px;
+    font-size:17px;
+    left: 0;
+    bottom: 0;
+    font-family: 'Quicksand', sans-serif;
+    width: 100%;
+    color: white;
+    background-color: #4a4e69;
+    text-align: center;
 }
 .intro{
-    margin-top: 30px;
     padding-bottom:25px;
-    border-radius: 25px;
+    border-radius: 35px;
     margin-top: 125px;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
     padding: 5%;
 }
 #IntroSloganBox {
-    background-color: rgba(255, 255, 255, 0.37);
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    background-color: rgba(255, 255, 255, 0.548);
     width: fit-content;
     margin-bottom:50px;
     margin: 0px;
-    padding: 5px;
-    backdrop-filter: blur(65px) saturate(100%) contrast(45%) brightness(130%);
-    content: '';
-    border: 1px solid rgba(255, 255, 255, 0.37);
+    padding: 10px;
+    border: 1px solid #22223b;
     border-radius: 15px;
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
     justify-content: center;
+    position: relative;
 }
+h2{
+    text-align:left;
+    font-family: 'Quicksand', sans-serif;
+    padding: 5px;
+}
+#AboutUsContent{
+    background: #8e9aaf;
+    margin-left: 1px;
+    margin-right: 1px;
+    border-top: 15px;
+    max-width:fit-content;
+    border-radius: 20px;
+
+}
+#AboutUsContent p{
+    margin-left: 5%;
+    font-size: 20px;
+}
+#WhatWeOfferContent{
+    background: #22223ba2;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+/* Make the image fully responsive */
+.carousel-inner img {
+    width: 50%;
+    height: 500px;
+}
+.carousel-caption p{
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px #000000;
+    align-content: center;
+}
+.carousel-caption a{
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px #000000;
+    align-content: center;
+} 
+.carousel-caption a:hover {
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px #000000;
+    align-content: center;
+    text-decoration: none;
+  }
+
 
