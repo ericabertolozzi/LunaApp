@@ -39,6 +39,30 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/Lab4/src/app/spotify/spotify.component.html');
 });
 
+app.get('/v1/singers/returnsongs', function(req, res){
+  singername = req.query.singername;
+  spotifyApi.searchArtists( singername ) // Enter any artist name here
+    .then(function(data) {
+      var output = '';
+      artist_id = data.body['artists']['items'][0]['id']; // Get the ID from the artist name
+
+      return spotifyApi.getArtistTopTracks(artist_id, 'GB') // Get the top three tracks
+        .then(function(data) {
+          for( let i=0; i < 3; i++ ) {
+            output += data.body["tracks"][i]['name']; // Track name
+            if (i<2)
+              output += ', ';
+            // output += data.body["tracks"][i]['preview_url']; // Track audio preview
+          }
+          res.send( output );
+        }, function(err) {
+        res.send('Something went wrong!', err);
+        });
+    }, function(err) {
+      res.send("Artist name not found");
+    });
+});
+
 // Using route parameters and string patterns
 // Using regular expressions thought process:
 // /v1(optional /)(optional "users")(optional /)(optional any string) / :singername / returnsongs
@@ -48,7 +72,6 @@ app.get('/v1(/users/*)?/:singername/returnsongs', function (req, res) {
   spotifyApi.searchArtists( singername ) // Enter any artist name here
     .then(function(data) {
       var output = '';
-      console.log(data.body['artists']['items'][0]['id']);
       artist_id = data.body['artists']['items'][0]['id']; // Get the ID from the artist name
 
       return spotifyApi.getArtistTopTracks(artist_id, 'GB') // Get the top three tracks
@@ -75,31 +98,7 @@ app.post('/v1/singers',function(req,res){
   console.log(singername) //Users input saved to variable singernames
 })
 
-// Test for "Pitbull"
-app.get('/v1/singers/returnsongs', function(req, res){
-  singername = req.query.singername;
-  spotifyApi.searchArtists( singername ) // Enter any artist name here
-    .then(function(data) {
-      var output = '';
-      console.log(data.body['artists']['items'][0]['id']);
-      artist_id = data.body['artists']['items'][0]['id']; // Get the ID from the artist name
 
-      return spotifyApi.getArtistTopTracks(artist_id, 'GB') // Get the top three tracks
-        .then(function(data) {
-          for( let i=0; i < 3; i++ ) {
-            output += data.body["tracks"][i]['name']; // Track name
-            if (i<2)
-              output += ', ';
-            // output += data.body["tracks"][i]['preview_url']; // Track audio preview
-          }
-          res.send( output );
-        }, function(err) {
-        res.send('Something went wrong!', err);
-        });
-    }, function(err) {
-      res.send("Artist name not found");
-    });
-});
 
 // PUT request to bulk update users
 app.put('/v1/users', function(req, res) {
