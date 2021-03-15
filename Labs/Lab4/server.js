@@ -35,13 +35,15 @@ var spotifyApi = new SpotifyWebApi({
   accessToken: access_token
 });
 //------------------------------------------------------------------------------
-
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/Lab4/src/app/spotify/spotify.component.html');
 });
 
-// Using route parameters
-app.get('/v1/singers/:singername/returnsongs', function (req, res) {
+// Using route parameters and regex
+// Using regular expressions thought process:
+// /v1(optional /)(optional "users")(optional /)(optional any string) / :singername / returnsongs
+// /v1(/users/*)?/:singername/returnsongs
+app.get('/v1(/users/*)?/:singername/returnsongs', function (req, res) {
   singername = req.params.singername;
   spotifyApi.searchArtists( singername ) // Enter any artist name here
     .then(function(data) {
@@ -73,7 +75,6 @@ app.post('/v1/singers',function(req,res){
   console.log(singername) //Users input saved to variable singernames
 })
 
-
 // Test for "Pitbull"
 app.get('/v1/singers/returnsongs', function(req, res){
   singername = req.query.singername;
@@ -104,4 +105,3 @@ app.get('/v1/singers/returnsongs', function(req, res){
 app.listen(port, () => {
 	console.log('Listening on *:4200');
 });
-
