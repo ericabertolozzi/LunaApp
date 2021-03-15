@@ -35,13 +35,15 @@ var spotifyApi = new SpotifyWebApi({
   accessToken: access_token
 });
 //------------------------------------------------------------------------------
-
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/Lab4/src/app/spotify/spotify.component.html');
 });
 
-// Using route parameters
-app.get('/v1/singers/:singername/returnsongs', function (req, res) {
+// Using route parameters and string patterns
+// Using regular expressions thought process:
+// /v1(optional /)(optional "users")(optional /)(optional any string) / :singername / returnsongs
+// /v1(/users/*)?/:singername/returnsongs
+app.get('/v1(/users/*)?/:singername/returnsongs', function (req, res) {
   singername = req.params.singername;
   spotifyApi.searchArtists( singername ) // Enter any artist name here
     .then(function(data) {
@@ -78,8 +80,6 @@ app.post('/v1/singers',function(req,res){
 })
 
 
-
-
 // Test for "Pitbull"
 app.get('/v1/singers/returnsongs', function(req, res){
   singername = req.query.singername;
@@ -106,9 +106,26 @@ app.get('/v1/singers/returnsongs', function(req, res){
     });
 });
 
+// PUT request to bulk update users
+app.put('/v1/users', function(req, res) {
+  res.send('PUT Request for Bulk Update Called');
+});
+
+// PUT request to update songs for a particular singer
+app.put('/v1/singers/:singername/returnsongs', function(req, res) {
+  res.send('PUT Request for Songs Update Called');
+});
+
+// Regular Expression middleware
+app.delete(/\/v1\/users\/.*a/, function(req, res) {
+  res.send('DELETE Request for users with names that contains any letters before ending with "a" called');
+});
+
+app.delete('/v1/users', function(req, res) {
+  res.send("DELETE Request for bulk deletion of users called");
+});
 
 app.listen(port, () => {
 	console.log('Listening on *:4200');
 });
-
 
