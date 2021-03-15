@@ -66,12 +66,18 @@ app.get('/v1/singers/:singername/returnsongs', function (req, res) {
     });
 })
 
+
+
 var singername='';
 app.post('/v1/singers',function(req,res){
+  var htmlBegin = " <! DOCTYPE html ><html ><head ><br><br><a href='https://www.spotify.com/us/'>Listen to above artist on Spotify</a><style > body { background-color:#354f52ec;font-size:30px;text-align:center;border:5px solid white; border-radius:30px;font-family: 'Arial', 'Helvetica', 'sans-serif'";
+  var htmlEnd = ";} </ style > </ head ><body > </ body > </ html >";
   singername=req.body.singername;
-  res.send(singername);
+  res.send("<br>You Posted:"+"<br><br><b>"+singername+"</b>"+htmlBegin+htmlEnd);
   console.log(singername) //Users input saved to variable singernames
 })
+
+
 
 
 // Test for "Pitbull"
@@ -104,4 +110,5 @@ app.get('/v1/singers/returnsongs', function(req, res){
 app.listen(port, () => {
 	console.log('Listening on *:4200');
 });
+
 
