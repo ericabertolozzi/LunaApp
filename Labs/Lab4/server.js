@@ -54,7 +54,10 @@ app.get('/v1/singers/returnsongs', function(req, res){
               output += ', ';
             // output += data.body["tracks"][i]['preview_url']; // Track audio preview
           }
-          res.send( output );
+          var htmlBegin = " <! DOCTYPE html ><html ><head ><br><br><div id='testing'><a href='https://www.spotify.com/us/'>Listen to this Artist's Top Tracks on Spotify</a></div><style > body { background-color:#354f52ec;font-size:30px;text-align:center;border:5px solid white; border-radius:30px;font-family: 'Arial', 'Helvetica', 'sans-serif'";
+          var htmlEnd = ";} #testing{font-size:20px}; </ style > </ head ><body > </ body > </ html >";
+          res.send(singername + "'s top tracks:</br>" + output + htmlBegin + htmlEnd);
+          //res.send( output );
         }, function(err) {
         res.send('Something went wrong!', err);
         });
@@ -91,7 +94,7 @@ app.get('/v1/singers/returnsongs', function(req, res){
               output += ', ';
             // output += data.body["tracks"][i]['preview_url']; // Track audio preview
           }
-          res.send( output );
+          res.send(output);
         }, function(err) {
         res.send('Something went wrong!', err);
         });
