@@ -67,8 +67,8 @@ app.get('/v1/singers/returnsongs', function(req, res){
 
 var singername='';
 app.post('/v1/singers',function(req,res){
-  var htmlBegin = " <! DOCTYPE html ><html ><head ><br><br><a href='https://www.spotify.com/us/'>Listen to above artist on Spotify</a><style > body { background-color:#354f52ec;font-size:30px;text-align:center;border:5px solid white; border-radius:30px;font-family: 'Arial', 'Helvetica', 'sans-serif'";
-  var htmlEnd = ";} </ style > </ head ><body > </ body > </ html >";
+  var htmlBegin = " <! DOCTYPE html ><html ><head ><br><br><div id='testing'><a href='https://www.spotify.com/us/'>Listen to Artist on Spotify</a></div><style > body { background-color:#354f52ec;font-size:30px;text-align:center;border:5px solid white; border-radius:30px;font-family: 'Arial', 'Helvetica', 'sans-serif'";
+  var htmlEnd = ";} #testing{font-size:20px}; </ style > </ head ><body > </ body > </ html >";
   singername=req.body.singername;
   res.send("<br>You Posted:"+"<br><br><b>"+singername+"</b>"+htmlBegin+htmlEnd);
   console.log(singername) //Users input saved to variable singernames
@@ -99,14 +99,6 @@ app.get('/v1/singers/returnsongs', function(req, res){
       res.send("Artist name not found");
     });
 })
-
-var singername='';
-app.post('/v1/singers',function(req,res){
-  singername=req.body.singername;
-  res.send(singername);
-  console.log(singername) //Users input saved to variable singernames
-})
-
 
 
 // PUT request to bulk update users
