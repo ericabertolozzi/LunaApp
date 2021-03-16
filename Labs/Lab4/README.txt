@@ -20,3 +20,4 @@ For creativity, in one of the paths for making a delete request, I added regular
 middleware for typing in a user id that ends in the letter 'a' with any amount of letters before.
 
 Simran Nambiar (@simrannambiar)
+Added css and styling to page 
