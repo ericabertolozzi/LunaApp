@@ -24,3 +24,11 @@ Added css and styling to homepage
 
 Lauren McAlarney (@mcalal)
 Added css and styling when user inputs artist name to get their top tracks
+
+Helena's Work Log: (@osullh)
+ For Lab 4, I helped with the HTML/CSS and the overall styling of the project. During the entire
+ process of the lab, I only really got stuck on getting Angular
+ and Node to communicate as I kept getting error messages, but aside from that I
+ understood what to do. Overall, I found that the work that I did for the lab to
+ be very reasonable. For individual creativity, I added graphical elements to the lab
+ (split background).
