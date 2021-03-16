@@ -21,3 +21,6 @@ middleware for typing in a user id that ends in the letter 'a' with any amount o
 
 Simran Nambiar (@simrannambiar)
 Added css and styling to homepage 
+
+Lauren McAlarney (@mcalal)
+Added css and styling when user inputs artist name to get their top tracks
