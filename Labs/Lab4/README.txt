@@ -1,5 +1,16 @@
 Team Luna Lab 4 README
 
+API Description -
+
+For the external API, we used the Spotify API. A clientid and clientsecret id were used to get access to
+this API. A GET request was used to display the top three songs of an artist input by the user. This data was 
+displayed on the /v1/singers/returnsong route.  A POST request was used to simply display the 
+artist the user entered in the form. This data was displayed on /v1/singer page. There are two 
+forms for each of these respective calls on the homepage. In addition to the GET and POST request, 
+a DELETE and PUT request were also implemented. 
+
+
+
 Individual Work Logs
 --------------------
 
