@@ -1,0 +1,64 @@
+body{
+    background-color:#354f52ec;
+    text-align:center;
+}
+h3{
+    font-size:50px;
+    font-family: 'Akaya Telivigala', cursive;
+    color:white;
+}
+h2{
+    font-family: "Times New Roman", Times, serif;
+}
+#submit{
+    background-color: #555555;
+    color:white;
+}
+#borderTop{
+    position: relative;
+    border-top: 12px solid rgb(59, 67, 71);
+    border-radius: 10px;
+}
+#borderLeft{
+    border-left: 12px solid rgb(59, 67, 71);
+    position: absolute;
+    top: 25;
+    bottom: 80%;
+    border-radius: 10px;
+}
+#borderRight{
+    border-right: 12px solid rgb(59, 67, 71);
+    position: absolute;
+    top: 25;
+    bottom: 80%;
+    left: 98.75%;
+    border-radius: 10px;
+}
+.artistform{
+    background-color:rgb(255, 255, 255);
+    width:50%;
+    height:150px;
+    margin-top:60px;
+    display:inline-block;
+    border-radius: 25px;
+    border: 3px solid #2f3e46ff;
+}
+.artistform:hover {
+    background-color: rgba(255, 255, 255, 0.952);
+    border: 3px solid #84a98cff;
+    box-shadow: 10px 10px 10px #354f52ec;
+    border-radius: 30px;
+}
+.footer{
+    font-family:'Lucida Bright', Georgia, serif;
+    text-align: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(46, 37, 56, 0.342);
+    opacity: 0.8;
+    color: rgb(255, 255, 255);
+    border-radius: 11px;
+    border: 3px solid rgb(59, 67, 71);
+    vertical-align: middle;
+}
