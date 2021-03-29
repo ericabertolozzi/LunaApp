@@ -1,5 +1,5 @@
 body{
-    background-color:#354f52ec;
+    background-color:#f6e6ff;
     text-align:center;
 }
 h3{
@@ -61,4 +61,27 @@ h2{
     border-radius: 11px;
     border: 3px solid rgb(59, 67, 71);
     vertical-align: middle;
+}
+
+#login {
+    display: none;
+}
+
+#loggedin {
+    display: none;
+}
+
+#button {
+    text-align: center;
+    display: flex;
+    margin: auto;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+#greetings {
+    text-align: center;
+    font-size: 50px;
+    font-family: "Akaya Telivigala";
+    margin-bottom: 30px;
 }
