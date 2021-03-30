@@ -148,8 +148,8 @@ app.get('/virginia.html', function(req, res){
         });
       });
       // Removed duplicates
-      setTimeout(() => {  artists = [...new Set(artists)]; console.log(artists); }, 1000);
-      setTimeout(() => {  images = [...new Set(images)]; console.log(images); }, 1000);
+      setTimeout(() => {  artists = [...new Set(artists)]; console.log(artists); }, 2000);
+      setTimeout(() => {  images = [...new Set(images)]; console.log(images); }, 2000);
       setTimeout(() => {
         output = '';
         for (var i = 0; i < images.length; i++) {
@@ -159,13 +159,13 @@ app.get('/virginia.html', function(req, res){
         for (var i = 0; i < artists.length; i++) {
           output += artists[i];
           if( i != artists.length-1 ) {
-            output += ', ';
+            output += '; ';
           }
         }
         output += '</p></div></body>';
         setTimeout(() => {  console.log(output); }, 1000);
         res.send( html1 + output );
-      }, 1000);
+      }, 2000);
     });
   });
 
