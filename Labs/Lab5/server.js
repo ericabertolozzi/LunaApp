@@ -159,8 +159,24 @@ app.get('/virginia.html', function(req, res){
         }
         output += '</p></div></body>';
         setTimeout(() => {  console.log(output); }, 1000);
-        res.send( html1 + output );
+        // Part 2
+
+        html2 = `
+        <h1>Add an Artist's Top Song</h1>
+        <form action="#">
+          <label for="fname">Artist name:</label>
+          <input type="text" id="name" name="name"><br><br>
+          <input type="submit" value="Submit">
+        </form>
+        `;
+
+
+
+        res.send( html1 + output + html2 );
       }, 2000);
+
+
+
     });
   });
 
