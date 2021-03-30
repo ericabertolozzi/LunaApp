@@ -96,10 +96,12 @@ app.get('/virginia.html', function(req, res){
         color: #1FD662;
       }
 
-      .container {
+      p {
         margin-top: 2%;
+      }
+
+      .container {
         text-align: center;
-        font-size: 150%;
         color: white;
       }
 
@@ -108,8 +110,6 @@ app.get('/virginia.html', function(req, res){
   <body>
     <h1>Artists</h1>
     <div class="container">
-      <div class="row">
-        <div class="col-sm">
   `;
   var artists = [];
   var images = [];
@@ -142,20 +142,23 @@ app.get('/virginia.html', function(req, res){
           console.error(err);
         });
       });
-      setTimeout(() => {  console.log(artists); }, 1000);
-      setTimeout(() => {  console.log(images); }, 1000);
+      // Removed duplicates
+      setTimeout(() => {  artists = [...new Set(artists)]; console.log(artists); }, 1000);
+      setTimeout(() => {  images = [...new Set(images)]; console.log(images); }, 1000);
+      setTimeout(() => {
+        output = '';
+        for (var i = 0; i < images.length; i++) {
+          output += '<img src="' + images[i] + '" alt="image" width="150px" height="150px">';
+        }
+        output += '<p>';
+        for (var i = 0; i < artists.length; i++) {
+          output += artists[i] + ',';
+        }
+        output += '</p></div></body>';
+        setTimeout(() => {  console.log(output); }, 1000);
+        res.send( html1 + output );
+      }, 1000);
 
-      output = '';
-      for (var i = 0; i < images.length; i++) {
-        output += '<p>' + images[i] + '</p>'
-      }
-      output += '</div><div class="col-sm">';
-      for (var i = 0; i < artists.length; i++) {
-        output += '<p>' + artists[i] + '</p>'
-      }
-      output += '</div></div></div></body>';
-      console.log(output);
-      res.send( html1 + output );
       // res.sendFile(__dirname + '/Lab4/src/app/spotify/virginia.html');
     });
   });
