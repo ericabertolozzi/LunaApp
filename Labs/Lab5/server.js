@@ -80,12 +80,16 @@ app.get('/virginia.html', function(req, res){
     <style>
       body, html {
         height: 100%;
+        margin: 0;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
         font-family: 'Varela Round', sans-serif;
-        background: rgb(0,0,0);
-        background: -moz-linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(96,98,101,1) 100%);
-        background: -webkit-linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(96,98,101,1) 100%);
-        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(96,98,101,1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#606265",GradientType=1);
+        background-image: linear-gradient(rgba(0,0,0,1), rgba(96,98,101,1));
+        // background: rgb(0,0,0);
+        // background: -moz-linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(96,98,101,1) 100%);
+        // background: -webkit-linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(96,98,101,1) 100%);
+        // background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(96,98,101,1) 100%);
+        // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#606265",GradientType=1);
       }
 
       h1 {
@@ -94,10 +98,12 @@ app.get('/virginia.html', function(req, res){
         width: 100%;
         text-align: center;
         color: #1FD662;
+        font-weight: bold;
       }
 
       p {
         margin-top: 2%;
+        font-size: 150%
       }
 
       .container {
@@ -126,7 +132,6 @@ app.get('/virginia.html', function(req, res){
             db.close(); // you may not want to close the DB if you have more code....
             return;
         }
-        // otherwise, do something with the item
         var artist_id = null;
         spotifyApi.searchArtists( item['Artist Name'] )
         .then(function(data) {
@@ -152,7 +157,10 @@ app.get('/virginia.html', function(req, res){
         }
         output += '<p>';
         for (var i = 0; i < artists.length; i++) {
-          output += artists[i] + ',';
+          output += artists[i];
+          if( i != artists.length-1 ) {
+            output += ', ';
+          }
         }
         output += '</p></div></body>';
         setTimeout(() => {  console.log(output); }, 1000);
