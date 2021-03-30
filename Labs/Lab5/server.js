@@ -8,16 +8,38 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 
+// Connect to the SpotifyWebApi-------------------------------------------------
+var SpotifyWebApi = require('spotify-web-api-node');
+var spotifyApi = new SpotifyWebApi({
+  clientId: 'f59627e7fcb842ff8c712ebe30c3d9d7',
+  clientSecret: '24e4f9a1e4244fd88fca81e8515a9860',
+  redirectUri: 'https://localhost:4200'
+});
+
+var access_token;
+// Retrieve an access token.
+spotifyApi.clientCredentialsGrant().then (
+  function(data) {
+    console.log('The access token expires in ' + data.body['expires_in']);
+    console.log('The access token is ' + data.body['access_token']);
+
+    // Save the access token so that it's used in future calls
+    spotifyApi.setAccessToken(data.body['access_token']);
+    access_token = data.body['access_token'];
+  },
+  function(err) {
+    console.log('Something went wrong when retrieving an access token', err);
+  }
+);
+var spotifyApi = new SpotifyWebApi({
+  accessToken: access_token
+});
+//------------------------------------------------------------------------------
+// Connect to MongoDB-----------------------------------------------------------
 const MongoClient = require('mongodb').MongoClient;
 // had to URL encode the password bc it contained an '@' - VB
 const url = "mongodb+srv://barnev:.mUNYTL8Ga.6q2%40@cluster0.pacdp.mongodb.net/lab5?retryWrites=true&w=majority";
 const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
-
 //------------------------------------------------------------------------------
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/Lab4/src/app/spotify/spotify.component.html');
@@ -44,6 +66,54 @@ app.get('/simi.html', function(req, res){
 });
 
 app.get('/virginia.html', function(req, res){
+  html1 = `
+  <!-- virginia -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8/">
+    <title>All Artists</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+    <style>
+      body, html {
+        height: 100%;
+        font-family: 'Varela Round', sans-serif;
+        background: rgb(0,0,0);
+        background: -moz-linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(96,98,101,1) 100%);
+        background: -webkit-linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(96,98,101,1) 100%);
+        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(96,98,101,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#606265",GradientType=1);
+      }
+
+      h1 {
+        margin-top: 2%;
+        font-size: 300%;
+        width: 100%;
+        text-align: center;
+        color: #1FD662;
+      }
+
+      .container {
+        margin-top: 2%;
+        text-align: center;
+        font-size: 150%;
+        color: white;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Artists</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+  `;
+  var artists = [];
+  var images = [];
+
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("lab5");
@@ -57,11 +127,38 @@ app.get('/virginia.html', function(req, res){
             return;
         }
         // otherwise, do something with the item
-        console.log(item);
+        var artist_id = null;
+        spotifyApi.searchArtists( item['Artist Name'] )
+        .then(function(data) {
+          artist_id = data.body['artists']['items'][0]['id']; // Get the ID from the artist name
+          spotifyApi.getArtist(artist_id)
+          .then(function(data) {
+            artists.push(item['Artist Name']);
+            images.push(data.body['images'][0]['url']);
+          }, function(err) {
+            console.error(err);
+          });
+        }, function(err) {
+          console.error(err);
+        });
+      });
+      setTimeout(() => {  console.log(artists); }, 1000);
+      setTimeout(() => {  console.log(images); }, 1000);
+
+      output = '';
+      for (var i = 0; i < images.length; i++) {
+        output += '<p>' + images[i] + '</p>'
+      }
+      output += '</div><div class="col-sm">';
+      for (var i = 0; i < artists.length; i++) {
+        output += '<p>' + artists[i] + '</p>'
+      }
+      output += '</div></div></div></body>';
+      console.log(output);
+      res.send( html1 + output );
+      // res.sendFile(__dirname + '/Lab4/src/app/spotify/virginia.html');
     });
   });
-  res.sendFile(__dirname + '/Lab4/src/app/spotify/virginia.html');
-});
 
 app.listen(port, () => {
 	console.log('Listening on *:4200');
