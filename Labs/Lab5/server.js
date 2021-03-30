@@ -23,13 +23,14 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/Lab4/src/app/spotify/spotify.component.html');
 });
 
-app.get('/erica.html', function(req, res){
+app.get('/erica', function(req, res){
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         var dbo = db.db("lab5");
         var collection = dbo.collection("transformed");
         const query = { "Genre" : "Pop" };
         const cursor = collection.find(query);
+        var html = "<!DOCTYPE html><html><head></head><body><h1>List of Pop Songs in the Database</h1><ul>";
         // Execute the each command, triggers for each document
         cursor.each(function(err, item) {
             // If the item is null then the cursor is exhausted/empty and closed
@@ -37,11 +38,13 @@ app.get('/erica.html', function(req, res){
                 db.close(); // you may not want to close the DB if you have more code....
                 return;
             }
-            // otherwise, do something with the item
-            console.log(item);
+            console.log(item['Track Name']);
+            // otherwise, send the item to the front end
+            html += "<li>" + item['Track Name'] + " by " + item['Artist Name'] + "</li>";
         });
-      });
-    res.sendFile(__dirname + '/Lab4/src/app/spotify/erica.html');
+        html += "</ul></body></html>";
+        res.send(html);
+    });
 });
 
 app.get('/helena.html', function(req, res){
