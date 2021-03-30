@@ -47,10 +47,17 @@ app.get('/virginia.html', function(req, res){
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("lab5");
-    dbo.collection("transformed").findOne({}, function(err, result) {
-      if (err) throw err;
-      console.log(result.name);
-      db.close();
+    var collection = dbo.collection("transformed");
+    var cursor = collection.find();
+    // Execute the each command, triggers for each document
+    cursor.each(function(err, item) {
+        // If the item is null then the cursor is exhausted/empty and closed
+        if(item == null) {
+            db.close(); // you may not want to close the DB if you have more code....
+            return;
+        }
+        // otherwise, do something with the item
+        console.log(item);
     });
   });
   res.sendFile(__dirname + '/Lab4/src/app/spotify/virginia.html');
