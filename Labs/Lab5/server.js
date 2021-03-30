@@ -166,8 +166,6 @@ app.get('/virginia.html', function(req, res){
         setTimeout(() => {  console.log(output); }, 1000);
         res.send( html1 + output );
       }, 1000);
-
-      // res.sendFile(__dirname + '/Lab4/src/app/spotify/virginia.html');
     });
   });
 
