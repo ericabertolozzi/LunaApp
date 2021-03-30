@@ -85,11 +85,6 @@ app.get('/virginia.html', function(req, res){
         background-attachment: fixed;
         font-family: 'Varela Round', sans-serif;
         background-image: linear-gradient(rgba(0,0,0,1), rgba(96,98,101,1));
-        // background: rgb(0,0,0);
-        // background: -moz-linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(96,98,101,1) 100%);
-        // background: -webkit-linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(96,98,101,1) 100%);
-        // background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(96,98,101,1) 100%);
-        // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#606265",GradientType=1);
       }
 
       h1 {
