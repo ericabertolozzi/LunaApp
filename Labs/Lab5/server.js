@@ -9,13 +9,14 @@ app.use(bodyParser.urlencoded({
 }));
 
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://barnev:.mUNYTL8Ga.6q2@@cluster0.pacdp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
+// had to URL encode the password bc it contained an '@' - VB
+const url = "mongodb+srv://barnev:.mUNYTL8Ga.6q2%40@cluster0.pacdp.mongodb.net/lab5?retryWrites=true&w=majority";
+const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+// client.connect(err => {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });
 
 //------------------------------------------------------------------------------
 app.get('/', function(req, res){
@@ -43,10 +44,18 @@ app.get('/simi.html', function(req, res){
 });
 
 app.get('/virginia.html', function(req, res){
-    res.sendFile(__dirname + '/Lab4/src/app/spotify/virginia.html');
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("lab5");
+    dbo.collection("transformed").findOne({}, function(err, result) {
+      if (err) throw err;
+      console.log(result.name);
+      db.close();
+    });
+  });
+  res.sendFile(__dirname + '/Lab4/src/app/spotify/virginia.html');
 });
 
 app.listen(port, () => {
 	console.log('Listening on *:4200');
 });
-
