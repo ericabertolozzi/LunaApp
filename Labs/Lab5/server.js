@@ -57,23 +57,21 @@ app.get('/lauren.html', function(req, res){
     res.sendFile(__dirname + '/Lab4/src/app/spotify/lauren.html');
 });
 
-app.get('/manya.html', function(req, res){
-     res.sendFile(__dirname + '/Lab4/src/app/spotify/manya.html');
-     var resultarray=[]
+app.get('/manya.html',function(req, res){
+  res.sendFile(__dirname + '/Lab4/src/app/spotify/manya.html');
+})
+
+app.get('/testing', function(req, res){
+     resultarray=[]
     MongoClient.connect(url, function(err, db) {
       var dbo = db.db("lab5");
       var collection = dbo.collection("transformed");
       dbo.collection('transformed').find({},{projection:{_id:0,'Arist Name':1,'Album Name':1,Genre:1}}).toArray(function(err, docs) {
-        // var x=JSON.stringify(docs);
-        resultarray.push(JSON.stringify(docs));
-        console.log(resultarray);
-        // return res.send(resultarray);
-        // console.log(x);
-        // console.log(JSON.stringify(docs));
+        var x=JSON.stringify(docs);
+        console.log(x)
+        res.send(x)
     });
       console.log("Connected")
-      console.log(collection);
-// });
 });
 });
 
@@ -87,8 +85,8 @@ app.post('/manyapost', function (req, res) {
     var date = req.body.date;
     var genre =req.body.genre;
     var data = {
-      "Track Name": artist,
-      "Artist Name":album,
+      "Track Name": track,
+      "Artist Name":artist,
       "Album Name":album,
       "Date":date,
       "Genre":genre
@@ -96,7 +94,7 @@ app.post('/manyapost', function (req, res) {
   dbo.collection('transformed').insertOne(data,function(err, collection){
     if (err) throw err;
     console.log("Record inserted Successfully"); 
-    res.send("Record Inserted Successfully")      
+    res.send("Record Inserted Successfully")     
 });
   });    
 });
