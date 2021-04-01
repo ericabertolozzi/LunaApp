@@ -30,20 +30,15 @@ app.get('/erica', function(req, res){
         var collection = dbo.collection("transformed");
         const query = { "Genre" : "Pop" };
         const cursor = collection.find(query);
-        var html = "<!DOCTYPE html><html><head></head><body><h1>List of Pop Songs in the Database</h1><ul>";
-        // Execute the each command, triggers for each document
-        cursor.each(function(err, item) {
-            // If the item is null then the cursor is exhausted/empty and closed
-            if(item == null) {
-                db.close(); // you may not want to close the DB if you have more code....
-                return;
-            }
-            console.log(item['Track Name']);
-            // otherwise, send the item to the front end
-            html += "<li>" + item['Track Name'] + " by " + item['Artist Name'] + "</li>";
+        cursor.toArray(function(err, docs) {
+            // Build an HTML string to send pop song data to the front end
+            var html = "<!DOCTYPE html><html><head></head><body><h1>List of Pop Songs in the Database</h1><ul>";
+            for (let i=0; i<docs.length; i++) {
+                html += '<li>' + docs[i]['Track Name'] + " by " + docs[i]['Artist Name'] + '</li>';
+            }            
+            html += "</ul></body></html>";
+            res.send(html);
         });
-        html += "</ul></body></html>";
-        res.send(html);
     });
 });
 
