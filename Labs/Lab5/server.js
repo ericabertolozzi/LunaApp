@@ -23,6 +23,7 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/Lab4/src/app/spotify/spotify.component.html');
 });
 
+// Erica Bertolozzi Part 1
 app.get('/erica', function(req, res){
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
@@ -41,6 +42,9 @@ app.get('/erica', function(req, res){
         });
     });
 });
+
+// Erica Bertolozzi Part 2
+
 
 app.get('/helena.html', function(req, res){
     res.sendFile(__dirname + '/Lab4/src/app/spotify/helena.html');
