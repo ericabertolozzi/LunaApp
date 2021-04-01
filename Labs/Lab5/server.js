@@ -109,6 +109,7 @@ app.get('/simi.html', function(req, res){
     res.sendFile(__dirname + '/Lab4/src/app/spotify/simi.html');
 });
 
+// PREP FOR VIRGINIA'S PAGE
 html1 = `
 <!-- virginia -->
 <!DOCTYPE html>
@@ -142,12 +143,45 @@ html1 = `
     p {
       margin-top: 2%;
       font-size: 150%
+      font-family: 'Varela Round', sans-serif;
+      color: white;
     }
 
     .container {
       text-align: center;
       color: white;
+      margin-bottom: 2%;
     }
+
+    .artist-form {
+      text-align: center;
+    }
+
+    .button {
+      border-radius: 20px;
+      width: 125px;
+      height: 40px;
+      display: inline;
+      font-family: 'Varela Round', sans-serif;
+      color: white;
+      background-color: #1FD662;
+      border-style: none;
+      letter-spacing: 2px;
+    }
+
+    #artist {
+      border-radius: 20px;
+      width: 250px;
+      height: 40px;
+      display: inline;
+      font-family: 'Varela Round', sans-serif;
+      border-style: none;
+      letter-spacing: 2px;
+
+      .footer {
+        text-align: center !important;
+        justify-content: center;
+      }
 
   </style>
 </head>
@@ -157,16 +191,24 @@ html1 = `
 `;
 
 html2 = `
-<h1>Add an Artist's Top Song</h1>
-<div class="form-group artist-form">
-  <form id="artist" action="/virginia.html/artist" method="GET">
-    <input type="text" id="artist" name="artist" placeholder="Enter Artist Name">
-    <br>
-    <input type="submit" class="btn btn-light" value="RUN" id="submit">
-  </form>
+<div class="container">
+  <h1>Add an Artist's Top Song</h1>
+  <p>Enter an Artist's name, click RUN, and watch as that artist's top track is added to the database!</p>
+  <div class="form-group artist-form">
+    <form id="artist" action="/virginia.html/artist" method="GET">
+      <input type="text" id="artist" name="artist" placeholder="Enter Artist Name">
+      <input type="submit" class="button" value="ADD" id="submit">
+    </form>
+  </div>
 </div>
+<footer class="container">
+    <p>Design by Team luna</p>
+</footer>
+</body>
+
 `;
 
+// PART 1
 app.get('/virginia.html', function(req, res) {
   var artists = [];
   var images = [];
@@ -212,7 +254,7 @@ app.get('/virginia.html', function(req, res) {
             output += '; ';
           }
         }
-        output += '</p></div></body>';
+        output += '</p></div>';
         res.send( html1 + output + html2 );
       }, 2000);
     });
@@ -251,7 +293,7 @@ app.get('/virginia.html', function(req, res) {
 
         // Refresh the frontend
         res.redirect('/virginia.html');
-        
+
       }, function(err) {
       console.log( "Could not add " + artist + " to the database." );
       });
