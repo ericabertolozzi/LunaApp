@@ -1,1 +1,50 @@
 <!-- manya -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Add to Database:</h1>
+    <form method="POST" action="/manyapost">
+        <label>Track Name:<input type="text"  name="track" required></label>
+        <br><br>
+        <label>Artist Name<input type="text" name="name" required></label>
+        <br><br>
+        <label>Album Name<br><textarea name="album"></textarea></label>
+        <br><br>
+        <label>Date<br><textarea name="date"></textarea></label>
+        <br><br>
+        <label>Genre<br><textarea name="genre"></textarea></label>
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+        <br><br><br><br>
+    </form>
+    <form method="GET" action="/display">
+        <input type="submit" name="display" id="display" value="Click to Display Database">
+    </form>
+</body>
+</html>
+
+<style>
+body{
+    background-color:lavender;
+}
+h1{
+    text-align:center;
+    color:cadetblue;
+}
+
+form{
+    text-align:center;
+}
+#display{
+background-color: cornflowerblue;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 25px;
+cursor: pointer;
+}
+</style>

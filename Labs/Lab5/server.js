@@ -57,8 +57,52 @@ app.get('/lauren.html', function(req, res){
     res.sendFile(__dirname + '/Lab4/src/app/spotify/lauren.html');
 });
 
-app.get('/manya.html', function(req, res){
-    res.sendFile(__dirname + '/Lab4/src/app/spotify/manya.html');
+app.get('/manya.html',function(req, res){
+  res.sendFile(__dirname + '/Lab4/src/app/spotify/manya.html');
+})
+
+app.get('/display', function(req, res){
+     resultarray=[]
+    MongoClient.connect(url, function(err, db) {
+      var dbo = db.db("lab5");
+      var collection = dbo.collection("transformed");
+      dbo.collection('transformed').find({},{projection:{_id:0,'Artist Name':1,'Album Name':1,Genre:1}}).toArray(function(err, docs) {
+        var x=JSON.stringify(docs);
+        console.log(x);
+        res.send(x);
+        // var s = '<ul>';
+        // for (var i = 0; i < x.length; i++) {
+        //   s += '<li>' + x + '</li>';
+        // }
+        // s += '</ul>'
+        // res.send(s);
+    });
+      console.log("Connected")
+});
+});
+
+app.post('/manyapost', function (req, res) {
+  MongoClient.connect(url, function(err, db) {
+    var dbo = db.db("lab5");
+    var collection = dbo.collection("transformed");
+    var track= req.body.track;
+    var artist= req.body.name;
+    var album =req.body.album;
+    var date = req.body.date;
+    var genre =req.body.genre;
+    var data = {
+      "Track Name": track,
+      "Artist Name":artist,
+      "Album Name":album,
+      "Date":date,
+      "Genre":genre
+  }
+  dbo.collection('transformed').insertOne(data,function(err, collection){
+    if (err) throw err;
+    console.log("Record inserted Successfully"); 
+    res.send("Record Inserted Successfully")     
+});
+  });    
 });
 
 app.get('/simi.html', function(req, res){
