@@ -7,6 +7,7 @@ cd LunaApp/Labs/Lab5/Lab4
 Install the following:
 npm install express --save
 npm install --save-dev @angular-devkit/build-angular
+ng serve
 
 Step 2: Run Node - 
 cd/LunaApp/Labs/Lab5
