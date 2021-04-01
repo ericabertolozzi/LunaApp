@@ -66,16 +66,14 @@ app.get('/display', function(req, res){
     MongoClient.connect(url, function(err, db) {
       var dbo = db.db("lab5");
       var collection = dbo.collection("transformed");
-      dbo.collection('transformed').find({},{projection:{_id:0,'Artist Name':1,'Album Name':1,Genre:1}}).toArray(function(err, docs) {
+      dbo.collection('transformed').find({},{projection:{_id:0,'Artist Name':1,'Track Name':1, 'Album Name':1,Genre:1}}).toArray(function(err, docs) {
         var x=JSON.stringify(docs);
         console.log(x);
-        res.send(x);
-        // var s = '<ul>';
-        // for (var i = 0; i < x.length; i++) {
-        //   s += '<li>' + x + '</li>';
-        // }
-        // s += '</ul>'
-        // res.send(s);
+        var htmlBegin = "<!DOCTYPE html><html><head></head><body><h1>Database</h1><ul><style>body {background-color:lightblue;}h1{text-align:center;}</style>";
+        for (var s = 0; s < docs.length; s++) {
+          htmlBegin += '<li>'+ '<b>Album Name:</b>  '+ docs[s]['Album Name'] +'  ' + '<b>Track: </b>  ' + docs[s]['Track Name'] + " <b>Artist:</b> " + docs[s]['Artist Name'] + '</li>';
+        }
+        res.send(htmlBegin)
     });
       console.log("Connected")
 });
