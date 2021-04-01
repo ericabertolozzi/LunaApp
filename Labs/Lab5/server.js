@@ -45,9 +45,28 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/Lab4/src/app/spotify/spotify.component.html');
 });
 
-app.get('/erica.html', function(req, res){
-    res.sendFile(__dirname + '/Lab4/src/app/spotify/erica.html');
+// Erica Bertolozzi Part 1
+app.get('/erica', function(req, res){
+    MongoClient.connect(url, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("lab5");
+        var collection = dbo.collection("transformed");
+        const query = { "Genre" : "Pop" };
+        const cursor = collection.find(query);
+        cursor.toArray(function(err, docs) {
+            // Build an HTML string to send pop song data to the front end
+            var html = "<!DOCTYPE html><html><head></head><body><h1>List of Pop Songs in the Database</h1><ul>";
+            for (let i=0; i<docs.length; i++) {
+                html += '<li>' + docs[i]['Track Name'] + " by " + docs[i]['Artist Name'] + '</li>';
+            }            
+            html += "</ul></body></html>";
+            res.send(html);
+        });
+    });
 });
+
+// Erica Bertolozzi Part 2
+
 
 app.get('/helena.html', function(req, res){
     res.sendFile(__dirname + '/Lab4/src/app/spotify/helena.html');
