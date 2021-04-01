@@ -61,15 +61,21 @@ app.get('/manya.html',function(req, res){
   res.sendFile(__dirname + '/Lab4/src/app/spotify/manya.html');
 })
 
-app.get('/testing', function(req, res){
+app.get('/display', function(req, res){
      resultarray=[]
     MongoClient.connect(url, function(err, db) {
       var dbo = db.db("lab5");
       var collection = dbo.collection("transformed");
-      dbo.collection('transformed').find({},{projection:{_id:0,'Arist Name':1,'Album Name':1,Genre:1}}).toArray(function(err, docs) {
+      dbo.collection('transformed').find({},{projection:{_id:0,'Artist Name':1,'Album Name':1,Genre:1}}).toArray(function(err, docs) {
         var x=JSON.stringify(docs);
-        console.log(x)
-        res.send(x)
+        console.log(x);
+        res.send(x);
+        // var s = '<ul>';
+        // for (var i = 0; i < x.length; i++) {
+        //   s += '<li>' + x + '</li>';
+        // }
+        // s += '</ul>'
+        // res.send(s);
     });
       console.log("Connected")
 });
