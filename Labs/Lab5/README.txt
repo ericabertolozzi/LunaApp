@@ -1,5 +1,17 @@
 Team Luna Lab 4 README
 
+Steps to Access Application:
+
+Step 1: Run Angular -
+cd LunaApp/Labs/Lab5/Lab4
+Install the following:
+npm install express --save
+npm install --save-dev @angular-devkit/build-angular
+
+Step 2: Run Node - 
+cd/LunaApp/Labs/Lab5
+node server
+
 API Description -
 For the external API, we used the Spotify API.
 
