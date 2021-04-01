@@ -205,7 +205,6 @@ html2 = `
     <p>Design by Team luna</p>
 </footer>
 </body>
-
 `;
 
 // PART 1
@@ -225,16 +224,20 @@ app.get('/virginia.html', function(req, res) {
             return;
         }
         var artist_id = null;
-        spotifyApi.searchArtists( item['Artist Name'] )
-        .then(function(data) {
-          artist_id = data.body['artists']['items'][0]['id']; // Get the ID from the artist name
-          spotifyApi.getArtist(artist_id)
-          .then(function(data) {
-            artists.push(item['Artist Name']);
-            images.push(data.body['images'][0]['url']);
-          }, function(err) {
-            console.log("Could not search " + item['Artist Name'] + " with Spotify API" );
-          });
+        spotifyApi.searchArtists( item['Artist Name'] ).then(function(data) {
+          if( !data.body['artists']['items'][0] ) {
+            console.log( "Could not add " + item['Artist Name'] + " to collage" );
+          }
+          else {
+            // console.log( data.body['artists']['items'][0] );
+            artist_id = data.body['artists']['items'][0]['id']; // Get the ID from the artist name
+            spotifyApi.getArtist(artist_id).then(function(data) {
+              artists.push(item['Artist Name']);
+              images.push(data.body['images'][0]['url']);
+            }, function(err) {
+              console.log("Could not search " + item['Artist Name'] + " with Spotify API" );
+            });
+          }
         }, function(err) {
           console.log("Could not search " + item['Artist Name'] + " with Spotify API" );
         });
@@ -292,7 +295,8 @@ app.get('/virginia.html', function(req, res) {
         });
 
         // Refresh the frontend
-        res.redirect('/virginia.html');
+        setTimeout(() => {  res.redirect('/virginia.html'); }, 2000);
+
 
       }, function(err) {
       console.log( "Could not add " + artist + " to the database." );
