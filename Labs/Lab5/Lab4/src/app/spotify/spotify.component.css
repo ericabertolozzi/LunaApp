@@ -1,87 +1,108 @@
 body{
-    background-color:#f6e6ff;
-    text-align:center;
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Varela Round', sans-serif;
+  /* color: #1FD662; */
+  background-image: linear-gradient(rgba(0,0,0,1), rgba(96,98,101,1));
+  text-align:center;
+}
+#greetings {
+  font-family: 'Varela Round', sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 30px;
+  font-weight: bold;
 }
 h3{
-    font-size:50px;
-    font-family: 'Akaya Telivigala', cursive;
-    color:white;
+  font-size:50px;
+  font-family: 'Akaya Telivigala', cursive;
+  color:white;
 }
 h2{
-    font-family: "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 #submit{
-    background-color: #555555;
-    color:white;
+  background-color: #555555;
+  color:white;
 }
 #borderTop{
-    position: relative;
-    border-top: 12px solid rgb(59, 67, 71);
-    border-radius: 10px;
+  position: relative;
+  border-top: 12px solid rgb(59, 67, 71);
+  border-radius: 10px;
 }
 #borderLeft{
-    border-left: 12px solid rgb(59, 67, 71);
-    position: absolute;
-    top: 25;
-    bottom: 80%;
-    border-radius: 10px;
+  border-left: 12px solid rgb(59, 67, 71);
+  position: absolute;
+  top: 25;
+  bottom: 80%;
+  border-radius: 10px;
 }
 #borderRight{
-    border-right: 12px solid rgb(59, 67, 71);
-    position: absolute;
-    top: 25;
-    bottom: 80%;
-    left: 98.75%;
-    border-radius: 10px;
+  border-right: 12px solid rgb(59, 67, 71);
+  position: absolute;
+  top: 25;
+  bottom: 80%;
+  left: 98.75%;
+  border-radius: 10px;
+}
+#button {
+  border-radius: 20px;
+  width: 125px;
+  height: 40px;
+  display: flex;
+  vertical-align: middle !important;
+  justify-content: center;
+  vertical-align: center;
+  font-family: 'Varela Round', sans-serif;
+  color: white;
+  background-color: #1FD662;
+  border-style: none;
+  letter-spacing: 2px;
 }
 .artistform{
-    background-color:rgb(255, 255, 255);
-    width:50%;
-    height:150px;
-    margin-top:60px;
-    display:inline-block;
-    border-radius: 25px;
-    border: 3px solid #2f3e46ff;
+  background-color:rgb(255, 255, 255);
+  width:50%;
+  height:150px;
+  margin-top:60px;
+  display:inline-block;
+  border-radius: 25px;
+  border: 3px solid #2f3e46ff;
 }
 .artistform:hover {
-    background-color: rgba(255, 255, 255, 0.952);
-    border: 3px solid #84a98cff;
-    box-shadow: 10px 10px 10px #354f52ec;
-    border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.952);
+  border: 3px solid #84a98cff;
+  box-shadow: 10px 10px 10px #354f52ec;
+  border-radius: 30px;
 }
 .footer{
-    font-family:'Lucida Bright', Georgia, serif;
-    text-align: center;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: rgba(46, 37, 56, 0.342);
-    opacity: 0.8;
-    color: rgb(255, 255, 255);
-    border-radius: 11px;
-    border: 3px solid rgb(59, 67, 71);
-    vertical-align: middle;
+  font-family:'Lucida Bright', Georgia, serif;
+  text-align: center;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(46, 37, 56, 0.342);
+  opacity: 0.8;
+  color: rgb(255, 255, 255);
+  border-radius: 11px;
+  border: 3px solid rgb(59, 67, 71);
+  vertical-align: middle;
 }
 
 #login {
-    display: none;
+  display: none;
 }
 
 #loggedin {
-    display: none;
+  display: none;
 }
 
 #button {
-    text-align: center;
-    display: flex;
-    margin: auto;
-    padding: 8px;
-    margin-bottom: 10px;
-}
-
-#greetings {
-    text-align: center;
-    font-size: 50px;
-    font-family: "Akaya Telivigala";
-    margin-bottom: 30px;
+  text-align: center;
+  display: flex;
+  margin: auto;
+  padding: 8px;
+  margin-bottom: 10px;
 }
