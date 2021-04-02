@@ -1,1 +1,197 @@
 <!-- helena -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8/">
+  <title>Helena: Lab 5</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+  <style>
+    body{
+        height: 100%;
+        font-family: 'Times New Roman';
+        background-color: #ffffff;
+    }
+    h1 {
+        font-size: 400%;
+        width: 100%;
+        text-align: center;
+        color: #ffffff;
+        margin-top: 350px;
+    }
+    h2{
+        margin: 40px;
+        color: #000000;
+    }
+    .container {
+        padding: 10%;
+        text-align: center;
+        font-size: 150%;
+        background-image: linear-gradient(to bottom right, rgb(80, 161, 134), rgb(17, 80, 45));
+    }
+    #submit{
+        background-image: linear-gradient(to bottom right, rgb(80, 161, 134), rgb(17, 80, 45));
+        border-radius:5px;
+        color: #ffffff;
+    }
+    #form_part2{
+        text-align:left;
+        background-color:white;
+        border-radius:20px;
+        margin-left: 65px;
+        margin-bottom: 40px;
+    }
+    #form_part1{
+        text-align:center;
+        background-image: linear-gradient(to bottom right, rgb(80, 161, 134), rgb(17, 80, 45));
+        width:15%;
+        border-radius:15px;
+        margin-left: 65px;
+    }
+    /* CSS for the Animated Background*/
+    .context {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        border-color: #ffffff;
+        border-width: 10px;
+    }
+    .area{
+        background-image: linear-gradient(to bottom right, rgb(80, 161, 134), rgb(17, 80, 45));
+        width: 100%;
+        height:100vh;
+    }
+    .circles{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    .circles li{
+        position: absolute;
+        display: block;
+        list-style: none;
+        width: 20px;
+        height: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        animation: animate 25s linear infinite;
+        bottom: -150px;  
+    }
+    .circles li:nth-child(1){
+        left: 25%;
+        width: 80px;
+        height: 80px;
+        animation-delay: 0s;
+    }
+    .circles li:nth-child(2){
+        left: 10%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 2s;
+        animation-duration: 12s;
+    }
+    .circles li:nth-child(3){
+        left: 70%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 4s;
+    }
+    .circles li:nth-child(4){
+        left: 40%;
+        width: 60px;
+        height: 60px;
+        animation-delay: 0s;
+        animation-duration: 18s;
+    }
+    .circles li:nth-child(5){
+        left: 65%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 0s;
+    }
+    .circles li:nth-child(6){
+        left: 75%;
+        width: 110px;
+        height: 110px;
+        animation-delay: 3s;
+    }
+    .circles li:nth-child(7){
+        left: 35%;
+        width: 150px;
+        height: 150px;
+        animation-delay: 7s;
+    }
+    .circles li:nth-child(8){
+        left: 50%;
+        width: 25px;
+        height: 25px;
+        animation-delay: 15s;
+        animation-duration: 45s;
+    }
+    .circles li:nth-child(9){
+        left: 20%;
+        width: 15px;
+        height: 15px;
+        animation-delay: 2s;
+        animation-duration: 35s;
+    }
+    .circles li:nth-child(10){
+        left: 85%;
+        width: 150px;
+        height: 150px;
+        animation-delay: 0s;
+        animation-duration: 11s;
+    }
+    @keyframes animate {
+        0%{
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+            border-radius: 0;
+        }
+
+        100%{
+            transform: translateY(-1000px) rotate(720deg);
+            opacity: 0;
+            border-radius: 50%;
+        }
+    }
+
+  </style>
+</head>
+
+<body>
+    <div class="context">
+        <h1> Helena's Lab 5 </h1>
+     </div>
+     <div class="area" >
+        <ul class="circles">
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+        </ul>
+     </div >
+
+    <h2>Part 1: Fetching data from the lab5 Database</h2>
+    <form method="GET"  id="form_part1" action="/osullhpart1">
+        <input type="submit" name="osullhpart1" id="osullhpart1" value="Ordered Song Names">
+    </form>
+
+    <br><br>
+
+    <h2>Part 2:  Putting new data into the lab5 Database: Will Add Album into Database</h2>
+    <form id="form_part2" action="osullhpart2" method="GET">
+        <input type="text" id="album" name="album" placeholder="Enter Album">
+        <input type="submit" class="button" value="ADD" id="submit">
+      </form>
+</body>

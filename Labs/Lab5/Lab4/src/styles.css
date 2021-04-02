@@ -9,8 +9,3 @@ body{
     margin: 0;
     padding: 0;
 }
-.diagonalimg{
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(to top left, #4a4e69 50%, #9d91a7 50%);
-}

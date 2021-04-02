@@ -1,4 +1,4 @@
-Team Luna Lab 4 README
+Team Luna Lab 5 README
 
 Steps to Access Application:
 
@@ -53,5 +53,25 @@ takes a few moments to load.
 If any errors occur when displaying or adding an artist, the console will say.
 
 Helena's Work Log: (@osullh)
+ For Lab 5, I helped with part 0, by helping devise a schema for our data, 
+ transforming the raw data into the schema and then putting the transformed
+ data into the Lab5 database. 
+
+ For Part 1, my webpage displays a sorted list of all the songs/tracks within
+ the database in Alphabetical order.
+
+ For Part 2, my webpage takes in an input of an albumn name, calls the API to
+ populate it with the correct data, and then inserts it into the lab5 database.
+
+ During the entire process of the lab, I got stuck on a couple of different aspects
+ of it. The the initial set-up for part 0 of the lab wasn't too bad, but I did
+ struggle on parts 1 and 2. I kept getting a lot of error messages, and half the
+ time the get and post functions stopped working. I kept getting connection
+ issue errors, and it was very difficult to test the lab as a result. Overall, I 
+ found the lab to be quite difficult at times as my connection to the lab5 database
+ was causing issues for me.
+
+ For individual creativity, I added a HTML/CSS animated floating box background
+ to my personal HTML page (helena.html).
 
 Manya Trehan (@Manya14)
