@@ -86,7 +86,7 @@ app.post('/ericapart2', function(req, res) {
                     var artist = data.body.items[0].artists[0]['name'];
                    
                     var track_name = data.body.items[0]['name'];
-                    c
+                    
                     // Add track to the collection
                     MongoClient.connect(url, function(err, db) {
                         if (err) throw err;
