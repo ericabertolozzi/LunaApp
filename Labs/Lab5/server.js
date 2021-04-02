@@ -84,9 +84,9 @@ app.post('/ericapart2', function(req, res) {
             spotifyApi.getAlbumTracks(album_id).then(
                 function(data) {
                     var artist = data.body.items[0].artists[0]['name'];
-                    console.log(artist);
+                   
                     var track_name = data.body.items[0]['name'];
-                    console.log(track_name);
+                    c
                     // Add track to the collection
                     MongoClient.connect(url, function(err, db) {
                         if (err) throw err;
