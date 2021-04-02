@@ -1,1 +1,28 @@
-<!-- erica -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Erica's Frontend Page</title>
+        <style>
+            body {
+                background-color: #a4b5c4;
+            }
+
+            h2, form {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Part 1: Get Data from the Database</h2>
+        <form method="GET" action="/ericapart1">
+            <input type="submit" value="Call Part 1">
+        </form>
+
+        <h2>Part 2: Add Data to the Database</h2>
+        <form method="POST" action="/ericapart2">
+            <label for="title">Enter an album title to add the first song to the database:</label><br>
+            <input type="text" id="title" name="title">
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

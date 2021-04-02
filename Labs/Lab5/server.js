@@ -45,8 +45,13 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/Lab4/src/app/spotify/spotify.component.html');
 });
 
+app.get('/erica.html',function(req, res){
+    res.sendFile(__dirname + '/Lab4/src/app/spotify/erica.html');
+  });
+  
+
 // Erica Bertolozzi Part 1
-app.get('/erica', function(req, res){
+app.get('/ericapart1', function(req, res){
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         var dbo = db.db("lab5");
@@ -66,19 +71,54 @@ app.get('/erica', function(req, res){
 });
 
 // Erica Bertolozzi Part 2
+app.post('/ericapart2', function(req, res) {
+    var album_title = req.body.title;
+    console.log("Attempting to find Spotify ID for " + album_title + " from the API.");
+
+    // Use the searchAlbums API function to find the ID of the album to use next
+    spotifyApi.searchAlbums(album_title).then(
+        function(data) {
+            var album_id = data.body.albums.items[0]['id'];
+            var release_date = data.body.albums.items[0]['release_date'];
+            // Get the tracks from the album and add the first track to the database
+            spotifyApi.getAlbumTracks(album_id).then(
+                function(data) {
+                    var artist = data.body.items[0].artists[0]['name'];
+                    console.log(artist);
+                    var track_name = data.body.items[0]['name'];
+                    console.log(track_name);
+                    // Add track to the collection
+                    MongoClient.connect(url, function(err, db) {
+                        if (err) throw err;
+                        var myobj = { "Track Name": track_name, "Artist Name" : artist, "Album Name": album_title, "Date" : release_date };
+                        var dbo = db.db("lab5");
+                        var collection = dbo.collection("transformed");
+                        collection.insertOne(myobj, function(err, res) {
+                          if (err) throw err;
+                          console.log( "Added " + track_name + " by " + artist + " to the database." );
+                          db.close();
+                        });
+                    });
+
+                },
+                function(err) {
+                    console.log('Something went wrong!', err);
+                }
+            );
+        }
+    );
+
+});
 
 
 app.get('/helena.html', function(req, res){
     res.sendFile(__dirname + '/Lab4/src/app/spotify/helena.html');
 });
 
-app.get('/lauren.html', function(req, res){
-    res.sendFile(__dirname + '/Lab4/src/app/spotify/lauren.html');
-});
 
 app.get('/manya.html',function(req, res){
   res.sendFile(__dirname + '/Lab4/src/app/spotify/manya.html');
-})
+});
 
 app.get('/display', function(req, res){
      resultarray=[]
