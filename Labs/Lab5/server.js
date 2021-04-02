@@ -72,10 +72,45 @@ app.get('/helena.html', function(req, res){
     res.sendFile(__dirname + '/Lab4/src/app/spotify/helena.html');
 });
 
+////////////// Lauren McAlarney///////////////////////
 app.get('/lauren.html', function(req, res){
-    res.sendFile(__dirname + '/Lab4/src/app/spotify/lauren.html');
+  var artists = [];
+  var images = [];
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("lab5");
+    var collection = dbo.collection("transformed");
+    var cursor = collection.find();
+    output = `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="utf-8/">
+      <title>All Artists</title>
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    </head>
+    <body>
+      <h1>Artists</h1>
+      <div class="container">
+      </div>
+    </body>
+    `;
+    cursor.each(function(err, item) {
+      if(item == null) {
+          db.close(); 
+          return;
+      }
+      //console.log(item['Artist Name']);
+      output += '<p>' + item['Artist Name'] + '</p>';
+    });
+    res.send(output);
+    //res.sendFile(__dirname + '/Lab4/src/app/spotify/lauren.html');
+  });
 });
 
+/////////////////////////////////////////////////////
 app.get('/manya.html',function(req, res){
   res.sendFile(__dirname + '/Lab4/src/app/spotify/manya.html');
 })
