@@ -25,6 +25,9 @@ For Part 1, I made my HTML page have a button to trigger the GET request for dat
 For Part 2, my idea was to use the Spotify getAlbumTracks API call to get the first song from an album that the user entered into an HTML form and add that song and its respective information to the database. The getAlbumTracks function requires an album ID that Spotify creates for each album, so I struggled with figuring out how to get this ID value. I had to call the Spotify searchAlbums function to obtain the ID given an album name. Once I got these, I was able to gain all of the other information from the array. Then I inserted the data to the database using code found online.
 
 Simran Nambiar (@simrannambiar)
+For Part 0, I uploaded 10 songs from Spotify into the collection. We initially each did 100 songs but the Professor said that would make our database too big. 
+For Part 1, I searched through the database for songs that had the genre 'Country' and took those top Country songs and printed them to my own HTML page. 
+For Part 2, I was kind of confused but I tried to take those Country songs, and search through Spotify's API and print those artists songs to the top tracks page. I don't think this works, because it threw a lot of errors. 
 
 Lauren McAlarney (@mcalal):
 For Part0, I uploaded 10 documents from Spotify into the collection.
