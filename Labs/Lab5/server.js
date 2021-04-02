@@ -262,9 +262,58 @@ app.post('/manyapost', function (req, res) {
   });
 });
 
+//SIMI
+
+//part 1
+//posts top Country artists
 app.get('/simi.html', function(req, res){
+    MongoClient.connect(url, function(err, db) {
+    var dbo = db.db("lab5");
+    var collection = dbo.collection("transformed");
+    myCursor = collection.find({"Genre" : "Country"});
+
+    myCursor.each(function(err, item) {
+      var web = "<!DOCTYPE html><html><head>Top Country Artists</head><body>";
+      for(let x=0; x<item.length; x++){
+        web += item[x]['Artist Name'];
+            }
+          web += "</body></html>";
+          db.send(web);
+    }
     res.sendFile(__dirname + '/Lab4/src/app/spotify/simi.html');
 });
+
+});
+
+//part 2
+app.post('/simi.html', function (req, res) {
+  MongoClient.connect(url, function(err, db) {
+    var dbo = db.db("lab5");
+    var collection = dbo.collection("transformed");
+    myCursor = collection.find({"Genre" : "Country"});
+    string artist;
+    myCursor.each(function(err, item) {
+      for(let x=0; x<item.length; x++){
+         var artist = item[x]['Artist Name'];
+            }
+    }
+      MongoClient.connect(url, function(err, db)){
+        var obj = {"Artist Name" : artist}
+        var dbo = db.db("lab5");
+        var collection = dbo.collection("transformed");
+        collection.insertOne(myobj, function(err, res) {
+          if (err) throw err;
+          console.log( "Added " + artist + " to the database." );
+          db.close();
+      }
+          
+    }
+
+    
+
+});
+});
+
 
 // PREP FOR VIRGINIA'S PAGE
 html1 = `
