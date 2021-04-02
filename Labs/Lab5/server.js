@@ -48,7 +48,7 @@ app.get('/', function(req, res){
 app.get('/erica.html',function(req, res){
     res.sendFile(__dirname + '/Lab4/src/app/spotify/erica.html');
   });
-  
+
 
 // Erica Bertolozzi Part 1
 app.get('/ericapart1', function(req, res){
@@ -63,7 +63,7 @@ app.get('/ericapart1', function(req, res){
             var html = "<!DOCTYPE html><html><head></head><body><h1>List of Pop Songs in the Database</h1><ul>";
             for (let i=0; i<docs.length; i++) {
                 html += '<li>' + docs[i]['Track Name'] + " by " + docs[i]['Artist Name'] + '</li>';
-            }            
+            }
             html += "</ul></body></html>";
             res.send(html);
         });
@@ -84,9 +84,9 @@ app.post('/ericapart2', function(req, res) {
             spotifyApi.getAlbumTracks(album_id).then(
                 function(data) {
                     var artist = data.body.items[0].artists[0]['name'];
-                   
+
                     var track_name = data.body.items[0]['name'];
-                    
+
                     // Add track to the collection
                     MongoClient.connect(url, function(err, db) {
                         if (err) throw err;
@@ -144,7 +144,7 @@ app.get('/osullhpart2', function (req, res) {
     // Get track's genre from Spotify API
     spotifyApi.searchTracks( track ).then(function(data) { // Get track ID
       track_id = data.body['track']['items'][0]['id'];
-      spotifyApi.getArtist(track_id, 'GB').then(function(data) { 
+      spotifyApi.getArtist(track_id, 'GB').then(function(data) {
         // DB takes Track Name, Artist Name, Album Name, Date, and Genre
         var track_name = data.body["track"][0]["name"];
         console.log("Track Name: " + track_name);
@@ -204,7 +204,7 @@ app.get('/lauren.html', function(req, res){
     `;
     cursor.each(function(err, item) {
       if(item == null) {
-          db.close(); 
+          db.close();
           return;
       }
       //console.log(item['Artist Name']);
@@ -280,7 +280,7 @@ app.get('/simi.html', function(req, res){
             }
           web += "</body></html>";
           db.send(web);
-    }
+    });
     res.sendFile(__dirname + '/Lab4/src/app/spotify/simi.html');
 });
 
@@ -292,13 +292,13 @@ app.post('/simi.html', function (req, res) {
     var dbo = db.db("lab5");
     var collection = dbo.collection("transformed");
     myCursor = collection.find({"Genre" : "Country"});
-    string artist;
+    var artist;
     myCursor.each(function(err, item) {
       for(let x=0; x<item.length; x++){
          var artist = item[x]['Artist Name'];
             }
-    }
-      MongoClient.connect(url, function(err, db)){
+    });
+      MongoClient.connect(url, function(err, db){
         var obj = {"Artist Name" : artist}
         var dbo = db.db("lab5");
         var collection = dbo.collection("transformed");
@@ -306,11 +306,11 @@ app.post('/simi.html', function (req, res) {
           if (err) throw err;
           console.log( "Added " + artist + " to the database." );
           db.close();
-      }
-          
-    }
+      });
 
-    
+    });
+
+
 
 });
 });
