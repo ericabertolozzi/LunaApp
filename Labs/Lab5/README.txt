@@ -23,7 +23,10 @@ Erica Bertolozzi (@ericabertolozzi):
 
 Simran Nambiar (@simrannambiar)
 
-Lauren McAlarney (@mcalal)
+Lauren McAlarney (@mcalal):
+For Part0, I uploaded 10 documents from Spotify into the collection.
+For Part1, I edited server js from lab 4 and created GETs for everyone to their own respective html files. I then output the list of artists from the collection.
+I did not get to Part 2, I unexpectedly started receiving errors saying that my token had expired, although that was not the case for anyone else. I had not changed the previous code from lab 4, so I could not figure out why this was the case. 
 
 Virginia Barnes (@barnesv17):
 For Part0, I setup the database in MongoDB by creating and sharing a cluster with
