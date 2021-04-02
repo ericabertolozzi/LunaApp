@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="sad.png" rel="icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Burnout Time</title>
+    <style>
+        html {
+            height: 100%;
+            /* max-height: 600px; */
+            width: 1000px;
+            background-color: hsla(200,40%,30%,.4);
+            /* background-image: url('https://media.giphy.com/media/10kxE34bJPaUO4/giphy.gif'); PIZZA GUY*/
+            background-image: url('https://media.giphy.com/media/glvyCVWYJ21fq/giphy.gif');
+            
+            background-position: 0 20%, 0 100%, 0 50%, 0 100%, 0 0;
+            background-size: 2500px, 800px, 500px 200px, 1000px, 400px 260px;
+        }
+
+        body {
+            background-color: #99999900;
+        }
+        
+        #welcomeBox{
+            margin: 20%;
+            text-align: center;
+        }
+        .button {
+            background-color: orange;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            box-shadow: 0 5px #999;
+            display: flex;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            outline: none;
+        }
+        .button:hover {
+            background-color: blue;
+        }
+        .button:active {
+            background-color: orange;
+            box-shadow: 0 5px gray;
+            transform: translateY(2px);
+        }
+
+        @keyframes para {
+            100% {
+                background-position: -5000px 20%, -800px 95%, 500px 50%, 1000px 100%, 400px 0;
+            }
+        }
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color:rgb(12, 12, 53);
+            color: white;
+            text-align: center;
+        }
+
+        #stages {
+            text-align: center;
+            margin: 0 auto;
+        }
+        #anger {
+            margin-top: 450px;
+        }
+        .quote{
+            font-family: 'Cedarville Cursive', cursive;
+            text-align:center;
+            font-size:25px;
+        }
+        h2 {
+            font-family: 'Comic Neue', cursive;
+            background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+            font-weight: bold;
+            font-size: 200%;
+            color: white;
+        }
+
+        #title {
+            background-image: url('https://media.giphy.com/media/Lopx9eUi34rbq/giphy.gif');
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="welcomeBox">
+        <div class="jumbotron" id="title">
+            <h1>We are tired :')</h1>   
+            <p class="quote">"I'm not okay" - My Chemical Romance</p>  
+        </div>     
+        <button class="button" onclick = " button_function()"><span>A Useless Button</span></button>
+        <div class="container" class="quote"></div>
+        <div class="container pt-3" id='stages'>
+            <h2 id="anger">FIRST STAGE: ANGER</h2>
+            <img width="600" height="300" src="https://media.giphy.com/media/ZebTmyvw85gnm/giphy.gif">
+            <img width="600" height="300" src="https://media.giphy.com/media/SrDsJj5i1Chm8/giphy.gif">
+
+            <h2>SECOND STAGE: MENTAL FATIGUE</h2>
+            <img width="600" height="300" src="https://media.giphy.com/media/3oEduR6BxaE9undCIU/giphy.gif">
+            <img width="600" height="300" src='https://media.giphy.com/media/Ta3v3I4GI1gH7Rqek6/giphy.gif'>
+
+            <h2>THIRD STAGE: HOPELESSNESS</h2>
+            <img width="700" height="600" src="https://media.giphy.com/media/iJJ6E58EttmFqgLo96/giphy.gif">
+
+            <h2>FOURTH STAGE: NOT GIVING A ----</h2>
+            <img width="600" height="300" src='senioritis-meme.jpg'>
+            
+            <h2>CONSTANT STAGE: REVERTING BACK TO EIGHTH GRADE EMO SELF</h2>
+            <img width="600" height="400" src="emo.jpg">
+            <img width="600" height="400" src=" https://media.giphy.com/media/pVuja7BJl0Eow/giphy.gif">
+            <img width="600" height="400" src=" https://media.giphy.com/media/DeyRhNUrRswNi/giphy.gif">   
+        </div>
+        
+    </div>
+    <div class="footer">
+        <p>By: Team Luna</p>
+    </div>
+
+    <script>
+
+    </script> 
+
+</body>
+</html>
