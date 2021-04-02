@@ -20,6 +20,9 @@ Individual Work Logs
 --------------------
 
 Erica Bertolozzi (@ericabertolozzi):
+For Part 0, I created the schema for the database and then transformed the data to follow the schema. I used JSON to rewrite the data to match the same schema. I did not find an online tool to help with this. Next, I wrote validation for the schema in MongoDBCompass to give a warning if the main attributes were not present in new data.
+For Part 1, I made my HTML page have a button to trigger the GET request for data. My idea was to write a query getting all of the songs in the database with a genre of Pop, and display them in a list on the front end. I wrote a simple HTML list structure for this, and the code to make this query execute and retrieve the correct data from the database. I struggled with figuring out how to write the query and execute it, but I found MongoDB documentation that explained it. I also struggled with building the HTML output and variable scoping. I tried to build a string of the data based on what the cursor.each function returned, but the variables outside of the function were never modified. So I had to just nest everything in the function. This same error appeared in Part 2 so I just nested all the variables in innermost scopes.
+For Part 2, my idea was to use the Spotify getAlbumTracks API call to get the first song from an album that the user entered into an HTML form and add that song and its respective information to the database. The getAlbumTracks function requires an album ID that Spotify creates for each album, so I struggled with figuring out how to get this ID value. I had to call the Spotify searchAlbums function to obtain the ID given an album name. Once I got these, I was able to gain all of the other information from the array. Then I inserted the data to the database using code found online.
 
 Simran Nambiar (@simrannambiar)
 
