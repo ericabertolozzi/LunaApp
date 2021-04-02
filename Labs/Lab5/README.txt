@@ -74,4 +74,24 @@ Helena's Work Log: (@osullh)
  For individual creativity, I added a HTML/CSS animated floating box background
  to my personal HTML page (helena.html).
 
-Manya Trehan (@Manya14)
+Manya Trehan (@Manya14) 
+Part 0 - In this part, I added 10 documents to the database from a JSON file that contains
+information related to artist, album, and track name. 
+
+Part 1 -In this part, I displayed the database contents on the page. I first connected to the
+database through the defined URL and then connected to the ‘transformed’ collection. I then used
+the find function to select the documents in the 'transformed' collection that contain Artist Name, 
+Track Name, and Album Name.I then added all these documents to a list and printed it out. 
+The one problem I faced in this partwas that I was using res.send twice in one request.
+One was to send the file and the second wasto send the output. In order to fix this, 
+I simply split it into different two different routes.
+
+Part 2 -In this part, users are able to add to the database. A form is created on the HTML page
+and the user can insert an artist, track, album and date. All fields are required. Each form input
+was then saved to its respective variable using req.body.  When the user submits the form, a new
+document will get added to the database. 
+
+For creativity, the part 1 database can be displayed after the user clicks the “display database”
+button on the main page. The benefit of doing this is so the page is no so cluttered and all the
+information is spread out. I also added CSS to both the main page as well as the different route
+pages to make it look nice for the user. 
