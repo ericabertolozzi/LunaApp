@@ -116,6 +116,7 @@ app.get('/helena.html', function(req, res){
   res.sendFile(__dirname + '/Lab4/src/app/spotify/helena.html');
 });
 app.get('/osullhpart1', function(req, res){
+  // console.log( "osullhpart1 called" ); // Debug Statement
  MongoClient.connect(url, function(err, db) {
   if (err) throw err;
    var dbo = db.db("lab5");
@@ -136,34 +137,34 @@ app.get('/osullhpart1', function(req, res){
 
 
 // PART 2
-app.post('/osullhpart2', function (req, res) {
-    // Get album name from frontend form
-    var album = req.query.album;
-    console.log( "Attempting to add " + album + " to the database." );
-    // Get song's genre from Spotify API
-    spotifyApi.searchAlbums( album ).then(function(data) { // Get album ID
-      album_id = data.body['album']['items'][0]['id'];
-      spotifyApi.getArtist(album_id, 'GB').then(function(data) { 
+app.get('/osullhpart2', function (req, res) {
+    // Get track name from frontend form
+    var track = req.query.track;
+    console.log( "Attempting to add " + track + " to the database." );
+    // Get track's genre from Spotify API
+    spotifyApi.searchTracks( track ).then(function(data) { // Get track ID
+      track_id = data.body['track']['items'][0]['id'];
+      spotifyApi.getArtist(track_id, 'GB').then(function(data) { 
         // DB takes Track Name, Artist Name, Album Name, Date, and Genre
-        var track_name = data.body["album"][0]["name"];
+        var track_name = data.body["track"][0]["name"];
         console.log("Track Name: " + track_name);
-        var album_name = data.body["album"][0]["album"]["name"];
+        var album_name = data.body["track"][0]["album"]["name"];
         console.log("Album Name: " + album_name);
-        var date = data.body["album"][0]["album"]["release_date"];
+        var date = data.body["track"][0]["album"]["release_date"];
         console.log("Date: " + date);
         var genre = null;
 
         // Add top track to the collection
         MongoClient.connect(url, function(err, db) {
-          if (err) throw err;
-          var osullh_obj = { "Track Name": track_name, "Artist Name" : artist, "Album Name": album_name, "Date" : date };
-          var dbo = db.db("lab5");
-          var collection = dbo.collection("transformed");
-          collection.insertOne(osullh_obj, function(err, res) {
             if (err) throw err;
-            console.log( "Added " + album_name + " by " + artist + " to the database." );
-            db.close();
-          });
+            var osullh_obj = { "Track Name": track_name, "Artist Name" : artist, "Album Name": album_name, "Date" : date };
+            var dbo = db.db("lab5");
+            var collection = dbo.collection("transformed");
+            collection.insertOne(osullh_obj, function(err, res) {
+              if (err) throw err;
+              console.log( "Added " + album_name + " by " + artist + " to the database." );
+              db.close();
+            });
         });
 dbo.collection('transformed').insertOne(data,function(err, collection){
  if (err) throw err;

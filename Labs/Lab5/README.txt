@@ -60,16 +60,16 @@ Helena's Work Log: (@osullh)
  For Part 1, my webpage displays a sorted list of all the songs/tracks within
  the database in Alphabetical order.
 
- For Part 2, my webpage takes in an input of an albumn name, calls the API to
+ For Part 2, my webpage takes in an input of an song name, calls the API to
  populate it with the correct data, and then inserts it into the lab5 database.
 
  During the entire process of the lab, I got stuck on a couple of different aspects
- of it. The the initial set-up for part 0 of the lab wasn't too bad, but I did
+ of it. The initial set-up for part 0 of the lab wasn't too bad, but I did
  struggle on parts 1 and 2. I kept getting a lot of error messages, and half the
- time the get and post functions stopped working. I kept getting connection
+ time the get functions stopped working. I kept getting router and connection
  issue errors, and it was very difficult to test the lab as a result. Overall, I 
- found the lab to be quite difficult at times as my connection to the lab5 database
- was causing issues for me.
+ found the lab to be quite difficult at times as the Spotify API would take a long time
+ to respond as well.
 
  For individual creativity, I added a HTML/CSS animated floating box background
  to my personal HTML page (helena.html).
