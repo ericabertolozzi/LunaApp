@@ -50,35 +50,30 @@
     </div>
   </nav>
   <!-- End of Navbar  -->
-    <h4>Please fill out the below information to enable the tracking feature. </h4>
+    <h4>Please fill out the below information to enable the tracking feature. </h4><br><br><br>
 
-  <div class="container">
-    <div class="left-element">
-        <p class="questions">1.  When Did Your Period Begin? </p>
-    <form class="periodquestion">
-      <label for="startdate"></label>
-      <div class="testing">
-      <input type="date" id="startdate" name="startdate" required>
+    <div class="flex-container">
+      <div>1. When Did Your Period Begin?
+        <form class="periodquestion">
+         <br> <label for="startdate"></label>
+          <input type="date" id="startdate" name="startdate" required>
+        </form>
       </div>
-    </form>
+      <div>2. How Many Days Is Your Period?
+        <form class="periodquestion">
+          <label for="quantity"></label>
+          <input type="number" id="periodlength" placeholder="Period Length" name="quantity" min="0" max="30">
+        </form>
       </div>
-      <div class="right-element">
-          <p class="questions1">2.  How Many Days Is Your Period?</p>
-          <form class="periodquestion">
-            <label for="quantity"></label>
-            <input type="number" id="periodlength" placeholder="Period Length" name="quantity" min="0" max="30">
-          </form>
-      </div>
-      <div class="right-element">
-          <p class="questions1">3. How Long is Your Menstrual Cycle?</p>
-          <form class="periodquestion">
-            <label for="quantity"></label>
-            <input type="number" id="cyclelength" placeholder="Menstrual Cycle Length" name="quantity" min="0" max="30" required>
-          </form>
-      </div>
-  </div>
+      <div>3. How Many Days Is Your Period?
+        <form class="periodquestion">
+          <label for="quantity"></label>
+          <input type="number" id="cyclelength" placeholder="Menstrual Cycle Length" name="quantity" min="0" max="30" required>
+        </form>
+      </div>  
+    </div>
   <div class="submission">
-  <input class="submit" type="submit" onclick="showInput();" value="Start Tracking Your Cycle"><br><br>
+  <input class="submit" type="submit" onclick="showInput();" value="Start Tracking Your Cycle"><br><br><br>
   <div id="lastperiod">
   <p class="lastperiods">Your last period was:<b><p><span id='display'></span></p></b> </p>
   </div>

@@ -4,7 +4,6 @@ body{
 
 #full-navbar {
     background-color:lavender;
-    /* position:fixed; */
     top:0;
     font-family: 'Quicksand', sans-serif;
     width:100%;
@@ -26,109 +25,88 @@ h1{
     bottom: 0;
     font-family: 'Quicksand', sans-serif;
     width: 100%;
-    /* color: white; */
     background-color: lavender;
     color: black;
     text-align: center;
     border-radius: 15px;
 }
 
-.questions{
-    margin-top:70px;
-    padding-left:70px;
-    font-size:15px;
-}
-
-.questions1{
-    margin-top:70px;
-    padding-left:70px;
-    font-size:15px;
-
-}
-.periodquestion{
-    padding-left:150px;
-    margin-left:75px;
-    font-size:15px;
-    border-radius: 25px;
-    border: 2px solid lightblue;
-    padding: 20px;
-    width: 200px;
-    height: 100px;
-}
-
 h4{
     position:relative;
     top:50px;
-    text-align:center;
-}
-
-.container {
-    position: fixed;
-    right:-34px;
-    padding: 0;
-    margin: 0;
-}
-
-.left-element {
-    display: inline-block;
-    float: left;
-}
-
-.right-element {
-    display: inline-block;
-    float: left;
-}
-.submission{
-    text-align:center;
-    margin-top:23px;
-}
-h4{
     margin-top:-40px;
+    text-align:center;
+}
+
+.submission{
+    position:relative;
+    text-align:center;
+    padding-top:-60%;
+}
+
+.flex-container {
+  display: flex;
+  text-align:center;
+  flex-wrap: nowrap;
+  background-color: #8e9aaf;
+  border-radius:15px;
+  margin-right:10%;
+  margin-left:10%;
+  border: 2px solid black;
+  justify-content:center;
+}
+
+.flex-container > div {
+  background-color: aliceblue;
+  width: 250px;
+  margin: 10px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 20px;
 }
 
 #periodlength{
-    background-color:mintcream;
-    width:160px;
+    text-align:center;
+    margin-bottom:30%;
+    width:70%;
 }
 
 #cyclelength{
-  background-color:mintcream;
-  width:163px;
+  width:86%;
 }
 
 #lastperiod{
-    margin-left:250px;
+    position:fixed;
+    margin-left:10%;
     font-size:15px;
     border-radius: 25px;
-    border: 2px solid cornflowerblue;
-    padding: 20px;
-    width: 200px;
-    height: 100px;
+    border: 2px solid #8e9aaf;
+    width:16%;
+    height: 14%
 
 }
 
 #nextperiod{
-  margin-top:-95px;
-  margin-left:830px;
+  position:fixed;
+  margin-bottom:10%;
+  margin-left:73%;
   font-size:15px;
   border-radius: 25px;
-  border: 2px solid cornflowerblue;
-  padding: 20px;
-  width: 200px;
-  height: 100px;
+  border: 2px solid #8e9aaf;
+  padding: 10px;
+  width: 16%;
+  height: 14%
 }
 
-
-
-.submit{
-    margin-top:250px;
+ .submit{
+    margin-top:22px;
     padding-left:-40px;
     background-color:cornflowerblue;
     color:black;
     border-radius:40px;
     width:250px;
     height:40px;
-}
+ } 
 
 label[for=quantity]{
     width:150px;
