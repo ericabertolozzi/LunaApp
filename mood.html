@@ -12,6 +12,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
 </head>
 <body>
   <!-- Start of Navbar -->
@@ -49,22 +52,82 @@
       </ul>
     </div>
   </nav>
-<p>Track Your Mood</p>
+<p class="moodtracker">Track Your Mood</p>
   <div id="moods">
-    <input type="radio" name="emotion" id="sad" />
-        <label for="sad"><img src="happy1.png" />
+    <input type="radio" name="emotion" id="happy" />
+        <label for="sad"><img src="lunaimages/happy1.png" />
         <p class="mood">Happy</p></label>
 
     <input type="radio" name="emotion" id="sad" />
-        <label for="happy"><img src="sad1.png"   />
-        <p class="mood">Sad</p></label>
+        <label for="happy"><img src="lunaimages/sad1.png"   />
+        <p class="sadmood">Sad</p></label>
 
     <input type="radio" name="emotion" id="worry" />
-    <label for="happy"><img src="worry1.png"  />
+    <label for="happy"><img src="lunaimages/worry1.png"  />
     <p class="mood">Anxious</p></label>
-    <input type="submit" value="Save">
+
+    <input type="radio" name="emotion" id="irritable" />
+    <label for="happy"><img src="lunaimages/irritable.png"  />
+    <p class="mood">Irritable</p></label>
+
+    <input type="radio" name="emotion" id="upset" />
+    <label for="happy"><img src="lunaimages/upset.png"  />
+    <p class="mood">Upset</p></label>
+
+    <input type="radio" name="emotion" id="fear" />
+    <label for="happy"><img src="lunaimages/fear.png"  />
+    <p class="mood">Scared</p></label>
 </div>
-<p>Track Your Sleep</p>
+<p class="sleeptracker">Track Your Sleep</p>
+<div id="sleep">
+    <input type="radio" name="emotion" id="poor" />
+        <label for="sad"><img src="lunaimages/onepillow.png" />
+        <p class="mood">0-4 Hours</p></label>
+
+    <input type="radio" name="emotion" id="fair" />
+        <label for="happy"><img src="lunaimages/twopillow.png"   />
+        <p class="mood">4-7 Hours</p></label> 
+
+     <input type="radio" name="emotion" id="good" />
+    <label for="happy"><img src="lunaimages/threepillow.png"  />
+    <p class="mood">8 Hours or More</p></label><br><br>
+</div>
+
+<!-- <table style="width:50%">
+    <tr>
+        <div id="sleep">
+      <th>
+        <input type="radio" name="emotion" id="poor" />
+            <label for="sad"><img src="onepillow.png" />
+            <p class="mood">0-4 Hours</p></label></th>
+      <th><input type="radio" name="emotion" id="fair" />
+        <label for="happy"><img src="twopillow.png"   />
+        <p class="mood">4-7 Hours</p></label></th> 
+      <th><input type="radio" name="emotion" id="good" />
+        <label for="happy"><img src="threepillow.png"  />
+        <p class="mood">8 Hours or More</p></label><br><br></th>
+    </tr>
+    </table> -->
+
+<!-- <table style="width:100%">
+    <tr>
+      <th><div id="sleep">
+        <input type="radio" name="emotion" id="poor" />
+            <label for="sad"><img src="onepillow.png" />
+            <p class="mood">0-4 Hours</p></label></div></th>
+      <th><div id="sleep"><input type="radio" name="emotion" id="fair" />
+        <label for="happy"><img src="twopillow.png"   />
+        <p class="mood">4-7 Hours</p></label> </div></th> 
+      <th><div id="sleep"><input type="radio" name="emotion" id="good" />
+        <label for="happy"><img src="threepillow.png"  />
+        <p class="mood">8 Hours or More</p></label></div><br><br></th>
+    </tr>
+    </table> -->
+<p class="addnote">Add Notes</p>
+<div id="notescontainer">
+    <textarea id="area" placeholder="Add more details regarding your mood and sleep patterns." rows="10" cols="40"></textarea>
+    <input type="submit" id="submitmood" value="Save">
+</div>
 
 
 <script>
@@ -72,4 +135,15 @@ $('#moods input:radio').addClass('input_hidden');
 $('#moods label').click(function(){
     $(this).addClass('selected').siblings().removeClass('selected');
 });
+$('#sleep input:radio').addClass('input_hidden1');
+$('#sleep label').click(function(){
+    $(this).addClass('selected1').siblings().removeClass('selected1');
+});
 </script>
+
+<style>
+    body{
+        background-color:white;
+    }
+</style>
+

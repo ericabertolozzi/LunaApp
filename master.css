@@ -33,7 +33,7 @@ h1{
 }
 
 .footer1 {
-  position: relative;
+  /* position: absolute; */
   font-size:17px;
   left: 0;
   bottom: 0;
@@ -112,17 +112,43 @@ h4{
   height: 14%
 }
 .mood{
-  text-align:center;
+  text-align:left;
+  padding-left:10px;
 }
-
+#moods{
+  margin-left:6%;
+}
+#sleep{
+  margin-left:11%;
+}
+#display{
+  display:block;
+  margin:0 auto;
+  position:relative;
+}
+.sadmood{
+  padding-left:18px;
+}
 .input_hidden {
   position: absolute;
-  left: 900px;
-  align-content:center;
+  left: 50px;
+}
+
+.input_hidden1 {
+  position: absolute;
+  right: 50px;
 }
 
 .selected {
   background-color: lightblue;
+  width:15%;
+  display:inline-block;
+}
+
+.selected1 {
+  background-color: lightblue;
+  width:35%;
+  display:inline-block;
 }
 
 #moods label {
@@ -131,9 +157,40 @@ h4{
   align-content:center;
 }
 
+#sleep label{
+  display:inline-block;
+  cursor:pointer;
+}
+
 #moods label img {
   padding: 2px;
-  width:75%
+  width:25%
+}
+
+#sleep label img{
+  padding:2px;
+  width:25%;
+}
+
+#notescontainer {
+  margin: 20px 20px 20px 20px;
+}
+#area {
+  width: 100%;
+  height: 100%;
+  font: 1em arial;
+  color: rgba(50, 82, 50, 1.0);
+}
+#area:focus {
+  color: black;
+  border: 2px lightcyan;
+  box-shadow: 0px 1px 1px #888888;
+  font-family: 'Indie Flower', cursive;
+}
+
+.moodtracker,.sleeptracker,.addnote{
+  text-align:center;
+  font-size:20px;
 }
 
  .submit{
@@ -159,9 +216,6 @@ label[for=quantity]{
     width: 60px;
     height: 34px;
   }
-
-
-
   .settings{
 
     font-size:15px;
