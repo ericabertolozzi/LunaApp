@@ -30,7 +30,7 @@
           <a class="nav-link" href="./calendar.html">Calendar</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">Tracker</a>
+          <a class="nav-link" href="./tracker.html">Tracker</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./shop.html">Shop</a>
@@ -49,54 +49,27 @@
       </ul>
     </div>
   </nav>
-  <!-- End of Navbar  -->
-    <h4>Please fill out the below information to enable the tracking feature. </h4><br><br><br>
+<p>Track Your Mood</p>
+  <div id="moods">
+    <input type="radio" name="emotion" id="sad" />
+        <label for="sad"><img src="happy1.png" />
+        <p class="mood">Happy</p></label>
 
-    <div class="flex-container">
-      <div>1. When Did Your Period Begin?
-        <form class="periodquestion">
-         <br> <label for="startdate"></label>
-          <input type="date" id="startdate" name="startdate" required>
-        </form>
-      </div>
-      <div>2. How Many Days Is Your Period?
-        <form class="periodquestion">
-          <label for="quantity"></label>
-          <input type="number" id="periodlength" placeholder="Period Length" name="quantity" min="0" max="30">
-        </form>
-      </div>
-      <div>3. How Many Days Is Your Period?
-        <form class="periodquestion">
-          <label for="quantity"></label>
-          <input type="number" id="cyclelength" placeholder="Menstrual Cycle Length" name="quantity" min="0" max="30" required>
-        </form>
-      </div>  
-    </div>
-  <div class="submission">
-  <input class="submit" type="submit" onclick="showInput();" value="Start Tracking Your Cycle"><br><br><br>
-  <div id="lastperiod">
-  <p class="lastperiods">Your last period was:<b><p><span id='display'></span></p></b> </p>
-  </div>
-  <div id="nextperiod">
-    <p class="nextperiods">Your next period is in:<b><p><span id='displayone'></span></p></b> </p>
-    </div>
-  </div><br><br><br>
+    <input type="radio" name="emotion" id="sad" />
+        <label for="happy"><img src="sad1.png"   />
+        <p class="mood">Sad</p></label>
 
-  <form method="GET" id="form2" action="./mood.html">
-    <input type="submit" name="display" id="display" value="Track Your Mood">
-</form>
-  
-    <div class="footer1">
-      <p class="footer-text">Luna Copyright &copy; 2021.</p>
-    </div> 
-</body>
-</html>
+    <input type="radio" name="emotion" id="worry" />
+    <label for="happy"><img src="worry1.png"  />
+    <p class="mood">Anxious</p></label>
+    <input type="submit" value="Save">
+</div>
+<p>Track Your Sleep</p>
+
 
 <script>
-  function showInput() {
-    document.getElementById('display').innerHTML = document.getElementById("startdate").value;
-    document.getElementById('displayone').innerHTML = document.getElementById("cyclelength").value-1+" days";
-}
-                
+$('#moods input:radio').addClass('input_hidden');
+$('#moods label').click(function(){
+    $(this).addClass('selected').siblings().removeClass('selected');
+});
 </script>
-
