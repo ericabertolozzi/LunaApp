@@ -1,5 +1,4 @@
-/* Colors: Dark Blue (#22223b), Blue/Purple (#4a4e69),  Grey (#b2b1b9), Periwinkle Blue (#8e9aaf) */
-
+/* Colors: Dark Blue (#22223b), Blue/Purple (#4a4e69),  Grey (#b2b1b9)*/
 .slogan{
     text-align:center;
     font-family: 'Quicksand', sans-serif;
@@ -15,18 +14,23 @@
     color:#ffffff !important;
     z-index: 10;
 }
-.footer {
-    position:unset;
-    margin-top: 15px;
-    font-size:17px;
-    left: 0;
-    bottom: 0;
+h2{
+    text-align:left;
     font-family: 'Quicksand', sans-serif;
-    width: 100%;
-    color: white;
-    background-color: #4a4e69;
-    text-align: center;
+    padding: 5px;
 }
+h3{
+    color: #ffffff;
+    align-content: center;
+    font-size: 20px !important;
+}
+#LunaBorderBackground{
+    border: 20px solid transparent;
+    padding: 15px;
+    border-image: url(./images/Star_SmallBackground.PNG) 60 round;
+    font-size: 20px;
+}
+/*Intro Box CSS*/
 .intro{
     padding-bottom:25px;
     border-radius: 35px;
@@ -48,28 +52,90 @@
     justify-content: center;
     position: relative;
 }
-h2{
-    text-align:left;
-    font-family: 'Quicksand', sans-serif;
-    padding: 5px;
-}
+
+/* About Us Box */
 #AboutUsContent{
-    background: #8e9aaf;
+    text-align: center;
+    margin-right: 4px;
+    margin-left: 4px;
+}
+#borderAboutUs{
+    width: 300px;
+    height: 10px;
+    background: #4a4e69;
+    margin: 0px auto;
+    position: relative;
+}
+#AboutUsBoxes{
+    font-size: 20px;
+    margin-top: 40px;
+    margin-bottom: 70px;
+    height: 100%;
+    width: 100%;
+}
+#leftBox {
+    background: #9096b69a;
+    border: 4px solid #22223b;
+    border-radius: 15px;
+    width: 33%;
+    float: left;
+}
+#centerBox {
+    background: #9096b69a;
+    border: 4px solid #22223b;
+    border-radius: 15px;
+    width: 33%;
+    margin:0 auto;
+    display:inline-block;
+}
+#rightBox {
+    background: #9096b69a;
+    border: 4px solid #22223b;
+    border-radius: 15px;
+    width: 33%;
+    float: right;
+}
+#AboutUsContent h2{
+    text-align: center;
+    margin-top: 50px;
+}
+#AboutUsContent h3{
+    background: #22223b8a;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 15px;
+    font-weight:normal;
+    text-shadow: 1px 1px #000000;
+}
+
+/* What We Offer CSS - Including Carousel*/
+#WhatWeOffer h2{
+    margin-top: 20px;
+}
+#WhatWeOffer h3{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-shadow: 2px 2px #000000;
+}
+#WhatWeOffer{
+    background: #9096b6;
     margin-left: 1px;
     margin-right: 1px;
+    margin-bottom: 70px;
     border-top: 15px;
-    max-width:fit-content;
-    border-radius: 20px;
-
+    max-width:99.8%;
 }
-#AboutUsContent p{
+#WhatWeOffer p{
     margin-left: 5%;
     font-size: 20px;
 }
-#WhatWeOfferContent{
-    background: #22223ba2;
+#CarouselSlider{
+    background: #e6e6fa;
     margin-top: 50px;
     margin-bottom: 50px;
+    border-style: double;
+    border-color: #9096b6;
+    border-width: thick;
 
 }
 /* Make the image fully responsive */
@@ -77,23 +143,31 @@ h2{
     width: 50%;
     height: 500px;
 }
-.carousel-caption p{
-    color: rgb(255, 255, 255);
-    text-shadow: 2px 2px #000000;
-    align-content: center;
-}
 .carousel-caption a{
     font-size: 30px;
-    color: rgb(255, 255, 255);
-    text-shadow: 2px 2px #000000;
+    color:  #ffffff;
+    text-shadow: 3px 2px #000000;
     align-content: center;
 } 
 .carousel-caption a:hover {
     font-size: 30px;
-    color: rgb(255, 255, 255);
-    text-shadow: 2px 2px #000000;
+    color:  #ffffff;
+    text-shadow: 4px 4px #000000;
     align-content: center;
     text-decoration: none;
-  }
+    font-weight: bold;
+}
 
-
+/* Footer CSS*/
+.footer {
+    position:unset;
+    margin-top: 15px;
+    font-size:17px;
+    left: 0;
+    bottom: 0;
+    font-family: 'Quicksand', sans-serif;
+    width: 100%;
+    color: white;
+    background-color: #4a4e69;
+    text-align: center;
+}
