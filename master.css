@@ -33,7 +33,7 @@ h1{
 }
 
 .footer1 {
-  /* position: absolute; */
+  /* position: fixed; */
   font-size:17px;
   left: 0;
   bottom: 0;
@@ -90,19 +90,21 @@ h4{
 }
 
 #lastperiod{
-    position:fixed;
-    margin-left:10%;
+    /* position:absolute; */
+    margin-top:4%;
+    margin-left:12%;
     font-size:15px;
     border-radius: 25px;
     border: 2px solid #8e9aaf;
+    padding:10px;
     width:16%;
     height: 14%
 
 }
 
 #nextperiod{
-  position:fixed;
-  margin-bottom:10%;
+  position:relative;
+  margin-top:-4%;
   margin-left:73%;
   font-size:15px;
   border-radius: 25px;
@@ -110,6 +112,11 @@ h4{
   padding: 10px;
   width: 16%;
   height: 14%
+}
+.forms-display{
+  width:100%;
+  text-align:center;
+  display:inline-block;
 }
 .mood{
   text-align:left;
@@ -122,9 +129,9 @@ h4{
   margin-left:11%;
 }
 #display{
-  display:block;
-  margin:0 auto;
-  position:relative;
+  display:inline-block;
+   margin:0 auto; 
+  position:relative; 
 }
 .sadmood{
   padding-left:18px;

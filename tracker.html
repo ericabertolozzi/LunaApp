@@ -73,24 +73,29 @@
       </div>  
     </div>
   <div class="submission">
-  <input class="submit" type="submit" onclick="showInput();" value="Start Tracking Your Cycle"><br><br><br>
+  <input class="submit" type="submit" onclick="showInput();" value="Start Tracking Your Cycle"><br>
   <div id="lastperiod">
   <p class="lastperiods">Your last period was:<b><p><span id='display'></span></p></b> </p>
   </div>
   <div id="nextperiod">
     <p class="nextperiods">Your next period is in:<b><p><span id='displayone'></span></p></b> </p>
-    </div>
-  </div><br><br><br><br><br>
+    </div><br><br>
+  </div>
 
+  <div class="forms-display">
   <form method="GET" id="form2" action="./mood.html">
-    <input type="submit" name="display" id="display" value="Track Your Mood"><br>
+    <input type="submit" name="display" id="display" value="Track Your Mood">
 </form>
-
-<input type="submit" name="display" id="display1" value="Cycle Analysis"><br>
+<form method="GET" id="form2" action="/display">
+  <input type="submit" name="display" id="display" value="Click to Download CSV File">
+</form>
+<input type="submit" name="display" id="display" value="Cycle Analysis">
+</div>
   
     <div class="footer1">
       <p class="footer-text">Luna Copyright &copy; 2021.</p>
     </div> 
+
 </body>
 </html>
 
@@ -98,7 +103,6 @@
   function showInput() {
     document.getElementById('display').innerHTML = document.getElementById("startdate").value;
     document.getElementById('displayone').innerHTML = document.getElementById("cyclelength").value-1+" days";
-}
-                
+}                
 </script>
 
