@@ -4,14 +4,25 @@ h1{
     font-size:25px;
 }
 
+.csvbutton{
+    display:flex;
+    margin-left:2%;
+    font-family: 'Zen Dots', cursive;
+    height: 100px;
+    font-size:20px;
+    justify-content: center;
+    align-items: center;
+}
+
 button{
    display: flex;
    font-family: 'Zen Dots', cursive;
   justify-content: center;
   align-items: center;
   height: 100px;
-  font-size:20px;
-  border: 3px solid green; 
+  font-size:25px;
+  border: 3px solid blue;
+  padding-right:20px;
 }
 
 #graph1{
