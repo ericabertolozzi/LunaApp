@@ -40,6 +40,38 @@ app.get('/ericaETL', function(req, res){
     });
 });
 
+app.get('/manya', (req, res) => {
+	res.sendFile(__dirname + '/lab6/src/app/manya/manya.component.html');
+});
+
+app.get('/display', function(req, res){
+	const mongodb = require("mongodb").MongoClient;
+	const fastcsv = require("fast-csv");
+	const ws = fs.createWriteStream("cycle_tracking.csv");
+	const url = "mongodb+srv://barnev:.mUNYTL8Ga.6q2%40@cluster0.pacdp.mongodb.net/luna?retryWrites=true&w=majority";
+  
+	mongodb.connect(
+	  url,
+	  (err, client) => {
+		if (err) throw err;
+		client
+		  .db("luna").collection("Cycle Tracking").find({},{projection:{_id:0}}).toArray((err, data) => {
+			if (err) throw err;
+			console.log(data);
+			fastcsv
+			  .write(data, { headers: true })
+			  .on("finish", function() {
+				console.log("Write to cycle_tracking.csv successfully!");
+				res.send("CSV Successfully Downloaded.")
+			  })
+			  .pipe(ws);
+  
+			client.close();
+		  });
+	  }
+	);
+	});
+
 app.listen(port, () => {
 	console.log('Listening on *:3000')
 });
