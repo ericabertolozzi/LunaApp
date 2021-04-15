@@ -6,11 +6,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HttpService {
 
-  private apiserver = "http://localhost:3000/api";
-
   constructor(private httpClient: HttpClient) { }
 
-  public sendGetRequest() {
-    return this.httpClient.get(this.apiserver);
+  public sendGetRequest(endpoint: string) {
+    let finaldest = "http://localhost:3000" + endpoint
+    return this.httpClient.get(finaldest);
   }
 }

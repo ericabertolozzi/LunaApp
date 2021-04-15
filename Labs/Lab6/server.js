@@ -27,7 +27,7 @@ app.get('/ericaETL', function(req, res){
 			const json2csvParser = new Json2csvParser({ csvFields });
 			const csv = json2csvParser.parse(result);
 
-			// have browser download csv when pressing button
+			// have browser download csv when pressing button --NOT DONE YET
 
 			// Export the data to a physical CSV file
 			fs.writeFile('erica-data.csv', csv, function(err) {
@@ -36,14 +36,6 @@ app.get('/ericaETL', function(req, res){
 			});
 
 			db.close();
-
-			// Build an HTML string to send information to the front end
-            var html = "<!DOCTYPE html><html><head></head><body><h1>All ages of users in the Database</h1><ul>";
-            for (let i=0; i<result.length; i++) {
-                html += '<li>' + result[i]['age'] +'</li>';
-            }
-            html += "</ul></body></html>";
-            res.send(html);
         });
     });
 });

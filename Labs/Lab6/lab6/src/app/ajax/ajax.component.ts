@@ -11,7 +11,7 @@ export class AjaxComponent implements OnInit {
   constructor(private httpService: HttpService) { }
 
   ngOnInit(): void {
-    this.httpService.sendGetRequest().subscribe((data) => {
+    this.httpService.sendGetRequest('/').subscribe((data) => {
       console.log(data);
     })
   }

@@ -7,6 +7,10 @@ import { AppComponent } from './app.component';
 import { EricaComponent } from './erica/erica.component';
 import { VirginiaComponent } from './virginia/virginia.component';
 import { AjaxComponent } from './ajax/ajax.component';
+import { HelenaComponent } from './helena/helena.component';
+import { LaurenComponent } from './lauren/lauren.component';
+import { ManyaComponent } from './manya/manya.component';
+import { SimiComponent } from './simi/simi.component';
 
 
 @NgModule({
@@ -14,7 +18,11 @@ import { AjaxComponent } from './ajax/ajax.component';
     AppComponent,
     EricaComponent,
     VirginiaComponent,
-    AjaxComponent
+    AjaxComponent,
+    HelenaComponent,
+    LaurenComponent,
+    ManyaComponent,
+    SimiComponent
   ],
   imports: [
     BrowserModule,
