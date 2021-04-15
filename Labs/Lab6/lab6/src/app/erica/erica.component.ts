@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-erica',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EricaComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private httpService: HttpService) {
+   }
 
   ngOnInit(): void {
+  }
+
+  public makeCSV(): void {
+    this.httpService.sendGetRequest('/ericaETL').subscribe((data) => {
+      console.log(data);
+    })
   }
 
 }
