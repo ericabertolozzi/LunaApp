@@ -64,6 +64,63 @@ app.get('/ericaETL2', function(req, res){
     });
 });
 
+
+app.get('/helena', (req, res) => {
+	res.sendFile(__dirname + '/lab6/src/app/helena/helena.component.html');
+});
+
+app.get('/helenaETL1', function(req, res){
+	
+	MongoClient.connect(url, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("luna");
+
+        dbo.collection("Home Page").find({}, {projection: {Pain_Onset_vs_Menarche: 1}}).toArray(function(err, result) {
+            
+			// Convert the JSON data in 'result' to CSV
+			const csvFields = ['_id', 'Pain_Onset_vs_Menarche'];
+			const json2csvParser = new Json2csvParser({ csvFields });
+			const csv = json2csvParser.parse(result);
+
+			// Export the data to a physical CSV file
+			fs.writeFile('osullh-data.csv', csv, function(err) {
+				if (err) throw err;
+				console.log('Write to osullh-data.csv successfully, Pain Onset vs Menarche Data saved!');
+			});
+
+			db.close();
+        });
+    });
+});
+
+app.get('/helenaETL2', function(req, res){
+	const mongodb = require("mongodb").MongoClient;
+	const fastcsv = require("fast-csv");
+	const ws = fs.createWriteStream("Home_Page.csv");
+	const url = "mongodb+srv://barnev:.mUNYTL8Ga.6q2%40@cluster0.pacdp.mongodb.net/luna?retryWrites=true&w=majority";
+  
+	mongodb.connect(
+	  url,
+	  (err, client) => {
+		if (err) throw err;
+		client
+		  .db("luna").collection("Home Page").find({},{projection:{_id:0}}).toArray((err, data) => {
+			if (err) throw err;
+			console.log(data);
+			fastcsv
+			  .write(data, { headers: true })
+			  .on("finish", function() {
+				console.log("Write to Home_Page.csv successfully, All Home Page Data saved!");
+				res.send("CSV Downloaded.")
+			  })
+			  .pipe(ws);
+  
+			client.close();
+		  });
+	  }
+	);
+});
+
 app.get('/virginia', (req, res) => {
 	res.sendFile(__dirname + '/lab6/src/app/virginia/virginia.component.html');
 });
