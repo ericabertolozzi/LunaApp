@@ -280,12 +280,14 @@ app.get('/laurenETL2', function(req, res){
 			fs.writeFile('lauren-data2.csv', csv, function(err) {
 				if (err) throw err;
 				console.log('File saved!');
+				res.download('lauren-data2.csv');
 			});
 
 			db.close();
         });
     });
 });
+
 
 app.get('/simi', (req, res) => {
 	res.sendFile(__dirname + '/lab6/src/app/simi/simi.component.html');
