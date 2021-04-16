@@ -73,7 +73,7 @@ app.get('/manya', (req, res) => {
 	res.sendFile(__dirname + '/lab6/src/app/manya/manya.component.html');
 });
 
-app.get('/display', function(req, res){
+app.get('/manyadisplay', function(req, res){
 	const mongodb = require("mongodb").MongoClient;
 	const fastcsv = require("fast-csv");
 	const ws = fs.createWriteStream("cycle_tracking.csv");
@@ -90,7 +90,8 @@ app.get('/display', function(req, res){
 			fastcsv
 			  .write(data, { headers: true })
 			  .on("finish", function() {
-				console.log("Write to cycle_tracking.csv successfully!");
+				res.download('cycle_tracking.csv')
+				console.log("cycle_tracking.csv created successfully!");
 				res.send("CSV Successfully Downloaded.")
 			  })
 			  .pipe(ws);
