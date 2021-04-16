@@ -26,6 +26,6 @@ button is clicked. The entire database except the auto created id is present in 
 CSV file is found in Labs/Lab6. The last step was to make visualizations which I used R to do. I
 created a Pi chart to show the different moods people experience and a bar chart to show the frequency
 of the different types of sleep. For creativity, I added CSS styling to make the page easier to
-understand. I also added a message to show up after the button to create the CSV file was clicked.
+understand. I also added a message that appears after the button was clicked to create the CSV file.
 I had difficulty making this work, but I was able to get it working after doing some online research
 and adjusting the ts file.
