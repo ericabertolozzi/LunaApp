@@ -19,4 +19,15 @@ export class LaurenComponent implements OnInit {
     })
   }
 
+  public makeFirstDataSet(): void {
+    this.httpService.sendGetRequest('/laurenETL1').subscribe((data) => {
+      console.log(data);
+    })
+  }
+
+  public makeSecondDataSet(): void {
+    this.httpService.sendGetRequest('/laurenETL2').subscribe((data) => {
+      console.log(data);
+    })
+  }
 }
