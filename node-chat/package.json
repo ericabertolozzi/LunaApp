@@ -8,7 +8,7 @@
     "express": "^4.10.2",
     "mongoose": "^3.8.24",
     "node-emoji": "^1.10.0",
-    "socket.io": "^1.3.4"
+    "socket.io": "^2.4.0"
   },
   "license": "UNLICENSED",
   "repository": "None"
