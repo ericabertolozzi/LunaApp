@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-helena',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelenaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpService: HttpService) { }
 
   ngOnInit(): void {
+  }
+
+  public makeCSV1(): void {
+    this.httpService.sendGetRequest('/helenaETL1').subscribe((data) => {
+      console.log(data);
+    })
+  }
+
+  public makeCSV2(): void {
+    this.httpService.sendGetRequest('/helenaETL2').subscribe((data) => {
+      console.log(data);
+    })
   }
 
 }

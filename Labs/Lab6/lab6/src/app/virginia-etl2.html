@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div class="main">
+    <h1>Virginia's ETL 2</h1>
+    <div class="csvbutton">
+      <button (click)="makeCSV();clickEvent()">Click to Download CSV File</button>
+    </div>
+  </div>
+  <div style='height: 30px'></div>
+  <div class="main">
+    <h1>Preview of CSV file</h1>
+    <table class="table table-bordered table-hover table-condensed">
+      <thead><tr><th title="Field #1">_id</th>
+        <th title="Field #2">name</th>
+        <th title="Field #3">preview</th>
+        <th title="Field #4">link</th>
+        <th title="Field #5">category</th>
+      </tr></thead>
+      <tbody><tr>
+        <td>60739f76938b66c4e83a516f</td>
+        <td>Birth Control</td>
+        <td>Birth control is how you prevent pregnancy. There are lots of different birth control options out there. We&amp;#39;re here to help you figure it all out.</td>
+        <td>https://www.plannedparenthood.org/learn/birth-control</td>
+        <td>Birth Control</td>
+      </tr>
+      <tr>
+        <td>60739f76938b66c4e83a5170</td>
+        <td>How Do I Get Birth Control Pills</td>
+        <td>The pill is easy to get, but you need a prescription. Here’s the scoop on where to get birth control pills, how much they cost, and how you might be able to get them for free or low cost.</td>
+        <td>https://www.plannedparenthood.org/learn/birth-control/birth-control-pill/how-do-i-get-birth-control-pills</td>
+        <td>Birth Control</td>
+      </tr>
+      <tr>
+        <td>60739f76938b66c4e83a5171</td>
+        <td>How to Figure Out Which Birth Control Method is Right for You</td>
+        <td>If there’s anything harder than figuring out what to eat at Cheesecake Factory or which vibrator to add to your collection, it’s figuring out which birth control option is right for you.</td>
+        <td>https://www.healthline.com/health/birth-control/methods</td>
+        <td>Birth Control</td>
+      </tr>
+      <tr>
+        <td>60739f76938b66c4e83a5172</td>
+        <td>What are the Disadvantages of the Pill</td>
+        <td>Remembering to take a pill every day can be hard. And some people get side effects that bother them (but they usually go away in a few months).</td>
+        <td>https://www.plannedparenthood.org/learn/birth-control/birth-control-pill/what-are-the-disadvantages-of-the-pill</td>
+        <td>Birth Control</td>
+      </tr>
+      <tr>
+        <td>60739f76938b66c4e83a5173</td>
+        <td>Birth Control Implant</td>
+        <td>A contraceptive implant is a type of hormonal birth control. In the United States, it’s sold under the brand name Nexplanon. It was previously available under the name Implanon.</td>
+        <td>https://www.healthline.com/health/birth-control-implant</td>
+        <td>Birth Control</td>
+      </tr>
+    </tbody></table>
+
+    <h1>See data visualization below:</h1>
+    <img src="../../assets/data_visualizations/virginia-plot2.png" alt="Barplot">
+    <div id="CSVTable"></div>
+  </div>
+</body>
+</html>
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="//jquerycsvtotable.googlecode.com/files/jquery.csvToTable.js"></script>
+<script>
+  $(function() {
+    $('#CSVTable').CSVToTable('virginia-etl2.csv');
+  });
+</script> -->
