@@ -238,6 +238,62 @@ app.get('/laurendisplay', function(req, res){
     });
 });
 
+
+app.get('/simi', (req, res) => {
+	res.sendFile(__dirname + '/lab6/src/app/simi/simi.component.html');
+});
+
+app.get('/SimiETL1', function(req, res){
+	
+	MongoClient.connect(url, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("luna");
+
+        dbo.collection("Symptoms").find({}, {projection: {Symptoms: 1}}).toArray(function(err, result) {
+            
+			
+			constfields = ['_id', 'Symptoms'];
+			const json2csvParser = new Json2csvParser({ fields });
+			const csv = json2csvParser.parse(result);
+			
+			fs.writeFile('simi-data.csv', csv, function(err) {
+				if (err) throw err;
+				console.log('Write to simi-data.csv successfully, Symptoms saved!');
+			});
+
+			db.close();
+        });
+    });
+});
+
+app.get('/SimiETL2', function(req, res){
+	const mongodb = require("mongodb").MongoClient;
+	const fastcsv = require("fast-csv");
+	const ws = fs.createWriteStream("simi-data.csv");
+	const url = "mongodb+srv://barnev:.mUNYTL8Ga.6q2%40@cluster0.pacdp.mongodb.net/luna?retryWrites=true&w=majority";
+  
+	mongodb.connect(
+	  url,
+	  (err, client) => {
+		if (err) throw err;
+		client
+		  .db("luna").collection("Symptoms").find({},{projection:{_id:0}}).toArray((err, data) => {
+			if (err) throw err;
+			console.log(data);
+			fastcsv
+			  .write(data, { headers: true })
+			  .on("finish", function() {
+				console.log("Write to simi-data.csv successfully, All Symptoms Data saved!");
+				res.send("CSV Downloaded.")
+			  })
+			  .pipe(ws);
+  
+			client.close();
+		  });
+	  }
+	);
+});
+
 app.listen(port, () => {
 	console.log('Listening on *:3000')
 });
