@@ -24,6 +24,13 @@ export class SimiComponent implements OnInit {
   //   })
   }
 
+  public makeFirstDataSet(): void {
+    this.httpService.sendGetRequest('/SimiETL1').subscribe((data) => {
+      console.log(data);
+    })
+  }
+
+
   public makeSecondDataSet(): void {
     this.httpService.sendGetRequest('/SimiETL2').subscribe((data) => {
       console.log(data);
