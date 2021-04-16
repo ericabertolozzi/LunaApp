@@ -6,7 +6,8 @@ These instructions will get you a copy of the Luna project up and running on you
 3. `cd LunaApp`
 4. `npm install`
 5. Once we have angular:
-   * Open another terminal (terminal 2) and cd into LunaApp directory
-   * cd into the angular directory: `cd ___` 
+   * Open another terminal (terminal 2)
+   * `cd` into LunaApp directory
+   * `cd` into the angular directory
    * `ng build --watch`
 6. `node server` in terminal 1
