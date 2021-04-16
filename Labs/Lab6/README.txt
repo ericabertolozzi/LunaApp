@@ -47,3 +47,27 @@ asked in the lab instructions, though.
 - Lauren McAlarney (@mcalal)
 I had to use the command "npm install --save-dev @angular-devkit/build-angular" after step 3 to make this lab work.
 For this lab, I created a JSON file to upload to the Shopping collection in the luna database. I included 8 objects, of which were either type reusable, non reusable, or null (article). The hardest part of this lab for me was using RStudio. For some reason, importing the dataset did not work the same way as when we practiced in class. Customizing the barplot and histogram was also interesting to learn how to do.
+
+Helena's Work Log: osullh
+  For Lab 6, my main goal was to add Data Visualizations that would support the point that knowing more about menstruation and period-related
+  symptoms will help individuals with managing periods. I added data to the Home Page collection in the luna database with 50 users based on
+  the results of a recent study on menstruation.
+        
+  For Part 1, I created two frontend objects that query the Home Page database for the Pain Onset vs. Menarche data and all the Home Page data, 
+  perform an ETL action to convert the results of that query from JSON to CSV, and then produces a download of the CSV file.
+
+  For Part 2, I created three data visualizations:
+ 	- Pain Onset vs. Menarche
+    	This data visualization shows when individuals first feel the pain caused by a period with respect to their first menstrual period.
+	- Pain Onset vs. Menstrual Flow
+    	This data visualization shows when individuals first feel the pain caused by a period with respect to the beginning of the menstrual flow.
+    - Effect of Periods on Performance/Absences of Individuals
+	    This data visualization illustrates the relationship between school and social performances, and absenteeism of individuals on their periods.
+
+  For Part 3, all three of my data visualizations are displayed when the frontend object is interacted with.
+
+  During the entire process of the lab, I only really got stuck on getting the necessary information to populate the database with, but aside from
+  that, I understood what to do. Overall, I found that the work that I did for the lab to be reasonable.
+
+  For individual creativity, I added an additional data visualization pertaining to the school and social performances, and absenteeism of
+  individuals on their periods.

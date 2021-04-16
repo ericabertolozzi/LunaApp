@@ -1,0 +1,27 @@
+/*Helena's Lab 6 CSS*/
+.title {
+    width: 70%;
+    margin: 0 auto;
+    padding: 5px;
+    text-align: center;
+}
+.main_boxes {
+    background-color: #cbc0d3;
+    width: 70%;
+    margin: 0 auto;
+    padding: 5px;
+    text-align: center;
+    border: 3px solid #8e9aaf;
+    border-radius: 12px;
+}
+.title h1 {
+    color:black;
+    font-family:Verdana, Tahoma, sans-serif;
+    text-shadow: 2px 2px #ffffff;
+    font-size: 30px;
+}
+h1 {
+    color:black;
+    font-family:Verdana, Tahoma, sans-serif;
+    text-shadow: 2px 2px #ffffff;
+}
