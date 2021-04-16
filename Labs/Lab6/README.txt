@@ -39,13 +39,17 @@ I had difficulty making this work, but I was able to get it working after doing 
 and adjusting the ts file.
 
 Virginia Barnes
-My visualizations in Part 2 use different queries from the ones I chose in Part 1.
-This is because my dataset was limited and I wanted to create both meaningful queries
-and meaningful visualizations. The transactions and logic are the same as what is
-asked in the lab instructions, though. 
+For this lab, I created data for the Articles collection in the luna database.
+I was also confused with how to have the csv file download to the user's computer
+in the browser, so I used res.download(csv) to download the csv file that is created
+in the code earlier.
+I tried to have two buttons on my main page, where clicking a button would show you
+the prospective ETL's csv and visualization. I could not get the buttons to redirect, though.
+I do not understand where the file goes after calling res.download, since
+I did not figure out a way to set a path for every user's computer Downloads folder.
 
 Simran Nambiar simrannambiar
-I created a csv file of different users and whether or not they had certain symptoms while menstruating. I then used R to analyze the data to make 2 graphs. One showed the number of women who got cramps while menstruating, and the other showed headaches. Both showed that they got a lot, so now we can add more articles and products to their respective pages to help them with that. I had trouble trying to come up with how to make my csv file because I wasn't sure which was necessary information and which wasn't for what information I was trying to portrey. 
+I created a csv file of different users and whether or not they had certain symptoms while menstruating. I then used R to analyze the data to make 2 graphs. One showed the number of women who got cramps while menstruating, and the other showed headaches. Both showed that they got a lot, so now we can add more articles and products to their respective pages to help them with that. I had trouble trying to come up with how to make my csv file because I wasn't sure which was necessary information and which wasn't for what information I was trying to portrey.
 
 - Lauren McAlarney (@mcalal)
 I had to use the command "npm install --save-dev @angular-devkit/build-angular" after step 3 to make this lab work.
@@ -55,8 +59,8 @@ Helena's Work Log: osullh
   For Lab 6, my main goal was to add Data Visualizations that would support the point that knowing more about menstruation and period-related
   symptoms will help individuals with managing periods. I added data to the Home Page collection in the luna database with 50 users based on
   the results of a recent study on menstruation.
-        
-  For Part 1, I created two frontend objects that query the Home Page database for the Pain Onset vs. Menarche data and all the Home Page data, 
+
+  For Part 1, I created two frontend objects that query the Home Page database for the Pain Onset vs. Menarche data and all the Home Page data,
   perform an ETL action to convert the results of that query from JSON to CSV, and then produces a download of the CSV file.
 
   For Part 2, I created three data visualizations:

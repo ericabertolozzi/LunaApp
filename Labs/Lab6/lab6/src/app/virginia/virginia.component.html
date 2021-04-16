@@ -57,7 +57,8 @@
     </tbody></table>
 
     <div class="csvbutton">
-      <button (click)="makeCSV1();">Click to Download CSV File</button>
+      <button (click)="makeCSV1();clickEvent1();">Click to Download CSV File</button>
+      <p>{{msg1}}</p>
     </div>
 
     <h2>Data Visualization: Barplot of the Number of Articles in each Category</h2>
@@ -117,7 +118,8 @@
     </tbody></table>
 
     <div class="csvbutton">
-      <button (click)="makeCSV2();">Click to Download CSV File</button>
+      <button (click)="makeCSV2();clickEvent2();">Click to Download CSV File</button>
+      <p>{{msg2}}</p>
     </div>
 
     <h2>Data Visualization: Barplot of the Number of Keywords Found in Articles Titles</h2>
