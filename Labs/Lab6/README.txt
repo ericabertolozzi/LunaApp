@@ -30,8 +30,8 @@ I did not figure out a way to set a path for every user's computer Downloads fol
 First, I created a collection called Cycle Tracking within the luna database. This collection
 contains data for 10 users about the start date of their cycle, cycle length, period length, mood
 and sleep. Second, I used the fast-csv module to create the CSV file from the database after the
-button is clicked. The entire database except the auto created id is present in the CSV file. The
-CSV file is found in Labs/Lab6. The last step was to make visualizations which I used R to do. I
+button is clicked. There are two buttons that create two different CSV files. Both
+CSV files are found in Labs/Lab6. The last step was to make visualizations which I used R to do. I
 created a Pi chart to show the different moods people experience and a bar chart to show the frequency
 of the different types of sleep. For creativity, I added CSS styling to make the page easier to
 understand. I also added a message that appears after the button was clicked to create the CSV file.
