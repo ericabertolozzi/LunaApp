@@ -6,8 +6,8 @@ Instructions for Running the Application
 1. Open one terminal and navigate to the node root directory (Labs/Lab6)
 2. Run the npm install -g @angular/cli command, npm install mongodb, npm install fast-csv, npm install json2csv and then run the node server command
 3. Open a second terminal and navigate to the angular root directory (Labs/Lab6/lab6)
-4. run npm install --save-dev @angular-devkit/build-angular
-5. run ng build --watch
+4. Run npm install --save-dev @angular-devkit/build-angular
+5. Run ng build --watch
 6. Open a browser and navigate to localhost:3000
 7. Go to each group member's page by pressing the button with their name in the top navbar
 
@@ -15,7 +15,16 @@ Individual Work Logs
 --------------------
 
 - Erica Bertolozzi (@ericabertolozzi)
-For this lab, I created data for the Users collection in the luna database. I made 7 users with varying ages and app modes. For my visualization, I decided to use the age and app mode data to see how many users fall into each category and the age ranges of users on the app, since that information is important for app developers. I created the angular components for each group member so we can set up the lab more robustly this time around. I struggled with connecting the angular front end to the node back end through the HTTP service, but I got help from Dr. Callahan in office hours to set up my services correctly. I was also confused with how to have the csv file download to the user's computer in the browser, so I am still trying to figure that out.
+For this lab, I created data for the Users collection in the luna database. 
+I made 7 users with varying ages and app modes. For my visualization, 
+I decided to use the age and app mode data to see how many users fall into each category 
+and the age ranges of users on the app, since that information is important for app developers. 
+I created the angular components for each group member so we can set up the lab more robustly this 
+time around. I struggled with connecting the angular front end to the node back end through the HTTP service,
+but I got help from Dr. Callahan in office hours to set up my services correctly. I was also confused with how to 
+have the csv file download to the user's computer in the browser, so I used res.download(csv) to download the csv 
+file that I createds in the code earlier. I do not understand where the file goes after calling res.download, since 
+I did not figure out a way to set a path for every user's computer Downloads folder.
 
 - Manya Trehan (@Manya14)
 First, I created a collection called Cycle Tracking within the luna database. This collection
@@ -32,3 +41,4 @@ and adjusting the ts file.
 - Lauren McAlarney (@mcalal)
 I had to use the command "npm install --save-dev @angular-devkit/build-angular" after step 3 to make this lab work.
 For this lab, I created a JSON file to upload to the Shopping collection in the luna database. I included 8 objects, of which were either type reusable, non reusable, or null (article). The hardest part of this lab for me was using RStudio. For some reason, importing the dataset did not work the same way as when we practiced in class. Customizing the barplot and histogram was also interesting to learn how to do.
+

@@ -15,24 +15,48 @@ app.get('/erica', (req, res) => {
 	res.sendFile(__dirname + '/lab6/src/app/erica/erica.component.html');
 });
 
-app.get('/ericaETL', function(req, res){
+app.get('/ericaETL1', function(req, res){
 	MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         var dbo = db.db("luna");
 
-        dbo.collection("Users").find({}).toArray(function(err, result) {
-
+        dbo.collection("Users").find({}, {projection: {age: 1}}).toArray(function(err, result) {
+         
 			// Convert the JSON data in 'result' to CSV
-			const csvFields = ['_id', 'age', 'app_mode'];
+			const csvFields = ['_id', 'age'];
+			const json2csvParser = new Json2csvParser({ csvFields });
+			const csv = json2csvParser.parse(result);
+			
+			// Export the data to a physical CSV file
+			fs.writeFile('erica-dataset1.csv', csv, function(err) {
+				if (err) throw err;
+				console.log('Dataset 1 generated!');
+				// Have browser download dataset
+				res.download('erica-dataset1.csv');
+			});
+
+			db.close();
+        });
+    });
+});
+
+app.get('/ericaETL2', function(req, res){
+	MongoClient.connect(url, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("luna");
+
+        dbo.collection("Users").find({}, {projection: {app_mode: 1}}).toArray(function(err, result) {
+			// Convert the JSON data in 'result' to CSV
+			const csvFields = ['_id', 'app_mode'];
 			const json2csvParser = new Json2csvParser({ csvFields });
 			const csv = json2csvParser.parse(result);
 
-			// have browser download csv when pressing button --NOT DONE YET
-
 			// Export the data to a physical CSV file
-			fs.writeFile('erica-data.csv', csv, function(err) {
+			fs.writeFile('erica-dataset2.csv', csv, function(err) {
 				if (err) throw err;
-				console.log('File saved!');
+				console.log('Dataset 2 generated!');
+				// Have browser download dataset
+				res.download('erica-dataset2.csv');
 			});
 
 			db.close();

@@ -9,7 +9,29 @@
 
 }
 
-h1 {
+button {
+    display: inline-block;
+    padding: 7px 20px;
+	/* border-radius: 25px; */
+    text-decoration: none;
+    color: #FFF;
+    background-image: -webkit-linear-gradient(45deg, #f0269c 0%, #f397d0 100%);
+    background-image: linear-gradient(45deg, #f0269c 0%, #f397d0 100%);
+    transition: .4s;
+    font-variant: small-caps;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button:hover {
+    background-image: -webkit-linear-gradient(45deg, #f397d0 0%, #f0269c 100%);
+    background-image: linear-gradient(45deg, #f397d0 0%, #f0269c 100%);
+}
+
+h1, h2 {
     color: #000;
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1 {
+    font-style: italic;
 }
