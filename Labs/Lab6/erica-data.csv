@@ -1,8 +1,0 @@
-"_id","id","username","password","email","photo_url","join_date","full_name","app_mode","age"
-"607477d5c2a1801a807c8482","1","user1","12345","user1@gmail.com","","2021-4-7","Morgan Smith","Pre-Puberty","11"
-"607477d5c2a1801a807c8488","7","user7","12345","user7@gmail.com","","2021-4-12","Sam Wright","Pre-Puberty","12"
-"607477d5c2a1801a807c8485","4","user4","12345","user4@gmail.com","","2021-4-9","Mary Williams","Menopause","51"
-"607477d5c2a1801a807c8484","3","user3","12345","user3@gmail.com","","2021-4-8","Lisa Jones","Puberty","14"
-"607477d5c2a1801a807c8487","6","user6","12345","user6@gmail.com","","2021-4-12","Chris Jones","Puberty","13"
-"607477d5c2a1801a807c8483","2","user2","12345","user2@gmail.com","","2021-4-8","Jane Jackson","Pregnant","30"
-"607477d5c2a1801a807c8486","5","user5","12345","user5@gmail.com","","2021-4-10","Sally Brown","Menstruating","40"

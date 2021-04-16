@@ -1,0 +1,15 @@
+.main {
+    background-color: #B5F3FF;
+    width: 70%;
+    margin: 0 auto;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 5px;
+
+}
+
+h1 {
+    color: #000;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

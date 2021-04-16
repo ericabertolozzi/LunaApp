@@ -14,8 +14,8 @@ export class SimiComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public makeCSV(): void {
-    this.httpService.sendGetRequest('/display').subscribe((data) => {
+ public makeCSV(): void {
+    this.httpService.sendGetRequest('/SimiETL').subscribe((data) => {
       console.log(data);
     })
   }
