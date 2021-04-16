@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div class="main">
+    <h1>Virginia's ETL 1</h1>
+    <div class="csvbutton">
+      <button (click)="makeCSV();clickEvent()">Click to Download CSV File</button>
+    </div>
+  </div>
+  <div style='height: 30px'></div>
+  <div class="main">
+    <h1>Preview of CSV file</h1>
+    <table class="table table-bordered table-hover table-condensed">
+      <thead><tr><th title="Field #1">_id</th>
+        <th title="Field #2">name</th>
+        <th title="Field #3">preview</th>
+        <th title="Field #4">link</th>
+        <th title="Field #5">category</th>
+      </tr></thead>
+      <tbody><tr>
+        <td>60739f76938b66c4e83a515b</td>
+        <td>All About Periods (For Teens)</td>
+        <td>A period is a release of blood from a girl&#39;s uterus, out through her vagina. It is a sign that she is getting close to the end of puberty. There is a lot to learn about periods. Here are some common questions that teens have.</td>
+        <td>https://kidshealth.org/en/teens/menstruation.html</td>
+        <td>General</td>
+      </tr>
+      <tr>
+        <td>60739f76938b66c4e83a515c</td>
+        <td>All About Menstruation</td>
+        <td>People (especially girls) talk a lot about periods. But what exactly is a period and what makes it happen?</td>
+        <td>https://www.rchsd.org/health-articles/all-about-menstruation/</td>
+        <td>General</td>
+      </tr>
+      <tr>
+        <td>60739f76938b66c4e83a515d</td>
+        <td>Your Menstrual Cycle</td>
+        <td>What happens during the typical 28-day menstrual cycle? Day 1 starts with the first day of your period. The blood and tissue lining the uterus (womb) break down and leave the body.</td>
+        <td>https://www.womenshealth.gov/menstrual-cycle/your-menstrual-cycle</td>
+        <td>General</td>
+      </tr>
+      <tr>
+        <td>60739f76938b66c4e83a515e</td>
+        <td>5 Things You May Not Know About Your Period</td>
+        <td>Think you know all there is to know about your period? Women have about 450 periods during their lifetime, which means you have plenty of chances to learn all about it.</td>
+        <td>https://www.webmd.com/women/5-things-about-your-period</td>
+        <td>General</td>
+      </tr>
+      <tr>
+        <td>60739f76938b66c4e83a515f</td>
+        <td>10 Common Period Questions</td>
+        <td>Period questions are so normal – you’re not alone! Here are answers to some of the most frequently asked questions.</td>
+        <td>https://always.com/en-us/tips-and-advice/your-first-period/10-common-period-questions</td>
+        <td>General</td>
+      </tr>
+    </tbody></table>
+
+    <h1>See data visualization below:</h1>
+    <img src="../../assets/data_visualizations/virginia-plot1.png" alt="Barplot">
+  </div>
+</body>
+</html>
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="//jquerycsvtotable.googlecode.com/files/jquery.csvToTable.js"></script>
+<script>
+  $(function() {
+    $('#CSVTable').CSVToTable('../../../virginia-etl1.csv');
+  });
+</script> -->

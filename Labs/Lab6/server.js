@@ -44,29 +44,55 @@ app.get('/virginia', (req, res) => {
 	res.sendFile(__dirname + '/lab6/src/app/virginia/virginia.component.html');
 });
 
-app.get('/virginiaETL', function(req, res){
+app.get('/virginia/etl1', function(req, res){
+	console.log("ETL1");
+	res.sendFile(__dirname + '/virginia-etl1.html');
+});
+app.get('/virginia/etl2', function(req, res){
+	console.log("ETL2");
+	res.sendFile(__dirname + '/virginia-etl2.html');
+});
+
+// Get all 'Period' Articles
+app.get('/virginiaETL1', function(req, res){
 	MongoClient.connect(url, function(err, db) {
-        if (err) throw err;
-        var dbo = db.db("luna");
-
-        dbo.collection("Articles").find({}).toArray(function(err, result) {
-
+    if (err) throw err;
+    var dbo = db.db("luna");
+    dbo.collection("Articles").find({ "category": "General" }).toArray(function(err, result) {
 			// Convert the JSON data in 'result' to CSV
 			const csvFields = ['_id', 'name', 'preview', 'link', 'category'];
 			const json2csvParser = new Json2csvParser({ csvFields });
 			const csv = json2csvParser.parse(result);
-
-			// have browser download csv when pressing button --NOT DONE YET
-
 			// Export the data to a physical CSV file
-			fs.writeFile('virginia-data.csv', csv, function(err) {
+			fs.writeFile('virginia-etl1.csv', csv, function(err) {
 				if (err) throw err;
 				console.log('File saved!');
 			});
-
 			db.close();
-        });
     });
+  });
+	setTimeout(() => {  res.redirect('/virginia/etl1'); }, 2000);
+});
+
+// Get all 'Period' Articles
+app.get('/virginiaETL2', function(req, res){
+	MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("luna");
+    dbo.collection("Articles").find({ "category": "Birth Control" }).toArray(function(err, result) {
+			// Convert the JSON data in 'result' to CSV
+			const csvFields = ['_id', 'name', 'preview', 'link', 'category'];
+			const json2csvParser = new Json2csvParser({ csvFields });
+			const csv = json2csvParser.parse(result);
+			// Export the data to a physical CSV file
+			fs.writeFile('virginia-etl2.csv', csv, function(err) {
+				if (err) throw err;
+				console.log('File saved!');
+			});
+			db.close();
+    });
+  });
+	res.redirect('/virginia-etl2');
 });
 
 app.get('/manya', (req, res) => {

@@ -29,3 +29,9 @@ of the different types of sleep. For creativity, I added CSS styling to make the
 understand. I also added a message to show up after the button to create the CSV file was clicked.
 I had difficulty making this work, but I was able to get it working after doing some online research
 and adjusting the ts file.
+
+Virginia Barnes
+My visualizations in Part 2 use different queries from the ones I chose in Part 1.
+This is because my dataset was limited and I wanted to create both meaningful queries
+and meaningful visualizations. The transactions and logic are the same as what is
+asked in the lab instructions, though. 
