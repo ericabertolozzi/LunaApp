@@ -102,6 +102,35 @@ app.get('/manyadisplay', function(req, res){
 	);
 	});
 
+app.get('/lauren', (req, res) => {
+	res.sendFile(__dirname + '/lab6/src/app/erica/lauren.component.html');
+});
+
+app.get('/laurendisplay', function(req, res){
+	MongoClient.connect(url, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("luna");
+
+        dbo.collection("Shopping Page").find({}).toArray(function(err, result) {
+            
+			// Convert the JSON data in 'result' to CSV
+			const csvFields = ['_id', 'Product Name', 'Link', 'Category'];
+			const json2csvParser = new Json2csvParser({ csvFields });
+			const csv = json2csvParser.parse(result);
+
+			// have browser download csv when pressing button --NOT DONE YET
+
+			// Export the data to a physical CSV file
+			fs.writeFile('lauren-data.csv', csv, function(err) {
+				if (err) throw err;
+				console.log('File saved!');
+			});
+
+			db.close();
+        });
+    });
+});
+
 app.listen(port, () => {
 	console.log('Listening on *:3000')
 });
