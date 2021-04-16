@@ -14,10 +14,18 @@ export class SimiComponent implements OnInit {
   ngOnInit(): void {
   }
 
- public makeCSV(): void {
-    this.httpService.sendGetRequest('/SimiETL').subscribe((data) => {
+  public makeFirstDataSet(): void {
+    this.httpService.sendGetRequest('/SimiETL1').subscribe((data) => {
       console.log(data);
     })
   }
+
+  public makeSecondDataSet(): void {
+    this.httpService.sendGetRequest('/SimiETL2').subscribe((data) => {
+      console.log(data);
+    })
+  }
+
+  
 
 }
