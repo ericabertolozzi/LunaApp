@@ -1,5 +1,9 @@
 const express = require('express')
 const app = express()
+
+app.set('view engine', 'html');
+app.engine('html', require('ejs').renderFile);
+
 const path = require('path')
 const port = 3000
 const MongoClient = require('mongodb').MongoClient;
@@ -125,16 +129,7 @@ app.get('/virginia', (req, res) => {
 	res.sendFile(__dirname + '/lab6/src/app/virginia/virginia.component.html');
 });
 
-app.get('/virginia/etl1', function(req, res){
-	console.log("ETL1");
-	res.sendFile(__dirname + '/lab6/src/app/virginia/virginia-etl1.html');
-});
-app.get('/virginia/etl2', function(req, res){
-	console.log("ETL2");
-	res.sendFile(__dirname + '/lab6/src/app/virginia/virginia-etl2.html');
-});
-
-// Get all 'Period' Articles
+// Get all 'General' Articles
 app.get('/virginiaETL1', function(req, res){
 	MongoClient.connect(url, function(err, db) {
     if (err) throw err;
@@ -152,10 +147,9 @@ app.get('/virginiaETL1', function(req, res){
 			db.close();
     });
   });
-	setTimeout(() => {  res.redirect('/virginia/etl1'); }, 2000);
 });
 
-// Get all 'Period' Articles
+// Get all 'Birth Control' Articles
 app.get('/virginiaETL2', function(req, res){
 	MongoClient.connect(url, function(err, db) {
     if (err) throw err;
@@ -173,7 +167,6 @@ app.get('/virginiaETL2', function(req, res){
 			db.close();
     });
   });
-	res.redirect('/virginia-etl2');
 });
 
 app.get('/manya', (req, res) => {
@@ -270,7 +263,7 @@ app.get('/laurenETL2', function(req, res){
         var dbo = db.db("luna");
 
         dbo.collection("Shopping Page").find({ "category": "Category" }).toArray(function(err, result) {
-            
+
 			// Convert the JSON data in 'result' to CSV
 			const csvFields = ['_id', 'Product Name', 'Link', 'Category'];
 			const json2csvParser = new Json2csvParser({ csvFields });

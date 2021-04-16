@@ -12,7 +12,6 @@ import { LaurenComponent } from './lauren/lauren.component';
 import { ManyaComponent } from './manya/manya.component';
 import { SimiComponent } from './simi/simi.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

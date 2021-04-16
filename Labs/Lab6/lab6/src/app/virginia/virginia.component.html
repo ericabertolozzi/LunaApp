@@ -1,19 +1,129 @@
 <!DOCTYPE html>
+<head>
+   <!-- <link rel="stylesheet" href="virginia-etl.css"> -->
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+</head>
+
 <html>
 <body>
-    <div class="main">
-        <h1>Click here to generate a CSV file of Article data from Luna:</h1>
-        <!-- <form action='/ericaETL' method='GET'>
-            <input type='submit' value='Generate Data'>
-        </form> -->
-        <button (click)="makeCSV1()">Get All 'General' Articles</button>
-        <button (click)="makeCSV2()">Get All 'Birth Control' Articles</button>
+  <div id="header">
+    <h1>Virginia's ETL 1</h1>
+  </div>
+  <div class="main">
+    <h2>CSV file: All Articles under the "General" Category</h2>
+    <table class="table table-bordered table-hover table-condensed">
+      <thead><tr><th title="Field #1">_id</th>
+        <th title="Field #2">name</th>
+        <th title="Field #3">preview</th>
+        <th title="Field #4">link</th>
+        <th title="Field #5">category</th>
+      </tr></thead>
+      <tbody><tr>
+        <td>60739f76938b66c4e83a515b</td>
+        <td>All About Periods (For Teens)</td>
+        <td>A period is a release of blood from a girl&#39;s uterus, out through her vagina. It is a sign that she is getting close to the end of puberty. There is a lot to learn about periods. Here are some common questions that teens have.</td>
+        <td>https://kidshealth.org/en/teens/menstruation.html</td>
+        <td>General</td>
+      </tr>
+      <tr>
+        <td>60739f76938b66c4e83a515c</td>
+        <td>All About Menstruation</td>
+        <td>People (especially girls) talk a lot about periods. But what exactly is a period and what makes it happen?</td>
+        <td>https://www.rchsd.org/health-articles/all-about-menstruation/</td>
+        <td>General</td>
+      </tr>
+      <tr>
+        <td>60739f76938b66c4e83a515d</td>
+        <td>Your Menstrual Cycle</td>
+        <td>What happens during the typical 28-day menstrual cycle? Day 1 starts with the first day of your period. The blood and tissue lining the uterus (womb) break down and leave the body.</td>
+        <td>https://www.womenshealth.gov/menstrual-cycle/your-menstrual-cycle</td>
+        <td>General</td>
+      </tr>
+      <tr>
+        <td>60739f76938b66c4e83a515e</td>
+        <td>5 Things You May Not Know About Your Period</td>
+        <td>Think you know all there is to know about your period? Women have about 450 periods during their lifetime, which means you have plenty of chances to learn all about it.</td>
+        <td>https://www.webmd.com/women/5-things-about-your-period</td>
+        <td>General</td>
+      </tr>
+      <tr>
+        <td>60739f76938b66c4e83a515f</td>
+        <td>10 Common Period Questions</td>
+        <td>Period questions are so normal – you’re not alone! Here are answers to some of the most frequently asked questions.</td>
+        <td>https://always.com/en-us/tips-and-advice/your-first-period/10-common-period-questions</td>
+        <td>General</td>
+      </tr>
+    </tbody></table>
+
+    <div class="csvbutton">
+      <button (click)="makeCSV1();">Click to Download CSV File</button>
     </div>
-    <div style='height: 30px'></div>
-    <div class="main">
-        <h1>See the data visualizations below:</h1>
-        <img src="../../assets/data_visualizations/virginia-plot1.png" alt="Barplot">
-        <img src="../../assets/data_visualizations/virginia-plot2.png" alt="Barplot">
+
+    <h2>Data Visualization: Barplot of the Number of Articles in each Category</h2>
+    <div id="img-container">
+      <img src="../../assets/data_visualizations/virginia-plot1.png" alt="Barplot">
     </div>
+  </div>
+
+
+  <div id="header">
+    <h1>Virginia's ETL 2</h1>
+  </div>
+  <div class="main">
+    <h2>CSV file: All Articles under the "Birth Control" Category</h2>
+    <table class="table table-bordered table-hover table-condensed">
+      <thead><tr><th title="Field #1">_id</th>
+        <th title="Field #2">name</th>
+        <th title="Field #3">preview</th>
+        <th title="Field #4">link</th>
+        <th title="Field #5">category</th>
+      </tr></thead>
+      <tbody><tr>
+        <td>60739f76938b66c4e83a516f</td>
+        <td>Birth Control</td>
+        <td>Birth control is how you prevent pregnancy. There are lots of different birth control options out there. We&amp;#39;re here to help you figure it all out.</td>
+        <td>https://www.plannedparenthood.org/learn/birth-control</td>
+        <td>Birth Control</td>
+      </tr>
+      <tr>
+        <td>60739f76938b66c4e83a5170</td>
+        <td>How Do I Get Birth Control Pills</td>
+        <td>The pill is easy to get, but you need a prescription. Here’s the scoop on where to get birth control pills, how much they cost, and how you might be able to get them for free or low cost.</td>
+        <td>https://www.plannedparenthood.org/learn/birth-control/birth-control-pill/how-do-i-get-birth-control-pills</td>
+        <td>Birth Control</td>
+      </tr>
+      <tr>
+        <td>60739f76938b66c4e83a5171</td>
+        <td>How to Figure Out Which Birth Control Method is Right for You</td>
+        <td>If there’s anything harder than figuring out what to eat at Cheesecake Factory or which vibrator to add to your collection, it’s figuring out which birth control option is right for you.</td>
+        <td>https://www.healthline.com/health/birth-control/methods</td>
+        <td>Birth Control</td>
+      </tr>
+      <tr>
+        <td>60739f76938b66c4e83a5172</td>
+        <td>What are the Disadvantages of the Pill</td>
+        <td>Remembering to take a pill every day can be hard. And some people get side effects that bother them (but they usually go away in a few months).</td>
+        <td>https://www.plannedparenthood.org/learn/birth-control/birth-control-pill/what-are-the-disadvantages-of-the-pill</td>
+        <td>Birth Control</td>
+      </tr>
+      <tr>
+        <td>60739f76938b66c4e83a5173</td>
+        <td>Birth Control Implant</td>
+        <td>A contraceptive implant is a type of hormonal birth control. In the United States, it’s sold under the brand name Nexplanon. It was previously available under the name Implanon.</td>
+        <td>https://www.healthline.com/health/birth-control-implant</td>
+        <td>Birth Control</td>
+      </tr>
+    </tbody></table>
+
+    <div class="csvbutton">
+      <button (click)="makeCSV2();">Click to Download CSV File</button>
+    </div>
+
+    <h2>Data Visualization: Barplot of the Number of Keywords Found in Articles Titles</h2>
+    <div id="img-container">
+      <img src="../../assets/data_visualizations/virginia-plot2.png" alt="Barplot">
+    </div>
+  </div>
 </body>
 </html>
