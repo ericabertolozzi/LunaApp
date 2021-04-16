@@ -21,12 +21,12 @@ app.get('/ericaETL1', function(req, res){
         var dbo = db.db("luna");
 
         dbo.collection("Users").find({}, {projection: {age: 1}}).toArray(function(err, result) {
-         
+
 			// Convert the JSON data in 'result' to CSV
 			const csvFields = ['_id', 'age'];
 			const json2csvParser = new Json2csvParser({ csvFields });
 			const csv = json2csvParser.parse(result);
-			
+
 			// Export the data to a physical CSV file
 			fs.writeFile('erica-dataset1.csv', csv, function(err) {
 				if (err) throw err;
@@ -70,13 +70,13 @@ app.get('/helena', (req, res) => {
 });
 
 app.get('/helenaETL1', function(req, res){
-	
+
 	MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         var dbo = db.db("luna");
 
         dbo.collection("Home Page").find({}, {projection: {Pain_Onset_vs_Menarche: 1}}).toArray(function(err, result) {
-            
+
 			// Convert the JSON data in 'result' to CSV
 			const csvFields = ['_id', 'Pain_Onset_vs_Menarche'];
 			const json2csvParser = new Json2csvParser({ csvFields });
@@ -98,7 +98,7 @@ app.get('/helenaETL2', function(req, res){
 	const fastcsv = require("fast-csv");
 	const ws = fs.createWriteStream("Home_Page.csv");
 	const url = "mongodb+srv://barnev:.mUNYTL8Ga.6q2%40@cluster0.pacdp.mongodb.net/luna?retryWrites=true&w=majority";
-  
+
 	mongodb.connect(
 	  url,
 	  (err, client) => {
@@ -114,7 +114,7 @@ app.get('/helenaETL2', function(req, res){
 				res.send("CSV Downloaded.")
 			  })
 			  .pipe(ws);
-  
+
 			client.close();
 		  });
 	  }
@@ -127,11 +127,11 @@ app.get('/virginia', (req, res) => {
 
 app.get('/virginia/etl1', function(req, res){
 	console.log("ETL1");
-	res.sendFile(__dirname + '/virginia-etl1.html');
+	res.sendFile(__dirname + '/lab6/src/app/virginia/virginia-etl1.html');
 });
 app.get('/virginia/etl2', function(req, res){
 	console.log("ETL2");
-	res.sendFile(__dirname + '/virginia-etl2.html');
+	res.sendFile(__dirname + '/lab6/src/app/virginia/virginia-etl2.html');
 });
 
 // Get all 'Period' Articles
@@ -246,7 +246,7 @@ app.get('/laurendisplay', function(req, res){
         var dbo = db.db("luna");
 
         dbo.collection("Shopping Page").find({}).toArray(function(err, result) {
-            
+
 			// Convert the JSON data in 'result' to CSV
 			const csvFields = ['_id', 'Product Name', 'Link', 'Category'];
 			const json2csvParser = new Json2csvParser({ csvFields });
@@ -271,18 +271,18 @@ app.get('/simi', (req, res) => {
 });
 
 app.get('/SimiETL1', function(req, res){
-	
+
 	MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         var dbo = db.db("luna");
 
         dbo.collection("Symptoms").find({}, {projection: {Symptoms: 1}}).toArray(function(err, result) {
-            
-			
+
+
 			constfields = ['_id', 'Symptoms'];
 			const json2csvParser = new Json2csvParser({ fields });
 			const csv = json2csvParser.parse(result);
-			
+
 			fs.writeFile('simi-data.csv', csv, function(err) {
 				if (err) throw err;
 				console.log('Write to simi-data.csv successfully, Symptoms saved!');
@@ -298,7 +298,7 @@ app.get('/SimiETL2', function(req, res){
 	const fastcsv = require("fast-csv");
 	const ws = fs.createWriteStream("simi-data.csv");
 	const url = "mongodb+srv://barnev:.mUNYTL8Ga.6q2%40@cluster0.pacdp.mongodb.net/luna?retryWrites=true&w=majority";
-  
+
 	mongodb.connect(
 	  url,
 	  (err, client) => {
@@ -314,7 +314,7 @@ app.get('/SimiETL2', function(req, res){
 				res.send("CSV Downloaded.")
 			  })
 			  .pipe(ws);
-  
+
 			client.close();
 		  });
 	  }

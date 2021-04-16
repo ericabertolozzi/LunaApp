@@ -1,15 +1,90 @@
 <!DOCTYPE html>
+
+<head>
+   <!-- <link rel="stylesheet" href="virginia-etl.css"> -->
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<style>
+
+body, html {
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: linear-gradient(rgba(0,0,0,1), rgba(96,98,101,1));
+  color: white;
+  font-family: 'Oswald', sans-serif;
+}
+
+#header {
+  justify-content: center;
+  text-align: center;
+}
+
+h1 {
+  color: #66C2A5;
+  text-align: center;
+  border-bottom: solid;
+  width: 90%;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  color: #66C2A5;
+}
+
+h3 {
+  color: white;
+}
+
+.main {
+  justify-content: center;
+  vertical-align: center;
+  text-align: center;
+}
+
+table {
+  background-color: white;
+  color: black;
+  font-size: 90%;
+  width: 90%;
+  margin: auto;
+  border-radius: 20px;
+}
+th {
+  color: #66C2A5;
+  font-size: 150%;
+}
+
+button {
+  margin-top: 6px;
+  border-radius: 20px;
+  width: 90%;
+  height: 110%;
+  background-color: #66C2A5;
+  font-family: 'Oswald', sans-serif;
+  color: white;
+  font-size: 120%;
+}
+
+#img-container {
+  background-color: white;
+  margin: auto;
+  width: 90%;
+  border-radius: 20px;
+}
+</style>
+
 <html>
 <body>
-  <div class="main">
-    <h1>Virginia's ETL 2</h1>
-    <div class="csvbutton">
-      <button (click)="makeCSV();clickEvent()">Click to Download CSV File</button>
-    </div>
+  <div id="header">
+    <h1>Virginia's ETL 1</h1>
   </div>
-  <div style='height: 30px'></div>
   <div class="main">
-    <h1>Preview of CSV file</h1>
+    <h2>CSV file: All Articles under the "Birth Control" Category</h2>
     <table class="table table-bordered table-hover table-condensed">
       <thead><tr><th title="Field #1">_id</th>
         <th title="Field #2">name</th>
@@ -54,17 +129,14 @@
       </tr>
     </tbody></table>
 
-    <h1>See data visualization below:</h1>
-    <img src="../../assets/data_visualizations/virginia-plot2.png" alt="Barplot">
-    <div id="CSVTable"></div>
+    <div class="csvbutton">
+      <button (click)="makeCSV();clickEvent()">Click to Download CSV File</button>
+    </div>
+
+    <h2>Data Visualization: Barplot of the Number of Keywords Found in Articles Titles</h2>
+    <div id="img-container">
+      <img src="../../assets/data_visualizations/virginia-plot2.png" alt="Barplot">
+    </div>
   </div>
 </body>
 </html>
-
-<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="//jquerycsvtotable.googlecode.com/files/jquery.csvToTable.js"></script>
-<script>
-  $(function() {
-    $('#CSVTable').CSVToTable('virginia-etl2.csv');
-  });
-</script> -->
