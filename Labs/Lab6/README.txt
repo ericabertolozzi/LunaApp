@@ -44,6 +44,9 @@ This is because my dataset was limited and I wanted to create both meaningful qu
 and meaningful visualizations. The transactions and logic are the same as what is
 asked in the lab instructions, though. 
 
+Simran Nambiar simrannambiar
+I created a csv file of different users and whether or not they had certain symptoms while menstruating. I then used R to analyze the data to make 2 graphs. One showed the number of women who got cramps while menstruating, and the other showed headaches. Both showed that they got a lot, so now we can add more articles and products to their respective pages to help them with that. I had trouble trying to come up with how to make my csv file because I wasn't sure which was necessary information and which wasn't for what information I was trying to portrey. 
+
 - Lauren McAlarney (@mcalal)
 I had to use the command "npm install --save-dev @angular-devkit/build-angular" after step 3 to make this lab work.
 For this lab, I created a JSON file to upload to the Shopping collection in the luna database. I included 8 objects, of which were either type reusable, non reusable, or null (article). The hardest part of this lab for me was using RStudio. For some reason, importing the dataset did not work the same way as when we practiced in class. Customizing the barplot and histogram was also interesting to learn how to do.
