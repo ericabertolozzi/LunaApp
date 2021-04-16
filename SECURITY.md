@@ -13,7 +13,7 @@ currently being supported with security updates.
 ## Reporting a Vulnerability
 
 The Luna team and community take all security bugs in Luna seriously. 
-Thank you for improving the security of Luna. We appreciate your efforts and responsible disclosure and will manke every effort to acknowledge your contributions.
+Thank you for improving the security of Luna. We appreciate your efforts and responsible disclosure and will make every effort to acknowledge your contributions.
 
 Report vulnerabilities by emailing the lead maintainer at barnev@rpi.edu.
 
