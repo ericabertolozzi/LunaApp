@@ -12,20 +12,20 @@ export class ManyaComponent implements OnInit{
   msg!:string;
 
   constructor(private httpService: HttpService) {
+    msg:String;
    }
 
   ngOnInit(): void {
   }
 
-  public showMyMessage = false
 
   public makeCSV(): void {
-    this.httpService.sendGetRequest('/display').subscribe((data) => {
+    this.httpService.sendGetRequest('/manyadisplay').subscribe((data) => {
       console.log(data);
     })
   }
   clickEvent(){
-    this.msg='Button is Clicked';
+    this.msg='CSV Successfully Downloaded. Please find file in Labs/Lab6 and visualizations below.';
     return this.msg;
   }
 

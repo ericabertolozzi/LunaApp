@@ -1,11 +1,11 @@
 id,username,startdate,periodlength,cyclelength,mood,sleep
-9,user9,3/29/2021,5,27,Happy,fair
-3,user3,4/3/2021,7,28,Happy,good
-10,user10,4/1/2021,6,27,Anxious,poor
 1,user1,3/15/2021,8,30,Sad,poor
 2,user2,3/18/2021,10,28,Happy,fair
-6,user6,3/23/2021,6,29,Irritable,good
-8,user8,3/16/2021,11,27,Upset,fair
-5,user5,3/9/2021,7,30,Upset,fair
+3,user3,4/3/2021,7,28,Happy,good
 4,user4,4/8/2021,6,25,Scared,good
+5,user5,3/9/2021,7,30,Upset,fair
+6,user6,3/23/2021,6,29,Irritable,good
 7,user7,3/31/2021,6,25,Upset,good
+8,user8,3/16/2021,11,27,Upset,fair
+9,user9,3/29/2021,5,27,Happy,fair
+10,user10,4/1/2021,6,27,Anxious,poor
