@@ -35,13 +35,14 @@ app.get('/ericaETL1', function(req, res){
 			fs.writeFile('erica-dataset1.csv', csv, function(err) {
 				if (err) throw err;
 				console.log('Dataset 1 generated!');
-				// Have browser download dataset
-				res.download('erica-dataset1.csv');
 			});
 
 			db.close();
         });
     });
+
+	// Have browser download dataset
+	setTimeout(() => {  res.download('erica-dataset1.csv'); }, 2000);
 });
 
 app.get('/ericaETL2', function(req, res){
@@ -59,13 +60,14 @@ app.get('/ericaETL2', function(req, res){
 			fs.writeFile('erica-dataset2.csv', csv, function(err) {
 				if (err) throw err;
 				console.log('Dataset 2 generated!');
-				// Have browser download dataset
-				res.download('erica-dataset2.csv');
 			});
 
 			db.close();
         });
     });
+
+	// Have browser download dataset
+	setTimeout(() => {  res.download('erica-dataset2.csv'); }, 2000);
 });
 
 
