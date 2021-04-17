@@ -23,8 +23,8 @@ I created the angular components for each group member so we can set up the lab 
 time around. I struggled with connecting the angular front end to the node back end through the HTTP service,
 but I got help from Dr. Callahan in office hours to set up my services correctly. I was also confused with how to
 have the csv file download to the user's computer in the browser, so I used res.download(csv) to download the csv
-file that I createds in the code earlier. I do not understand where the file goes after calling res.download, since
-I did not figure out a way to set a path for every user's computer Downloads folder.
+file that I createds in the code earlier. I was able to get the file to show up in this directory (Lab6) but I could not 
+get the download to show in the browser.
 
 - Manya Trehan (@Manya14)
 First, I created a collection called Cycle Tracking within the luna database. This collection
