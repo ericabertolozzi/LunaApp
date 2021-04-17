@@ -146,4 +146,41 @@ app.get('/display', function(req, res){
   );
   });
 
+// src="http://maps.googleapis.com/maps/api/js?sensor=false";
+// let auth = new google.auth.OAuth2(
+//     '619493635707-ntjk96ok34dvi62ngq5cnq0k6q8aqmjt.apps.googleusercontent.com',
+//     'tuy3Q5SgioaVcxqgNyc4TcQZ',
+//     'http://localhost:3000'
+// );
+// let calendar = google.calendar({version: 'v3', auth});
+//     calendar.events.insert({
+//         auth: auth,
+//         calendarId: 'primary',
+//         resource: {
+//             'summary': 'Period Started',
+//             'description': 'Period Started',
+//             'start': {
+//                 'dateTime':startdate+'T06:00:00.000Z',
+//                 'timeZone':'utc'
+//             },
+//             'end': {
+//                 'dateTime': '2019-01-01T07:00:00.000Z',
+//                 'timeZone':'utc'
+//             },
+//             'colorId' : 4 ,
+//             'sendUpdates':'all',
+//             'status' : 'confirmed'
+//         },
+//     }, (err, res) => {
+//         if (err) {
+//             console.log(err);
+//         } else {
+//             console.log(res.data);
+//         }
+//     });
+
+  
+
 app.listen(port, () => console.log(`Application listening on port ${port}!`))
+
+
