@@ -52,28 +52,23 @@
   <!-- End of Navbar  -->
     <h4>Please fill out the below information to enable the tracking feature. </h4><br><br><br>
 
+      <!-- </form> -->
+    <form method="POST" id="form1" action="/manyapost">
     <div class="flex-container">
-      <div>1. When Did Your Period Begin?
-        <form class="periodquestion">
-         <br> <label for="startdate"></label>
+      <div>1. When Did Your Period Begin?<br>
           <input type="date" id="startdate" name="startdate" required>
-        </form>
       </div>
-      <div>2. How Many Days Is Your Period?
-        <form class="periodquestion">
-          <label for="quantity"></label>
-          <input type="number" id="periodlength" placeholder="Period Length" name="quantity" min="0" max="30">
-        </form>
+      <div>2. How Many Days Is Your Period?<br>
+          <input type="number" id="periodlength" placeholder="Period Length" name="periodlength" min="0" max="30">
       </div>
-      <div>3. How Many Days Is Your Period?
-        <form class="periodquestion">
-          <label for="quantity"></label>
-          <input type="number" id="cyclelength" placeholder="Menstrual Cycle Length" name="quantity" min="0" max="30" required>
-        </form>
+      <div>3. How Many Days Is Your Period?<br>
+          <input type="number" id="cyclelength" placeholder="Menstrual Cycle Length" name="cyclelength" min="0" max="30" required>
       </div>  
     </div>
+    
   <div class="submission">
   <input class="submit" type="submit" onclick="showInput();" value="Start Tracking Your Cycle"><br>
+  </form>
   <div id="lastperiod">
   <p class="lastperiods">Your last period was:<b><p><span id='display'></span></p></b> </p>
   </div>
@@ -82,9 +77,59 @@
     </div><br><br>
   </div>
 
+  <p class="moodtracker">Track Your Mood</p>
+<form method="POST" id="form1" action="/manyapost1">
+  <div id="moods">
+    <input type="radio" name="emotion" value="Happy" id="happy" Happy/>
+        <label for="sad"><img src="lunaimages/happy1.png" />
+        <p class="mood">Happy</p></label>
+
+    <input type="radio" name="emotion" value="Sad" id="sad" />
+        <label for="happy"><img src="lunaimages/sad1.png"   />
+        <p class="sadmood">Sad</p></label>
+
+    <input type="radio" name="emotion" value="Worry" id="worry" />
+    <label for="happy"><img src="lunaimages/worry1.png"  />
+    <p class="mood">Anxious</p></label>
+
+    <input type="radio" name="emotion" value="Irritable" id="irritable" />
+    <label for="happy"><img src="lunaimages/irritable.png"  />
+    <p class="mood">Irritable</p></label>
+
+    <input type="radio" name="emotion" value="Upset" id="upset" />
+    <label for="happy"><img src="lunaimages/upset.png"  />
+    <p class="mood">Upset</p></label>
+
+    <input type="radio" name="emotion" value="Fear" id="fear" />
+    <label for="happy"><img src="lunaimages/fear.png"  />
+    <p class="mood">Scared</p></label>
+</div>
+<p class="sleeptracker">Track Your Sleep</p>
+<div id="sleep">
+    <input type="radio" name="emotion" value="Poor" id="poor" />
+        <label for="sad"><img src="lunaimages/onepillow.png" />
+        <p class="mood">0-4 Hours</p></label>
+
+    <input type="radio" name="emotion" id="fair" />
+        <label for="happy"><img src="lunaimages/twopillow.png"   />
+        <p class="mood">4-7 Hours</p></label> 
+
+     <input type="radio" name="emotion" id="good" />
+    <label for="happy"><img src="lunaimages/threepillow.png"  />
+    <p class="mood">8 Hours or More</p></label>
+</div>
+<p class="addnote">Add Notes</p>
+<div id="notescontainer">
+    <textarea id="area" name="notes" placeholder="Add more details regarding your mood and sleep patterns." rows="10" cols="40"></textarea>
+</div>
+<input class="submit" type="submit" value="Update Sleep and Mood and Notes"><br>
+</form>
+
+
+
   <div class="forms-display">
   <form method="GET" id="form2" action="./mood.html">
-    <input type="submit" name="display" id="display" value="Track Your Mood">
+    <input type="submit" name="display" id="displaymood" value="Track Your Mood">
 </form>
 <form method="GET" id="form2" action="/display">
   <input type="submit" name="display" id="display" value="Click to Download CSV File">
@@ -103,6 +148,15 @@
   function showInput() {
     document.getElementById('display').innerHTML = document.getElementById("startdate").value;
     document.getElementById('displayone').innerHTML = document.getElementById("cyclelength").value-1+" days";
-}                
+}  
+
+$('#moods input:radio').addClass('input_hidden');
+$('#moods label').click(function(){
+    $(this).addClass('selected').siblings().removeClass('selected');
+});
+$('#sleep input:radio').addClass('input_hidden1');
+$('#sleep label').click(function(){
+    $(this).addClass('selected1').siblings().removeClass('selected1');
+});
 </script>
 

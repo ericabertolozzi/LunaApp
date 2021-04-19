@@ -53,31 +53,34 @@
     </div>
   </nav>
 <p class="moodtracker">Track Your Mood</p>
+<form method="POST" id="form1" action="/manyapost">
   <div id="moods">
-    <input type="radio" name="emotion" id="happy" />
+    <input type="radio" name="emotion" value="Happy" id="happy" Happy/>
         <label for="sad"><img src="lunaimages/happy1.png" />
         <p class="mood">Happy</p></label>
 
-    <input type="radio" name="emotion" id="sad" />
+    <input type="radio" name="emotion" value="Sad" id="sad" />
         <label for="happy"><img src="lunaimages/sad1.png"   />
         <p class="sadmood">Sad</p></label>
 
-    <input type="radio" name="emotion" id="worry" />
+    <input type="radio" name="emotion" value="Worry" id="worry" />
     <label for="happy"><img src="lunaimages/worry1.png"  />
     <p class="mood">Anxious</p></label>
 
-    <input type="radio" name="emotion" id="irritable" />
+    <input type="radio" name="emotion" value="Irritable" id="irritable" />
     <label for="happy"><img src="lunaimages/irritable.png"  />
     <p class="mood">Irritable</p></label>
 
-    <input type="radio" name="emotion" id="upset" />
+    <input type="radio" name="emotion" value="Upset" id="upset" />
     <label for="happy"><img src="lunaimages/upset.png"  />
     <p class="mood">Upset</p></label>
 
-    <input type="radio" name="emotion" id="fear" />
+    <input type="radio" name="emotion" value="Fear" id="fear" />
     <label for="happy"><img src="lunaimages/fear.png"  />
     <p class="mood">Scared</p></label>
 </div>
+<input class="submit" type="submit" value="Updated Mood"><br>
+</form>
 <p class="sleeptracker">Track Your Sleep</p>
 <div id="sleep">
     <input type="radio" name="emotion" id="poor" />
@@ -124,10 +127,12 @@
     </tr>
     </table> -->
 <p class="addnote">Add Notes</p>
+<form method="POST" id="form1" action="/manyapost">
 <div id="notescontainer">
     <textarea id="area" placeholder="Add more details regarding your mood and sleep patterns." rows="10" cols="40"></textarea>
-    <input type="submit" id="submitmood" value="Save">
+    <input class="submit" type="submit" value="Save Notes"><br>
 </div>
+</form>
 
 
 <script>

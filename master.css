@@ -90,7 +90,6 @@ h4{
 }
 
 #lastperiod{
-    /* position:absolute; */
     margin-top:4%;
     margin-left:12%;
     font-size:15px;
@@ -103,8 +102,7 @@ h4{
 }
 
 #nextperiod{
-  position:relative;
-  margin-top:-4%;
+  margin-top:-8%;
   margin-left:73%;
   font-size:15px;
   border-radius: 25px;
@@ -126,9 +124,11 @@ h4{
   margin-left:6%;
 }
 #sleep{
-  margin-left:11%;
+  position:relative;
+  margin-right:10%;
+   
 }
-#display{
+#display,#displayone{
   display:inline-block;
    margin:0 auto; 
   position:relative; 
