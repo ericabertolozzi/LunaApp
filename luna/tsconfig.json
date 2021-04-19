@@ -21,8 +21,8 @@
       "dom"
     ],
     "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop":true
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

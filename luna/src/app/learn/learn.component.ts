@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import articlesData from '../../assets/json/learn.json';
+import * as articlesData from '../../assets/json/learn.json';
 
 interface Article {
   name: String;
@@ -18,6 +18,7 @@ export class LearnComponent implements OnInit {
   articles: Article[] = articlesData;
 
   constructor() {
+    console.log(articlesData);
   }
 
   ngOnInit(): void {

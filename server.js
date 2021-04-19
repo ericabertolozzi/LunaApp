@@ -18,7 +18,7 @@ app.get('/learn', (req, res) => {
       if (err) throw err;
       var dbo = db.db("luna");
       dbo.collection("Articles").find().toArray(function(err, result) {
-        console.log( result );
+        // console.log( result );
         let articlesData = JSON.stringify( result );
         fs.writeFileSync( 'luna/src/assets/json/learn.json', articlesData );
   			db.close();
