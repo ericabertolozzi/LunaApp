@@ -172,7 +172,7 @@ app.post('/manyapost', function (req, res) {
       "startdate": startdate,
       "periodlength":periodlength,
       "cyclelength":cyclelength,
-      "mood":req.param.mood,
+      "mood":req.body.mood,
       "sleep":req.body.sleep,
       "notes":req.body.notes
   }
@@ -183,27 +183,27 @@ app.post('/manyapost', function (req, res) {
   });
 });
 
-app.post('/manyapost1', function (req, res) {
-  const MongoClient = require("mongodb").MongoClient;
-  const url = "mongodb+srv://barnev:.mUNYTL8Ga.6q2%40@cluster0.pacdp.mongodb.net/luna?retryWrites=true&w=majority";
-  const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
-  MongoClient.connect(url, function(err, db) {
-    var dbo = db.db("luna");
-    var collection = dbo.collection("Cycle Tracking");
-    var mood =req.body.mood;
-    var sleep =req.body.sleep;
-    notes=req.body.notes;
-    var data = {
-      "mood":req.param.mood,
-      "sleep":req.body.sleep,
-      "notes":req.body.notes
-  }
-  dbo.collection('Cycle Tracking').insertOne(data,function(err, collection){
-    if (err) throw err;
-    console.log("Great Record inserted Successfully");
-});
-  });
-});
+// app.post('/manyapost1', function (req, res) {
+//   const MongoClient = require("mongodb").MongoClient;
+//   const url = "mongodb+srv://barnev:.mUNYTL8Ga.6q2%40@cluster0.pacdp.mongodb.net/luna?retryWrites=true&w=majority";
+//   const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+//   MongoClient.connect(url, function(err, db) {
+//     var dbo = db.db("luna");
+//     var collection = dbo.collection("Cycle Tracking");
+//     var mood =req.body.mood;
+//     var sleep =req.body.sleep;
+//     notes=req.body.notes;
+//     var data = {
+//       "mood":req.body.mood,
+//       "sleep":req.body.sleep,
+//       "notes":req.body.notes
+//   }
+//   dbo.collection('Cycle Tracking').insertOne(data,function(err, collection){
+//     if (err) throw err;
+//     console.log("Great Record inserted Successfully");
+// });
+//   });
+// });
 
 // src="http://maps.googleapis.com/maps/api/js?sensor=false";
 // let auth = new google.auth.OAuth2(

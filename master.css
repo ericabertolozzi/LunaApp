@@ -121,11 +121,15 @@ h4{
   padding-left:10px;
 }
 #moods{
-  margin-left:6%;
+  margin-left:30%;
 }
 #sleep{
-  position:relative;
-  margin-right:10%;
+  /* position:relative;
+  display:block;
+  margin-left:15%; */
+  display: flex;
+  margin-left:15%;
+  justify-content: space-between 10%;
    
 }
 #display,#displayone{
@@ -139,6 +143,11 @@ h4{
 .input_hidden {
   position: absolute;
   left: 50px;
+}
+
+#finalsubmit{
+  align-content:center;
+  margin-left:42%;
 }
 
 .input_hidden1 {
@@ -165,18 +174,18 @@ h4{
 }
 
 #sleep label{
-  display:inline-block;
+  display: inline-block;
   cursor:pointer;
 }
 
 #moods label img {
   padding: 2px;
-  width:25%
+  width:15%
 }
 
 #sleep label img{
   padding:2px;
-  width:25%;
+  width:8%;
 }
 
 #notescontainer {
@@ -202,7 +211,7 @@ h4{
 
  .submit{
     margin-top:22px;
-    padding-left:-40px;
+    padding-left:5%;
     background-color:cornflowerblue;
     color:black;
     border-radius:40px;
