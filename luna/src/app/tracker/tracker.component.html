@@ -1,0 +1,110 @@
+<p>tracker works!</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tracker</title>
+  <link rel="icon" href="moon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./master.css"/> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Start of Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light" id="full-navbar">
+    <a class="navbar-brand" href="./index.html"><img src='logo.png' height='70px'/></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./calendar.html">Calendar</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Tracker</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./shop.html">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./learn.html">Learn</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./settings.html">Settings</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="./profile.html">Profile</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- End of Navbar  -->
+    <h4>Please fill out the below information to enable the tracking feature. </h4><br><br><br>
+
+    <div class="flex-container">
+      <div>1. When Did Your Period Begin?
+        <form class="periodquestion">
+         <br> <label for="startdate"></label>
+          <input type="date" id="startdate" name="startdate" required>
+        </form>
+      </div>
+      <div>2. How Many Days Is Your Period?
+        <form class="periodquestion">
+          <label for="quantity"></label>
+          <input type="number" id="periodlength" placeholder="Period Length" name="quantity" min="0" max="30">
+        </form>
+      </div>
+      <div>3. How Many Days Is Your Period?
+        <form class="periodquestion">
+          <label for="quantity"></label>
+          <input type="number" id="cyclelength" placeholder="Menstrual Cycle Length" name="quantity" min="0" max="30" required>
+        </form>
+      </div>  
+    </div>
+  <div class="submission">
+  <input class="submit" type="submit" onclick="showInput();" value="Start Tracking Your Cycle"><br>
+  <div id="lastperiod">
+  <p class="lastperiods">Your last period was:<b><p><span id='display'></span></p></b> </p>
+  </div>
+  <div id="nextperiod">
+    <p class="nextperiods">Your next period is in:<b><p><span id='displayone'></span></p></b> </p>
+    </div><br><br>
+  </div>
+
+  <div class="forms-display">
+  <form method="GET" id="form2" action="./mood.html">
+    <input type="submit" name="display" id="display" value="Track Your Mood">
+</form>
+<form method="GET" id="form2" action="/display">
+  <input type="submit" name="display" id="display" value="Click to Download CSV File">
+</form>
+<input type="submit" name="display" id="display" value="Cycle Analysis">
+</div>
+  
+    <div class="footer1">
+      <p class="footer-text">Luna Copyright &copy; 2021.</p>
+    </div> 
+
+</body>
+</html>
+
+<script>
+  function showInput() {
+    document.getElementById('display').innerHTML = document.getElementById("startdate").value;
+    document.getElementById('displayone').innerHTML = document.getElementById("cyclelength").value-1+" days";
+}                
+</script>
+
+
