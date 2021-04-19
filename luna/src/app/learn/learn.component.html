@@ -1,1 +1,184 @@
-<p>learn works!!!</p>
+<html>
+
+<head>
+  <title>Learn</title>
+  <!-- Load icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" type="text/css" href="./master.css"/>
+  <link rel="stylesheet" type="text/css" href="./learn.css"/> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+
+
+  <style>
+    /* Beginning of master.css */
+    body {
+      background-color: #ebebeb;
+      overflow:scroll;
+    }
+
+    h1 {
+      text-align:center;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .footer {
+      position: fixed;
+      font-size:17px;
+      left: 0;
+      bottom: 0;
+      font-family: 'Quicksand', sans-serif;
+      width: 100%;
+      background-color: lavender;
+      color: black;
+      text-align: center;
+      border-radius: 15px;
+    }
+
+    .footer1 {
+    /* position: fixed; */
+    font-size:17px;
+    left: 0;
+    bottom: 0;
+    font-family: 'Quicksand', sans-serif;
+    width: 100%;
+    background-color: lavender;
+    color: black;
+    text-align: center;
+    border-radius: 15px;
+    }
+
+    h4 {
+      position:relative;
+      top:50px;
+      margin-top:-40px;
+      text-align:center;
+    }
+    /* End of master.css */
+    /* Beginning of learn.css */
+    .content {
+      width: auto;
+      height: auto;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .heading {
+      margin-top: 2%;
+      font-weight: bold;
+      color: #A5A5EF;
+    }
+
+    .articles-container {
+      margin-top: 4%;
+      margin-bottom: 40px;
+      width: 85%;
+    }
+
+    .articles-container p {
+      text-align: left;
+    }
+
+    .articles-container .name {
+      font-weight: bold;
+      color: #A5A5EF;
+    }
+
+    .articles-container a {
+      color: #A5A5EF;
+    }
+
+    /* Search Button */
+    * {
+      box-sizing: border-box;
+    }
+
+    form.example {
+      margin-top: 2%;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Style the search field */
+    form.example input[type=text] {
+      padding: 10px;
+      font-size: 17px;
+      border: 1px solid grey;
+      float: left;
+      width: 40%;
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    /* Style the submit button */
+    form.example button {
+      float: left;
+      width: 7%;
+      height: 47px;;
+      padding: 10px;
+      background: #A5A5EF;
+      color: white;
+      font-size: 17px;
+      border: 1px solid grey;
+      border-left: none; /* Prevent double borders */
+      cursor: pointer;
+      border-radius: 10px;
+    }
+
+    form.example button:hover {
+      background: #8282e0;
+    }
+
+    /* Clear floats */
+    form.example::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    /* End of learn.css */
+  </style>
+
+
+</head>
+
+<body>
+  <div class="content" align="center">
+    <h1 class="heading">LEARN FROM OUR COLLECTION OF VERIFIED ARTICLES</h1>
+    <form class="example" align="center">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+
+    <div class="articles-container">
+    </div>
+  </div>
+
+<!-- Beginning of Footer  -->
+  <div class="footer">
+      <p class="footer-text">Luna Copyright &copy; 2021.</p>
+  </div>
+</body>
+
+</html>
+
+<!-- let rawdata = fs.readFileSync('learn.json');
+let articles = JSON.parse(rawdata)["articles"];
+var htmladd = '';
+for( i=0; i < articles.length; i++ ) {
+  var name = articles[i]["name"];
+  var preview = articles[i]["preview"];
+  var link = articles[i]["link"];
+  htmladd += `
+    <div class="article">
+      <h1 class="text-left"><a class="name" href="`+link+`">`+name+`</a></h1>
+      <p>`+preview+`</p>
+      <div>
+        <div class="more label text-right"><a href="`+link+`">Read more</a></div>
+      </div>
+      <div class="clear"></div>
+      <hr>
+    </div>
+  `; -->
