@@ -5,14 +5,11 @@
   <!-- Load icon library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <!-- <link rel="stylesheet" type="text/css" href="./master.css"/>
-  <link rel="stylesheet" type="text/css" href="./learn.css"/> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
-
 
   <style>
     /* Beginning of master.css */
@@ -152,8 +149,35 @@
       <button type="submit"><i class="fa fa-search"></i></button>
     </form>
 
-    <div class="articles-container">
+
+    <div class="container">
+
+      <h1>How to Display Data from Json File in Angular 9/8/7? - ItSolutionStuff.com</h1>
+
+      <table class="table table-striped">
+        <thead>
+            <tr>
+              <th>Name</th>
+              <th>Preview</th>
+              <th>Link</th>
+              <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let article of articles">
+            <td>{{ article.name }}</td>
+            <td>{{ article.preview }}</td>
+            <td>{{ article.link }}</td>
+            <td>{{ article.category }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+
+
+    <!-- <div class="articles-container">
+      {{articles}}
+    </div> -->
   </div>
 
 <!-- Beginning of Footer  -->
