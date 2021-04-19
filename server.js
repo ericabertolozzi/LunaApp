@@ -12,20 +12,21 @@ const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology:
 app.use(express.static(path.join(__dirname, './luna/dist/luna')));
 
 app.get('/learn', (req, res) => {
+  console.log( "HERE" );
 
   // Get all Articles
   	MongoClient.connect(url, function(err, db) {
       if (err) throw err;
       var dbo = db.db("luna");
       dbo.collection("Articles").find().toArray(function(err, result) {
-        // console.log( result );
+        console.log( result );
         let articlesData = JSON.stringify( result );
         fs.writeFileSync( 'luna/src/assets/json/learn.json', articlesData );
   			db.close();
       });
     });
 
-	res.sendFile(__dirname + '/luna/src/app/learn/learn.component.html');
+	// res.sendFile(__dirname + '/luna/src/app/learn/learn.component.html');
 });
 
 // app.get('/tracker.html', function(req, res){

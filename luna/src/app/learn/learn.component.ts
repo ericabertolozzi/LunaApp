@@ -18,10 +18,13 @@ export class LearnComponent implements OnInit {
   articles: Article[] = articlesData;
 
   constructor() {
-    console.log(articlesData);
+    console.log("AGHHHHHHH");
+    console.log(this.articles);
   }
 
   ngOnInit(): void {
+    console.log("AGHHHHHHHHHHHHHHHHH");
+    console.log(this.articles);
   }
 
 }
