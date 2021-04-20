@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { LearnComponent } from './learn/learn.component';
 import { HomeComponent } from './home/home.component';
 import { AjaxComponent } from './ajax/ajax.component';
+import { TrackingComponent } from './tracking/tracking.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LearnComponent,
     HomeComponent,
-    AjaxComponent
+    AjaxComponent,
+    TrackingComponent
   ],
   imports: [
     BrowserModule,
