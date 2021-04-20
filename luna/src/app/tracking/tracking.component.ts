@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+declare function showInput():any;
 
 @Component({
   selector: 'app-tracking',
@@ -12,6 +13,7 @@ export class TrackingComponent implements OnInit {
   
 
   ngOnInit(): void {
+    showInput();
   }
 
 }
