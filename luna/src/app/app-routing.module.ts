@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import 'testing.js'
+
+declare var showInput: any;
+
+
 
 import { LearnComponent } from './learn/learn.component';
 import { TrackingComponent } from './tracking/tracking.component';
