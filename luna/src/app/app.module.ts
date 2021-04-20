@@ -14,7 +14,7 @@ import { AjaxComponent } from './ajax/ajax.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
     LearnComponent,
     HomeComponent,
     AjaxComponent
