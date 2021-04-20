@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
 import { LearnComponent } from './learn/learn.component';
 import { HomeComponent } from './home/home.component';
 import { AjaxComponent } from './ajax/ajax.component';
@@ -12,6 +14,8 @@ import { TrackingComponent } from './tracking/tracking.component';
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
+    ProfileComponent,
     LearnComponent,
     HomeComponent,
     AjaxComponent,
