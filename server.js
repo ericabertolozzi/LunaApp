@@ -12,8 +12,6 @@ const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology:
 app.use(express.static(path.join(__dirname, './luna/dist/luna')));
 
 app.get('/learn', (req, res) => {
-  console.log( "HERE" );
-
   // Get all Articles
   	MongoClient.connect(url, function(err, db) {
       if (err) throw err;
@@ -25,11 +23,11 @@ app.get('/learn', (req, res) => {
   			db.close();
       });
     });
-
-	// res.sendFile(__dirname + '/luna/src/app/learn/learn.component.html');
+    res.end();
+	// res.sendFile(path.join(__dirname + '/luna/src/app/learn/learn.component.html'));
 });
 
- 
+
 app.post('/manyapost', function (req, res) {
   const MongoClient = require("mongodb").MongoClient;
   const url = "mongodb+srv://barnev:.mUNYTL8Ga.6q2%40@cluster0.pacdp.mongodb.net/luna?retryWrites=true&w=majority";
