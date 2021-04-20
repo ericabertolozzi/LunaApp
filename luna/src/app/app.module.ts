@@ -9,6 +9,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { LearnComponent } from './learn/learn.component';
 import { HomeComponent } from './home/home.component';
 import { AjaxComponent } from './ajax/ajax.component';
+import { TrackingComponent } from './tracking/tracking.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AjaxComponent } from './ajax/ajax.component';
     ProfileComponent,
     LearnComponent,
     HomeComponent,
-    AjaxComponent
+    AjaxComponent,
+    TrackingComponent
   ],
   imports: [
     BrowserModule,

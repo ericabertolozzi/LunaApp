@@ -1,0 +1,127 @@
+<p>tracking works!</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tracker</title>
+  <link rel="icon" href="moon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" type="text/css" href="./master.css"/>  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- End of Navbar  -->
+    <h4>Please fill out the below information to enable the tracking feature. </h4><br><br><br>
+
+      <!-- </form> -->
+    <form method="POST" id="form1" action="/manyapost">
+    <div class="flex-container">
+      <div>1. When Did Your Period Begin?<br><br>
+          <input type="date" id="startdate" name="startdate" required>
+      </div>
+      <div>2. How Many Days Is Your Period?<br><br>
+          <input type="number" id="periodlength" placeholder="Period Length" name="periodlength" min="0" max="30">
+      </div>
+      <div>3. How Many Days Is Your Cycle?<br><br>
+          <input type="number" id="cyclelength" placeholder="Menstrual Cycle Length" name="cyclelength" min="0" max="30" required>
+      </div>  
+    </div>
+    
+  <div class="submission">
+    <input class="submit" onclick="showInput();" value="Cycle Countdown"><br>
+  <!-- <input class="submit" type="submit" onclick="showInput();" value="Start Tracking Your Cycle"><br> -->
+  <!-- </form> -->
+  <div id="lastperiod">
+  <p class="lastperiods">Your last period was:<b><p><span id='display'></span></p></b> </p>
+  </div>
+  <div id="nextperiod">
+    <p class="nextperiods">Your next period is in:<b><p><span id='displayone'></span></p></b> </p>
+    </div><br><br>
+  </div>
+
+  <p class="moodtracker">Track Your Mood</p>
+  <div id="moods">
+    <input type="radio" name="mood" value="Happy" id="mood"/>
+        <label for="Happy"><img src="../../assets/images/happy1.png" />
+        <p class="mood">Happy</p></label>
+
+    <input type="radio" name="mood" value="Sad" id="mood"/>
+        <label for="Sad"><img src="../../assets/images/sad1.png"   />
+        <p class="sadmood">Sad</p></label>
+
+    <input type="radio" name="mood" value="Worry" id="mood" />
+    <label for="Anxious"><img src="../../assets/images/worry1.png"  />
+    <p class="mood">Anxious</p></label><br>
+
+    <input type="radio" name="mood" value="Irritable" id="irritable" />
+    <label for="Irritable"><img src="../../assets/images/irritable.png"  />
+    <p class="mood">Irritable</p></label>
+
+    <input type="radio" name="mood" value="Upset" id="upset" />
+    <label for="Upset"><img src="../../assets/images/upset.png"  />
+    <p class="mood">Upset</p></label>
+
+    <input type="radio" name="mood" value="Fear" id="fear" />
+    <label for="Scared"><img src="../../assets/images/fear.png"  />
+    <p class="scaredmood">Scared</p></label>
+</div>
+<p class="sleeptracker">Track Your Sleep</p>
+<div id="sleep">
+    <input type="radio" name="sleep" value="Poor" id="poor" />
+        <label for="sad"><img src="../../assets/images/onepillow.png"  />
+        <p class="mood">Poor</p></label>
+
+    <input type="radio" name="sleep" id="fair" />
+        <label for="happy"><img src="../../assets/images/twopillow.png" />
+        <p class="mood">Fair</p></label> 
+
+     <input type="radio" name="sleep" id="good" />
+    <label for="happy"><img src="../../assets/images/threepillow.png"  />
+    <p class="mood">Good</p></label>
+</div>
+
+
+<p class="addnote">Add Notes</p>
+<div id="notescontainer">
+    <textarea id="area" name="notes" placeholder="Add more details regarding your mood and sleep patterns." rows="10" cols="40"></textarea>
+</div>
+<input class="submit" id="finalsubmit" type="submit" onclick="showInput();" value="Save"><br><br><br>
+</form>
+
+
+
+  <div class="forms-display">
+<form method="GET" id="form2" action="/display">
+  <input type="submit" name="display" id="display" value="Click to Download CSV File">
+</form>
+<input type="submit" name="display" onclick="showInput();" id="display" value="Cycle Analysis">
+</div>
+  
+    <div class="footer1">
+      <p class="footer-text">Luna Copyright &copy; 2021.</p>
+    </div> 
+
+</body>
+</html>
+
+<script>
+  function showInput() {
+    document.getElementById('display').innerHTML = document.getElementById("startdate").value;
+    document.getElementById('displayone').innerHTML = document.getElementById("cyclelength").value-1+" days";
+}  
+
+// $('#moods input:radio').addClass('input_hidden');
+// $('#moods label').click(function(){
+//     $(this).addClass('selected').siblings().removeClass('selected');
+// });
+// $('#sleep input:radio').addClass('input_hidden1');
+// $('#sleep label').click(function(){
+//     $(this).addClass('selected1').siblings().removeClass('selected1');
+// });
+</script>
