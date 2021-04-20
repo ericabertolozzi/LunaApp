@@ -421,7 +421,7 @@ h3{
 #LunaBorderBackground{
   border: 20px solid transparent;
   padding: 15px;
-  border-image: url("./images/Star_SmallBackground.PNG") 60 round;
+  /* border-image: url("./images/Star_SmallBackground.PNG") 60 round; */
   font-size: 20px;
 }
 /*Intro Box CSS*/
