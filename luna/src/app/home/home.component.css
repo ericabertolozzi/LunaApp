@@ -421,7 +421,7 @@ h3{
 #LunaBorderBackground{
   border: 20px solid transparent;
   padding: 15px;
-  border-image: url(./images/Star_SmallBackground.PNG) 60 round;
+  border-image: url("./images/Star_SmallBackground.PNG") 60 round;
   font-size: 20px;
 }
 /*Intro Box CSS*/
@@ -434,7 +434,7 @@ h3{
   padding: 5%;
 }
 #IntroSloganBox {
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
   background-color: rgba(255, 255, 255, 0.548);
   width: fit-content;
   margin-bottom:50px;
@@ -595,7 +595,7 @@ h3{
   color:  #ffffff;
   text-shadow: 3px 2px #000000;
   align-content: center;
-} 
+}
 .carousel-caption a:hover {
   font-size: 30px;
   color:  #ffffff;
