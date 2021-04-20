@@ -34,7 +34,7 @@
               "src/styles.css"
             ],
             "scripts": [
-              "../../assets/javascript/external.js"
+     
             ]
           },
           "configurations": {
