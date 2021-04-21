@@ -3,6 +3,10 @@ const app = express();
 const path = require('path');
 const port = 3000;
 const fs = require('fs');
+var bodyParser = require('body-parser') //To help read form data.
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 
 const MongoClient = require('mongodb').MongoClient;
 // had to URL encode the password bc it contained an '@' - VB
@@ -29,6 +33,8 @@ app.get('/learn', (req, res) => {
 
 
 app.post('/manyapost', function (req, res) {
+  console.log("Hello");
+  res.send("Hello");
   const MongoClient = require("mongodb").MongoClient;
   const url = "mongodb+srv://barnev:.mUNYTL8Ga.6q2%40@cluster0.pacdp.mongodb.net/luna?retryWrites=true&w=majority";
   const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
