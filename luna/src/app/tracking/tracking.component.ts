@@ -18,6 +18,8 @@ declare function showInput():any;
   styleUrls: ['./tracking.component.css']
 })
 export class TrackingComponent implements OnInit {
+  poststartdate;
+  postperiodlength;
  
 
   
@@ -27,14 +29,21 @@ export class TrackingComponent implements OnInit {
 
   ngOnInit(): void {
     // showInput();
+    
   }
 
   public makeFirstDataSet(): void {
-    this.http.post('/manyapost').subscribe((data) => {
+    this.http.post<Cycle>('/manyapost',{ title: 'Angular POST Request Example' }).subscribe((data) => {
+      this.poststartdate=data.startdate;
+      this.postperiodlength=data.periodlength
       console.log(data);
     })
   }
-  
 
 
+}
+
+interface Cycle {
+  startdate: string;
+  periodlength: number;
 }
