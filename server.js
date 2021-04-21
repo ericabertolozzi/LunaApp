@@ -38,6 +38,7 @@ app.post('/manyapost', function (req, res) {
   const MongoClient = require("mongodb").MongoClient;
   const url = "mongodb+srv://barnev:.mUNYTL8Ga.6q2%40@cluster0.pacdp.mongodb.net/luna?retryWrites=true&w=majority";
   const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+  console.log(req);
   MongoClient.connect(url, function(err, db) {
     var dbo = db.db("luna");
     var collection = dbo.collection("Cycle Tracking");
