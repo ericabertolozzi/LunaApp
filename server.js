@@ -34,7 +34,7 @@ app.get('/learn', (req, res) => {
 
 app.post('/manyapost', function (req, res) {
   console.log("Hello");
-  res.send("Data Saved");
+  // res.redirect("http://localhost:3000/");
   const MongoClient = require("mongodb").MongoClient;
   const url = "mongodb+srv://barnev:.mUNYTL8Ga.6q2%40@cluster0.pacdp.mongodb.net/luna?retryWrites=true&w=majority";
   const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -66,6 +66,8 @@ app.post('/manyapost', function (req, res) {
 });
   });
 });
+
+app.get('manyapost')
 
 // app.get('/tracker.html', function(req, res){
 //     res.sendFile(__dirname + '/tracker.html');

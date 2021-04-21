@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {HttpClient} from "@angular/common/http";
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { stringify } from '@angular/compiler/src/util';
 // import { FormBuilder, FormGroup } from '@angular/forms';
 // import { HttpClient } from '@angular/common/http';
 
@@ -18,13 +18,21 @@ declare function showInput():any;
   styleUrls: ['./tracking.component.css']
 })
 export class TrackingComponent implements OnInit {
+  msg!:string;
   poststartdate;
   postperiodlength;
+
+  clickEvent(){
+    this.msg='Data Successfully Saved.';
+    return this.msg;
+  }
  
 
   
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) {
+    msg:String;
+   }
   
 
   ngOnInit(): void {
@@ -47,3 +55,5 @@ interface Cycle {
   startdate: string;
   periodlength: number;
 }
+
+

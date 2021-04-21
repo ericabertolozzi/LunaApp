@@ -91,7 +91,9 @@
 <div id="notescontainer">
     <textarea id="area" name="notes" placeholder="Add more details regarding your mood and sleep patterns." rows="10" cols="40"></textarea>
 </div>
-<button (click)="makeFirstDataSet()">Save Information</button>
+<button (click)="makeFirstDataSet();clickEvent()">Save Information</button>
+<h2>{{msg}}</h2>
+
 <!-- <input class="submit" id="finalsubmit" type="submit" onclick="showInput();" value="Save"><br><br><br> -->
 </form>
 
