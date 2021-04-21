@@ -33,7 +33,7 @@ export class TrackingComponent implements OnInit {
   }
 
   public makeFirstDataSet(): void {
-    this.http.post<Cycle>('/manyapost',{ title: 'Angular POST Request Example' }).subscribe((data) => {
+    this.http.post<Cycle>('http://localhost:3000/manyapost',{ title: 'Angular POST Request Example' }).subscribe((data) => {
       this.poststartdate=data.startdate;
       this.postperiodlength=data.periodlength
       console.log(data);
