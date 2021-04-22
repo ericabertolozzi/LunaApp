@@ -8,8 +8,6 @@ import { stringify } from '@angular/compiler/src/util';
 // import { FormBuilder, FormGroup } from '@angular/forms';
 // import { HttpClient } from '@angular/common/http';
 
-
-
 declare function showInput():any;
 
 @Component({
@@ -27,9 +25,6 @@ export class TrackingComponent implements OnInit {
     return this.msg;
   }
  
-
-  
-
   constructor(private http:HttpClient) {
     msg:String;
    }

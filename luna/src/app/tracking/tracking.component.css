@@ -118,27 +118,45 @@ h4{
 }
 .mood{
   text-align:left;
-  padding-left:10px;
+  padding-left:6px;
 }
 #moods{
-  margin-left:30%;
+  /* margin-left:30%; */
+  display:flex;
+  justify-content:space-around;
+  max-width:50%;
+  margin:auto;
 }
 #sleep{
   /* position:relative;
   display:block;
   margin-left:15%; */
+ 
+  /* margin-left:15%; */
+
   display: flex;
-  margin-left:15%;
-  justify-content: space-between 10%;
-   
+  /* flex-direction: row; */
+  /* justify-content: space-between; */
+  /* min-width: 10px;   */
+  padding-left:3%;
+  justify-content:space-around;     
+  max-width:55%;
+  margin:auto;
+
 }
+
+#good{
+  padding-right:4%;
+}
+
+
 #display,#displayone{
   display:inline-block;
    margin:0 auto; 
   position:relative; 
 }
 .sadmood{
-  padding-left:18px;
+  padding-left:14px;
 }
 .input_hidden {
   position: absolute;
@@ -179,13 +197,13 @@ h4{
 }
 
 #moods label img {
-  padding: 2px;
-  width:15%
+  /* padding: 5%; */
+  width:50%
 }
 
 #sleep label img{
-  padding:2px;
-  width:8%;
+  /* padding-right:5%; */
+  width:50%;
 }
 
 #notescontainer {
@@ -218,6 +236,10 @@ h4{
     width:250px;
     height:40px;
  } 
+
+ #upset{
+   padding-left:50%;
+ }
 
 label[for=quantity]{
     width:150px;
