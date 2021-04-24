@@ -17,7 +17,7 @@
 <body>
 
   <!-- End of Navbar  -->
-    <h4>Please fill out the below information to enable the tracking feature. </h4><br><br><br>
+   <br> <h4>Please fill out the below information to enable the tracking feature. </h4><br><br><br>
 
       <!-- </form> -->
     <form method="POST" id="form1" action="/manyapost">
@@ -32,9 +32,9 @@
           <input type="number" id="cyclelength" placeholder="Menstrual Cycle Length" name="cyclelength" min="0" max="30" required>
       </div>  
     </div>
-    
+    <!-- onclick="showInput();" -->
   <div class="submission">
-    <input class="submit" onclick="showInput();" value="Cycle Countdown"><br>
+    <input class="submit" ons-col ng-click="showInput()"  value="Cycle Countdown"><br>
   <!-- <input class="submit" type="submit" onclick="showInput();" value="Start Tracking Your Cycle"><br> -->
   <!-- </form> -->
   <div id="lastperiod">
@@ -70,7 +70,7 @@
     <input type="radio" name="mood" value="Fear" id="fear" />
     <label for="Scared"><img src="../../assets/images/fear.png"  />
     <p class="scaredmood">Scared</p></label>
-</div>
+</div><br>
 <p class="sleeptracker"><b>Track Your Sleep</b></p>
 <div id="sleep">
     <input type="radio" name="sleep" value="Poor" id="poor" />
@@ -84,25 +84,28 @@
      <input type="radio" name="sleep" value="Good" id="good" />
     <label for="happy"><img src="../../assets/images/threepillow.png"  />
     <p class="mood">Good</p></label>
-</div>
+</div><br>
 
 
-<p class="addnote">Add Notes</p>
+<p class="addnote"><b>Add Notes</b></p>
 <div id="notescontainer">
     <textarea id="area" name="notes" placeholder="Add more details regarding your mood and sleep patterns." rows="10" cols="40"></textarea>
 </div>
-<button (click)="makeFirstDataSet();clickEvent()">Save Information</button>
+<button id="finalsubmit" (click)="makeFirstDataSet();clickEvent()">Save Information</button>
 <h2>{{msg}}</h2>
 
 <!-- <input class="submit" id="finalsubmit" type="submit" onclick="showInput();" value="Save"><br><br><br> -->
 </form>
 
+<button id="display" (click)="makeCSV();clickEvent1()">Click to Download Cycle Tracking Data</button>
+
+<button id="display" (click)="getvisualization();">Click to View Tracking Visualizations</button>
 
 
   <div class="forms-display">
-<form method="GET" id="form2" action="/display">
+<!-- <form method="GET" id="form2" action="/display">
   <input type="submit" name="display" id="display" value="Click to Download CSV File">
-</form>
+</form> -->
 <input type="submit" name="display" onclick="showInput();" id="display" value="Cycle Analysis">
 </div>
   

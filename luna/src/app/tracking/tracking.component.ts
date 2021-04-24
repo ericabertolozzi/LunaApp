@@ -24,8 +24,19 @@ export class TrackingComponent implements OnInit {
     this.msg='Data Successfully Saved.';
     return this.msg;
   }
+
+  clickEvent1(){
+    this.msg='CSV Data Successfully Saved.';
+    return this.msg;
+  }
+
+  clickEvent2(){
+    this.msg='View Visualizations';
+    return this.msg;
+  }
  
-  constructor(private http:HttpClient) {
+ 
+  constructor(private http:HttpClient, private httpService:HttpService) {
     msg:String;
    }
   
@@ -36,9 +47,20 @@ export class TrackingComponent implements OnInit {
   }
 
   public makeFirstDataSet(): void {
-    this.http.post<Cycle>('http://localhost:3000/tracking',{ title: 'Angular POST Request Example' }).subscribe((data) => {
+    this.http.post<Cycle>('http://localhost:3000/tracking',{ title: 'Angular POST Request' }).subscribe((data) => {
       this.poststartdate=data.startdate;
       this.postperiodlength=data.periodlength
+      console.log(data);
+    })
+  }
+  public makeCSV(): void {
+    this.httpService.sendGetRequest('/trackerCSV').subscribe((data) => {
+      console.log(data);
+    })
+  }
+
+  public getvisualization(): void {
+    this.httpService.sendGetRequest('/trackerimage').subscribe((data) => {
       console.log(data);
     })
   }

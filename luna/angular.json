@@ -34,6 +34,7 @@
               "src/styles.css"
             ],
             "scripts": [
+              "luna/src/assets/javascript/external.js"
      
             ]
           },
