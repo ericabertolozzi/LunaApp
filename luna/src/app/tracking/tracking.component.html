@@ -99,14 +99,17 @@
 
 <button id="display" (click)="makeCSV();clickEvent1()">Click to Download Cycle Tracking Data</button>
 
-<button id="display" (click)="getvisualization();">Click to View Tracking Visualizations</button>
+<!-- <button id="display" (click)="getvisualization();">Click to View Tracking Visualizations</button> -->
 
 
   <div class="forms-display">
 <!-- <form method="GET" id="form2" action="/display">
   <input type="submit" name="display" id="display" value="Click to Download CSV File">
 </form> -->
-<input type="submit" name="display" onclick="showInput();" id="display" value="Cycle Analysis">
+<form method="GET" id="form2" action="/trackerimage">
+  <input type="submit" name="trackerimage" id="display" value="Cycle Analysis">
+</form>
+<!-- <input type="submit" name="display" onclick="showInput();" id="display" value="Cycle Analysis"> -->
 </div>
   
     <div class="footer1">

@@ -96,10 +96,10 @@ app.get('/trackerCSV', function(req, res){
 	);
 	});
 
-  var filepath='../../assets/images/moodduringcycle.png'
-  var filepath1='../../assets/images/sleepquality.png'
   app.get('/trackerimage',function(req,res){
-    res.sendFile(filepath+filepath1);
+    var htmlBegin = " <! DOCTYPE html ><html ><head ><h1>Mood and Sleep Trends During Cycle</h1><br><br><div id='image1'><img src='../../assets/images/moodduringcycle.png'></div><br><div id='image2'><img src='../../assets/images/sleepquality.png' width:5px></div><style > body { background-color:#ebebeb;text-align:center;";
+    var htmlEnd = ";} h1{font-size-20px;text-align:center;} img{width:500px}; </ style > </ head ><body ><form method='Post'> <input type='submit' method='GET' value='Redirect' action='http://localhost:3000/'></form> </ body > </ html >";
+    res.send(htmlBegin+htmlEnd)
   });
 
 // app.get('/tracker.html', function(req, res){
