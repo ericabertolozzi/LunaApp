@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
 import {HttpClient, JsonpClientBackend} from "@angular/common/http";
+import { ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-learn',
   templateUrl: './learn.component.html',
-  styleUrls: ['./learn.component.css']
+  styleUrls: ['./learn.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class LearnComponent implements OnInit {
   postName: string;
