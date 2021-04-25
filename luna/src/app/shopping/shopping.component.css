@@ -1,0 +1,69 @@
+/* Beginning of master.css */
+body {
+  background-color: #ebebeb;
+  /* overflow:scroll; */
+}
+
+.footer {
+  position: fixed;
+  font-size:17px;
+  left: 0;
+  bottom: 0;
+  font-family: 'Quicksand', sans-serif;
+  width: 100%;
+  background-color: lavender;
+  color: black;
+  text-align: center;
+  border-radius: 15px;
+}
+/* End of master.css */
+/* Beginning of shopping.css */
+.content {
+  /* width: auto;
+  height: auto; */
+  margin-top: 100px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.heading {
+  margin-top: 2%;
+  font-weight: bold;
+  color: #A5A5EF;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: lavender;
+  color: black;
+  border: 2px solid #e7e7e7;
+  border-radius: 12px;
+  font-family: 'Quicksand', sans-serif;
+  padding: 15px;
+  margin: 7px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.button1:hover {background-color: #937DCA;}
+
+.productName {
+  margin-top: 2%;
+  font-weight: bold;
+  color: #606060;
+  font-size: 30px;
+}
+
+
+/* End of shopping.css */
