@@ -13,14 +13,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
   <!-- End of Navbar  -->
-    <h4>Please fill out the below information to enable the tracking feature. </h4><br><br><br>
+   <br> <h4>PLEASE ANSWER THE BELOW QUESTIONS TO TRACK YOUR CYCLE </h4><br><br><br>
 
       <!-- </form> -->
-    <form method="POST" id="form1" action="/manyapost">
+    <form method="POST" id="form1" action="/infopost">
     <div class="flex-container">
       <div>1. When Did Your Period Begin?<br><br>
           <input type="date" id="startdate" name="startdate" required>
@@ -32,9 +35,9 @@
           <input type="number" id="cyclelength" placeholder="Menstrual Cycle Length" name="cyclelength" min="0" max="30" required>
       </div>  
     </div>
-    
+    <!-- onclick="showInput();" -->
   <div class="submission">
-    <input class="submit" onclick="showInput();" value="Cycle Countdown"><br>
+    <input class="submit" ons-col ng-click="showInput()"  value="Cycle Countdown"><br>
   <!-- <input class="submit" type="submit" onclick="showInput();" value="Start Tracking Your Cycle"><br> -->
   <!-- </form> -->
   <div id="lastperiod">
@@ -45,7 +48,7 @@
     </div><br><br>
   </div>
 
-  <p class="moodtracker">Track Your Mood</p>
+  <p class="moodtracker"><b>Track Your Mood</b></p><br><br><br>
   <div id="moods">
     <input type="radio" name="mood" value="Happy" id="mood"/>
         <label for="Happy"><img src="../../assets/images/happy1.png" />
@@ -70,43 +73,57 @@
     <input type="radio" name="mood" value="Fear" id="fear" />
     <label for="Scared"><img src="../../assets/images/fear.png"  />
     <p class="scaredmood">Scared</p></label>
-</div>
-<p class="sleeptracker">Track Your Sleep</p>
+</div><br>
+<p class="sleeptracker"><b>Track Your Sleep</b></p><br><br><br>
 <div id="sleep">
     <input type="radio" name="sleep" value="Poor" id="poor" />
         <label for="sad"><img src="../../assets/images/onepillow.png"  />
         <p class="mood">Poor</p></label>
 
-    <input type="radio" name="sleep" id="fair" />
+    <input type="radio" name="sleep" value="Fair" id="fair" />
         <label for="happy"><img src="../../assets/images/twopillow.png" />
         <p class="mood">Fair</p></label> 
 
-     <input type="radio" name="sleep" id="good" />
+     <input type="radio" name="sleep" value="Good" id="good" />
     <label for="happy"><img src="../../assets/images/threepillow.png"  />
     <p class="mood">Good</p></label>
-</div>
+</div><br>
 
 
-<p class="addnote">Add Notes</p>
+<p class="addnote"><b>My Notes</b></p>
 <div id="notescontainer">
     <textarea id="area" name="notes" placeholder="Add more details regarding your mood and sleep patterns." rows="10" cols="40"></textarea>
 </div>
-<input class="submit" id="finalsubmit" type="submit" onclick="showInput();" value="Save"><br><br><br>
-</form>
-
-
-
-  <div class="forms-display">
-<form method="GET" id="form2" action="/display">
-  <input type="submit" name="display" id="display" value="Click to Download CSV File">
-</form>
-<input type="submit" name="display" onclick="showInput();" id="display" value="Cycle Analysis">
+<input type="hidden" name="_to" value="manyatrehan14@gmail.com" />
+<div id="finalsubmit">
+<button (click)="makeFirstDataSet();clickEvent()">Save Information</button><br><br>
 </div>
+<h2>{{msg}}</h2>
+
+<!-- <input class="submit" id="finalsubmit" type="submit" onclick="showInput();" value="Save"><br><br><br> -->
+</form>
+<p class="askquestion">Have a Question for a Member of Our Team?</p><br><br>
+<form id="askquestions" action="https://mailthis.to/manyatrehan14@gmail.com" method="POST">
+  <input type="text" name="question" placeholder="Your name">
+  <input type="email" name="_replyto" placeholder="Your email">
+  <input type="text" name="question" placeholder="Your Question">
+  <input type="submit" value="Send Email">
+</form><br><br>
+
+<div id="submittwo">
+  <div class="forms-display">
+    <form method="GET" id="form2" action="/trackerimage">
+      <input type="submit" name="trackerimage" id="displaytwo" value="Cycle Analysis">
+    </form>
+    </div>
+<button id="displaythree" (click)="makeCSV();clickEvent1()">Click to Download Cycle Tracking Data</button>
+<h2>{{msg1}}</h2>
+ 
+</div><br><br>
   
     <div class="footer1">
       <p class="footer-text">Luna Copyright &copy; 2021.</p>
     </div> 
-
 </body>
 </html>
 

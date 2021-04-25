@@ -3,6 +3,10 @@ const app = express();
 const path = require('path');
 const port = 3000;
 const fs = require('fs');
+var bodyParser = require('body-parser') //To help read form data.
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 
 const MongoClient = require('mongodb').MongoClient;
 // had to URL encode the password bc it contained an '@' - VB
@@ -28,10 +32,12 @@ app.get('/learn', (req, res) => {
 });
 
 
-app.post('/manyapost', function (req, res) {
+app.post('/infopost', function (req, res) {
+  console.log("Hello");
   const MongoClient = require("mongodb").MongoClient;
   const url = "mongodb+srv://barnev:.mUNYTL8Ga.6q2%40@cluster0.pacdp.mongodb.net/luna?retryWrites=true&w=majority";
   const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+  // console.log(req);
   MongoClient.connect(url, function(err, db) {
     var dbo = db.db("luna");
     var collection = dbo.collection("Cycle Tracking");
@@ -59,6 +65,41 @@ app.post('/manyapost', function (req, res) {
 });
   });
 });
+
+
+app.get('/trackerCSV', function(req, res){
+	const mongodb = require("mongodb").MongoClient;
+	const fastcsv = require("fast-csv");
+	const ws = fs.createWriteStream("cycle_tracking2.csv");
+	const url = "mongodb+srv://barnev:.mUNYTL8Ga.6q2%40@cluster0.pacdp.mongodb.net/luna?retryWrites=true&w=majority";
+
+	mongodb.connect(
+		url,
+		(err, client) => {
+		if (err) throw err;
+		client
+			.db("luna").collection("Cycle Tracking").find({},{projection:{_id:0}}).toArray((err, data) => {
+			if (err) throw err;
+			console.log(data);
+			fastcsv
+				.write(data, { headers: true })
+				.on("finish", function() {
+				console.log("cycle_tracking.csv created successfully!");
+				res.send("CSV Successfully Downloaded.")
+				})
+				.pipe(ws);
+
+			client.close();
+			});
+		}
+	);
+	});
+
+  app.get('/trackerimage',function(req,res){
+    var htmlBegin = " <! DOCTYPE html ><html ><head ><h1>Mood and Sleep Trends During Cycle</h1><br><br><div id='image1'><img src='../../assets/images/moodduringcycle.png'></div><br><div id='image2'><img src='../../assets/images/sleepquality.png' width:5px></div><style > body { background-color:#ebebeb;text-align:center;";
+    var htmlEnd = ";} h1{font-size-20px;text-align:center;} img{width:500px}; </ style > </ head ><body ><form method='Post'> <input type='submit' method='GET' value='Redirect' action='http://localhost:3000/'></form> </ body > </ html >";
+    res.send(htmlBegin+htmlEnd)
+  });
 
 // app.get('/tracker.html', function(req, res){
 //     res.sendFile(__dirname + '/tracker.html');
@@ -101,66 +142,5 @@ app.post('/manyapost', function (req, res) {
 // app.use(express.static('.'));
 //
 //
-// app.get('/display', function(req, res){
-//   const mongodb = require("mongodb").MongoClient;
-//   const fastcsv = require("fast-csv");
-//   const ws = fs.createWriteStream("cycle_tracking4.csv");
-//   const url = "mongodb+srv://barnev:.mUNYTL8Ga.6q2%40@cluster0.pacdp.mongodb.net/luna?retryWrites=true&w=majority";
-//
-//   mongodb.connect(
-//     url,
-//     (err, client) => {
-//       if (err) throw err;
-//       client
-//         .db("luna").collection("Cycle Tracking").find({}).toArray((err, data) => {
-//           if (err) throw err;
-//           console.log(data);
-//           fastcsv
-//             .write(data, { headers: true })
-//             .on("finish", function() {
-//               console.log("Write to cycle_tracking.csv successfully!");
-//               res.send("CSV Successfully Downloaded.")
-//             })
-//             .pipe(ws);
-//
-//           client.close();
-//         });
-//     }
-//   );
-//   });
-
-// src="http://maps.googleapis.com/maps/api/js?sensor=false";
-// let auth = new google.auth.OAuth2(
-//     '619493635707-ntjk96ok34dvi62ngq5cnq0k6q8aqmjt.apps.googleusercontent.com',
-//     'tuy3Q5SgioaVcxqgNyc4TcQZ',
-//     'http://localhost:3000'
-// );
-// let calendar = google.calendar({version: 'v3', auth});
-//     calendar.events.insert({
-//         auth: auth,
-//         calendarId: 'primary',
-//         resource: {
-//             'summary': 'Period Started',
-//             'description': 'Period Started',
-//             'start': {
-//                 'dateTime':startdate+'T06:00:00.000Z',
-//                 'timeZone':'utc'
-//             },
-//             'end': {
-//                 'dateTime': '2019-01-01T07:00:00.000Z',
-//                 'timeZone':'utc'
-//             },
-//             'colorId' : 4 ,
-//             'sendUpdates':'all',
-//             'status' : 'confirmed'
-//         },
-//     }, (err, res) => {
-//         if (err) {
-//             console.log(err);
-//         } else {
-//             console.log(res.data);
-//         }
-//     });
-
 
 app.listen(port, () => console.log(`Application listening on port ${port}!`))
