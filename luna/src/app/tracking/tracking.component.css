@@ -45,11 +45,24 @@ h1{
   border-radius: 15px;
 }
 
-h4{
+h4,.moodtracker,.sleeptracker,.addnote,.askquestion{
+    margin-top: 2%;
+    font-weight: bold;
+    font-size:30px;
+    color: #A5A5EF;
     position:relative;
     top:50px;
     margin-top:-40px;
     text-align:center;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.askquestion{
+  font-size:20px;
+}
+
+#askquestions{
+  text-align:center;
 }
 
 .submission{
@@ -118,27 +131,45 @@ h4{
 }
 .mood{
   text-align:left;
-  padding-left:10px;
+  padding-left:6px;
 }
 #moods{
-  margin-left:30%;
+  /* margin-left:30%; */
+  display:flex;
+  justify-content:space-around;
+  max-width:50%;
+  margin:auto;
 }
 #sleep{
   /* position:relative;
   display:block;
   margin-left:15%; */
+ 
+  /* margin-left:15%; */
+
   display: flex;
-  margin-left:15%;
-  justify-content: space-between 10%;
-   
+  /* flex-direction: row; */
+  /* justify-content: space-between; */
+  /* min-width: 10px;   */
+  padding-left:3%;
+  justify-content:space-around;     
+  max-width:55%;
+  margin:auto;
+
 }
+
+#good{
+  padding-right:10%;
+}
+
+
 #display,#displayone{
   display:inline-block;
    margin:0 auto; 
   position:relative; 
 }
 .sadmood{
-  padding-left:18px;
+  padding-left:14px;
 }
 .input_hidden {
   position: absolute;
@@ -146,13 +177,43 @@ h4{
 }
 
 #finalsubmit{
-  align-content:center;
-  margin-left:42%;
+  top: 50%;
+  left: 50%;
+  margin-top: -60px;
+  margin-left: 540px;
 }
+
+#submittwo{
+  top: 50%;
+  left: 50%;
+  margin-top: -60px;
+  margin-left: 250px;
+  display:inline;
+
+}
+
+#displaytwo{
+  margin-left:-450px;
+}
+
+#displaythree{
+  margin-left:500px;
+}
+
 
 .input_hidden1 {
   position: absolute;
   right: 50px;
+}
+
+#graphics{
+  margin-right:50%;
+  
+}
+
+h2{
+  text-align:center;
+  font-size:20px;
 }
 
 .selected {
@@ -179,17 +240,18 @@ h4{
 }
 
 #moods label img {
-  padding: 2px;
-  width:15%
+  /* padding: 5%; */
+  width:50%
 }
 
 #sleep label img{
-  padding:2px;
-  width:8%;
+  /* padding-right:5%; */
+  width:70%;
 }
 
 #notescontainer {
-  margin: 20px 20px 20px 20px;
+  margin: 70px 150px 100px 150px;
+  font-family: 'Indie Flower', cursive;
 }
 #area {
   width: 100%;
@@ -218,6 +280,10 @@ h4{
     width:250px;
     height:40px;
  } 
+
+ #upset{
+   padding-left:50%;
+ }
 
 label[for=quantity]{
     width:150px;
