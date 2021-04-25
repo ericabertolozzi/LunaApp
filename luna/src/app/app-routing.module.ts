@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'learn', component: LearnComponent },
   { path: 'login', component: LoginComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'tracking',component: TrackingComponent },
 
 

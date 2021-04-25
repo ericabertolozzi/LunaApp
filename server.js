@@ -16,7 +16,7 @@ const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology:
 app.use(express.static(path.join(__dirname, './luna/dist/luna')));
 
 
-
+// TO DO: Change this to API stuff
 app.get('/learn', (req, res) => {
   // Get all Articles
   	MongoClient.connect(url, function(err, db) {
@@ -31,6 +31,17 @@ app.get('/learn', (req, res) => {
     });
     res.send(result);
 	// res.sendFile(path.join(__dirname + '/luna/src/app/learn/learn.component.html'));
+});
+
+app.get("/getArticlesData", function (req, res) {
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("luna");
+    dbo.collection("Articles").find().toArray(function(err, result) {
+      res.json(result);
+      db.close();
+    });
+  });
 });
 
 
