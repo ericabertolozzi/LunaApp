@@ -11,6 +11,8 @@ const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology:
 
 app.use(express.static(path.join(__dirname, './luna/dist/luna')));
 
+
+
 app.get('/learn', (req, res) => {
   // Get all Articles
   	MongoClient.connect(url, function(err, db) {
@@ -23,7 +25,7 @@ app.get('/learn', (req, res) => {
   			db.close();
       });
     });
-    res.end();
+    res.send(result);
 	// res.sendFile(path.join(__dirname + '/luna/src/app/learn/learn.component.html'));
 });
 
