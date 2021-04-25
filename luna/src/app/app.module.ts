@@ -10,6 +10,7 @@ import { LearnComponent } from './learn/learn.component';
 import { HomeComponent } from './home/home.component';
 import { AjaxComponent } from './ajax/ajax.component';
 import { TrackingComponent } from './tracking/tracking.component';
+import { ShoppingComponent } from './shopping/shopping.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TrackingComponent } from './tracking/tracking.component';
     LearnComponent,
     HomeComponent,
     AjaxComponent,
-    TrackingComponent
+    TrackingComponent,
+    ShoppingComponent
   ],
   imports: [
     BrowserModule,
