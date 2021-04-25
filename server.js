@@ -32,9 +32,8 @@ app.get('/learn', (req, res) => {
 });
 
 
-app.post('/manyapost', function (req, res) {
+app.post('/infopost', function (req, res) {
   console.log("Hello");
-  // res.redirect("http://localhost:3000/");
   const MongoClient = require("mongodb").MongoClient;
   const url = "mongodb+srv://barnev:.mUNYTL8Ga.6q2%40@cluster0.pacdp.mongodb.net/luna?retryWrites=true&w=majority";
   const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });

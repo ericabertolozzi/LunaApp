@@ -17,6 +17,7 @@ declare function showInput():any;
 })
 export class TrackingComponent implements OnInit {
   msg!:string;
+  msg1!:string;
   poststartdate;
   postperiodlength;
 
@@ -26,13 +27,8 @@ export class TrackingComponent implements OnInit {
   }
 
   clickEvent1(){
-    this.msg='CSV Data Successfully Saved.';
-    return this.msg;
-  }
-
-  clickEvent2(){
-    this.msg='View Visualizations';
-    return this.msg;
+    this.msg1='CSV Data Successfully Saved.';
+    return this.msg1;
   }
  
  

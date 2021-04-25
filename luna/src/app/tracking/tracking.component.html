@@ -23,7 +23,7 @@
    <br> <h4>PLEASE ANSWER THE BELOW QUESTIONS TO TRACK YOUR CYCLE </h4><br><br><br>
 
       <!-- </form> -->
-    <form method="POST" id="form1" action="/manyapost">
+    <form method="POST" id="form1" action="/infopost">
     <div class="flex-container">
       <div>1. When Did Your Period Begin?<br><br>
           <input type="date" id="startdate" name="startdate" required>
@@ -112,29 +112,18 @@
 
 <div id="submittwo">
   <div class="forms-display">
-    <!-- <form method="GET" id="form2" action="/display">
-      <input type="submit" name="display" id="display" value="Click to Download CSV File">
-    </form> -->
     <form method="GET" id="form2" action="/trackerimage">
       <input type="submit" name="trackerimage" id="displaytwo" value="Cycle Analysis">
     </form>
-    <!-- <input type="submit" name="display" onclick="showInput();" id="display" value="Cycle Analysis"> -->
     </div>
 <button id="displaythree" (click)="makeCSV();clickEvent1()">Click to Download Cycle Tracking Data</button>
-
-<!-- <button id="display" (click)="getvisualization();">Click to View Tracking Visualizations</button> -->
-
-
+<h2>{{msg1}}</h2>
  
 </div><br><br>
   
     <div class="footer1">
       <p class="footer-text">Luna Copyright &copy; 2021.</p>
     </div> 
-    <!-- <form action="https://api.mailslurp.com/forms?_to=manyatrehan14@gmail.com" method="post">
-      <input name="birthday" placeholder="Please enter your birthday" />
-      <button type="submit">Submit</button>
-    </form> -->
 </body>
 </html>
 
