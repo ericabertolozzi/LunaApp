@@ -1,100 +1,89 @@
-  /* Beginning of master.css */
-  body {
-    background-color: #ebebeb;
-    /* overflow:scroll; */
-  }
+.footer {
+  position: fixed;
+  font-size:17px;
+  left: 0;
+  bottom: 0;
+  font-family: 'Quicksand', sans-serif;
+  width: 100%;
+  background-color: lavender;
+  color: black;
+  text-align: center;
+  border-radius: 15px;
+}
 
-  .footer {
-    position: fixed;
-    font-size:17px;
-    left: 0;
-    bottom: 0;
-    font-family: 'Quicksand', sans-serif;
-    width: 100%;
-    background-color: lavender;
-    color: black;
-    text-align: center;
-    border-radius: 15px;
-  }
-  /* End of master.css */
-  /* Beginning of learn.css */
-  .content {
-    /* width: auto;
-    height: auto; */
-    margin-top: 100px;
-    font-family: 'Quicksand', sans-serif;
-  }
+.content {
+  margin-top: 100px;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #ebebeb;
+  width: 100%;
+}
 
-  .heading {
-    margin-top: 2%;
-    font-weight: bold;
-    color: #A5A5EF;
-  }
+.heading {
+  margin-top: 2%;
+  font-weight: bold;
+  color: #A5A5EF;
+}
 
-  .articles-container {
-    margin-top: 4%;
-    margin-bottom: 40px;
-    width: 85%;
-  }
+.articles-container {
+  margin-top: 4%;
+  margin-bottom: 40px;
+  width: 85%;
+  text-align: left;
+}
 
-  .articles-container p {
-    text-align: left;
-  }
+.articles-container .name {
+  font-weight: bold;
+  color: #A5A5EF;
+}
 
-  .articles-container .name {
-    font-weight: bold;
-    color: #A5A5EF;
-  }
+.articles-container a {
+  color: #A5A5EF;
+}
 
-  .articles-container a {
-    color: #A5A5EF;
-  }
+/* Search Button */
+* {
+  box-sizing: border-box;
+}
 
-  /* Search Button */
-  * {
-    box-sizing: border-box;
-  }
+form.example {
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+}
 
-  form.example {
-    margin-top: 2%;
-    display: flex;
-    justify-content: center;
-  }
+/* Style the search field */
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 40%;
+  background: #f1f1f1;
+  border-radius: 10px;
+}
 
-  /* Style the search field */
-  form.example input[type=text] {
-    padding: 10px;
-    font-size: 17px;
-    border: 1px solid grey;
-    float: left;
-    width: 40%;
-    background: #f1f1f1;
-    border-radius: 10px;
-  }
+/* Style the submit button */
+form.example button {
+  float: left;
+  width: 7%;
+  height: 47px;;
+  padding: 10px;
+  background: #A5A5EF;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+  border-radius: 10px;
+}
 
-  /* Style the submit button */
-  form.example button {
-    float: left;
-    width: 7%;
-    height: 47px;;
-    padding: 10px;
-    background: #A5A5EF;
-    color: white;
-    font-size: 17px;
-    border: 1px solid grey;
-    border-left: none; /* Prevent double borders */
-    cursor: pointer;
-    border-radius: 10px;
-  }
+form.example button:hover {
+  background: #8282e0;
+}
 
-  form.example button:hover {
-    background: #8282e0;
-  }
-
-  /* Clear floats */
-  form.example::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  /* End of learn.css */
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
