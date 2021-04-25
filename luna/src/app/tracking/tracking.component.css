@@ -45,11 +45,24 @@ h1{
   border-radius: 15px;
 }
 
-h4{
+h4,.moodtracker,.sleeptracker,.addnote,.askquestion{
+    margin-top: 2%;
+    font-weight: bold;
+    font-size:30px;
+    color: #A5A5EF;
     position:relative;
     top:50px;
     margin-top:-40px;
     text-align:center;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.askquestion{
+  font-size:20px;
+}
+
+#askquestions{
+  text-align:center;
 }
 
 .submission{
@@ -164,13 +177,43 @@ h4{
 }
 
 #finalsubmit{
-  align-content:center;
-  margin-left:43%;
+  top: 50%;
+  left: 50%;
+  margin-top: -60px;
+  margin-left: 540px;
 }
+
+#submittwo{
+  top: 50%;
+  left: 50%;
+  margin-top: -60px;
+  margin-left: 250px;
+  display:inline;
+
+}
+
+#displaytwo{
+  margin-left:-450px;
+}
+
+#displaythree{
+  margin-left:500px;
+}
+
 
 .input_hidden1 {
   position: absolute;
   right: 50px;
+}
+
+#graphics{
+  margin-right:50%;
+  
+}
+
+h2{
+  text-align:center;
+  font-size:20px;
 }
 
 .selected {
@@ -207,7 +250,8 @@ h4{
 }
 
 #notescontainer {
-  margin: 80px 80px 80px 80px;
+  margin: 70px 150px 100px 150px;
+  font-family: 'Indie Flower', cursive;
 }
 #area {
   width: 100%;
