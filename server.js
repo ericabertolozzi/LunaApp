@@ -73,11 +73,9 @@ app.get("/getArticlesDataCategory/category/:category", function (req, res) {
 
 
 app.post('/infopost', function (req, res) {
-  console.log("Hello");
   const MongoClient = require("mongodb").MongoClient;
   const url = "mongodb+srv://barnev:.mUNYTL8Ga.6q2%40@cluster0.pacdp.mongodb.net/luna?retryWrites=true&w=majority";
   const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
-  // console.log(req);
   MongoClient.connect(url, function(err, db) {
     var dbo = db.db("luna");
     var collection = dbo.collection("Cycle Tracking");
@@ -88,6 +86,7 @@ app.post('/infopost', function (req, res) {
     var cyclelength =req.body.cyclelength;
     var mood =req.body.mood;
     var sleep =req.body.sleep;
+    var symptom=req.body.symptom;
     notes=req.body.notes;
     var data = {
       "id":ids,
@@ -97,7 +96,8 @@ app.post('/infopost', function (req, res) {
       "cyclelength":cyclelength,
       "mood":req.body.mood,
       "sleep":req.body.sleep,
-      "notes":req.body.notes
+      "notes":req.body.notes,
+      "symptom":symptom
   }
   dbo.collection('Cycle Tracking').insertOne(data,function(err, collection){
     if (err) throw err;

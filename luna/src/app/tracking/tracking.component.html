@@ -37,11 +37,8 @@
           <input type="number" id="cyclelength" placeholder="Menstrual Cycle Length" name="cyclelength" min="0" max="30" required>
       </div>  
     </div>
-    <!-- onclick="showInput();" -->
   <div class="submission">
     <input class="submit" onclick="document.getElementById('displayone').innerHTML = document.getElementById('cyclelength').value-1+' days'; document.getElementById('display').innerHTML = document.getElementById('startdate').value;"  value="Cycle Countdown"><br>
-  <!-- <input class="submit" type="submit" onclick="showInput();" value="Start Tracking Your Cycle"><br> -->
-  <!-- </form> -->
   <div id="lastperiod">
   <p class="lastperiods">Your last period was:<b><p><span id='display'></span></p></b> </p>
   </div>
@@ -49,8 +46,35 @@
     <p class="nextperiods">Your next period is in:<b><p><span id='displayone'></span></p></b> </p>
     </div><br><br>
   </div>
+  <p class="symptomtracker"><b>Track Your Symptoms</b></p><br><br><br>
+  <div class="symptoms">
+    <label></label>
+    <div><input name="symptom" value="Cramp" type='checkbox'>Cramp</div>
+    <label></label>
+    <div><input name="symptom" value="Headache" type='checkbox'>Headache</div>
+    <label></label>
+    <div><input name="symptom" value="Bloating" type='checkbox'>Bloating</div>
+    <label></label>
+    <div><input name="symptom" value="Mood Swings" type='checkbox'>Mood Swings</div>
+    <label></label>
+    <div><input name="symptom" value="Bowel Issues" type='checkbox'>Bowel Issues</div>
+    <label></label>
+    <div><input name="symptom" value="Back Pain" type='checkbox'>Back Pain</div>
+    <label></label>
+    <div><input name="symptom" id="jointpain" value="Joint Pain" type='checkbox'>Joint Pain</div>
+    <label></label>
+    <div><input name="symptom" value="Nausea" type='checkbox'>Nausea</div>
+    <label></label>
+    <div><input name="symptom" value="Nausea" type='checkbox'>Vomiting</div>
+    <label></label>
+    <div><input name="symptom" value="Dizzy" type='checkbox'>Dizzy</div>
+    <label></label>
+    <div><input name="symptom" id="food" value="Appetite Loss" type='checkbox'>Appetite Loss</div>
+    <label></label>
+    <div><input name="symptom" id="food" value="Appetite Loss" type='checkbox'>Shortness of Breath</div>
+</div>
 
-  <p class="moodtracker"><b>Track Your Mood</b></p><br><br><br>
+  <br><br><p class="moodtracker"><b>Track Your Mood</b></p><br><br><br>
   <div id="moods">
     <input type="radio" name="mood" value="Happy" id="mood"/>
         <label for="Happy"><img src="../../assets/images/happy1.png" />
@@ -101,17 +125,19 @@
 <button (click)="makeFirstDataSet();clickEvent()">Save Information</button><br><br>
 </div>
 <h2>{{msg}}</h2>
-
-<!-- <input class="submit" id="finalsubmit" type="submit" onclick="showInput();" value="Save"><br><br><br> -->
 </form>
-<p class="askquestion">Have a Question for a Member of Our Team?</p><br><br>
-<form id="askquestions" action="https://mailthis.to/manyatrehan14@gmail.com" method="POST">
-  <input type="text" name="question" placeholder="Your name">
-  <input type="email" name="_replyto" placeholder="Your email">
-  <input type="text" name="question" placeholder="Your Question">
-  <input type="submit" value="Send Email">
-</form><br><br>
 
+<div class="askequestion">
+<p class="askquestion">Have a Question for a Member of Our Team?</p><br><br><br>
+<form id="askquestions" action="https://mailthis.to/manyatrehan14@gmail.com" method="POST">
+  <input class="equestions" type="email" name="_replyto" placeholder="Your email">
+  <input class="equestions" type="text" name="question" placeholder="Your Question">
+ <br><br> <input class="submitequestion" type="submit" value="Send Email"><br>
+ <p>Our team will respond to your question within 2-3 business days. Thanks!</p>
+</form>
+</div>
+
+<br><br>
 <div id="submittwo">
   <div class="forms-display">
     <form method="GET" id="form2" action="/trackerimage">
