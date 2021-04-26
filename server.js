@@ -33,6 +33,19 @@ app.get('/learn', (req, res) => {
 	// res.sendFile(path.join(__dirname + '/luna/src/app/learn/learn.component.html'));
 });
 
+app.get("/getButtonsData", function (req, res) {
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("luna");
+    // const categorySet = new Set();
+    dbo.collection("Articles").distinct('category').then(function(arr) {
+      console.log(arr);
+      res.send(arr);
+    });
+    db.close();
+  });
+});
+
 app.get("/getArticlesData", function (req, res) {
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
@@ -43,6 +56,20 @@ app.get("/getArticlesData", function (req, res) {
     });
   });
 });
+
+app.get("/getArticlesDataCategory/category/:category", function (req, res) {
+  console.log( req.params );
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("luna");
+    dbo.collection("Articles").find({category: req.params.category}).toArray(function(err, result) {
+      res.json(result);
+      db.close();
+    });
+  });
+});
+
+
 
 
 app.post('/infopost', function (req, res) {
