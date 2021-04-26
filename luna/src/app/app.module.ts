@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { AjaxComponent } from './ajax/ajax.component';
 import { TrackingComponent } from './tracking/tracking.component';
 import { ShoppingComponent } from './shopping/shopping.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ShoppingComponent } from './shopping/shopping.component';
     HomeComponent,
     AjaxComponent,
     TrackingComponent,
-    ShoppingComponent
+    ShoppingComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,

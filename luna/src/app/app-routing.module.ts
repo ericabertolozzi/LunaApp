@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 import { LearnComponent } from './learn/learn.component';
+import { CalendarComponent } from './calendar/calendar.component';
 import { TrackingComponent } from './tracking/tracking.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
