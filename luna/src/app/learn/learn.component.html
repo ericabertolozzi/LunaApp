@@ -1,13 +1,14 @@
   <div class="content" align="center">
     <h1 class="heading">LEARN FROM OUR COLLECTION OF VERIFIED ARTICLES</h1>
-    <form class="example" align="center">
+    <!-- <form class="example" align="center">
       <input type="text" placeholder="Search.." name="search">
       <button type="submit"><i class="fa fa-search"></i></button>
-    </form>
+    </form> -->
 
     <!-- Category Buttons -->
     <!-- <div class="categoryButtons" [innerHTML]="buttonsListText | safe: 'html'"></div> -->
     <div class="categoryButtons">
+      <button type="submit" (click)="getArticlesData()">All</button>
       <button type="submit" (click)="getArticlesDataCategory('General')">General</button>
       <button type="submit" (click)="getArticlesDataCategory('Hygiene')">Hygiene</button>
       <button type="submit" (click)="getArticlesDataCategory('Birth Control')">Birth Control</button>
