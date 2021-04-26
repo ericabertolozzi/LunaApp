@@ -73,11 +73,9 @@ app.get("/getArticlesDataCategory/category/:category", function (req, res) {
 
 
 app.post('/infopost', function (req, res) {
-  console.log("Hello");
   const MongoClient = require("mongodb").MongoClient;
   const url = "mongodb+srv://barnev:.mUNYTL8Ga.6q2%40@cluster0.pacdp.mongodb.net/luna?retryWrites=true&w=majority";
   const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
-  // console.log(req);
   MongoClient.connect(url, function(err, db) {
     var dbo = db.db("luna");
     var collection = dbo.collection("Cycle Tracking");
@@ -88,6 +86,7 @@ app.post('/infopost', function (req, res) {
     var cyclelength =req.body.cyclelength;
     var mood =req.body.mood;
     var sleep =req.body.sleep;
+    var symptom=req.body.symptom;
     notes=req.body.notes;
     var data = {
       "id":ids,
@@ -97,7 +96,8 @@ app.post('/infopost', function (req, res) {
       "cyclelength":cyclelength,
       "mood":req.body.mood,
       "sleep":req.body.sleep,
-      "notes":req.body.notes
+      "notes":req.body.notes,
+      "symptom":symptom
   }
   dbo.collection('Cycle Tracking').insertOne(data,function(err, collection){
     if (err) throw err;
@@ -133,13 +133,37 @@ app.get('/trackerCSV', function(req, res){
 			});
 		}
 	);
-	});
+});
 
-  app.get('/trackerimage',function(req,res){
-    var htmlBegin = " <! DOCTYPE html ><html ><head ><h1>Mood and Sleep Trends During Cycle</h1><br><br><div id='image1'><img src='../../assets/images/moodduringcycle.png'></div><br><div id='image2'><img src='../../assets/images/sleepquality.png' width:5px></div><style > body { background-color:#ebebeb;text-align:center;";
-    var htmlEnd = ";} h1{font-size-20px;text-align:center;} img{width:500px}; </ style > </ head ><body ><form method='Post'> <input type='submit' method='GET' value='Redirect' action='http://localhost:3000/'></form> </ body > </ html >";
-    res.send(htmlBegin+htmlEnd)
+app.get('/trackerimage',function(req,res){
+  var htmlBegin = " <! DOCTYPE html ><html ><head ><h1>Mood and Sleep Trends During Cycle</h1><br><br><div id='image1'><img src='../../assets/images/moodduringcycle.png'></div><br><div id='image2'><img src='../../assets/images/sleepquality.png' width:5px></div><style > body { background-color:#ebebeb;text-align:center;";
+  var htmlEnd = ";} h1{font-size-20px;text-align:center;} img{width:500px}; </ style > </ head ><body ><form method='Post'> <input type='submit' method='GET' value='Redirect' action='http://localhost:3000/'></form> </ body > </ html >";
+  res.send(htmlBegin+htmlEnd)
+});
+
+app.post("/add_user", function (req, res) {
+
+  MongoClient.connect(url, function(err, db) {
+    var dbo = db.db("luna");
+    var name = req.body.name;
+    var email = req.body.email;
+    var pw = req.body.pw;
+    var mode = req.body.mode;
+
+    // hash password here
+    
+    var data = {
+      "email": email,
+      "password": pw,
+      "full_name": name,
+      "app_mode": mode
+    }
+    dbo.collection('Users').insertOne(data, function(err, collection){
+      if (err) throw err;
+      console.log("New item inserted successfully!");
+    });
   });
+});
 
 // app.get('/tracker.html', function(req, res){
 //     res.sendFile(__dirname + '/tracker.html');

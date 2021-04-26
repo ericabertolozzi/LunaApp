@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 import { LearnComponent } from './learn/learn.component';
+import { CalendarComponent } from './calendar/calendar.component';
 import { TrackingComponent } from './tracking/tracking.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -15,6 +16,7 @@ import { ShoppingComponent } from './shopping/shopping.component';
 
 const routes: Routes = [
   { path: 'learn', component: LearnComponent },
+  { path: 'calendar', component: CalendarComponent },
   { path: 'login', component: LoginComponent },
   { path: 'profile', component: ProfileComponent },
   { path: '', component: HomeComponent },

@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MbscModule } from '@mobiscroll/angular';
+
 import { HttpClientModule } from '@angular/common/http';
 import { SafePipeModule } from 'safe-pipe';
 
@@ -12,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { AjaxComponent } from './ajax/ajax.component';
 import { TrackingComponent } from './tracking/tracking.component';
 import { ShoppingComponent } from './shopping/shopping.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +27,18 @@ import { ShoppingComponent } from './shopping/shopping.component';
     HomeComponent,
     AjaxComponent,
     TrackingComponent,
-    ShoppingComponent
+    ShoppingComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule, 
+    MbscModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    HttpClientJsonpModule
     HttpClientModule,
     SafePipeModule
   ],
@@ -34,3 +46,9 @@ import { ShoppingComponent } from './shopping/shopping.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
+
+
+

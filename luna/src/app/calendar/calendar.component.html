@@ -13,38 +13,27 @@
 </head>
 
 <body>
-  <div class="content" align="center">
-    <h1 class="heading">SHOP FOR MENSTRUAL PRODUCTS</h1>
-    
-    <div>
-	  	<a href="https://www.plannedparenthood.org/health-center">
-	  		<button class="button button1">Planned Parenthood Near Me</button>
-	 	</a>
-	 	<a href="https://www.wellandgood.com/free-tampons-pads/">
-			<button class="button button1">Organizations that Provide Free Products</button>
-		</a>
-	</div>
-
-	<div class="productName">
-		<img src="../../assets/images/pads.png">
-	</div>
-
-	<div class="productName">
-		<img src="../../assets/images/tamp.png">
-	</div>
-
-	<div class="productName">
-		<img src="../../assets/images/underwear.png">
-	</div>
-
-	<div class="productName">
-		<img src="../../assets/images/cup.png">
-	</div>
-
-	<div class="productName">
-		<img src="../../assets/images/reusePads.png">
-	</div>
-  </div> 
+    <br>
+    <br>
+    <mbsc-eventcalendar [data]="myEvents" [options]="calendarOptions" [(selectedDate)]="calendarSelectedDate">
+    </mbsc-eventcalendar>
+    <mbsc-popup [options]="popupOptions" [anchor]="popupAnchor" [buttons]="popupButtons" [headerText]="popupHeaderText" #popup>
+        <div class="mbsc-form-group">
+            <mbsc-input label="Title" [(ngModel)]="popupEventTitle"></mbsc-input>
+            <mbsc-textarea label="Symptoms" [(ngModel)]="popupEventDescription"></mbsc-textarea>
+        </div>
+        <div class="mbsc-form-group">
+            <mbsc-switch label="Notifications" [(ngModel)]="popupEventAllDay"></mbsc-switch>
+            <mbsc-datepicker [(ngModel)]="popupEventDates" [options]="datePickerOptions" [startInput]="startInput"
+                [endInput]="endInput"></mbsc-datepicker>
+            <mbsc-input #startInput label="Starts"></mbsc-input>
+            <mbsc-input #endInput label="Ends"></mbsc-input>
+            <div *ngIf="isEdit" class="mbsc-button-group">
+                <mbsc-button class="mbsc-button-block" color="danger" variant="outline" (click)="onDeleteClick()">Delete event
+                </mbsc-button>
+            </div>
+        </div>
+    </mbsc-popup>
 
 <!-- Beginning of Footer  -->
   <div class="footer">
