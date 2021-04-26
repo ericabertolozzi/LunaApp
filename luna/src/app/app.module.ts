@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MbscModule } from '@mobiscroll/angular';
-
-import { HttpClientModule } from '@angular/common/http';
 import { SafePipeModule } from 'safe-pipe';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -33,22 +31,14 @@ import { CalendarComponent } from './calendar/calendar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule, 
+    HttpClientModule,
     MbscModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
-    HttpClientJsonpModule
-    HttpClientModule,
+    HttpClientJsonpModule,
     SafePipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-
-
-
-
-
