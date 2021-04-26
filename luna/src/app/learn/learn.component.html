@@ -1,4 +1,3 @@
-<body>
   <div class="content" align="center">
     <h1 class="heading">LEARN FROM OUR COLLECTION OF VERIFIED ARTICLES</h1>
     <form class="example" align="center">
@@ -7,16 +6,17 @@
     </form>
 
     <!-- Category Buttons -->
-    <div class="categoryButtons">
-      <button type="submit">General</button>
-      <button type="submit">Hygiene</button>
-      <button type="submit">Cramps</button>
-      <button type="submit">Gyno</button>
-      <button type="submit">Products</button>
-    </div>
+    <div class="categoryButtons" [innerHTML]="buttonsListText | safe: 'html'"></div>
+      <!-- <button type="submit" (click)="getArticlesDataCategory('General')">General</button> -->
+      <!-- <button type="submit" (click)="getArticlesDataCategory('Hy')">Hygiene</button>
+      <button type="submit" (click)="getArticlesDataCategory('General')">Cramps</button>
+      <button type="submit" (click)="getArticlesDataCategory('General')">Gyno</button>
+      <button type="submit" (click)="getArticlesDataCategory('General')">Products</button> -->
 
+    <div id="categoryButtons"></div>
 
     <div class="articles-container" [innerHTML]="articlesListText"></div>
+
 
 <!-- Beginning of Footer  -->
   <div class="footer">
