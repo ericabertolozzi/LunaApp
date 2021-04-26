@@ -1,11 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-
-
-
-
-
 import { LearnComponent } from './learn/learn.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { TrackingComponent } from './tracking/tracking.component';
@@ -24,7 +19,6 @@ const routes: Routes = [
   { path: 'shopping', component: ShoppingComponent },
 
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
