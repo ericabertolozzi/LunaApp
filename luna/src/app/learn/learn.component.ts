@@ -2,30 +2,27 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
 import { HttpClient, HttpParams, JsonpClientBackend} from "@angular/common/http";
 import { ViewEncapsulation } from '@angular/core';
-import { Pipe } from '@angular/core';
-import { DomSanitizer, SafeHtml, SafeStyle, SafeScript, SafeUrl, SafeResourceUrl } from '@angular/platform-browser';
+// import { Pipe } from '@angular/core';
+// import { DomSanitizer, SafeHtml, SafeStyle, SafeScript, SafeUrl, SafeResourceUrl } from '@angular/platform-browser';
 
-@Pipe({
-	name: 'safe'
-})
-export class SafePipe {
-
-	constructor(protected _sanitizer: DomSanitizer) {
-
-	}
-
-	public transform(value: string, type: string = 'html'): SafeHtml | SafeStyle | SafeScript | SafeUrl | SafeResourceUrl {
-		switch (type) {
-			case 'html': return this._sanitizer.bypassSecurityTrustHtml(value);
-			case 'style': return this._sanitizer.bypassSecurityTrustStyle(value);
-			case 'script': return this._sanitizer.bypassSecurityTrustScript(value);
-			case 'url': return this._sanitizer.bypassSecurityTrustUrl(value);
-			case 'resourceUrl': return this._sanitizer.bypassSecurityTrustResourceUrl(value);
-			default: throw new Error(`Invalid safe type specified: ${type}`);
-		}
-	}
-
-}
+// @Pipe({
+// 	name: 'safe'
+// })
+// export class SafePipe {
+//
+// 	constructor(protected _sanitizer: DomSanitizer) {}
+//
+// 	public transform(value: string, type: string = 'html'): SafeHtml | SafeStyle | SafeScript | SafeUrl | SafeResourceUrl {
+// 		switch (type) {
+// 			case 'html': return this._sanitizer.bypassSecurityTrustHtml(value);
+// 			case 'style': return this._sanitizer.bypassSecurityTrustStyle(value);
+// 			case 'script': return this._sanitizer.bypassSecurityTrustScript(value);
+// 			case 'url': return this._sanitizer.bypassSecurityTrustUrl(value);
+// 			case 'resourceUrl': return this._sanitizer.bypassSecurityTrustResourceUrl(value);
+// 			default: throw new Error(`Invalid safe type specified: ${type}`);
+// 		}
+// 	}
+// }
 
 @Component({
   selector: 'app-learn',
@@ -41,7 +38,8 @@ export class LearnComponent implements OnInit {
   articlesListText: string;
   buttonsListText: string;
 
-  constructor(private http: HttpClient, private httpService: HttpService, private sanitizer: DomSanitizer) {
+  // constructor(private http: HttpClient, private httpService: HttpService, private sanitizer: DomSanitizer) {
+  constructor(private http: HttpClient, private httpService: HttpService) {
     this.postName = "";
     this.postPreview = "";
     this.postLink = "";
@@ -51,22 +49,27 @@ export class LearnComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getButtonsData();
+    // this.getButtonsData();
     this.getArticlesData();
   }
 
-  public getButtonsData(): void {
-    this.httpService.sendGetRequest('/getButtonsData').subscribe((data) => {
-      // console.log(data);
-      var arr = JSON.parse(JSON.stringify(data));
-      console.log(arr);
-      for (let i=0; i<arr.length; i++) {
-        this.buttonsListText += `
-          <button type="submit" (click)="getArticlesDataCategory(`+ arr[i] +`)">`+arr[i]+`</button>
-        `;
-      }
-    });
-  }
+  // public getButtonsData(): void {
+  //   this.httpService.sendGetRequest('/getButtonsData').subscribe((data) => {
+  //     // console.log(data);
+  //     var arr = JSON.parse(JSON.stringify(data));
+  //     console.log(arr);
+  //     for (let i=0; i<arr.length; i++) {
+  //       this.buttonsListText += `
+  //         <button type="submit" id="categoryButton`+i+`" (click)="getArticlesDataCategory(`+ arr[i] +`)">`+arr[i]+`</button>
+  //       `;
+  //     }
+  //   });
+  // }
+
+
+  // this.buttonsListText.querySelector("categoryButton"+i).addEventListener('click', () => {
+  //   this.getArticlesDataCategory(`+ arr[i] +`);
+  // });
 
   public getArticlesData(): void {
     this.httpService.sendGetRequest('/getArticlesData').subscribe((data) => {

@@ -6,14 +6,15 @@
     </form>
 
     <!-- Category Buttons -->
-    <div class="categoryButtons" [innerHTML]="buttonsListText | safe: 'html'"></div>
-      <!-- <button type="submit" (click)="getArticlesDataCategory('General')">General</button> -->
-      <!-- <button type="submit" (click)="getArticlesDataCategory('Hy')">Hygiene</button>
-      <button type="submit" (click)="getArticlesDataCategory('General')">Cramps</button>
-      <button type="submit" (click)="getArticlesDataCategory('General')">Gyno</button>
-      <button type="submit" (click)="getArticlesDataCategory('General')">Products</button> -->
-
-    <div id="categoryButtons"></div>
+    <!-- <div class="categoryButtons" [innerHTML]="buttonsListText | safe: 'html'"></div> -->
+    <div class="categoryButtons">
+      <button type="submit" (click)="getArticlesDataCategory('General')">General</button>
+      <button type="submit" (click)="getArticlesDataCategory('Hygiene')">Hygiene</button>
+      <button type="submit" (click)="getArticlesDataCategory('Birth Control')">Birth Control</button>
+      <button type="submit" (click)="getArticlesDataCategory('Cramps')">Cramps</button>
+      <button type="submit" (click)="getArticlesDataCategory('Gyno')">Gyno</button>
+      <button type="submit" (click)="getArticlesDataCategory('Products')">Products</button>
+    </div>
 
     <div class="articles-container" [innerHTML]="articlesListText"></div>
 
