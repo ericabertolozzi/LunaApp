@@ -13,5 +13,6 @@ These instructions will get you a copy of the Luna project up and running on you
  4. Then Open up another Command Prompt window and navigate to folder with the server.js file (LunaApp). Once you navigated to the inside of the folder, type:
       - 'npm start'
       - 'npm install express --save' (To Install Express)
+      - 'npm install mongodb --save' (For Installing MongoDB)
       - 'node server'
  5. In a browser go to http://localhost:3000
