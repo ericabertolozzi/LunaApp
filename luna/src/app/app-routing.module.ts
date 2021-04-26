@@ -16,6 +16,7 @@ import { ShoppingComponent } from './shopping/shopping.component';
 
 const routes: Routes = [
   { path: 'learn', component: LearnComponent },
+  { path: 'calendar', component: CalendarComponent },
   { path: 'login', component: LoginComponent },
   { path: 'profile', component: ProfileComponent },
   { path: '', component: HomeComponent },
