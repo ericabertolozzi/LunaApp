@@ -21,6 +21,7 @@
     "@angular/router": "~11.2.3",
     "@mobiscroll/angular": "https://npm.mobiscroll.com/@mobiscroll/angular-trial/-/angular-trial-5.3.0.tgz",
     "rxjs": "~6.6.0",
+    "safe-pipe": "^1.0.3",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },

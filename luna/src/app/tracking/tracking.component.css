@@ -19,6 +19,8 @@ h1{
 }
 
 
+
+
 .footer {
     position: fixed;
     font-size:17px;
@@ -31,6 +33,21 @@ h1{
     text-align: center;
     border-radius: 15px;
 }
+
+.symptoms *{
+  display:inline;
+  text-align:center;
+  width:50%;
+}
+
+.symptoms{
+  display:inline-block;
+  padding-right:4%;
+  font-size:18px;
+  column-count:3;
+}
+
+
 
 .footer1 {
   /* position: fixed; */
@@ -45,16 +62,28 @@ h1{
   border-radius: 15px;
 }
 
-h4,.moodtracker,.sleeptracker,.addnote,.askquestion{
-    margin-top: 2%;
+.moodtracker,.sleeptracker,.addnote,.askquestion,.symptomtracker{
+    margin-top: 4%;
     font-weight: bold;
-    font-size:30px;
+    font-size:19px;
     color: #A5A5EF;
     position:relative;
     top:50px;
     margin-top:-40px;
     text-align:center;
     font-family: 'Quicksand', sans-serif;
+}
+
+h4{
+  margin-top: 1%;
+  font-weight: bold;
+  font-size:30px;
+  color: #A5A5EF;
+  position:relative;
+  top:50px;
+  text-align:center;
+  font-family: 'Quicksand', sans-serif;
+
 }
 
 .askquestion{
@@ -65,11 +94,42 @@ h4,.moodtracker,.sleeptracker,.addnote,.askquestion{
   text-align:center;
 }
 
+.askequestion{
+  border-style:solid;
+  width:75%;
+  margin-left:12%;
+}
+
 .submission{
     position:relative;
     text-align:center;
     padding-top:-60%;
 }
+
+.equestions{
+  padding-right:8%;
+  margin-left:5%;
+  padding-bottom:3%;
+}
+
+
+.submitequestion{
+  text-align:center;
+  /* margin-left:5%; */
+  font-size:20px;
+  top: 50%;
+  left: 50%;
+  margin-top:-6%;
+  margin-left:6%;
+  border:1px solid black;
+}
+
+/* #food{
+  margin-left:5%
+}
+#jointpain{
+  padding-left:1%;
+} */
 
 .flex-container {
   display: flex;
@@ -141,21 +201,11 @@ h4,.moodtracker,.sleeptracker,.addnote,.askquestion{
   margin:auto;
 }
 #sleep{
-  /* position:relative;
-  display:block;
-  margin-left:15%; */
- 
-  /* margin-left:15%; */
-
   display: flex;
-  /* flex-direction: row; */
-  /* justify-content: space-between; */
-  /* min-width: 10px;   */
   padding-left:3%;
   justify-content:space-around;     
   max-width:55%;
   margin:auto;
-
 }
 
 #good{
@@ -177,10 +227,11 @@ h4,.moodtracker,.sleeptracker,.addnote,.askquestion{
 }
 
 #finalsubmit{
+  font-size:25px;
   top: 50%;
   left: 50%;
-  margin-top: -60px;
-  margin-left: 540px;
+  margin-top:-6%;
+  margin-left:42%;
 }
 
 #submittwo{
@@ -193,11 +244,11 @@ h4,.moodtracker,.sleeptracker,.addnote,.askquestion{
 }
 
 #displaytwo{
-  margin-left:-450px;
+  margin-right:40%;
 }
 
 #displaythree{
-  margin-left:500px;
+  margin-left:39%;
 }
 
 
@@ -279,6 +330,7 @@ h2{
     border-radius:40px;
     width:250px;
     height:40px;
+    cursor:pointer;
  } 
 
  #upset{
