@@ -1,0 +1,32 @@
+/* Beginning of master.css */
+body {
+    background-color: #ebebeb;
+    /* overflow:scroll; */
+  }
+  
+  .footer {
+    position: fixed;
+    font-size:17px;
+    left: 0;
+    bottom: 0;
+    font-family: 'Quicksand', sans-serif;
+    width: 100%;
+    background-color: lavender;
+    color: black;
+    text-align: center;
+    border-radius: 15px;
+  }
+  /* End of master.css */
+  /* Beginning of shopping.css */
+  .content {
+    /* width: auto;
+    height: auto; */
+    margin-top: 100px;
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+  .heading {
+    margin-top: 2%;
+    font-weight: bold;
+    color: #A5A5EF;
+  }
