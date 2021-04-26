@@ -32,7 +32,7 @@ body {
 }
 
 .button {
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50;
   border: none;
   color: white;
   padding: 16px 32px;
@@ -60,7 +60,8 @@ body {
 
 .productName {
   margin-top: 2%;
-  width: 500px;
+  width: 550px;
+  margin-bottom: 3%;
 }
 
 
