@@ -15,7 +15,7 @@ import { AjaxComponent } from './ajax/ajax.component';
 import { TrackingComponent } from './tracking/tracking.component';
 import { ShoppingComponent } from './shopping/shopping.component';
 import { CalendarComponent } from './calendar/calendar.component';
-
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,8 @@ import { CalendarComponent } from './calendar/calendar.component';
     AjaxComponent,
     TrackingComponent,
     ShoppingComponent,
-    CalendarComponent
+    CalendarComponent,
+    SettingsComponent
   ],
   imports: [ 
     MbscModule, 
