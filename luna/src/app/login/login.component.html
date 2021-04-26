@@ -5,8 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./login.component.css"></link>
-
     </head>
     <body>
         <div class="container text-center vertical-center" id="loginbox">
@@ -21,7 +19,7 @@
             <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
             <div id="id01" class="modal">
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
-                <form class="modal-content animate" action="/action_page.php" method="post">
+                <form class="modal-content animate" action="/add_user" method="post">
                     <div class="imgcontainer">
                         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
                     </div>
@@ -37,6 +35,9 @@
                     
                         <label for="psw"><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" name="psw" required>
+
+                        <label for="age"><b>Age</b></label>
+                        <input type="number" placeholder="Enter Age" name="age" required>
 
                         <label for="mode"><b>Choose App Mode</b></label><br>
                         <select name = "mode" style="float: left; margin-left: 10px; margin-bottom: 10px;">

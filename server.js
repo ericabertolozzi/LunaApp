@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const port = 3000;
 const fs = require('fs');
+const bcrypt = require('bcrypt');
 var bodyParser = require('body-parser') //To help read form data.
 app.use(bodyParser.urlencoded({
   extended: false
@@ -147,20 +148,30 @@ app.post("/add_user", function (req, res) {
     var dbo = db.db("luna");
     var name = req.body.name;
     var email = req.body.email;
-    var pw = req.body.pw;
+    var psw = req.body.psw;
     var mode = req.body.mode;
+    var age = req.body.age;
+    var current_date = new Date();
+  
+    // Hash password before storing in database
 
-    // hash password here
-    
+    // Generate Salt
+    const salt = bcrypt.genSaltSync(10);
+
+    // Hash Password
+    const hash = bcrypt.hashSync(psw, salt);
+
     var data = {
       "email": email,
-      "password": pw,
+      "password": hash,
       "full_name": name,
-      "app_mode": mode
+      "app_mode": mode,
+      "age" : age,
+      "join_date" : current_date
     }
     dbo.collection('Users').insertOne(data, function(err, collection){
       if (err) throw err;
-      console.log("New item inserted successfully!");
+      console.log("New user inserted successfully!");
     });
   });
 });

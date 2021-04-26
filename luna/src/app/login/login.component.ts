@@ -13,12 +13,14 @@ export class LoginComponent implements OnInit {
   postEmail: string;
   postPW: string;
   postMode: string;
+  postAge: number;
 
   constructor(private http: HttpClient, private httpService: HttpService) {
     this.postName = "";
     this.postEmail = "";
     this.postPW = "";
     this.postMode = "";
+    this.postAge = 0;
   }
 
   ngOnInit(): void {
@@ -30,6 +32,7 @@ export class LoginComponent implements OnInit {
       this.postEmail = data.email; 
       this.postPW = data.psw;
       this.postMode = data.mode;
+      this.postAge = data.age;
 
       console.log(data);
     })
@@ -42,4 +45,5 @@ interface User {
   email: string;
   psw: string;
   mode: string;
+  age: number;
 }
