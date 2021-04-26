@@ -16,6 +16,7 @@ import { TrackingComponent } from './tracking/tracking.component';
 import { ShoppingComponent } from './shopping/shopping.component';
 import { CalendarComponent } from './calendar/calendar.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,3 +43,7 @@ import { CalendarComponent } from './calendar/calendar.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
+

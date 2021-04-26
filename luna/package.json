@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "~11.2.3",
     "@angular/router": "~11.2.3",
     "@mobiscroll/angular": "https://npm.mobiscroll.com/@mobiscroll/angular-trial/-/angular-trial-5.3.0.tgz",
+    "angular-calendar": "^0.28.22",
     "mobiscroll": "^3.0.0-beta6",
     "rxjs": "~6.6.0",
     "safe-pipe": "^1.0.3",
