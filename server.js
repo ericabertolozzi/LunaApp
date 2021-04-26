@@ -33,6 +33,19 @@ app.get('/learn', (req, res) => {
 	// res.sendFile(path.join(__dirname + '/luna/src/app/learn/learn.component.html'));
 });
 
+app.get("/getButtonsData", function (req, res) {
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("luna");
+    // const categorySet = new Set();
+    dbo.collection("Articles").distinct('category').then(function(arr) {
+      console.log(arr);
+      res.send(arr);
+    });
+    db.close();
+  });
+});
+
 app.get("/getArticlesData", function (req, res) {
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
@@ -44,13 +57,25 @@ app.get("/getArticlesData", function (req, res) {
   });
 });
 
+app.get("/getArticlesDataCategory/category/:category", function (req, res) {
+  console.log( req.params );
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("luna");
+    dbo.collection("Articles").find({category: req.params.category}).toArray(function(err, result) {
+      res.json(result);
+      db.close();
+    });
+  });
+});
+
+
+
 
 app.post('/infopost', function (req, res) {
-  console.log("Hello");
   const MongoClient = require("mongodb").MongoClient;
   const url = "mongodb+srv://barnev:.mUNYTL8Ga.6q2%40@cluster0.pacdp.mongodb.net/luna?retryWrites=true&w=majority";
   const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
-  // console.log(req);
   MongoClient.connect(url, function(err, db) {
     var dbo = db.db("luna");
     var collection = dbo.collection("Cycle Tracking");
@@ -61,6 +86,7 @@ app.post('/infopost', function (req, res) {
     var cyclelength =req.body.cyclelength;
     var mood =req.body.mood;
     var sleep =req.body.sleep;
+    var symptom=req.body.symptom;
     notes=req.body.notes;
     var data = {
       "id":ids,
@@ -70,12 +96,13 @@ app.post('/infopost', function (req, res) {
       "cyclelength":cyclelength,
       "mood":req.body.mood,
       "sleep":req.body.sleep,
-      "notes":req.body.notes
-    }
-    dbo.collection('Cycle Tracking').insertOne(data,function(err, collection){
-      if (err) throw err;
-      console.log("Record inserted Successfully");
-    });
+      "notes":req.body.notes,
+      "symptom":symptom
+  }
+  dbo.collection('Cycle Tracking').insertOne(data,function(err, collection){
+    if (err) throw err;
+    console.log("Record inserted Successfully");
+});
   });
 });
 
