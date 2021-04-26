@@ -1,8 +1,8 @@
+import { MbscModule } from '@mobiscroll/angular';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MbscModule } from '@mobiscroll/angular';
 import { SafePipeModule } from 'safe-pipe';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,11 +29,11 @@ import { CalendarComponent } from './calendar/calendar.component';
     ShoppingComponent,
     CalendarComponent
   ],
-  imports: [
+  imports: [ 
+    MbscModule, 
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MbscModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientJsonpModule,

@@ -15,6 +15,26 @@
 <body>
   <div class="content" align="center">
     <h1 class="heading">CALENDAR FOR MENSTRUATION CYCLE</h1>
+
+    <mbsc-eventcalendar [data]="myEvents" [options]="calendarOptions" [(selectedDate)]="calendarSelectedDate">
+    </mbsc-eventcalendar>
+    <mbsc-popup [options]="popupOptions" [anchor]="popupAnchor" [buttons]="popupButtons" [headerText]="popupHeaderText" #popup>
+        <div class="mbsc-form-group">
+            <mbsc-input label="Title" [(ngModel)]="popupEventTitle"></mbsc-input>
+            <mbsc-textarea label="Symptoms" [(ngModel)]="popupEventDescription"></mbsc-textarea>
+        </div>
+        <div class="mbsc-form-group">
+            <mbsc-switch label="Notifications" [(ngModel)]="popupEventAllDay"></mbsc-switch>
+            <mbsc-datepicker [(ngModel)]="popupEventDates" [options]="datePickerOptions" [startInput]="startInput"
+                [endInput]="endInput"></mbsc-datepicker>
+            <mbsc-input #startInput label="Starts"></mbsc-input>
+            <mbsc-input #endInput label="Ends"></mbsc-input>
+            <div *ngIf="isEdit" class="mbsc-button-group">
+                <mbsc-button class="mbsc-button-block" color="danger" variant="outline" (click)="onDeleteClick()">Delete event
+                </mbsc-button>
+            </div>
+        </div>
+    </mbsc-popup>
     
     
 
