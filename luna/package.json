@@ -19,13 +19,15 @@
     "@angular/platform-browser": "~11.2.3",
     "@angular/platform-browser-dynamic": "~11.2.3",
     "@angular/router": "~11.2.3",
+    "@mobiscroll/angular": "https://npm.mobiscroll.com/@mobiscroll/angular-trial/-/angular-trial-5.3.0.tgz",
+    "mobiscroll": "^3.0.0-beta6",
     "rxjs": "~6.6.0",
     "safe-pipe": "^1.0.3",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.1102.9",
+    "@angular-devkit/build-angular": "^0.1102.10",
     "@angular/cli": "~11.2.2",
     "@angular/compiler-cli": "~11.2.3",
     "@types/jasmine": "~3.6.0",
