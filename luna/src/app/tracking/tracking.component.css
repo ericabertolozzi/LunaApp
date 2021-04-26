@@ -45,8 +45,8 @@ h1{
   border-radius: 15px;
 }
 
-h4,.moodtracker,.sleeptracker,.addnote,.askquestion{
-    margin-top: 2%;
+.moodtracker,.sleeptracker,.addnote,.askquestion{
+    margin-top: 4%;
     font-weight: bold;
     font-size:30px;
     color: #A5A5EF;
@@ -55,6 +55,18 @@ h4,.moodtracker,.sleeptracker,.addnote,.askquestion{
     margin-top:-40px;
     text-align:center;
     font-family: 'Quicksand', sans-serif;
+}
+
+h4{
+  margin-top: 1%;
+  font-weight: bold;
+  font-size:30px;
+  color: #A5A5EF;
+  position:relative;
+  top:50px;
+  text-align:center;
+  font-family: 'Quicksand', sans-serif;
+
 }
 
 .askquestion{
