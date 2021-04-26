@@ -1,6 +1,6 @@
 /* CSS for Log-In/Sign-Up */
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     background-color:#BCC0D3;
   }
   
@@ -26,7 +26,7 @@ body {
   
   /* Set a style for all buttons */
   button {
-    background-color: #4CAF50;
+    background-color: #4a4e69;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -55,6 +55,7 @@ body {
   /* Add padding to container elements */
   .container {
     padding: 16px;
+    margin-top: 100px;
   }
   
   /* The Modal (background) */
