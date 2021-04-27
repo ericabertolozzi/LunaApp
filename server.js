@@ -136,13 +136,13 @@ app.get('/trackerCSV', function(req, res){
 	);
 });
 
-app.get('/trackerimage',function(req,res){
+app.get('/trackerimage', function(req,res){
   var htmlBegin = " <! DOCTYPE html ><html ><head ><h1>Mood and Sleep Trends During Cycle</h1><br><br><div id='image1'><img src='../../assets/images/moodduringcycle.png'></div><br><div id='image2'><img src='../../assets/images/sleepquality.png' width:5px></div><style > body { background-color:#ebebeb;text-align:center;";
   var htmlEnd = ";} h1{font-size-20px;text-align:center;} img{width:500px}; </ style > </ head ><body ><form method='Post'> <input type='submit' method='GET' value='Redirect' action='http://localhost:3000/'></form> </ body > </ html >";
   res.send(htmlBegin+htmlEnd)
 });
 
-app.post("/add_user", function (req, res) {
+app.post("/add_user", function(req, res) {
 
   MongoClient.connect(url, function(err, db) {
     var dbo = db.db("luna");
@@ -152,6 +152,8 @@ app.post("/add_user", function (req, res) {
     var mode = req.body.mode;
     var age = req.body.age;
     var current_date = new Date();
+
+    console.log(req.body);
   
     // Hash password before storing in database
 
@@ -169,10 +171,32 @@ app.post("/add_user", function (req, res) {
       "age" : age,
       "join_date" : current_date
     }
+
     dbo.collection('Users').insertOne(data, function(err, collection){
       if (err) throw err;
       console.log("New user inserted successfully!");
     });
+  });
+});
+
+app.post("/validate", function(req, res) {
+
+  MongoClient.connect(url, function(err, db) {
+    var dbo = db.db("luna");
+    var email = req.body.email;
+    var psw = req.body.psw;
+
+    console.log(email);
+    console.log(psw);
+
+    dbo.collection('Users').find({"email": email}).toArray(function(err, docs) {
+      var hash = docs[0]['password'];
+      const isValidPass = bcrypt.compareSync(psw, hash);
+      
+    });
+
+    // Check if passwords match using bcrypt
+    // const isValidPass = bcrypt.compareSync(password, hash);
   });
 });
 
