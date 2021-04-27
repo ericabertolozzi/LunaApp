@@ -1,35 +1,36 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en" style="background-color: #EBEBEB;">
    <head>
        <title>Login Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        
-
     </head>
-    <body>
-        <div class="container text-center vertical-center" style="margin-top: 20%;" id="loginbox">
-            <h1>Welcome New or Existing User</h1>
-            <p style="font-size: 14px">
-                Welcome to Luna! If you have an existing account with Luna, please click on the "Login" button below. Otherwise,
-                please click on the "Sign Up" button.
-            </p>
-            <hr>
+    <body> -->
 
-            <!-- Sign-Up -->
-            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
-            <div id="id01" class="modal">
+<div class="container-login text-center vertical-center" id="loginbox">
+    <div id="loginboxBegin">
+        <h1>WELCOME NEW OR EXISTING USER</h1>
+        <hr>
+        <p style="font-size: 14px">
+            Welcome to Luna! If you have an existing account with Luna, please click on the "Login" button below. Otherwise,
+            please click on the "Sign Up" button.
+        </p>
+    </div>
+
+    <!-- Sign-Up -->
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
+    <div id="id01" class="modal">
+        <!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span> -->
+        <form class="modal-content animate" action="/action_page.php" method="post">
+            <div class="imgcontainer">
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
                 <form class="modal-content animate" method="POST" action="/add_user">
-                    <div class="imgcontainer">
-                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
-                    </div>
                     <div class="container">
-                        <h1>Sign Up</h1>
+                        <h1 style="margin: 20px; font-size: 30px;">Sign Up</h1>
                         <p>Please fill in this form to create an account with Luna.</p>
                         <hr>
-                        <label for="name"><b style="text-align: left">Name</b></label>
+                        <label for="name"><b style="font-size: 18px;">Name</b></label>
                         <input type="text" placeholder="Enter Name" name="name" required>
 
                         <label for="email"><b>Email</b></label>
@@ -41,7 +42,7 @@
                         <label for="age"><b>Age</b></label>
                         <input type="number" placeholder="Enter Age" name="age" required>
 
-                        <label for="mode"><b>Choose App Mode</b></label><br>
+                        <label for="mode"><b style="font-size: 18px;">Choose App Mode</b></label><br>
                         <select name = "mode" style="float: left; margin-left: 10px; margin-bottom: 10px;">
                             <option value = "Pre-Puberty" selected>Pre-Puberty</option>
                             <option value = "Puberty">Puberty</option>
@@ -57,17 +58,19 @@
                     </div>
                 </form>
             </div>
+        </form>
+    </div>
 
-            <!--Login-->
-            <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Login</button>
-            <div id="id02" class="modal">
+    <!--Login-->
+    <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Login</button>
+    <div id="id02" class="modal">
+        <!-- <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close">&times;</span> -->
+        <form class="modal-content animate" action="/action_page.php" method="post">
+            <div class="imgcontainer">
                 <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close">&times;</span>
                 <form class="modal-content animate" method="POST" action="/validate">
-                    <div class="imgcontainer">
-                        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close">&times;</span>
-                    </div>
                     <div class="container">
-                        <h1>Log In</h1>
+                        <h1 style="margin: 20px; font-size: 30px;">Log In</h1>
                         <p>Please fill in this form to log into Luna.</p>
                         <hr>
                         <label for="email"><b>Email</b></label>
@@ -76,26 +79,44 @@
                         <label for="psw"><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" name="psw" required>
 
-                        <button type="submit" (click)="checkUserExists()">Login</button>
+                        <button style= "width: 100%" type="submit" (click)="checkUserExists()">Login</button>
                     </div>
                 </form>
             </div>
-        </div>
+            <!-- Duplicate Log In Form
+            <div class="container-login">
+                <h1>LOG IN</h1>
+                <p>Please fill in this form to log into Luna.</p>
+                <hr>
+                <label for="name"><b>Name</b></label>
+                <input type="text" placeholder="Enter Name" name="name" required>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                <button style= "width: 100%" type="submit">Login</button>
+            </div> -->
+        </form>
+    </div>
+</div>
 
-        <script>
-            // Get the modal
-            var modal1 = document.getElementById('id01');
-            var modal2 = document.getElementById('id02');
+  <!--Footer-->
+  <div class="footer">
+    <p class="footer-text">Luna Copyright &copy; 2021.</p>
+  </div>
 
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-                if (event.target == modal1 || event.target == modal2) {
-                    modal1.style.display = "none";
-                    modal2.style.display = "none";
-                }
-            }
-        </script>
+<script>
+    // Get the modal
+    var modal1 = document.getElementById('id01');
+    var modal2 = document.getElementById('id02');
 
-    </body>
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal1 || event.target == modal2) {
+            modal1.style.display = "none";
+            modal2.style.display = "none";
+        }
+    }
+</script>
 
-</html>
+    <!-- </body>
+
+</html> -->
