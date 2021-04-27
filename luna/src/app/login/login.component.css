@@ -2,6 +2,8 @@
 h1{
   margin: 20px;
   font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  color: #A5A5EF;
 }
 
 label{
@@ -28,26 +30,25 @@ input {
 
 /* Set a style for all buttons */
 button {
-  background-color: #686A81;
-  color: white;
-  padding: 15px 20px;
-  font-size: 15px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  margin-right: 10px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
+  background-color: lavender;
+  color: black;
+  border: 2px solid #e7e7e7;
+  border-radius: 12px;
+  font-family: 'Quicksand', sans-serif;
+  padding: 15px;
+  margin: 7px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-button:hover {
-  opacity:1;
-}
+button:hover {background-color: #937DCA;}
 
 /* Add padding to container elements */
-.container {
+.container-login {
+  /* margin-top: 20px; */
+  width: 100%;
+  /* height: 100%; */
   padding: 16px;
+
 }
 
 /* The Modal (background) */
@@ -60,7 +61,8 @@ button:hover {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: #32344D;
+  /* background-color: #32344D; */
+  background-color: #ebebeb;
   padding-top: 80px;
   margin-top: 6%;
 }
@@ -78,7 +80,7 @@ hr {
   border: 3px solid #30314b;
   margin-bottom: 25px;
 }
- 
+
 /* The Close Button (x) */
 .close {
   position: absolute;
@@ -87,12 +89,12 @@ hr {
   top: 15px;
   font-size: 40px;
   font-weight: bold;
-  color: #f1f1f1;
+  color: #937DCA;
 }
 
 .close:hover,
 .close:focus {
-  color: #f44336;
+  color: #937DCA;
   cursor: pointer;
 }
 
