@@ -1,9 +1,10 @@
 /* Beginning of master.css */
 body {
-    background-color: #ebebeb;
+    /* background-color: #ebebeb; */
+    background-color: white;
     /* overflow:scroll; */
   }
-  
+
   .footer {
     position: fixed;
     font-size:17px;
@@ -24,8 +25,9 @@ body {
     margin-top: 100px;
     font-family: 'Quicksand', sans-serif;
   }
-  
+
   .heading {
+    background-color: white;
     margin-top: 2%;
     font-weight: bold;
     color: #A5A5EF;
@@ -34,18 +36,20 @@ body {
   h3 {
     margin: 0 0 10px;
   }
-  
+
   pre {
     background-color: #f5f5f5;
     padding: 15px;
   }
 
   mbsc-eventcalendar{
-    background-color: #ebebeb;
+    background-color: white;
+    /* background-color: #ebebeb; */
   }
 
   .mbsc-form-group{
-    background-color: #ebebeb;
+    background-color: white;
+    /* background-color: #ebebeb; */
   }
 
   .mbsc-popup-button-primary{
