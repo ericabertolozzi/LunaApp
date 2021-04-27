@@ -2,6 +2,8 @@
 h1{
   margin: 20px;
   font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  color: #A5A5EF;
 }
 
 label{
@@ -41,8 +43,12 @@ button {
 button:hover {background-color: #937DCA;}
 
 /* Add padding to container elements */
-.container {
+.container-login {
+  /* margin-top: 20px; */
+  width: 100%;
+  /* height: 100%; */
   padding: 16px;
+
 }
 
 /* The Modal (background) */
