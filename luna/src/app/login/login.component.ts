@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   }
 
   public sendData(): void {
-    this.http.post<User>('http://localhost:3000/add_user',{ title: 'Angular POST Request Example' }).subscribe((data) => {
+    this.http.post<User>('http://localhost:3000/login',{ title: 'Angular POST Request Example' }).subscribe((data) => {
       this.postName = data.name;
       this.postEmail = data.email; 
       this.postPW = data.psw;
@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
 
   public checkUserExists(): void {
     console.log("here");
-    this.http.post<Login>('http://localhost:3000/validate',{ title: 'Angular POST Request Example' }).subscribe((data) => {
+    this.http.post<Login>('http://localhost:3000/login',{ title: 'Angular POST Request Example' }).subscribe((data) => {
       this.postEmail = data.email; 
       this.postPW = data.psw;
       console.log(data);
