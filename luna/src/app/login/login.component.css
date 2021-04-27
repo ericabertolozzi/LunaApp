@@ -61,7 +61,8 @@ button:hover {background-color: #937DCA;}
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: #32344D;
+  /* background-color: #32344D; */
+  background-color: #ebebeb;
   padding-top: 80px;
   margin-top: 6%;
 }
@@ -88,12 +89,12 @@ hr {
   top: 15px;
   font-size: 40px;
   font-weight: bold;
-  color: #f1f1f1;
+  color: #937DCA;
 }
 
 .close:hover,
 .close:focus {
-  color: #f44336;
+  color: #937DCA;
   cursor: pointer;
 }
 
