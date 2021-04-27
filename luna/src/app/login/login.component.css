@@ -1,11 +1,27 @@
-/* CSS for Log-In/Sign-Up */
+/* Beginning of master.css */
+body{
+  overflow:auto; /* overflow:scroll was causing multiple scroll bars to appear*/
+}
+
+#full-navbar {
+  background-color:lavender;
+  top:0;
+  font-family: 'Quicksand', sans-serif;
+  width:100%;
+  font-size:18px;
+  color:#ffffff !important;
+  z-index: 10;
+}
+
 h1{
   margin: 20px;
+  text-align:center;
   font-family: 'Quicksand', sans-serif;
   font-weight: bold;
   color: #A5A5EF;
 }
 
+/* CSS for Log-In/Sign-Up */
 label{
   float: left;
   font-family: 'Quicksand', sans-serif;
@@ -64,21 +80,41 @@ button:hover {background-color: #937DCA;}
   /* background-color: #32344D; */
   background-color: #ebebeb;
   padding-top: 80px;
-  margin-top: 6%;
+  margin-top: 3%;
+  margin-bottom: 30px;
 }
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
-  margin: 2% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #30314b;
+  background-color:  #fefefe;
+  margin: 2% auto 7% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #ffffff;
   width: 80%; /* Could be more or less, depending on screen size */
+}
+
+#loginbox p {
+  font-size: 18px;
 }
 
 /* Style the horizontal ruler */
 hr {
   border: 3px solid #30314b;
   margin-bottom: 25px;
+  width:60%;
+}
+
+.footer {
+  position: fixed;
+  font-size:17px;
+  left: 0;
+  bottom: 0;
+  font-family: 'Quicksand', sans-serif;
+  width: 100%;
+  background-color: lavender;
+  color: black;
+  text-align: center;
+  border-radius: 15px;
+  margin-top: 20px;
 }
 
 /* The Close Button (x) */
@@ -109,4 +145,18 @@ hr {
   background-color: white;
   border-radius: 5px;
   margin-top: 90px;
+  padding-top: 70px;
+}
+
+#loginboxBegin{
+  background-color: rgba(230, 230, 250, 0.863);
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-left: 40px;
+  margin-right: 40px;
+  border-radius: 30px;
+}
+
+.container{
+  border-top-color: none;
 }
