@@ -1,7 +1,7 @@
 <html>
 
 <head>
-  <title>Learn</title>
+  <title>Calendar</title>
   <!-- Load icon library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -13,8 +13,9 @@
 </head>
 
 <body>
-    <br>
-    <br>
+  <div class="content" align="center">
+    <h1 class="heading">MENSTRUATION CYCLE CALENDAR</h1>
+
     <mbsc-eventcalendar [data]="myEvents" [options]="calendarOptions" [(selectedDate)]="calendarSelectedDate">
     </mbsc-eventcalendar>
     <mbsc-popup [options]="popupOptions" [anchor]="popupAnchor" [buttons]="popupButtons" [headerText]="popupHeaderText" #popup>
@@ -34,6 +35,10 @@
             </div>
         </div>
     </mbsc-popup>
+    
+    
+
+  </div> 
 
 <!-- Beginning of Footer  -->
   <div class="footer">

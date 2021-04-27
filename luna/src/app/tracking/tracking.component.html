@@ -16,7 +16,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet"><
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -100,6 +102,7 @@
     <label for="Scared"><img src="../../assets/images/fear.png"  />
     <p class="scaredmood">Scared</p></label>
 </div><br>
+
 <p class="sleeptracker"><b>Track Your Sleep</b></p><br><br><br>
 <div id="sleep">
     <input type="radio" name="sleep" value="Poor" id="poor" />
@@ -120,12 +123,46 @@
 <div id="notescontainer">
     <textarea id="area" name="notes" placeholder="Add more details regarding your mood and sleep patterns." rows="10" cols="40"></textarea>
 </div>
-<input type="hidden" name="_to" value="manyatrehan14@gmail.com" />
 <div id="finalsubmit">
-<button (click)="makeFirstDataSet();clickEvent()">Save Information</button><br><br>
+  <button (click)="makeFirstDataSet();clickEvent()">Save Information</button><br><br>
+  </div>
+  <h2>{{msg}}</h2>
+  </form>
+
+
+<input type="hidden" name="_to" value="manyatrehan14@gmail.com" />
+<div class="row">
+  <div class="column">
+    <h6>Most Common Symptom</h6>
+    <p>Cramps in your lower abdomen are the most frequent menustral complaint. They may occur one or two days before your period
+    and last for 2-3 days during your period. Here are some things you can do to ease cramps:</p>
+    <ul class="relief">
+      <li>Over-the-counter pain medicine like ibuprofen (Advil) or acetaminophen (Tylenol)</li>
+      <li>Place a heating pad on your lower abdomen or back</li>
+      <li>Taking a hot bath</li>
+    </ul>
+   
+  </div>
+  <div class="column">
+    <h6>Does Food Help to Relieve Symptoms? </h6>
+    <p>Yes! Eating foods that decrease inflamation in the body will help to ease menustrual symptoms including cramps.
+    Both a vegetarian and plant-based diet help to decrease inflammation in your body. Also, a low-fat and high fiber diet help
+    to signicantly reduce estrogen level which also reduces menustral symptoms and reduces risk for breast cancer. Here
+    are some things you can eat/drink to help:
+    </p>
+    <ul class="relief">
+      <li>Whole Grains</li>
+      <li>Legumes</li>
+      <li>Nuts and Seeds</li>
+      <li>Green Tea</li>
+    </ul>
+  </div>
 </div>
-<h2>{{msg}}</h2>
-</form>
+
+
+
+<br><br><br><br>
+
 
 <div class="askequestion">
 <p class="askquestion">Have a Question for a Member of Our Team?</p><br><br><br>

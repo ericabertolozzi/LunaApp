@@ -7,14 +7,14 @@
 
     <!-- Category Buttons -->
     <!-- <div class="categoryButtons" [innerHTML]="buttonsListText | safe: 'html'"></div> -->
-    <div class="categoryButtons">
-      <button type="submit" (click)="getArticlesData()">All</button>
-      <button type="submit" (click)="getArticlesDataCategory('General')">General</button>
-      <button type="submit" (click)="getArticlesDataCategory('Hygiene')">Hygiene</button>
-      <button type="submit" (click)="getArticlesDataCategory('Birth Control')">Birth Control</button>
-      <button type="submit" (click)="getArticlesDataCategory('Cramps')">Cramps</button>
-      <button type="submit" (click)="getArticlesDataCategory('Gyno')">Gyno</button>
-      <button type="submit" (click)="getArticlesDataCategory('Products')">Products</button>
+    <div>
+      <button type="submit" (click)="getArticlesData()" class="button button1">All</button>
+      <button type="submit" (click)="getArticlesDataCategory('General')" class="button button1">General</button>
+      <button type="submit" (click)="getArticlesDataCategory('Hygiene')" class="button button1">Hygiene</button>
+      <button type="submit" (click)="getArticlesDataCategory('Birth Control')" class="button button1">Birth Control</button>
+      <button type="submit" (click)="getArticlesDataCategory('Cramps')" class="button button1">Cramps</button>
+      <button type="submit" (click)="getArticlesDataCategory('Gyno')" class="button button1">Gyno</button>
+      <button type="submit" (click)="getArticlesDataCategory('Products')" class="button button1">Products</button>
     </div>
 
     <div class="articles-container" [innerHTML]="articlesListText"></div>

@@ -41,12 +41,40 @@ h1{
 }
 
 .symptoms{
+  margin-left:-4%;
   display:inline-block;
-  padding-right:4%;
   font-size:18px;
   column-count:3;
 }
 
+ul.relief {
+  list-style-type: square;
+}
+
+.row{
+  padding-left:14%;
+}
+h6{
+  text-align:center;
+  font-weight:bold;
+}
+
+.column {
+  float: left;
+  /* margin-left:15%; */
+  width: 43%;
+  font-size:12px;
+  border-style:solid;
+  border:2px solid black;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 
 .footer1 {
@@ -97,7 +125,7 @@ h4{
 .askequestion{
   border-style:solid;
   width:75%;
-  margin-left:12%;
+  margin-left:14%;
 }
 
 .submission{
@@ -120,7 +148,7 @@ h4{
   top: 50%;
   left: 50%;
   margin-top:-6%;
-  margin-left:6%;
+  margin-left:5%;
   border:1px solid black;
 }
 
@@ -163,6 +191,7 @@ h4{
 }
 
 #lastperiod{
+  position:relative;
     margin-top:4%;
     margin-left:12%;
     font-size:15px;
@@ -175,6 +204,7 @@ h4{
 }
 
 #nextperiod{
+  position:relative;
   margin-top:-8%;
   margin-left:73%;
   font-size:15px;
@@ -228,7 +258,7 @@ h4{
 
 #finalsubmit{
   font-size:25px;
-  top: 50%;
+  top: 30%;
   left: 50%;
   margin-top:-6%;
   margin-left:42%;
@@ -237,7 +267,7 @@ h4{
 #submittwo{
   top: 50%;
   left: 50%;
-  margin-top: -60px;
+  margin-top: -80px;
   margin-left: 250px;
   display:inline;
 

@@ -1,6 +1,6 @@
 
 
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import {
     MbscCalendarEvent,
     MbscDatepickerOptions,
@@ -40,9 +40,13 @@ export class CalendarComponent implements OnInit {
     popupEventStatus = 'busy';
     calendarSelectedDate: any = now;
     switchLabel: any = 'All-day';
-     myEvents: MbscCalendarEvent[] = [
-      
-    ];
+    myEvents: MbscCalendarEvent[] = [{
+        id: 1,
+        start: new Date(now.getFullYear(), now.getMonth(), 8, 13),
+        end: new Date(now.getFullYear(), now.getMonth(), 8, 13, 30),
+        title: 'Gyno appointment',
+        color: '#A5A5EF'
+    }];
     tempEvent!: MbscCalendarEvent;
     calendarOptions: MbscEventcalendarOptions = {
         clickToCreate: 'double',
@@ -55,26 +59,26 @@ export class CalendarComponent implements OnInit {
         onEventClick: (args) => {
             this.isEdit = true;
             this.tempEvent = args.event;
-            // fill popup form with event data
+            
             this.loadPopupForm(args.event);
-            // set popup options
+            
             this.popupHeaderText = 'Edit event';
             this.popupButtons = this.popupEditButtons;
             this.popupAnchor = args.domEvent.currentTarget;
-            // open the popup
+            
             this.popup.open();
         },
         onEventCreated: (args) => {
             setTimeout(() => {
                 this.isEdit = false;
                 this.tempEvent = args.event;
-                // fill popup form with event data
+               
                 this.loadPopupForm(args.event);
-                // set popup options
-                this.popupHeaderText = 'Add Cycle';
+                
+                this.popupHeaderText = 'Menstruation Cycle';
                 this.popupButtons = this.popupAddButtons;
                 this.popupAnchor = args.target;
-                // open the popup
+                
                 this.popup.open();
             });
         },
@@ -84,8 +88,7 @@ export class CalendarComponent implements OnInit {
             });
         },
         onEventUpdated: (args) => {
-            // here you can update the event in your storage as well, after drag & drop or resize
-            // ...
+            
         }
     };
     popupHeaderText!: string;
@@ -113,7 +116,7 @@ export class CalendarComponent implements OnInit {
         fullScreen: true,
         onClose: () => {
             if (!this.isEdit) {
-                // refresh the list, if add popup was canceled, to remove the temporary event
+                
                 this.myEvents = [...this.myEvents];
             }
         },
@@ -161,21 +164,17 @@ export class CalendarComponent implements OnInit {
         this.tempEvent.allDay = this.popupEventAllDay;
         this.tempEvent.status = this.popupEventStatus;
         if (this.isEdit) {
-            // update the event in the list
+            
             this.myEvents = [...this.myEvents];
-            // here you can update the event in your storage as well
-            // ...
+          
         } else {
-            // add the new event to the list
-            
+           
             this.myEvents = [...this.myEvents, this.tempEvent];
-            
-            // here you can add the event to your storage as well
-            // ...
+        
         }
-        // navigate the calendar
+       
         this.calendarSelectedDate = this.popupEventDates[0];
-        // close the popup
+       
         this.popup.close();
     }
     deleteEvent(event: MbscCalendarEvent): void {
@@ -189,11 +188,12 @@ export class CalendarComponent implements OnInit {
             },
             message: 'Event deleted'
         });
-        // here you can delete the event from your storage as well
-        // ...
+      
     }
     onDeleteClick(): void {
         this.deleteEvent(this.tempEvent);
         this.popup.close();
     }
 }
+
+
