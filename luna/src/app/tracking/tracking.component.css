@@ -309,10 +309,9 @@ h4{
 
 #finalsubmit{
   font-size:25px;
-  top: 30%;
-  left: 50%;
+  justify-content: center;
+  text-align: center;
   margin-top:-6%;
-  margin-left:42%;
 }
 
 #submittwo{
