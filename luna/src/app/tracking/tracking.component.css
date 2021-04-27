@@ -3,7 +3,8 @@
 }
 
 body{
-    background-color: #ebebeb;
+    /* background-color: #ebebeb; */
+    background-color: white;
     overflow:scroll;
 }
 

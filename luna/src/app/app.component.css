@@ -1,6 +1,7 @@
 /* Beginning of master.css */
 body{
-    background-color: #ebebeb;
+    /* background-color: #ebebeb; */
+    background-color: white;
     overflow:auto; /* overflow:scroll was causing multiple scroll bars to appear*/
 }
 
