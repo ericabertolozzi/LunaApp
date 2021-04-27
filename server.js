@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const port = 3000;
 const fs = require('fs');
+const bcrypt = require('bcrypt');
 var bodyParser = require('body-parser') //To help read form data.
 app.use(bodyParser.urlencoded({
   extended: false
@@ -135,33 +136,67 @@ app.get('/trackerCSV', function(req, res){
 	);
 });
 
-app.get('/trackerimage',function(req,res){
+app.get('/trackerimage', function(req,res){
   var htmlBegin = " <! DOCTYPE html ><html ><head ><h1>Mood and Sleep Trends During Cycle</h1><br><br><div id='image1'><img src='../../assets/images/moodduringcycle.png'></div><br><div id='image2'><img src='../../assets/images/sleepquality.png' width:5px></div><style > body { background-color:#ebebeb;text-align:center;";
   var htmlEnd = ";} h1{font-size-20px;text-align:center;} img{width:500px}; </ style > </ head ><body ><form method='Post'> <input type='submit' method='GET' value='Redirect' action='http://localhost:3000/'></form> </ body > </ html >";
   res.send(htmlBegin+htmlEnd)
 });
 
-app.post("/add_user", function (req, res) {
+app.post("/add_user", function(req, res) {
 
   MongoClient.connect(url, function(err, db) {
     var dbo = db.db("luna");
     var name = req.body.name;
     var email = req.body.email;
-    var pw = req.body.pw;
+    var psw = req.body.psw;
     var mode = req.body.mode;
+    var age = req.body.age;
+    var current_date = new Date();
 
-    // hash password here
-    
+    console.log(req.body);
+  
+    // Hash password before storing in database
+
+    // Generate Salt
+    const salt = bcrypt.genSaltSync(10);
+
+    // Hash Password
+    const hash = bcrypt.hashSync(psw, salt);
+
     var data = {
       "email": email,
-      "password": pw,
+      "password": hash,
       "full_name": name,
-      "app_mode": mode
+      "app_mode": mode,
+      "age" : age,
+      "join_date" : current_date
     }
+
     dbo.collection('Users').insertOne(data, function(err, collection){
       if (err) throw err;
-      console.log("New item inserted successfully!");
+      console.log("New user inserted successfully!");
     });
+  });
+});
+
+app.post("/validate", function(req, res) {
+
+  MongoClient.connect(url, function(err, db) {
+    var dbo = db.db("luna");
+    var email = req.body.email;
+    var psw = req.body.psw;
+
+    console.log(email);
+    console.log(psw);
+
+    dbo.collection('Users').find({"email": email}).toArray(function(err, docs) {
+      var hash = docs[0]['password'];
+      const isValidPass = bcrypt.compareSync(psw, hash);
+      
+    });
+
+    // Check if passwords match using bcrypt
+    // const isValidPass = bcrypt.compareSync(password, hash);
   });
 });
 
