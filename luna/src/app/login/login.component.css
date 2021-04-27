@@ -1,15 +1,7 @@
 /* CSS for Log-In/Sign-Up */
-body {
-  font-family: 'Quicksand', sans-serif;
-  background-color:#BCC0D3;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 h1{
   margin: 20px;
+  font-family: 'Quicksand', sans-serif;
 }
 
 label{
@@ -25,6 +17,7 @@ input[type=text], input[type=password] {
   display: inline-block;
   border: none;
   background: #f1f1f1;
+  font-family: 'Quicksand', sans-serif;
 }
 
 /* Add a background color when the inputs get focus */
@@ -37,8 +30,11 @@ input[type=text]:focus, input[type=password]:focus {
 button {
   background-color: #686A81;
   color: white;
-  padding: 14px 20px;
+  padding: 15px 20px;
+  font-size: 15px;
+  margin-top: 10px;
   margin-bottom: 20px;
+  margin-right: 10px;
   border: none;
   cursor: pointer;
   width: 100%;
@@ -47,12 +43,6 @@ button {
 
 button:hover {
   opacity:1;
-}
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
 }
 
 /* Add padding to container elements */
@@ -71,13 +61,14 @@ button:hover {
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: #32344D;
-  padding-top: 50px;
+  padding-top: 80px;
+  margin-top: 6%;
 }
 
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  margin: 2% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #30314b;
   width: 80%; /* Could be more or less, depending on screen size */
 }
@@ -91,6 +82,7 @@ hr {
 /* The Close Button (x) */
 .close {
   position: absolute;
+  margin-top: 20px;
   right: 35px;
   top: 15px;
   font-size: 40px;
@@ -114,5 +106,5 @@ hr {
 #loginbox{
   background-color: white;
   border-radius: 5px;
-  margin-top: 80px;
+  margin-top: 90px;
 }
