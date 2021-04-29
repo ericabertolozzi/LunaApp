@@ -1,7 +1,7 @@
-import { MbscModule } from '@mobiscroll/angular';
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SafePipeModule } from 'safe-pipe';
 
@@ -29,13 +29,11 @@ import { SettingsComponent } from './settings/settings.component';
     SettingsComponent
   ],
   imports: [ 
-    MbscModule, 
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientJsonpModule,
     SafePipeModule
   ],
   providers: [],
