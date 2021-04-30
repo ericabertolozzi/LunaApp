@@ -14,5 +14,6 @@ These instructions will get you a copy of the Luna project up and running on you
       - 'npm start'
       - 'npm install express --save' (To Install Express)
       - 'npm install mongodb --save' (For Installing MongoDB)
+      - 'npm install bcrypt'
       - 'node server'
  5. In a browser go to http://localhost:3000
