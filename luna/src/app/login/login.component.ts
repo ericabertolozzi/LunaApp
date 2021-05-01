@@ -41,7 +41,6 @@ export class LoginComponent implements OnInit {
   }
 
   public checkUserExists(): void {
-    console.log("here");
     this.http.post<Login>('http://localhost:3000/login',{ title: 'Angular POST Request Example' }).subscribe((data) => {
       this.postEmail = data.email; 
       this.postPW = data.psw;

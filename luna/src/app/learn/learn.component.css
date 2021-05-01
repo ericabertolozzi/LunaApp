@@ -14,7 +14,8 @@
 .content {
   margin-top: 100px;
   font-family: 'Quicksand', sans-serif;
-  background-color: #ebebeb;
+  /* background-color: #ebebeb; */
+  background-color: white;
   width: 100%;
 }
 

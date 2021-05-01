@@ -1,6 +1,7 @@
 /* Beginning of master.css */
 body{
-    background-color: #ebebeb;
+    /* background-color: #ebebeb; */
+    background-color: white;
     overflow-x: hidden;
     overflow: auto !important;
 }
@@ -22,20 +23,7 @@ h1{
 
 
 .footer {
-    position: fixed;
-    font-size:17px;
-    left: 0;
-    bottom: 0;
-    font-family: 'Quicksand', sans-serif;
-    width: 100%;
-    background-color: lavender;
-    color: black;
-    text-align: center;
-    border-radius: 15px;
-}
-
-.footer1 {
-  /* position: fixed; */
+  position: fixed;
   font-size:17px;
   left: 0;
   bottom: 0;
@@ -46,6 +34,18 @@ h1{
   text-align: center;
   border-radius: 15px;
 }
+
+/* .footer1 {
+  font-size:17px;
+  left: 0;
+  bottom: 0;
+  font-family: 'Quicksand', sans-serif;
+  width: 100%;
+  background-color: lavender;
+  color: black;
+  text-align: center;
+  border-radius: 15px;
+} */
 
 h4{
     position:relative;
@@ -632,7 +632,7 @@ tr{
 
 /* Footer CSS*/
 .footer {
-  position:unset;
+  position: fixed;
   font-size:17px;
   left: 0;
   bottom: 0;
@@ -641,7 +641,7 @@ tr{
   background-color: lavender;
   color: black;
   text-align: center;
-  border-radius: 15px;
+  /* border-radius: 15px; */
 }
 /* End of index.css */
 /* Beginning of index_StarBackground.css */

@@ -1,6 +1,7 @@
 /* Beginning of master.css */
 body{
-    background-color: #ebebeb;
+    /* background-color: #ebebeb; */
+    background-color: white;
     overflow:auto; /* overflow:scroll was causing multiple scroll bars to appear*/
 }
 
@@ -18,7 +19,6 @@ h1{
     text-align:center;
     font-family: 'Quicksand', sans-serif;
 }
-
 
 .footer {
     position: fixed;

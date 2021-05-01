@@ -186,17 +186,17 @@ app.post("/validate", function(req, res) {
     var email = req.body.email;
     var psw = req.body.psw;
 
-    console.log(email);
-    console.log(psw);
-
     dbo.collection('Users').find({"email": email}).toArray(function(err, docs) {
       var hash = docs[0]['password'];
       const isValidPass = bcrypt.compareSync(psw, hash);
+      if (isValidPass) {
+        console.log("User successfully logged in!");
+      }
+      else {
+        console.log("Incorrect password, login attempt unsuccessful.");
+      }
       
     });
-
-    // Check if passwords match using bcrypt
-    // const isValidPass = bcrypt.compareSync(password, hash);
   });
 });
 

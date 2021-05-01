@@ -1,9 +1,14 @@
+.body {
+  margin-top: 60px;
+}
+
 body{
-    background-color: #ebebeb;
+    /* background-color: #ebebeb; */
+    background-color: white;
     overflow:scroll;
 }
 
-#full-navbar {
+/* #full-navbar {
     background-color:lavender;
     top:0;
     font-family: 'Quicksand', sans-serif;
@@ -11,27 +16,66 @@ body{
     font-size:18px;
     color:#ffffff !important;
     z-index: 10;
-}
+} */
 
 h1{
-    text-align:center;
-    font-family: 'Quicksand', sans-serif;
+  text-align:center;
+  font-family: 'Quicksand', sans-serif;
+  margin-top: 2%;
+  font-weight: bold;
+  color: #A5A5EF;
 }
 
-
-
+h6 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  color: #A5A5EF;
+}
 
 .footer {
-    position: fixed;
-    font-size:17px;
-    left: 0;
-    bottom: 0;
-    font-family: 'Quicksand', sans-serif;
-    width: 100%;
-    background-color: lavender;
-    color: black;
-    text-align: center;
-    border-radius: 15px;
+  position: fixed;
+  font-size:17px;
+  left: 0;
+  bottom: 0;
+  font-family: 'Quicksand', sans-serif;
+  width: 100%;
+  background-color: lavender;
+  color: black;
+  text-align: center;
+  border-radius: 15px;
+}
+
+button {
+  background-color: lavender;
+  color: black;
+  border: 2px solid #e7e7e7;
+  border-radius: 12px;
+  font-family: 'Quicksand', sans-serif;
+  padding: 15px;
+  margin: 7px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {background-color: #937DCA;}
+
+.button {
+  background-color: lavender;
+  color: black;
+  border: 2px solid #e7e7e7;
+  border-radius: 12px;
+  font-family: 'Quicksand', sans-serif;
+  padding: 15px;
+  margin: 7px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {background-color: #937DCA;}
+
+input {
+  border-radius: 12px;
+  justify-content: center;
+  text-align: center;
+  vertical-align: center;
 }
 
 .symptoms *{
@@ -64,9 +108,18 @@ h6{
   /* margin-left:15%; */
   width: 43%;
   font-size:12px;
-  border-style:solid;
-  border:2px solid black;
+  /* border-style:solid;
+  border:2px solid black; */
   font-family: 'Raleway', sans-serif;
+}
+
+.column1 {
+  border-right-style: solid;
+  border-right-color: #937DCA;
+}
+
+.column2 {
+  margin-left: 20px;
 }
 
 /* Clear floats after the columns */
@@ -77,8 +130,7 @@ h6{
 }
 
 
-.footer1 {
-  /* position: fixed; */
+/* .footer1 {
   font-size:17px;
   left: 0;
   bottom: 0;
@@ -88,7 +140,7 @@ h6{
   color: black;
   text-align: center;
   border-radius: 15px;
-}
+} */
 
 .moodtracker,.sleeptracker,.addnote,.askquestion,.symptomtracker{
     margin-top: 4%;
@@ -123,7 +175,7 @@ h4{
 }
 
 .askequestion{
-  border-style:solid;
+  /* border-style:solid; */
   width:75%;
   margin-left:14%;
 }
@@ -142,14 +194,13 @@ h4{
 
 
 .submitequestion{
-  text-align:center;
-  /* margin-left:5%; */
+  /* text-align:center;
   font-size:20px;
   top: 50%;
   left: 50%;
   margin-top:-6%;
   margin-left:5%;
-  border:1px solid black;
+  border:1px solid black; */
 }
 
 /* #food{
@@ -163,21 +214,22 @@ h4{
   display: flex;
   text-align:center;
   flex-wrap: nowrap;
-  background-color: #8e9aaf;
-  border-radius:15px;
+  background-color: transparent;
+  border-radius:12px;
   margin-right:10%;
   margin-left:10%;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   justify-content:center;
 }
 
 .flex-container > div {
-  background-color: aliceblue;
+  background-color: #A5A5EF;
   width: 250px;
   margin: 10px;
   text-align: center;
   line-height: 20px;
   font-size: 20px;
+  border-radius: 12px;
 }
 
 #periodlength{
@@ -233,7 +285,7 @@ h4{
 #sleep{
   display: flex;
   padding-left:3%;
-  justify-content:space-around;     
+  justify-content:space-around;
   max-width:55%;
   margin:auto;
 }
@@ -245,8 +297,8 @@ h4{
 
 #display,#displayone{
   display:inline-block;
-   margin:0 auto; 
-  position:relative; 
+   margin:0 auto;
+  position:relative;
 }
 .sadmood{
   padding-left:14px;
@@ -258,27 +310,28 @@ h4{
 
 #finalsubmit{
   font-size:25px;
-  top: 30%;
-  left: 50%;
+  justify-content: center;
+  text-align: center;
   margin-top:-6%;
-  margin-left:42%;
 }
 
 #submittwo{
-  top: 50%;
-  left: 50%;
-  margin-top: -80px;
+  /* top: 50%;
+  left: 50%; */
+  /* margin-top: -80px;
   margin-left: 250px;
-  display:inline;
+  display:inline; */
+  justify-content: center;
+  text-align: center;
 
 }
 
 #displaytwo{
-  margin-right:40%;
+  /* margin-right:40%; */
 }
 
 #displaythree{
-  margin-left:39%;
+  /* margin-left:39%; */
 }
 
 
@@ -289,7 +342,7 @@ h4{
 
 #graphics{
   margin-right:50%;
-  
+
 }
 
 h2{
@@ -339,12 +392,15 @@ h2{
   height: 100%;
   font: 1em arial;
   color: rgba(50, 82, 50, 1.0);
+  font-family: 'Indie Flower', cursive;
+  border-radius: 12px;
 }
 #area:focus {
   color: black;
   border: 2px lightcyan;
   box-shadow: 0px 1px 1px #888888;
   font-family: 'Indie Flower', cursive;
+  border-radius: 12px;
 }
 
 .moodtracker,.sleeptracker,.addnote{
@@ -354,14 +410,14 @@ h2{
 
  .submit{
     margin-top:22px;
-    padding-left:5%;
-    background-color:cornflowerblue;
+    /* padding-left:5%; */
+    /* background-color:cornflowerblue; */
     color:black;
-    border-radius:40px;
-    width:250px;
+    /* border-radius:40px; */
+    /* width:250px;
     height:40px;
-    cursor:pointer;
- } 
+    cursor:pointer; */
+ }
 
  #upset{
    padding-left:50%;

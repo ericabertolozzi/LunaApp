@@ -1,16 +1,14 @@
-<p>tracking works!</p>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <title>Tracker</title>
   <link rel="icon" href="moon.png">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <!-- <link rel="stylesheet" type="text/css" href="./master.css"/>  -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="//code.angularjs.org/snapshot/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -18,13 +16,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet"> -->
 
-</head>
-<body>
+<!-- </head>
+<body> -->
 
   <!-- End of Navbar  -->
-   <br> <h4>PLEASE ANSWER THE BELOW QUESTIONS TO TRACK YOUR CYCLE </h4><br><br><br>
+<div class="body">
+   <br> <h1>PLEASE ANSWER THE BELOW QUESTIONS TO TRACK YOUR CYCLE </h1><br><br><br>
 
       <!-- </form> -->
     <form method="POST" id="form1" action="/infopost">
@@ -37,18 +36,20 @@
       </div>
       <div>3. How Many Days Is Your Cycle?<br><br>
           <input type="number" id="cyclelength" placeholder="Menstrual Cycle Length" name="cyclelength" min="0" max="30" required>
-      </div>  
+      </div>
     </div>
+
   <div class="submission">
-    <input class="submit" onclick="document.getElementById('displayone').innerHTML = document.getElementById('cyclelength').value-1+' days'; document.getElementById('display').innerHTML = document.getElementById('startdate').value;"  value="Cycle Countdown"><br>
-  <div id="lastperiod">
-  <p class="lastperiods">Your last period was:<b><p><span id='display'></span></p></b> </p>
-  </div>
-  <div id="nextperiod">
-    <p class="nextperiods">Your next period is in:<b><p><span id='displayone'></span></p></b> </p>
+    <input class="submit button" onclick="document.getElementById('displayone').innerHTML = document.getElementById('cyclelength').value-1+' days'; document.getElementById('display').innerHTML = document.getElementById('startdate').value;"  value="Cycle Countdown"><br>
+    <div id="lastperiod">
+      <p class="lastperiods">Your last period was:<b><p><span id='display'></span></p></b> </p>
+    </div>
+    <div id="nextperiod">
+      <p class="nextperiods">Your next period is in:<b><p><span id='displayone'></span></p></b> </p>
     </div><br><br>
   </div>
-  <p class="symptomtracker"><b>Track Your Symptoms</b></p><br><br><br>
+
+  <p class="symptomtracker"><b>TRACK YOUR SYMPTOMS</b></p><br><br><br>
   <div class="symptoms">
     <label></label>
     <div><input name="symptom" value="Cramp" type='checkbox'>Cramp</div>
@@ -76,7 +77,7 @@
     <div><input name="symptom" id="food" value="Appetite Loss" type='checkbox'>Shortness of Breath</div>
 </div>
 
-  <br><br><p class="moodtracker"><b>Track Your Mood</b></p><br><br><br>
+  <br><br><p class="moodtracker"><b>TRACK YOUR MOOD</b></p><br><br><br>
   <div id="moods">
     <input type="radio" name="mood" value="Happy" id="mood"/>
         <label for="Happy"><img src="../../assets/images/happy1.png" />
@@ -103,7 +104,7 @@
     <p class="scaredmood">Scared</p></label>
 </div><br>
 
-<p class="sleeptracker"><b>Track Your Sleep</b></p><br><br><br>
+<p class="sleeptracker"><b>TRACK YOUR SLEEP</b></p><br><br><br>
 <div id="sleep">
     <input type="radio" name="sleep" value="Poor" id="poor" />
         <label for="sad"><img src="../../assets/images/onepillow.png"  />
@@ -111,7 +112,7 @@
 
     <input type="radio" name="sleep" value="Fair" id="fair" />
         <label for="happy"><img src="../../assets/images/twopillow.png" />
-        <p class="mood">Fair</p></label> 
+        <p class="mood">Fair</p></label>
 
      <input type="radio" name="sleep" value="Good" id="good" />
     <label for="happy"><img src="../../assets/images/threepillow.png"  />
@@ -125,14 +126,15 @@
 </div>
 <div id="finalsubmit">
   <button (click)="makeFirstDataSet();clickEvent()">Save Information</button><br><br>
-  </div>
-  <h2>{{msg}}</h2>
-  </form>
+</div>
+<h2>{{msg}}</h2>
+<!-- WHAT DOES THIS FORM GO TO -->
+</form>
 
 
-<input type="hidden" name="_to" value="manyatrehan14@gmail.com" />
+<!-- <input type="hidden" name="_to" value="manyatrehan14@gmail.com" />
 <div class="row">
-  <div class="column">
+  <div class="column column1">
     <h6>Most Common Symptom</h6>
     <p>Cramps in your lower abdomen are the most frequent menustral complaint. They may occur one or two days before your period
     and last for 2-3 days during your period. Here are some things you can do to ease cramps:</p>
@@ -141,9 +143,9 @@
       <li>Place a heating pad on your lower abdomen or back</li>
       <li>Taking a hot bath</li>
     </ul>
-   
+
   </div>
-  <div class="column">
+  <div class="column column2">
     <h6>Does Food Help to Relieve Symptoms? </h6>
     <p>Yes! Eating foods that decrease inflamation in the body will help to ease menustrual symptoms including cramps.
     Both a vegetarian and plant-based diet help to decrease inflammation in your body. Also, a low-fat and high fiber diet help
@@ -157,38 +159,39 @@
       <li>Green Tea</li>
     </ul>
   </div>
-</div>
+</div> -->
 
 
 
-<br><br><br><br>
+<!-- <br><br><br><br> -->
 
 
 <div class="askequestion">
-<p class="askquestion">Have a Question for a Member of Our Team?</p><br><br><br>
+<p class="askquestion">HAVE A QUESTION FOR A MEMBER OF OUR TEAM?</p><br><br><br>
 <form id="askquestions" action="https://mailthis.to/manyatrehan14@gmail.com" method="POST">
   <input class="equestions" type="email" name="_replyto" placeholder="Your email">
   <input class="equestions" type="text" name="question" placeholder="Your Question">
- <br><br> <input class="submitequestion" type="submit" value="Send Email"><br>
+ <br><br> <input class="submitequestion button" type="submit" value="Send Email"><br>
  <p>Our team will respond to your question within 2-3 business days. Thanks!</p>
 </form>
 </div>
 
-<br><br>
+<br><br><br>
+
 <div id="submittwo">
   <div class="forms-display">
     <form method="GET" id="form2" action="/trackerimage">
-      <input type="submit" name="trackerimage" id="displaytwo" value="Cycle Analysis">
+      <input type="submit" name="trackerimage" id="displaytwo" class="button" value="Cycle Analysis">
     </form>
-    </div>
-<button id="displaythree" (click)="makeCSV();clickEvent1()">Click to Download Cycle Tracking Data</button>
-<h2>{{msg1}}</h2>
- 
+  </div>
+  <button id="displaythree" (click)="makeCSV();clickEvent1()">Click to Download Cycle Tracking Data</button>
+  <h2>{{msg1}}</h2>
 </div><br><br>
- 
-    <div class="footer1">
+
+    <div class="footer">
       <p class="footer-text">Luna Copyright &copy; 2021.</p>
-    </div> 
-  
-</body>
-</html>
+    </div>
+</div>
+
+<!-- </body>
+</html> -->

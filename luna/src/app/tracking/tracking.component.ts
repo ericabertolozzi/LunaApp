@@ -18,8 +18,8 @@ declare function showInput():any;
 export class TrackingComponent implements OnInit {
   msg!:string;
   msg1!:string;
-  poststartdate;
-  postperiodlength;
+  poststartdate: string;
+  postperiodlength: number;
 
   clickEvent(){
     this.msg='Data Successfully Saved.';
@@ -34,6 +34,8 @@ export class TrackingComponent implements OnInit {
  
   constructor(private http:HttpClient, private httpService:HttpService) {
     msg:String;
+    this.poststartdate = "";
+    this.postperiodlength = 0;
    }
   
 
