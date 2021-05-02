@@ -84,10 +84,11 @@ input {
   width:50%;
 }
 
+
 .symptoms{
   margin-left:-4%;
   display:inline-block;
-  font-size:18px;
+  font-size:1.8vw;
   column-count:3;
 }
 
@@ -246,7 +247,7 @@ h4{
   position:relative;
     margin-top:4%;
     margin-left:12%;
-    font-size:15px;
+    font-size:1.4vw;
     border-radius: 25px;
     border: 2px solid #8e9aaf;
     padding:10px;
@@ -259,7 +260,7 @@ h4{
   position:relative;
   margin-top:-8%;
   margin-left:73%;
-  font-size:15px;
+  font-size:1.4vw;
   border-radius: 25px;
   border: 2px solid #8e9aaf;
   padding: 10px;
