@@ -9,7 +9,6 @@ import { LoginComponent } from './login/login.component';
 import { LearnComponent } from './learn/learn.component';
 import { HomeComponent } from './home/home.component';
 import { ShoppingComponent } from './shopping/shopping.component';
-import { AjaxComponent } from './ajax/ajax.component';
 import { TrackingComponent } from './tracking/tracking.component';
 import { CalendarComponent } from './calendar/calendar.component';
 
@@ -19,7 +18,6 @@ import { CalendarComponent } from './calendar/calendar.component';
     LoginComponent,
     LearnComponent,
     HomeComponent,
-    AjaxComponent,
     TrackingComponent,
     ShoppingComponent,
     CalendarComponent,
