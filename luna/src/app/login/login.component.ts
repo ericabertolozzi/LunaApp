@@ -13,7 +13,6 @@ export class LoginComponent implements OnInit {
   postName: string;
   postEmail: string;
   postPW: string;
-  postMode: string;
   postAge: number;
 
 
@@ -21,7 +20,6 @@ export class LoginComponent implements OnInit {
     this.postName = "";
     this.postEmail = "";
     this.postPW = "";
-    this.postMode = "";
     this.postAge = 0;
   }
 
@@ -33,7 +31,6 @@ export class LoginComponent implements OnInit {
       this.postName = data.name;
       this.postEmail = data.email; 
       this.postPW = data.psw;
-      this.postMode = data.mode;
       this.postAge = data.age;
 
       console.log(data);
@@ -53,7 +50,6 @@ interface User {
   name: string;
   email: string;
   psw: string;
-  mode: string;
   age: number;
 }
 

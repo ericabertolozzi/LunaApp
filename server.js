@@ -149,11 +149,8 @@ app.post("/add_user", function(req, res) {
     var name = req.body.name;
     var email = req.body.email;
     var psw = req.body.psw;
-    var mode = req.body.mode;
     var age = req.body.age;
     var current_date = new Date();
-
-    console.log(req.body);
   
     // Hash password before storing in database
 
@@ -167,7 +164,6 @@ app.post("/add_user", function(req, res) {
       "email": email,
       "password": hash,
       "full_name": name,
-      "app_mode": mode,
       "age" : age,
       "join_date" : current_date
     }
