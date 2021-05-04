@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session');
 const app = express();
 const path = require('path');
 const port = 3000;
@@ -15,7 +16,9 @@ const url = "mongodb+srv://barnev:.mUNYTL8Ga.6q2%40@cluster0.pacdp.mongodb.net/l
 const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use(express.static(path.join(__dirname, './luna/dist/luna')));
+app.use(session({secret: "ssshhhhh"}));
 
+var sess;
 
 // TO DO: Change this to API stuff
 app.get('/api/articles', (req, res) => {
@@ -187,6 +190,8 @@ app.post("/validate", function(req, res) {
       const isValidPass = bcrypt.compareSync(psw, hash);
       if (isValidPass) {
         console.log("User successfully logged in!");
+        sess = req.session;
+        sess.email = email;
       }
       else {
         console.log("Incorrect password, login attempt unsuccessful.");
@@ -196,46 +201,22 @@ app.post("/validate", function(req, res) {
   });
 });
 
-// app.get('/tracker.html', function(req, res){
-//     res.sendFile(__dirname + '/tracker.html');
-// });
-//
-// app.get('/explore.html', function(req, res){
-//     res.sendFile(__dirname + '/explore.html');
-// });
-//
-// app.get('/profile.html', function(req, res){
-//     res.sendFile(__dirname + '/profile.html');
-// });
-//
-// app.get('/learn.html', function(req, res){
-//
-//   let rawdata = fs.readFileSync('learn.json');
-//   let articles = JSON.parse(rawdata)["articles"];
-//   var htmladd = '';
-//   for( i=0; i < articles.length; i++ ) {
-//     var name = articles[i]["name"];
-//     var preview = articles[i]["preview"];
-//     var link = articles[i]["link"];
-//     htmladd += `
-//       <div class="article">
-//         <h1 class="text-left"><a class="name" href="`+link+`">`+name+`</a></h1>
-//         <p>`+preview+`</p>
-//         <div>
-//           <div class="more label text-right"><a href="`+link+`">Read more</a></div>
-//         </div>
-//         <div class="clear"></div>
-//         <hr>
-//       </div>
-//     `;
-//   }
-//   // console.log(htmladd);
-//   res.write(html1+htmladd+html2);
-//
-//   // res.sendFile(__dirname + '/learn.html');
-// });
-// app.use(express.static('.'));
-//
-//
+app.get("/getEmail", function(req, res) {
+  if (req.session.email) {
+    res.send(req.session.email);
+  } 
+  else {
+    res.send("No Login");
+  }
+});
+
+// Source: https://codeforgeek.com/manage-session-using-node-js-express-4/
+
+app.get("/logout", (req, res) => {
+  req.session.destroy((err) => {
+    if (err) throw err;
+    res.redirect('/');
+  });
+});
 
 app.listen(port, () => console.log(`Application listening on port ${port}!`))
